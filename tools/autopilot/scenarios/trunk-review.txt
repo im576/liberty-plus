@@ -1,0 +1,40 @@
+# Arsenal S-2/S-3 on the engine: the trunk sequence (engine choreography) and the storage wheel (Liberty.Ui radial menu).
+events on
+god on
+wanted 0
+goto east_park
+wait 5000
+time 13 0
+weather 1
+give 14 120
+heading 0
+wait 500
+spawncar admiral 8
+expect "autopilot_spawncar handle=" 15
+wait 1500
+at-trunk 3.0
+wait 2000
+# The measured run reached ~100 ms frames here; keep the initial interaction across input polls too.
+key E 1200
+wait 4000
+expect "choreography_begin trunk" 8
+expect "arsenal_storage_open" 8
+hud off
+shot trunk_open
+# The measured Windows run reached long frames while the wheel was open; hold each key across input polls.
+key Right 1200
+wait 500
+shot trunk_wheel_next_segment
+key Left 1200
+wait 500
+key Space 1200
+expect "arsenal_store id=\d+ to=" 10
+wait 2500
+shot trunk_after_store
+key Back 1200
+wait 3500
+expect "choreography_complete trunk" 10
+expect "arsenal_storage_closed" 10
+shot trunk_closed
+hud on
+clear

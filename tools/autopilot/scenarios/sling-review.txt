@@ -1,0 +1,47 @@
+# W-5 review: both slings and slung long guns in daylight from four sides.
+events on
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto east_park
+expect "teleport_done id=east_park" 15
+wait 4000
+# Reassert after scene setup too; ownership alone does not prove the native flags remained set.
+god on
+alive
+pos
+owned autopilot
+expect "line=.owned autopilot. reply=.*invincible=1\b" 10
+time 13 0
+weather 1
+mark
+give 10 200
+give 14 200
+give 7 100
+select 7
+expectmarked "holster_sling_attached slot=LongGun1" 15
+expectmarked "holster_sling_attached slot=LongGun2" 15
+hud off
+cam 0 2.2 0.4
+wait 1500
+alive
+shot front
+cam 180 2.2 0.4
+wait 1500
+alive
+shot back
+cam 90 2.0 0.4
+wait 1500
+alive
+shot left
+cam 270 2.0 0.4
+wait 1500
+alive
+shot right
+cam 150 1.4 0.6
+wait 1500
+alive
+shot back_close
+cam off
+hud on

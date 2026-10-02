@@ -1,0 +1,19 @@
+# T-044 inventory integrity, part a of 2: 25 death cycles. Each cycle buys a pistol and a rifle (owned), dies and respawns;
+# the stored weapon count must grow by exactly the owned weapons carried at death (0 lost owned weapons; a weapon the arsenal did not count as bought in time is not expected in the stash).
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto east_park
+expect "teleport_done id=east_park" 90
+wait 4000
+time 13 0
+wait 1500
+weather 1
+arsenal status
+expect "arsenal_status loadout=on" 10
+cycle-deaths 25
+expect "autopilot_death_cycles_done cycles=25 lost_owned=0 failed_cycles=0 timeouts=0 owned_expected=(4[0-9]|50) stored_growth=\1 " 900
+arsenal roundtrip
+expect "arsenal_roundtrip identical=True" 15

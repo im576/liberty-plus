@@ -1,0 +1,59 @@
+# T-045 UI cost: frame statistics with nothing open, with the SDK sample radial menu, with the SDK sample list menu and with the
+# weapon wheel open. Each window is 5 s; `framestats` resets its counters, so the first call of a pair discards the opening.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1500
+give 3 1
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1200
+give 7 100
+wait 1500
+label ui_closed
+framestats
+wait 5000
+framestats
+costs
+radial-test
+wait 1500
+label ui_radial_sample
+framestats
+wait 5000
+framestats
+costs
+menu-close
+wait 1500
+menu-test
+wait 1500
+label ui_list_sample
+framestats
+wait 5000
+framestats
+costs
+menu-close
+wait 1500
+wheel open
+wait 1500
+label ui_weapon_wheel
+framestats
+wait 5000
+framestats
+costs
+wheel close
+wait 1500
+framestats
+wait 3000
+framestats
+clear

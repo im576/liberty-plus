@@ -1,0 +1,61 @@
+# Bounded shared-path experiment. Same scene/population/modules; vary draw primitives and control capture only.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+label path_closed
+framestats
+costs
+wait 4000
+framestats
+costs
+ui-render-diagnostic none
+menu-test
+wait 2000
+label path_locked_no_draw
+framestats
+costs
+wait 4000
+framestats
+costs
+ui-render-diagnostic primitives
+wait 2000
+label path_locked_primitives
+framestats
+costs
+wait 4000
+framestats
+costs
+ui-render-diagnostic text
+wait 2000
+label path_locked_text
+framestats
+costs
+wait 4000
+framestats
+costs
+ui-render-diagnostic all
+wait 2000
+label path_locked_all
+framestats
+costs
+wait 4000
+framestats
+costs
+menu-close
+wait 1500
+menu-test unlocked
+wait 2000
+label path_unlocked_all
+framestats
+costs
+wait 4000
+framestats
+costs
+menu-close
+ui-render-diagnostic all
+clear

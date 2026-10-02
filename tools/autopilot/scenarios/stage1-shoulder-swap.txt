@@ -1,0 +1,93 @@
+# T-042 shoulder swap without the aim button. The autopilot cannot hold the aim input, so the aim camera itself is an owner check; what is
+# measured here: (1) the swap mechanism (forced sides slide the game's aim-camera table to -1/+1 and the live table matches, then restore),
+# (2) shoulder clearance: the engine ray from the player's side (0.5 m up) at wall spots and at city capture points, both sides. The camera
+# sits at the shoulder offset (0.475 m on foot, 0.2 m in cover), so a wall closer than that on one side is where a clip would happen.
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+swap probe
+expect "swap_probe side=right target=1.00 applied=1.000 settled=True live_ok=True" 10
+swap left
+wait 800
+swap probe
+expect "swap_probe side=left target=-1.00 applied=-1.000 settled=True live_ok=True" 10
+swap right
+wait 800
+swap probe
+expect "swap_probe side=right target=1.00 applied=1.000 settled=True live_ok=True" 10
+swap toggle
+wait 800
+swap probe
+expect "swap_probe side=left target=-1.00 applied=-1.000 settled=True live_ok=True" 10
+goto east_park
+expect "teleport_done id=east_park" 90
+wait 8000
+time 13 0
+world
+expect "world objects=1 spawned=1 test_wall:handle \d+" 10
+# Positive control: the engine ray does hit the test wall's collision proxies from here (so a Clear below means clear, not blind).
+world ray test_wall
+expect "world_ray name=test_wall .*status=Hit" 10
+# The test wall runs along X through (-64.8, 671.4); standing south of it facing east puts it on the left, facing west on the right.
+tp -64.8 671 16.5 270
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+shot swap_wall_left_0.4
+tp -64.8 671 16.5 90
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+tp -64.8 670.6 16.5 270
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+shot swap_wall_left_0.8
+tp -64.8 670.6 16.5 90
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+tp -64.8 669.9 16.5 270
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+shot swap_wall_left_1.5
+tp -64.8 669.9 16.5 90
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+tp -64.8 668.4 16.5 270
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+shot swap_wall_left_3
+tp -64.8 668.4 16.5 90
+wait 2500
+ray left 4 0.5 all
+ray right 4 0.5 all
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 6000
+ray left 4 0.5 all
+ray right 4 0.5 all
+goto s1_rotterdam_hill
+expect "teleport_done id=s1_rotterdam_hill" 90
+wait 6000
+ray left 4 0.5 all
+ray right 4 0.5 all
+goto s1_boabo
+expect "teleport_done id=s1_boabo" 90
+wait 6000
+ray left 4 0.5 all
+ray right 4 0.5 all
+goto s1_east_hook
+expect "teleport_done id=s1_east_hook" 90
+wait 6000
+ray left 4 0.5 all
+ray right 4 0.5 all
+# Back to the right shoulder: the camera table is the game's again.
+swap right
+wait 800
+swap probe
+expect "swap_probe side=right target=1.00 applied=1.000 settled=True live_ok=True" 10

@@ -1,0 +1,141 @@
+# T-043 weapon-specific reticles. One weapon per class (pistol, SMG, rifle, shotgun) is given and held; the `aim` test hook makes the model
+# treat the player as aiming (the autopilot cannot hold the aim button) with a forced stance/speed, so the reticle is drawn and the spread cone
+# changes with standing, crouched, moving, sustained fire (range fire, continuous) and recovery. `reticle debug on` samples the drawn opening
+# against the opening the cone asks for on every frame (reticle_frame lines); `reticle check` fails if a steady frame is more than 5% off or any
+# frame under-reports the cone. Screenshots: each class standing and while firing. Draw cost: costs per class (draw.crosshair average must stay under 0.15 ms; the proposal is 0.1 ms, see the T-043 card).
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto gun_test_range
+expect "teleport_done id=gun_test_range" 90
+wait 4000
+time 12 0
+costs
+
+# --- pistol: service-pistol (weapon 7), reticle style cross
+wanted 0
+catalog give service-pistol 400 clear
+expect "weapon_changed from=\d+ to=7 profile=glock_stage1" 20
+expect "reticle_resolved weapon=7 class=pistol style=cross" 10
+costs
+aim on
+reticle debug on
+wait 2500
+shot reticle_pistol_standing
+aim on crouched
+wait 2500
+aim on speed 4
+wait 2500
+aim on
+wait 1500
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 3000 4
+wait 1200
+shot reticle_pistol_firing
+wait 5000
+range stop
+wait 2500
+reticle check
+expect "reticle_check class=.* violations=0 under_reports=0" 10
+costs
+expect "costs_ms.*draw\.crosshair=0\.(0\d|1[0-4])\d/" 10
+reticle debug off
+aim off
+
+# --- smg: imi-uzi (weapon 12), reticle style cross
+wanted 0
+catalog give imi-uzi 400 clear
+expect "weapon_changed from=\d+ to=12 profile=uzi_stage1" 20
+expect "reticle_resolved weapon=12 class=smg style=cross" 10
+costs
+aim on
+reticle debug on
+wait 2500
+shot reticle_smg_standing
+aim on crouched
+wait 2500
+aim on speed 4
+wait 2500
+aim on
+wait 1500
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 3000 4
+wait 1200
+shot reticle_smg_firing
+wait 5000
+range stop
+wait 2500
+reticle check
+expect "reticle_check class=.* violations=0 under_reports=0" 10
+costs
+expect "costs_ms.*draw\.crosshair=0\.(0\d|1[0-4])\d/" 10
+reticle debug off
+aim off
+
+# --- rifle: ak-47 (weapon 14), reticle style bracket
+wanted 0
+catalog give ak-47 400 clear
+expect "weapon_changed from=\d+ to=14 profile=ak47_stage1" 20
+expect "reticle_resolved weapon=14 class=rifle style=bracket" 10
+costs
+aim on
+reticle debug on
+wait 2500
+shot reticle_rifle_standing
+aim on crouched
+wait 2500
+aim on speed 4
+wait 2500
+shot reticle_rifle_moving
+aim on
+wait 1500
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 3000 4
+wait 1200
+shot reticle_rifle_firing
+wait 5000
+range stop
+wait 2500
+reticle check
+expect "reticle_check class=.* violations=0 under_reports=0" 10
+costs
+expect "costs_ms.*draw\.crosshair=0\.(0\d|1[0-4])\d/" 10
+reticle debug off
+aim off
+
+# --- shotgun: remington-1100 (weapon 11), reticle style ring
+wanted 0
+catalog give remington-1100 400 clear
+expect "weapon_changed from=\d+ to=11 profile=remington_stage1" 20
+expect "reticle_resolved weapon=11 class=shotgun style=ring" 10
+costs
+aim on
+reticle debug on
+wait 2500
+shot reticle_shotgun_standing
+aim on crouched
+wait 2500
+aim on speed 4
+wait 2500
+aim on
+wait 1500
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 3000 4
+wait 1200
+shot reticle_shotgun_firing
+wait 5000
+range stop
+wait 2500
+reticle check
+expect "reticle_check class=.* violations=0 under_reports=0" 10
+costs
+expect "costs_ms.*draw\.crosshair=0\.(0\d|1[0-4])\d/" 10
+reticle debug off
+aim off
+
+wait 1000

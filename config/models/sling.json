@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "bodyArchive": "pc/models/cdimages/playerped.rpf",
+  "bodyPrefixes": ["uppr_", "lowr_"],
+  "skeletonModel": "uppr_000_u.wdr",
+  "attachBone": "Char_Spine2",
+  "templateArchive": "pc/models/cdimages/weapons.img",
+  "templateModel": "amb_plank",
+  "clearanceMeters": 0.012,
+  "hipMarginMeters": 0.03,
+  "widthMeters": 0.042,
+  "thicknessMeters": 0.005,
+  "textureRepeatMeters": 0.34,
+  "segments": 72,
+  "textureDictionary": "lf_sling",
+  "drawDistanceMeters": 30,
+  "audioMaterial": "CM_PED_GYM_BAG",
+  "leather": {
+    "baseColour": [62, 41, 27],
+    "edgeColour": [30, 20, 14],
+    "stitchColour": [150, 128, 96],
+    "grainStrength": 0.22,
+    "scuffStrength": 0.05,
+    "stitchInsetFraction": 0.16,
+    "stitchPeriodPixels": 9
+  },
+  "straps": [
+    {
+      "model": "lf_sling_a",
+      "shoulderBone": "Char_L_Clavicle", "shoulderTowards": "Char_L_UpperArm", "shoulderFraction": 0.55,
+      "hipBone": "Char_R_Thigh", "hipOffsetMeters": [0.0, 0.0, 0.07]
+    },
+    {
+      "model": "lf_sling_b",
+      "shoulderBone": "Char_R_Clavicle", "shoulderTowards": "Char_R_UpperArm", "shoulderFraction": 0.55,
+      "hipBone": "Char_L_Thigh", "hipOffsetMeters": [0.0, 0.0, 0.07]
+    }
+  ]
+}

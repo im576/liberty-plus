@@ -1,0 +1,27 @@
+# T045-config-watch-reload. Host-only wheel-config fixture restores exact config bytes and original running/enabled
+# state in the runner's finally. Rejection intentionally emits ERROR; do not hide it or claim zero log errors.
+await-alive 60000
+expect "autopilot_player_ready" 65
+wheel-config begin
+wheel-config enabled
+restart weapon-wheel
+wheel status
+expect "weapon_wheel_status .*enabled=True" 10
+mark
+wheel-config invalid
+expectmarked "weapon_wheel_config_rejected keeping previous error=.*navigation keys" 10
+wheel status
+expect "weapon_wheel_status .*enabled=True" 10
+# Change to a different valid value, so retention of an old enabled config cannot accidentally satisfy recovery.
+mark
+wheel-config disabled
+expectmarked "weapon_wheel_config enabled=False" 10
+wheel status
+expect "weapon_wheel_status .*enabled=False" 10
+mark
+wheel-config enabled
+expectmarked "weapon_wheel_config enabled=True" 10
+wheel status
+expect "weapon_wheel_status .*enabled=True" 10
+wait 1500
+wheel-config single

@@ -1,0 +1,152 @@
+{
+  "id": "ART-002",
+  "title": "Blood spatter decal atlas",
+  "status": "prepped",
+  "priority": "P0",
+  "kind": "decal",
+  "prompt": "A 2 by 2 atlas of four realistic blood spatter decals seen straight on (orthographic), each centred in its quarter with empty margin, on a fully transparent background. Dark realistic blood: deep red to near-black where thick, thin brownish-red where it has run or dried, fine satellite droplets and a few directional streaks consistent with a gunshot spray, one variant a heavier pool-like splash. Photographic material detail, no surface texture behind the blood, no lighting, no shadows. Grounded forensic realism, not cartoon or horror-movie exaggeration.",
+  "intendedUse": "T-047 harsh gore: surface blood on walls and ground near shootings; four variants in a 2x2 atlas, applied as decals once T-051 finds the decal path.",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024
+  },
+  "aspectRatio": "1:1",
+  "transparency": "alpha",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-002/",
+  "outputName": "art_002.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A 2 by 2 atlas of four realistic blood spatter decals seen straight on (orthographic), each centred in its quarter with empty margin, on a fully transparent background. Dark realistic blood: deep red to near-black where thick, thin brownish-red where it has run or dried, fine satellite droplets and a few directional streaks consistent with a gunshot spray, one variant a heavier pool-like splash. Photographic material detail, no surface texture behind the blood, no lighting, no shadows. Grounded forensic realism, not cartoon or horror-movie exaggeration."
+    },
+    {
+      "at": "2026-09-30T04:43:45+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent generations from the exact prompt plus all verbatim constraints produced prominent white specular highlights and shaded raised droplets, conflicting with no lighting/no shadows. No prompt substitution or approval performed. Failed candidates retained for provenance. Built-in model/version and seeds are not exposed.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic blood spatter decals seen straight on (orthographic), each centred in its quarter with empty margin, on a fully transparent background. Dark realistic blood: deep red to near-black where thick, thin brownish-red where it has run or dried, fine satellite droplets and a few directional streaks consistent with a gunshot spray, one variant a heavier pool-like splash. Photographic material detail, no surface texture behind the blood, no lighting, no shadows. Grounded forensic realism, not cartoon or horror-movie exaggeration.",
+      "files": [
+        {
+          "path": "art/generated/ART-002/r1/art_002_1.png",
+          "sha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-002/r1/art_002_2.png",
+          "sha256": "5889ed937296240ef1ff515b1ca1218698b1bfb131e569af2348ed593d976a0d",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:40:39+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Current prompt plus verbatim constraints, square real alpha; two fresh generations (_3,_4), earlier candidates retained and all four registered. _1: white specular highlights and raised shaded droplets. _2: glossy highlights on droplets and pooled splash. _3: numerous bright highlights, raised droplets, lower-left splash has tight bottom margin. _4: shiny droplets and broad highlights on heavier lower-left splash. No alpha, tiling, resizing or review decisions performed; seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic blood spatter decals seen straight on (orthographic), each centred in its quarter with empty margin, on a fully transparent background. Dark realistic blood: deep red to near-black where thick, thin brownish-red where it has run or dried, fine satellite droplets and a few directional streaks consistent with a gunshot spray, one variant a heavier pool-like splash. Photographic material detail, no surface texture behind the blood, no lighting, no shadows. Grounded forensic realism, not cartoon or horror-movie exaggeration.",
+      "files": [
+        {
+          "path": "art/generated/ART-002/r1/art_002_1.png",
+          "sha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-002/r1/art_002_2.png",
+          "sha256": "5889ed937296240ef1ff515b1ca1218698b1bfb131e569af2348ed593d976a0d",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-002/r1/art_002_3.png",
+          "sha256": "2acc580bb46c3bc795caa99b118a908738898a1e2ae7129a4d9f4032188c4a91",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-002/r1/art_002_4.png",
+          "sha256": "a29809cac07c8a2a8f96e5077a51ab3413ffba82b958e3436fcba1575a45b81a",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:53+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "four varied spatters incl. one heavy; drips suit walls; slight gloss acceptable",
+      "files": [
+        {
+          "path": "art/approved/ART-002/r1_art_002_1.png",
+          "sha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:57+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 1024x1024 RGBA; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-002/prepped/art_002.png",
+          "sha256": "2914654fd9caf9399e3c0e4188d70323f13e1f98300e031424c81695732953aa",
+          "width": 1024,
+          "height": 1024,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-002/r1_art_002_1.png"
+}

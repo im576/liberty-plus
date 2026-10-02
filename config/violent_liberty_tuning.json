@@ -1,0 +1,8 @@
+{
+  "headPressure": "high",
+  "neckPressure": "high",
+  "bleedDuration": "long",
+  "shotgunChanceMinimumPercent": 75,
+  "shotgunChanceMaximumPercent": 100,
+  "shotgunGravitySpeedPercent": 200
+}

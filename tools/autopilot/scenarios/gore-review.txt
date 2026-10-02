@@ -1,0 +1,40 @@
+# T-022 under the engine: the DevTools gore tests on spawned NPCs, framed by the review camera.
+events on
+god on
+wanted 0
+goto gun_test_range
+wait 4000
+time 13 0
+weather 1
+spawn 1 2.5
+wait 3000
+gore arm
+expect "gore_test sever part=" 10
+wait 2500
+hud off
+cam ped 0 20 2.8 1.0
+wait 1500
+shot arm_cut
+clear
+cam off
+spawn 1 2.5
+wait 3000
+gore leg
+expect "gore_test sever part=" 10
+wait 2500
+cam ped 0 20 2.8 1.0
+wait 1500
+shot leg_cut
+clear
+cam off
+spawn 1 2.5
+wait 3000
+gore head
+expect "gore_test sever part=" 10
+wait 2500
+cam ped 0 20 2.8 1.0
+wait 1500
+shot head_cut
+cam off
+hud on
+clear

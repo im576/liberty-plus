@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "weather": {
+    "enabled": true,
+    "blockMinimumHours": 2,
+    "blockMaximumHours": 5,
+    "dayWeights":   [ { "weather": "EXTRASUNNY", "weight": 2 }, { "weather": "SUNNY", "weight": 10 }, { "weather": "SUNNY_WINDY", "weight": 6 }, { "weather": "CLOUDY", "weight": 34 }, { "weather": "RAIN", "weight": 16 }, { "weather": "DRIZZLE", "weight": 20 }, { "weather": "FOGGY", "weight": 7 }, { "weather": "LIGHTNING", "weight": 5 } ],
+    "nightWeights": [ { "weather": "EXTRASUNNY", "weight": 0 }, { "weather": "SUNNY", "weight": 8 }, { "weather": "SUNNY_WINDY", "weight": 4 }, { "weather": "CLOUDY", "weight": 30 }, { "weather": "RAIN", "weight": 14 }, { "weather": "DRIZZLE", "weight": 20 }, { "weather": "FOGGY", "weight": 18 }, { "weather": "LIGHTNING", "weight": 6 } ],
+    "nightStartHour": 20,
+    "nightEndHour": 6,
+    "forbiddenTransitions": [ "EXTRASUNNY>RAIN", "EXTRASUNNY>LIGHTNING", "SUNNY>LIGHTNING", "SUNNY>RAIN", "EXTRASUNNY>FOGGY", "LIGHTNING>EXTRASUNNY", "LIGHTNING>SUNNY", "RAIN>EXTRASUNNY" ],
+    "releaseDuringMissions": true
+  },
+  "breath": {
+    "enabled": true,
+    "effectNames": [ "ped_breath", "ped_exhale_vapour" ],
+    "coldNightStartHour": 19,
+    "coldNightEndHour": 8,
+    "coldWeathers": [ "CLOUDY", "RAIN", "DRIZZLE", "FOGGY", "LIGHTNING" ],
+    "intervalMinimumMilliseconds": 2600,
+    "intervalMaximumMilliseconds": 4200,
+    "scale": 1.0,
+    "nearbyPeds": 3,
+    "nearbyRadiusMeters": 9.0,
+    "scanIntervalMilliseconds": 1000
+  },
+  "density": {
+    "enabled": false,
+    "fullDensityFrameMilliseconds": 25.0,
+    "minimumDensityFrameMilliseconds": 45.0,
+    "minimumPedDensity": 0.55,
+    "minimumCarDensity": 0.6,
+    "smoothingSeconds": 2.0,
+    "maximumChangePerSecond": 0.08
+  }
+}

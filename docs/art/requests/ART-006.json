@@ -1,0 +1,152 @@
+{
+  "id": "ART-006",
+  "title": "Muzzle flash front frames",
+  "status": "prepped",
+  "priority": "P0",
+  "kind": "decal",
+  "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from directly in front, each centred in its quarter on a fully transparent background: a bright white-hot centre with four to six irregular orange-yellow star petals and faint smoke, different petal counts and sizes per variant. Photographic, short and sharp, no gun, no background, no neon or cartoon shapes.",
+  "intendedUse": "T-048: muzzle flash seen from the front (toward the camera / the target), four variants in a 2x2 atlas.",
+  "dimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "aspectRatio": "1:1",
+  "transparency": "alpha",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-006/",
+  "outputName": "art_006.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from directly in front, each centred in its quarter on a fully transparent background: a bright white-hot centre with four to six irregular orange-yellow star petals and faint smoke, different petal counts and sizes per variant. Photographic, short and sharp, no gun, no background, no neon or cartoon shapes."
+    },
+    {
+      "at": "2026-09-30T04:53:10+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Both candidates include a three-petal flash despite the required four-to-six petals per variant, and dense smoke rather than faint smoke. Exact specification not achieved. Failed candidates retained for provenance; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from directly in front, each centred in its quarter on a fully transparent background: a bright white-hot centre with four to six irregular orange-yellow star petals and faint smoke, different petal counts and sizes per variant. Photographic, short and sharp, no gun, no background, no neon or cartoon shapes.",
+      "files": [
+        {
+          "path": "art/generated/ART-006/r1/art_006_1.png",
+          "sha256": "72092252366de8f804e70215c23aa9f939ab4248b55cba75268adab51bb54a0f",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-006/r1/art_006_2.png",
+          "sha256": "1474a8156749302f449432da55e4554638c0687dfba2ca6f97c2738c380c90dd",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:47:48+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two fresh generations (_3,_4) from current prompt plus verbatim constraints; four candidates registered with alpha intact. _1: lower-right flash has three petals, smoke dense. _2: lower-right three-petal flash and dense smoke. _3: oversized shapes, upper-left smoke/petal clipped at top-left edge, lower-right appears three-petal; dense smoke. _4: lower-right appears three-petal, long spark streaks and dense smoke, top-right tight right margin. Counts/margins left for reviewer; no post-processing, version/seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from directly in front, each centred in its quarter on a fully transparent background: a bright white-hot centre with four to six irregular orange-yellow star petals and faint smoke, different petal counts and sizes per variant. Photographic, short and sharp, no gun, no background, no neon or cartoon shapes.",
+      "files": [
+        {
+          "path": "art/generated/ART-006/r1/art_006_1.png",
+          "sha256": "72092252366de8f804e70215c23aa9f939ab4248b55cba75268adab51bb54a0f",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-006/r1/art_006_2.png",
+          "sha256": "1474a8156749302f449432da55e4554638c0687dfba2ca6f97c2738c380c90dd",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-006/r1/art_006_3.png",
+          "sha256": "4bd2e911d132e070b5c6670073d3279c9fd3dd2ef19697c9d955549e3a707393",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-006/r1/art_006_4.png",
+          "sha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:54+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "least regular petals of the four; closest to a real front flash",
+      "files": [
+        {
+          "path": "art/approved/ART-006/r1_art_006_4.png",
+          "sha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:58+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 512x512 RGBA; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-006/prepped/art_006.png",
+          "sha256": "2d2f98b54871b9f3800ab944150bdb40b80ca6d66ff65ef8e73bf298be26baa5",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-006/r1_art_006_4.png"
+}

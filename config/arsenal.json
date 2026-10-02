@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "sidearmLimit": 2,
+  "longGunLimit": 2,
+  "meleeLimit": 1,
+  "purchaseWindowMilliseconds": 1500,
+  "gunsmithGoldFinishPrice": 500,
+  "inventoryRefreshMilliseconds": 500,
+  "stateRefreshMilliseconds": 500,
+  "trunkDistanceMeters": 2.5,
+  "trunkRearOffsetMeters": 2.0,
+  "ownedVehicleMatchMeters": 12.0,
+  "fallbackVehicleMatchMeters": 8.0,
+  "trunkTimings": {
+    "turnMilliseconds": 450,
+    "lidOpenAtMilliseconds": 520,
+    "openMinMilliseconds": 700,
+    "openMaxMilliseconds": 2600,
+    "idleMinMilliseconds": 300,
+    "withdrawMinMilliseconds": 500,
+    "withdrawMaxMilliseconds": 2400,
+    "browseStepTimeoutMilliseconds": 3000,
+    "lidCloseAtMilliseconds": 450,
+    "closeMinMilliseconds": 700,
+    "closeMaxMilliseconds": 2400
+  },
+  "categories": [
+    {"category": 1, "group": "melee", "bodySlot": 5},
+    {"category": 2, "group": "sidearm", "bodySlot": 1},
+    {"category": 4, "group": "sidearm", "bodySlot": 2},
+    {"category": 3, "group": "longGun", "bodySlot": 3},
+    {"category": 5, "group": "longGun", "bodySlot": 4},
+    {"category": 6, "group": "longGun", "bodySlot": 4},
+    {"category": 7, "group": "longGun", "bodySlot": 4},
+    {"category": 8, "group": "uncounted", "bodySlot": 0}
+  ],
+  "loadout": {
+    "enabled": true,
+    "sidearmLimit": 1,
+    "longGunLimit": 2,
+    "categoryOverrides": [
+      {"category": 4, "group": "longGun", "bodySlot": 3}
+    ],
+    "ammoCaps": [
+      {"category": 2, "maximumRounds": 150},
+      {"category": 3, "maximumRounds": 60},
+      {"category": 4, "maximumRounds": 240},
+      {"category": 5, "maximumRounds": 240},
+      {"category": 6, "maximumRounds": 40},
+      {"category": 7, "maximumRounds": 12}
+    ]
+  },
+  "weaponWheel": {
+    "enabled": true,
+    "padButton": "Back",
+    "keyboardKey": "Tab",
+    "tapMilliseconds": 250,
+    "allowInVehicle": false
+  },
+  "trunkCapacity": {
+    "defaultSlots": 8,
+    "safehouseSlots": 0,
+    "classes": [
+      {"id": "sports", "slots": 4, "models": ["banshee", "comet", "coquette", "infernus", "turismo", "sultanrs", "feroci", "futo", "stalion"]},
+      {"id": "utility", "slots": 16, "models": ["burrito", "burrito2", "speedo", "mule", "pony", "steed", "stockade", "rancher", "landstalker", "huntley", "cavalcade", "patriot"]}
+    ]
+  },
+  "safehouses": [],
+  "safehouseBlipSprite": 29,
+  "discoveredSafehouseRadiusMeters": 12.0
+}

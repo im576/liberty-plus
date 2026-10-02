@@ -1,0 +1,89 @@
+# T-040 limited preview: functional smoke; original task/performance gates remain unchanged.
+# Parent backs up owner state before this run and restores it afterward, before final installation.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+modules
+expect "gunplay avg=.*weapon-catalog avg=.*arsenal avg=.*holsters avg=.*weapon-wheel avg=.*devtools avg=" 15
+catalog check
+expect "catalog ok: 6 Stage 1 weapons of 13 entries" 20
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+weather 1
+hud on
+strip
+wait 1500
+give 7 100
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1500
+wheel status
+expect "weapon_wheel_status open=False .*held=14 slots=7,(10,14|14,10),0,0 enabled=True" 10
+select 7
+wait 1500
+mark
+key Tab 120
+expectmarked "weapon_wheel_open frame=\d+ held=7" 10
+wait 1500
+shot preview_wheel
+key Right 500
+wait 500
+mark
+key Enter 500
+expectmarked "weapon_wheel_equipped requested=(\d+) actual=\1 match=True" 10
+wheel status
+expect "weapon_wheel_status open=False" 10
+swap left
+wait 1000
+swap probe
+expect "swap .*settled=True.*live_ok=True" 10
+swap right
+wait 1000
+swap probe
+expect "swap .*settled=True.*live_ok=True" 10
+select 7
+wait 1500
+heading 0
+spawncar admiral 8
+expect "autopilot_spawncar handle=" 15
+wait 1500
+at-trunk 3.0
+wait 2000
+mark
+key E 1200
+expectmarked "arsenal_storage_open" 15
+wait 4000
+storage status
+expect "storage_status open=True .*stored=0 capacity=8 carried=7,(10,14|14,10),0,0 list=none" 10
+shot preview_trunk_open
+storage select 2
+wait 800
+mark
+key Space 1200
+expectmarked "arsenal_store id=14 .*ammo=100 owned=True" 15
+wait 3000
+storage status
+expect "storage_status open=True .*stored=1 capacity=8 carried=7,10,0,0,0 list=14" 10
+shot preview_trunk_stored
+mark
+key Enter 1200
+expectmarked "arsenal_take id=14 .*ammo=100 owned=True" 15
+wait 3000
+storage status
+expect "storage_status open=True .*stored=0 capacity=8 carried=7,(10,14|14,10),0,0 list=none" 10
+key Back 1200
+wait 3500
+storage state
+expect "storage_state open=False closing=False animation=False locked=False control=True" 15
+hud on
+shot preview_storage_closed
+perf
+framestats
+clear
+god off

@@ -1,0 +1,64 @@
+# T-044: loadout limits, ammunition cap and the draw/holster transitions.
+# 1. A third long gun pushes the least recently used one into the car's storage (2 long guns + 1 sidearm).
+# 2. More ammunition than the cap is taken back to the cap.
+# 3. Selecting each carried weapon in turn: the prop of the weapon in hand goes, the others stay, within a few frames.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto east_park
+expect "teleport_done id=east_park" 90
+wait 4000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1500
+spawncar admiral 3.5
+expect "autopilot_spawncar handle=" 15
+wait 3000
+enter
+wait 6000
+leave
+wait 4000
+give 7 100
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1500
+mark
+give 12 100
+expectmarked "arsenal_overflow id=10 to=" 20
+wait 2000
+arsenal status
+expect "arsenal_status loadout=on .*carried=(?=.*7/Handgun)(?=.*14/Rifle)(?=.*12/SMG)(?!.*10/Shotgun)" 10
+mark
+give 14 900
+expectmarked "arsenal_ammo_capped id=14 category=Rifle from=\d+ to=240" 15
+wait 1500
+cycle-weapons 4 7 14 12
+expect "autopilot_weapon_cycles_done switches=12 failures=0 " 120
+# Cost of the three modules with the full loadout carried and nothing else going on (budget: gunplay + arsenal + holsters <= 1.5 ms).
+select 7
+wait 2000
+label loadout_idle
+framestats
+costs
+wait 20000
+perf
+costs
+framestats
+hud off
+select 7
+wait 1500
+cam 150 2.2 0.5
+wait 1500
+shot loadout_back
+cam 0 2.5 0.4
+wait 1500
+shot loadout_front
+cam off
+hud on
+clear

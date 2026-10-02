@@ -1,0 +1,92 @@
+{
+  "id": "ART-001",
+  "title": "Reticle reference sheet",
+  "status": "approved",
+  "priority": "P0",
+  "kind": "concept",
+  "prompt": "Design reference sheet of six video-game aiming reticles, arranged in a 3 by 2 grid on a plain very dark charcoal background, flat 2D, orthographic, evenly spaced, each reticle centred in its cell. 1: pistol, a small precise reticle of four short thin ticks around a tiny gap. 2: submachine gun, a wider reticle of four slightly longer broken ticks set further apart. 3: assault rifle, a tight structured reticle with short ticks and small corner brackets. 4: shotgun, a wide circle made of eight small dots suggesting a pellet spread. 5: precision rifle from the hip, a single small dot. 6: heavy weapon, a short horizontal bar with two small side ticks. All lines thin, off-white (#E6E6E6) with a one-pixel near-black outline, one small muted amber (#C8822A) accent element on reticle 3 only. Restrained, gritty, readable, utilitarian, like a late-2000s console crime game remastered today. No glow, no neon, no sci-fi, no text.",
+  "intendedUse": "Concept for T-043 weapon-specific reticles: shows the Liberty Vanilla+ reticle language before it is implemented as line drawings in code.",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "aspectRatio": "3:2",
+  "transparency": "none",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-001/",
+  "outputName": "art_001.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "Design reference sheet of six video-game aiming reticles, arranged in a 3 by 2 grid on a plain very dark charcoal background, flat 2D, orthographic, evenly spaced, each reticle centred in its cell. 1: pistol, a small precise reticle of four short thin ticks around a tiny gap. 2: submachine gun, a wider reticle of four slightly longer broken ticks set further apart. 3: assault rifle, a tight structured reticle with short ticks and small corner brackets. 4: shotgun, a wide circle made of eight small dots suggesting a pellet spread. 5: precision rifle from the hip, a single small dot. 6: heavy weapon, a short horizontal bar with two small side ticks. All lines thin, off-white (#E6E6E6) with a one-pixel near-black outline, one small muted amber (#C8822A) accent element on reticle 3 only. Restrained, gritty, readable, utilitarian, like a late-2000s console crime game remastered today. No glow, no neon, no sci-fi, no text."
+    },
+    {
+      "at": "2026-09-30T04:40:46+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested 1536x1024 3:2, opaque PNG; seed unavailable; visually inspected; owner review pending.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "Design reference sheet of six video-game aiming reticles, arranged in a 3 by 2 grid on a plain very dark charcoal background, flat 2D, orthographic, evenly spaced, each reticle centred in its cell. 1: pistol, a small precise reticle of four short thin ticks around a tiny gap. 2: submachine gun, a wider reticle of four slightly longer broken ticks set further apart. 3: assault rifle, a tight structured reticle with short ticks and small corner brackets. 4: shotgun, a wide circle made of eight small dots suggesting a pellet spread. 5: precision rifle from the hip, a single small dot. 6: heavy weapon, a short horizontal bar with two small side ticks. All lines thin, off-white (#E6E6E6) with a one-pixel near-black outline, one small muted amber (#C8822A) accent element on reticle 3 only. Restrained, gritty, readable, utilitarian, like a late-2000s console crime game remastered today. No glow, no neon, no sci-fi, no text.",
+      "files": [
+        {
+          "path": "art/generated/ART-001/r1/art_001_1.png",
+          "sha256": "2bba4645a38662932bd44444310bba5cd58f977dc43b6aab4c5a1d3d16c80b3c",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-001/r1/art_001_2.png",
+          "sha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:53+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "clean six-reticle sheet, amber accent on the rifle reticle only; reference for T-043",
+      "files": [
+        {
+          "path": "art/approved/ART-001/r1_art_001_2.png",
+          "sha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ],
+      "technicalIssues": null
+    }
+  ],
+  "approvedFile": "art/approved/ART-001/r1_art_001_2.png"
+}

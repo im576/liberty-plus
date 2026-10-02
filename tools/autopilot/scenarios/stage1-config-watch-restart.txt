@@ -1,0 +1,30 @@
+# T045-config-watch-restart. Uses only existing modules/stop/restart/wheel commands and scoped host fixture actions.
+# finally restores bytes and original running/enabled state even on fail-fast. No new weapons, natives or menu artwork.
+await-alive 60000
+expect "autopilot_player_ready" 65
+wheel-config begin
+wheel-config enabled
+restart weapon-wheel
+wheel status
+expect "weapon_wheel_status .*enabled=True" 10
+stop weapon-wheel
+expect "engine_module_stopped weapon-wheel" 10
+wheel-config disabled
+wait 2500
+wheel-config quiet
+mark
+restart weapon-wheel
+expectmarked "weapon_wheel_config enabled=False" 10
+wheel status
+expect "weapon_wheel_status .*enabled=False" 10
+# A second fresh instance must not accumulate active owner callbacks.
+mark
+restart weapon-wheel
+expectmarked "weapon_wheel_config enabled=False" 10
+mark
+wheel-config enabled
+expectmarked "weapon_wheel_config enabled=True" 10
+wait 1500
+wheel-config single
+wheel status
+expect "weapon_wheel_status .*enabled=True" 10

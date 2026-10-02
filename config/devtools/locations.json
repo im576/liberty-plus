@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "locations": [
+    {
+      "id": "gun_test_range",
+      "name": "Gun Test Range (Broker)",
+      "x": 1041.0,
+      "y": -568.3,
+      "z": 20.0,
+      "heading": 0.0,
+      "snap": "pavement",
+      "note": "Street level beside Hove Beach station (coordinates from common/data/paths/TracksQueens.dat), snapped to the nearest pavement. Use DevTools > Teleport > Set Gun Test Range Here to replace it with any spot you prefer; that save is exact."
+    },
+    {
+      "id": "hove_beach_station",
+      "name": "Hove Beach Station Street",
+      "x": 1050.8,
+      "y": -560.0,
+      "z": 20.0,
+      "heading": 90.0,
+      "snap": "pavement",
+      "note": "Broker, available from the start of the story."
+    },
+    {
+      "id": "schottler",
+      "name": "Schottler Station Street",
+      "x": 1317.7,
+      "y": -76.9,
+      "z": 30.0,
+      "heading": 0.0,
+      "snap": "pavement",
+      "note": "Broker/Dukes border."
+    },
+    {
+      "id": "east_park",
+      "name": "Algonquin East Park Street",
+      "x": -64.4,
+      "y": 674.8,
+      "z": 15.5,
+      "heading": 0.0,
+      "snap": "none",
+      "note": "Algonquin; may trigger a wanted level if the island is still locked in your story. A fixed point: the old pavement snap from y=663.4 landed up to 19 m apart between runs and made the scenarios flaky."
+    },
+    {
+      "id": "city_hall",
+      "name": "Algonquin City Hall Street",
+      "x": -78.2,
+      "y": -493.4,
+      "z": 15.0,
+      "heading": 0.0,
+      "snap": "pavement",
+      "note": "Algonquin; may trigger a wanted level if the island is still locked in your story."
+    },
+    {
+      "id": "s1_hove_beach_a",
+      "name": "Stage 1: Hove Beach, station street",
+      "x": 1050.1,
+      "y": -568.3,
+      "z": 14.0,
+      "heading": 90.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/Hove Beach (zone HOBEH, node paths.ipl:15897), the street beside the station and the shop row. Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading west along the street. Replaced a service-yard node that faced a blank wall."
+    },
+    {
+      "id": "s1_hove_beach_b",
+      "name": "Stage 1: Hove Beach, inland avenue",
+      "x": 1067.0,
+      "y": -374.0,
+      "z": 15.7,
+      "heading": 300.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/Hove Beach (zone HOBEH, node paths.ipl:2992). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_firefly_island",
+      "name": "Stage 1: Firefly Island",
+      "x": 883.3,
+      "y": -654.3,
+      "z": 11.6,
+      "heading": 80.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/Firefly Island (zone FIISL, node paths.ipl:15195), the funland edge: heading west so the fairground structures and boardwalk are in view. Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon."
+    },
+    {
+      "id": "s1_rotterdam_hill",
+      "name": "Stage 1: Rotterdam Hill",
+      "x": 923.9,
+      "y": 62.7,
+      "z": 30.2,
+      "heading": 180.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/Rotterdam Hill (zone ROTTH, node paths.ipl:3699). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_boabo",
+      "name": "Stage 1: BOABO",
+      "x": 890.8,
+      "y": 416.8,
+      "z": 13.1,
+      "heading": 296.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/BOABO (zone BOAB, node paths.ipl:6120). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_east_hook",
+      "name": "Stage 1: East Hook",
+      "x": 833.3,
+      "y": -157.0,
+      "z": 6.0,
+      "heading": 335.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Broker/East Hook (zone ESHOO, node paths.ipl:8259). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_dukes_meadow_hills",
+      "name": "Stage 1: Dukes, Meadow Hills road",
+      "x": 1614.3,
+      "y": 573.8,
+      "z": 30.2,
+      "heading": 180.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Dukes/Meadow Hills (zone MEADH, node paths.ipl:15451). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_east_island_city",
+      "name": "Stage 1: East Island City",
+      "x": 902.0,
+      "y": 586.6,
+      "z": 22.3,
+      "heading": 180.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Dukes/East Island City (zone EISLC, node paths.ipl:16533). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_algonquin_star_junction",
+      "name": "Stage 1: Algonquin, Star Junction",
+      "x": -203.1,
+      "y": 384.6,
+      "z": 14.9,
+      "heading": 188.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Algonquin/Star Junction (zone STARJ, node paths.ipl:15521). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_algonquin_chinatown",
+      "name": "Stage 1: Algonquin, Chinatown",
+      "x": 65.8,
+      "y": -398.8,
+      "z": 14.8,
+      "heading": 89.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Algonquin/Chinatown (zone CHITO, node paths.ipl:11384). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_bohan_boulevard",
+      "name": "Stage 1: Bohan, Boulevard",
+      "x": 498.9,
+      "y": 1972.4,
+      "z": 23.4,
+      "heading": 272.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Bohan/Boulevard (zone BOULE, node paths.ipl:4972). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    },
+    {
+      "id": "s1_alderney_city",
+      "name": "Stage 1: Alderney City",
+      "x": -1116.5,
+      "y": 1005.2,
+      "z": 13.7,
+      "heading": 270.0,
+      "snap": "none",
+      "note": "Stage 1 capture point (T-040), Alderney/Alderney City (zone ALDCI, node paths2.ipl:477). Fixed position, never snapped: x/y/z from a vehicle node in the game's common/data/maps/paths.ipl (road surface z + 1 m), zone from common/data/info.zon, heading down the road toward the farthest linked node."
+    }
+  ]
+}

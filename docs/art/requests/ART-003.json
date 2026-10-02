@@ -1,0 +1,152 @@
+{
+  "id": "ART-003",
+  "title": "Blood pool decal",
+  "status": "prepped",
+  "priority": "P0",
+  "kind": "decal",
+  "prompt": "A single realistic pool of blood seen from directly above (orthographic), centred, irregular organic outline with a few smaller satellite drops, on a fully transparent background. Deep dark red centre, slightly thinner translucent edges, a thin darker dried rim, subtle wet sheen without visible reflections of any environment. Photographic, grounded, no ground texture, no lighting, no shadows.",
+  "intendedUse": "T-047 persistent aftermath: blood pool that grows under a body; one decal, scaled at runtime.",
+  "dimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "aspectRatio": "1:1",
+  "transparency": "alpha",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-003/",
+  "outputName": "art_003.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A single realistic pool of blood seen from directly above (orthographic), centred, irregular organic outline with a few smaller satellite drops, on a fully transparent background. Deep dark red centre, slightly thinner translucent edges, a thin darker dried rim, subtle wet sheen without visible reflections of any environment. Photographic, grounded, no ground texture, no lighting, no shadows."
+    },
+    {
+      "at": "2026-09-30T04:46:59+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Both candidates contain broad bright specular reflection patches and shaded raised liquid; this exceeds subtle wet sheen and conflicts with no lighting. Failed candidates retained for provenance; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A single realistic pool of blood seen from directly above (orthographic), centred, irregular organic outline with a few smaller satellite drops, on a fully transparent background. Deep dark red centre, slightly thinner translucent edges, a thin darker dried rim, subtle wet sheen without visible reflections of any environment. Photographic, grounded, no ground texture, no lighting, no shadows.",
+      "files": [
+        {
+          "path": "art/generated/ART-003/r1/art_003_1.png",
+          "sha256": "53d097655b69b1f12f9775bd2071e60570ffadb65e312652f14ec6f4d1bb87f2",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-003/r1/art_003_2.png",
+          "sha256": "62e6ed192701c9b7eb8dfa4138d514b4ba88de4ac57210f625b3c136a2adea5a",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:43:46+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two fresh independent generations (_3,_4) from current prompt plus verbatim constraints; all earlier candidates preserved and four registered. _1: broad specular patches and shaded raised liquid. _2: broad glossy highlights, rounded raised droplets. _3: bright broad reflective patches and glossy raised droplets. _4: strong specular patch across centre-right, numerous shiny drops and bubble-like surface detail. Real alpha preserved; no post-processing or acceptance decision; built-in version/seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A single realistic pool of blood seen from directly above (orthographic), centred, irregular organic outline with a few smaller satellite drops, on a fully transparent background. Deep dark red centre, slightly thinner translucent edges, a thin darker dried rim, subtle wet sheen without visible reflections of any environment. Photographic, grounded, no ground texture, no lighting, no shadows.",
+      "files": [
+        {
+          "path": "art/generated/ART-003/r1/art_003_1.png",
+          "sha256": "53d097655b69b1f12f9775bd2071e60570ffadb65e312652f14ec6f4d1bb87f2",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-003/r1/art_003_2.png",
+          "sha256": "62e6ed192701c9b7eb8dfa4138d514b4ba88de4ac57210f625b3c136a2adea5a",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-003/r1/art_003_3.png",
+          "sha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-003/r1/art_003_4.png",
+          "sha256": "d50cc6e1ce14f6e7167fa758fb12a9354b547ea42c2ac728016cb91ff9f6cff8",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:53+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "dark centre, irregular edge, satellite drops; some specular gloss, acceptable for a wet pool",
+      "files": [
+        {
+          "path": "art/approved/ART-003/r1_art_003_3.png",
+          "sha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:57+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 512x512 RGBA; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-003/prepped/art_003.png",
+          "sha256": "af3bc450611796484750c4d97b9129a4c0ba17370ed416c0309b9daa1aee316b",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-003/r1_art_003_3.png"
+}

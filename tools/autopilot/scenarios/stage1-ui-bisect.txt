@@ -1,0 +1,67 @@
+# T-045 UI stall bisect: the SDK sample list menu with every gameplay module running, then with modules stopped one group
+# at a time. Each window is 4 s after 2 s of settling; `framestats` resets its counters.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+label bisect_closed
+framestats
+wait 3000
+framestats
+menu-test
+wait 2000
+label bisect_all_modules
+framestats
+wait 4000
+framestats
+menu-close
+wait 1500
+stop gunplay
+wait 1000
+menu-test
+wait 2000
+label bisect_no_gunplay
+framestats
+wait 4000
+framestats
+menu-close
+wait 1500
+stop combat
+stop atmosphere
+stop holsters
+stop weapon-wheel
+wait 1000
+menu-test
+wait 2000
+label bisect_no_gunplay_combat_atmosphere_holsters_wheel
+framestats
+wait 4000
+framestats
+menu-close
+wait 1500
+stop arsenal
+wait 1000
+menu-test
+wait 2000
+label bisect_only_devtools_and_autopilot
+framestats
+wait 4000
+framestats
+menu-close
+wait 1500
+modules
+restart gunplay
+restart combat
+restart atmosphere
+restart holsters
+restart weapon-wheel
+restart arsenal
+wait 2000
+modules

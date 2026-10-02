@@ -1,0 +1,44 @@
+# T-044: the holster props hide in a vehicle and come back on foot, 100 enter/exit cycles, and none is left behind.
+# Two long guns and a sidearm are carried, so two guns and two straps are shown on foot. Pass = every cycle hid the props
+# inside the car and restored all of them outside, and the game's object pool did not grow across the run.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1500
+give 10 100
+wait 1200
+give 14 100
+wait 1200
+give 7 100
+wait 1500
+spawncar admiral 6 0
+expect "autopilot_spawncar handle=" 15
+wait 3000
+holsters status
+expect "holsters_status props=2 existing=2 slings=2 slings_existing=2 hidden=none" 10
+hud off
+cam 150 2.2 0.5
+wait 1500
+shot on_foot_back
+cam off
+hud on
+cycle-vehicle 100
+expect "autopilot_vehicle_cycles_done cycles=100 hidden_failures=0 restored_failures=0 enter_timeouts=0 leave_timeouts=0 object_growth=(-\d+|[0-3]) " 1700
+wait 1500
+holsters status
+hud off
+cam 150 2.2 0.5
+wait 1500
+shot after_cycles_back
+cam off
+hud on
+clear

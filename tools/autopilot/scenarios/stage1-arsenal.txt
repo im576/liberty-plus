@@ -1,0 +1,122 @@
+# T-041 Stage 1 arsenal: every catalog weapon is given, held and fired at the test range; the Liberty gunplay profile is active for the
+# six Stage 1 weapons and only for them (restricted weapons, a test weapon and a vanilla weapon outside the catalog are the controls).
+# Evidence in the log: weapon_changed (profile=), BulletFired events, gunplay_state (only written while a profile drives the weapon),
+# stage1_gate_check / stage1_weaponinfo (catalog vs gunplay.json vs the loaded WeaponInfo.xml). Screenshots: each weapon in hand.
+await-alive 60000
+expect "autopilot_player_ready" 65
+events on
+god on
+wanted 0
+goto gun_test_range
+expect "teleport_done id=gun_test_range" 90
+wait 4000
+time 12 0
+
+# The catalog, the profiles, the gate and the installed WeaponInfo.xml agree (a disagreement is an error reply and fails the step).
+catalog list
+expect "catalog_list entries=13 stage1=6" 20
+catalog check
+expect "catalog ok: 6 Stage 1 weapons of 13 entries" 20
+# Availability rules: $600 at the start buys the common weapons only; everything for a rich, late, connected player; never a restricted weapon.
+catalog offer 600 0.0 -
+expect "catalog_offer money=600 progress=0.0 offered=3" 20
+catalog offer 99999 1.0 little-jacob
+expect "catalog_offer money=99999 progress=1.0 offered=6" 20
+
+# --- 7 Glock 17 (pistol, common)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give service-pistol 200 clear
+expect "weapon_changed from=\d+ to=7 profile=glock_stage1 catalog=service-pistol" 20
+wait 1500
+shot stage1_arsenal_service-pistol
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=7( |$)" 30
+expect "gunplay_state weapon=7 profile=glock_stage1" 15
+clear
+
+# --- 9 .44 AutoMag (pistol, less common)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give combat-pistol 200 clear
+expect "weapon_changed from=\d+ to=9 profile=automag_stage1 catalog=combat-pistol" 20
+wait 1500
+shot stage1_arsenal_combat-pistol
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=9( |$)" 30
+expect "gunplay_state weapon=9 profile=automag_stage1" 15
+clear
+
+# --- 10 Street Sweeper (shotgun, less common)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give street-sweeper 200 clear
+expect "weapon_changed from=\d+ to=10 profile=sweeper_stage1 catalog=street-sweeper" 20
+wait 1500
+shot stage1_arsenal_street-sweeper
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=10( |$)" 30
+expect "gunplay_state weapon=10 profile=sweeper_stage1" 15
+clear
+
+# --- 11 Remington 1100 (shotgun, common)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give remington-1100 200 clear
+expect "weapon_changed from=\d+ to=11 profile=remington_stage1 catalog=remington-1100" 20
+wait 1500
+shot stage1_arsenal_remington-1100
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=11( |$)" 30
+expect "gunplay_state weapon=11 profile=remington_stage1" 15
+clear
+
+# --- 12 IMI Uzi (SMG, common)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give imi-uzi 200 clear
+expect "weapon_changed from=\d+ to=12 profile=uzi_stage1 catalog=imi-uzi" 20
+wait 1500
+shot stage1_arsenal_imi-uzi
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=12( |$)" 30
+expect "gunplay_state weapon=12 profile=uzi_stage1" 15
+clear
+
+# --- 14 AK-47 (rifle, rare)
+wanted 0
+spawn 1 15 0
+expect "autopilot_spawned count=1" 30
+catalog give ak-47 200 clear
+expect "weapon_changed from=\d+ to=14 profile=ak47_stage1 catalog=ak-47" 20
+wait 1500
+shot stage1_arsenal_ak-47
+pfire 0 2500
+expect "event BulletFired shooter=[1-9]\d* weapon=14( |$)" 30
+expect "gunplay_state weapon=14 profile=ak47_stage1" 15
+clear
+
+# --- controls: restricted weapons, a test weapon and a vanilla weapon outside the catalog
+catalog give m40a1 25 force clear
+expect "weapon_changed from=\d+ to=16 profile=vanilla" 20
+catalog give fn-p90 100 force clear
+expect "weapon_changed from=\d+ to=13 profile=vanilla" 20
+catalog give hk-mg36 100 force clear
+expect "weapon_changed from=\d+ to=15 profile=vanilla" 20
+give 1 1
+expect "weapon_changed from=\d+ to=1 profile=vanilla" 20
+catalog give gold-test-pistol 100 force clear
+expect "weapon_changed from=\d+ to=58 profile=pistol_gta4plus" 20
+# Back to a Stage 1 weapon: the accuracy the model wrote for the previous catalog weapon was given back to the game.
+catalog give service-pistol 100 clear
+expect "weapon_changed from=\d+ to=7 profile=glock_stage1" 20
+catalog give ak-47 100 clear
+expect "weaponinfo_restored id=7 " 20
+catalog check
+expect "catalog ok: 6 Stage 1 weapons of 13 entries" 20
+wait 1000

@@ -1,0 +1,92 @@
+{
+  "id": "ART-008",
+  "title": "Hove Beach remaster mood target",
+  "status": "approved",
+  "priority": "P1",
+  "kind": "concept",
+  "prompt": "Street-level photograph of a fictional working-class seaside immigrant neighbourhood in a cold New York-like city, 2008: a wide avenue under an elevated steel subway line on riveted columns, wet asphalt reflecting warm storefront lights, rows of small shops with weathered awnings and hand-painted signs whose lettering is illegible, four-storey brick apartment buildings with fire escapes, grime, graffiti tags on the columns, a few parked mid-2000s sedans, sparse pedestrians in dark winter coats. Heavy overcast late afternoon, light drizzle, cold grey-blue daylight against warm yellow-orange artificial light, dense urban depth. Realistic, melancholic, grounded, like a modern remaster of a 2008 open-world game, not a painting. No readable text, no real brands, no modern phones or cars.",
+  "intendedUse": "Concept for the Slice B art pass (STAGE1 10a): the benchmark mood for Hove Beach that texture and lighting work is judged against.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "aspectRatio": "16:9",
+  "transparency": "none",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-008/",
+  "outputName": "art_008.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:27+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "Street-level photograph of a fictional working-class seaside immigrant neighbourhood in a cold New York-like city, 2008: a wide avenue under an elevated steel subway line on riveted columns, wet asphalt reflecting warm storefront lights, rows of small shops with weathered awnings and hand-painted signs whose lettering is illegible, four-storey brick apartment buildings with fire escapes, grime, graffiti tags on the columns, a few parked mid-2000s sedans, sparse pedestrians in dark winter coats. Heavy overcast late afternoon, light drizzle, cold grey-blue daylight against warm yellow-orange artificial light, dense urban depth. Realistic, melancholic, grounded, like a modern remaster of a 2008 open-world game, not a painting. No readable text, no real brands, no modern phones or cars."
+    },
+    {
+      "at": "2026-09-30T04:58:38+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Visually inspected mood references; generated 1672x941, nearest supported 16:9 concept size under GENERATOR.md concept exception; no readable signage identified. Owner visual review pending.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "Street-level photograph of a fictional working-class seaside immigrant neighbourhood in a cold New York-like city, 2008: a wide avenue under an elevated steel subway line on riveted columns, wet asphalt reflecting warm storefront lights, rows of small shops with weathered awnings and hand-painted signs whose lettering is illegible, four-storey brick apartment buildings with fire escapes, grime, graffiti tags on the columns, a few parked mid-2000s sedans, sparse pedestrians in dark winter coats. Heavy overcast late afternoon, light drizzle, cold grey-blue daylight against warm yellow-orange artificial light, dense urban depth. Realistic, melancholic, grounded, like a modern remaster of a 2008 open-world game, not a painting. No readable text, no real brands, no modern phones or cars.",
+      "files": [
+        {
+          "path": "art/generated/ART-008/r1/art_008_1.png",
+          "sha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-008/r1/art_008_2.png",
+          "sha256": "ac16e5d71963031b5436cf8738e41fcafa04bcd99a7284bf5791b9aee019171b",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:55+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "benchmark mood for Hove Beach: El line, wet asphalt, warm storefronts against cold overcast",
+      "files": [
+        {
+          "path": "art/approved/ART-008/r1_art_008_1.png",
+          "sha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ],
+      "technicalIssues": null
+    }
+  ],
+  "approvedFile": "art/approved/ART-008/r1_art_008_1.png"
+}

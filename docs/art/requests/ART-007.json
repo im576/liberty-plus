@@ -1,0 +1,131 @@
+{
+  "id": "ART-007",
+  "title": "Liberty UI style board",
+  "status": "approved",
+  "priority": "P0",
+  "kind": "concept",
+  "prompt": "A UI style board for Liberty Vanilla+, a grounded GTA IV-era remaster set in a cold, rainy, New York-like city in 2008. The background must read as a remastered 2008 third-person game screenshot: modest angular urban geometry, weathered brick, elevated railway, wet pavement, muted grey-brown grading and warm street lamps, restrained game-rendered lighting rather than a cinematic photorealistic photograph. A generic original player figure may be viewed from behind. Preserve the established screen anchors. In the TOP-RIGHT corner, within a small safe margin, place a compact off-white current-weapon silhouette with the exact ammo text \"17 / 68\" immediately below it; directly underneath, place two thin, compact health and armour indicators, muted sage-green for health and pale desaturated blue-grey for armour. This entire weapon/ammo/health/armour group must be at the TOP RIGHT, never in a lower corner. Keep a small circular radar at the BOTTOM LEFT with simple monochrome street blocks and a player arrow; no compass letters, no labels. In the centre, show a radial weapon selector with exactly six segments: sidearm, two long guns, melee, thrown, and an entirely blank empty segment. Use simple white line-art weapon silhouettes and a restrained muted amber edge on the selected segment. Place a compact two-column carried / vehicle-trunk inventory panel at right-centre, below and clearly separate from the top-right HUD. All other placeholder text must be short illegible lines. Use compact off-white condensed lettering with a thin dark outline, flat crisp monochrome icons, dark translucent grey/black menu surfaces, restrained amber/orange/red accents, sharp edges, minimal decoration and generous spacing. Match the understated, utilitarian GTA IV-era visual language with original artwork. No health crosses or large boxed HUD cards, no decorative distressed texture on UI, no readable text except \"17 / 68\", no game logos, no copied game artwork, no copyrighted characters, no neon gradients, no rounded mobile-app cards, no glossy glass.",
+  "intendedUse": "Concept for T-045 weapon wheel, T-046 trunk UI and T-049 HUD: one style board that sets the Liberty Vanilla+ UI language before Slice C.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "aspectRatio": "16:9",
+  "transparency": "none",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: preserve a GTA IV-era visual language with original artwork; compact monochrome icons and off-white condensed lettering with thin dark outlines; dark translucent grey/black menu surfaces and restrained amber/orange/red accents; thin muted sage-green health and desaturated blue-grey armour indicators; sharp purposeful shapes and minimal decoration",
+    "Owner-directed HUD placement: current weapon, ammo, health and armour are grouped in the top-right corner; radar remains bottom-left; menus must not overlap these anchors"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)",
+    "Weapon/ammo/health/armour HUD in any lower corner; oversized boxed HUD cards or health-cross icons",
+    "Compass letters, radar labels, or readable text other than the exact ammo text 17 / 68",
+    "Cinematic photographic background, modern photorealistic rendering, or decorative distressed texture on the UI"
+  ],
+  "outputPath": "art/generated/ART-007/",
+  "outputName": "art_007.png",
+  "consumer": null,
+  "revision": 2,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A UI style board for a gritty 2008 console crime game set in a cold, rainy, New York-like city, remastered today. Over a dim, blurred, rainy night street screenshot: a radial weapon selector with six segments (sidearm, two long guns, melee, thrown, empty) showing simple white line-art weapon silhouettes, the selected segment edged in muted amber; a small inventory panel with two columns (carried / vehicle trunk); a compact health and armour indicator and an ammo counter in a lower corner. Dark translucent grey and black surfaces, restrained amber, orange and red accents, gritty condensed sans-serif typography, sharp edges, minimal decoration, generous spacing. Placeholder text only as short illegible lines. Not GTA V, not a mobile app: no neon gradients, no large rounded cards, no glossy glass."
+    },
+    {
+      "at": "2026-09-30T04:55:58+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Both candidates introduce a minimap with a readable N compass label, conflicting with placeholder text only as short illegible lines and the prohibition on readable text. Exact specification not achieved. Failed candidates retained; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A UI style board for a gritty 2008 console crime game set in a cold, rainy, New York-like city, remastered today. Over a dim, blurred, rainy night street screenshot: a radial weapon selector with six segments (sidearm, two long guns, melee, thrown, empty) showing simple white line-art weapon silhouettes, the selected segment edged in muted amber; a small inventory panel with two columns (carried / vehicle trunk); a compact health and armour indicator and an ammo counter in a lower corner. Dark translucent grey and black surfaces, restrained amber, orange and red accents, gritty condensed sans-serif typography, sharp edges, minimal decoration, generous spacing. Placeholder text only as short illegible lines. Not GTA V, not a mobile app: no neon gradients, no large rounded cards, no glossy glass.",
+      "files": [
+        {
+          "path": "art/generated/ART-007/r1/art_007_1.png",
+          "sha256": "0f2d585a25b722c48a3a8d9a9858148ed67c09b11caf84122a6bb588f30dea4b",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-007/r1/art_007_2.png",
+          "sha256": "0c86e0b569c8c652a332fc72dfec74a1fde3c42689b3d6a8197243d3d9ee222f",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T05:44:11+00:00",
+      "event": "requested",
+      "revision": 2,
+      "by": "Codex",
+      "notes": "Owner requested returning weapon/ammo/health/armour to the top right and a more faithful GTA IV-era look. Earlier r1 prompts and candidates retained. Exact ammo text supplied to permit a faithful compact counter.",
+      "prompt": "A UI style board for Liberty Vanilla+, a grounded GTA IV-era remaster set in a cold, rainy, New York-like city in 2008. The background must read as a remastered 2008 third-person game screenshot: modest angular urban geometry, weathered brick, elevated railway, wet pavement, muted grey-brown grading and warm street lamps, restrained game-rendered lighting rather than a cinematic photorealistic photograph. A generic original player figure may be viewed from behind. Preserve the established screen anchors. In the TOP-RIGHT corner, within a small safe margin, place a compact off-white current-weapon silhouette with the exact ammo text \"17 / 68\" immediately below it; directly underneath, place two thin, compact health and armour indicators, muted sage-green for health and pale desaturated blue-grey for armour. This entire weapon/ammo/health/armour group must be at the TOP RIGHT, never in a lower corner. Keep a small circular radar at the BOTTOM LEFT with simple monochrome street blocks and a player arrow; no compass letters, no labels. In the centre, show a radial weapon selector with exactly six segments: sidearm, two long guns, melee, thrown, and an entirely blank empty segment. Use simple white line-art weapon silhouettes and a restrained muted amber edge on the selected segment. Place a compact two-column carried / vehicle-trunk inventory panel at right-centre, below and clearly separate from the top-right HUD. All other placeholder text must be short illegible lines. Use compact off-white condensed lettering with a thin dark outline, flat crisp monochrome icons, dark translucent grey/black menu surfaces, restrained amber/orange/red accents, sharp edges, minimal decoration and generous spacing. Match the understated, utilitarian GTA IV-era visual language with original artwork. No health crosses or large boxed HUD cards, no decorative distressed texture on UI, no readable text except \"17 / 68\", no game logos, no copied game artwork, no copyrighted characters, no neon gradients, no rounded mobile-app cards, no glossy glass."
+    },
+    {
+      "at": "2026-09-30T06:49:32+00:00",
+      "event": "generated",
+      "revision": 2,
+      "by": "Codex",
+      "notes": "Two independent fresh candidates from exact current r2 prompt plus verbatim constraints, nearest supported landscape concept size. Both place weapon/ammo/health/armour at top right, radar bottom left, and show only requested ammo text 17 / 68. _1: background is more photographic/cinematic than modest 2008 game rendering, weapon icons have internal shaded detail rather than simple line art; selected wedge protrudes slightly, busy detailed inventory. _2: background similarly too photorealistic, icons use filled silhouettes rather than pure line art; inventory larger and more boxed than compact target. Six-sector layouts and blank empty sectors left for reviewer judgement. No post-processing or acceptance decision; model version/seeds unavailable. r1 files/history preserved separately.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A UI style board for Liberty Vanilla+, a grounded GTA IV-era remaster set in a cold, rainy, New York-like city in 2008. The background must read as a remastered 2008 third-person game screenshot: modest angular urban geometry, weathered brick, elevated railway, wet pavement, muted grey-brown grading and warm street lamps, restrained game-rendered lighting rather than a cinematic photorealistic photograph. A generic original player figure may be viewed from behind. Preserve the established screen anchors. In the TOP-RIGHT corner, within a small safe margin, place a compact off-white current-weapon silhouette with the exact ammo text \"17 / 68\" immediately below it; directly underneath, place two thin, compact health and armour indicators, muted sage-green for health and pale desaturated blue-grey for armour. This entire weapon/ammo/health/armour group must be at the TOP RIGHT, never in a lower corner. Keep a small circular radar at the BOTTOM LEFT with simple monochrome street blocks and a player arrow; no compass letters, no labels. In the centre, show a radial weapon selector with exactly six segments: sidearm, two long guns, melee, thrown, and an entirely blank empty segment. Use simple white line-art weapon silhouettes and a restrained muted amber edge on the selected segment. Place a compact two-column carried / vehicle-trunk inventory panel at right-centre, below and clearly separate from the top-right HUD. All other placeholder text must be short illegible lines. Use compact off-white condensed lettering with a thin dark outline, flat crisp monochrome icons, dark translucent grey/black menu surfaces, restrained amber/orange/red accents, sharp edges, minimal decoration and generous spacing. Match the understated, utilitarian GTA IV-era visual language with original artwork. No health crosses or large boxed HUD cards, no decorative distressed texture on UI, no readable text except \"17 / 68\", no game logos, no copied game artwork, no copyrighted characters, no neon gradients, no rounded mobile-app cards, no glossy glass.",
+      "files": [
+        {
+          "path": "art/generated/ART-007/r2/art_007_1.png",
+          "sha256": "84b18f6e7d5cc6287ce2f1bb365e2c5faf7459c04a8c9486a03924db77da662e",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-007/r2/art_007_2.png",
+          "sha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:55+00:00",
+      "event": "approved",
+      "revision": 2,
+      "by": "claude",
+      "notes": "top-right weapon/ammo/health group, radar bottom left, cleaner wheel and two-column trunk panel; style reference for T-045/T-046/T-049",
+      "files": [
+        {
+          "path": "art/approved/ART-007/r2_art_007_2.png",
+          "sha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb",
+          "width": 1672,
+          "height": 941,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ],
+      "technicalIssues": null
+    }
+  ],
+  "approvedFile": "art/approved/ART-007/r2_art_007_2.png"
+}

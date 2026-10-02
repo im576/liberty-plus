@@ -1,0 +1,172 @@
+# T-058 citywide candidate: one integrated batch, existing installed gameplay build.
+alive
+pos
+modules
+god on
+wanted 0
+hud off
+cam off
+clear
+weather 3
+time 13 0
+tp 1050.8 -580 14 0
+spawnprop lf_test_crate 0 19.2 off
+hideprop on
+heading 0
+cam prop 80 20 1.3
+wait 5000
+wanted 0
+weather 3
+time 13 0
+wait 4000
+time 13 0
+shot 01-station-cloudy-day
+wanted 0
+weather 1
+time 13 0
+wait 4000
+time 13 0
+shot 01-station-clear-day
+wanted 0
+weather 4
+time 13 0
+wait 8000
+time 13 0
+shot 01-station-rain-day
+wanted 0
+weather 1
+time 19 0
+wait 5000
+time 19 0
+shot 01-station-dusk
+wanted 0
+weather 3
+time 23 0
+wait 7000
+time 23 0
+shot 01-station-cloudy-night
+cam off
+clear
+weather 3
+time 13 0
+tp -203.1 384.6 14.9 188
+spawnprop lf_test_crate 25 20 off
+hideprop on
+cam prop 180 17 -18.2
+wait 5000
+wanted 0
+weather 3
+time 13 0
+wait 4000
+time 13 0
+shot 02-star-junction-cloudy-day
+wanted 0
+weather 1
+time 13 0
+wait 4000
+time 13 0
+shot 02-star-junction-clear-day
+wanted 0
+weather 4
+time 13 0
+wait 8000
+time 13 0
+shot 02-star-junction-rain-day
+wanted 0
+weather 1
+time 19 0
+wait 5000
+time 19 0
+shot 02-star-junction-dusk
+wanted 0
+weather 3
+time 23 0
+wait 7000
+time 23 0
+shot 02-star-junction-cloudy-night
+cam off
+clear
+weather 3
+time 13 0
+tp 1067 -374 15.7 300
+spawnprop lf_test_crate 30 2.5 off
+hideprop on
+cam prop 180 18 0.3
+wait 5000
+wanted 0
+weather 3
+time 13 0
+wait 4000
+time 13 0
+shot 03-hove-street-cloudy-day
+wanted 0
+weather 1
+time 13 0
+wait 4000
+time 13 0
+shot 03-hove-street-clear-day
+wanted 0
+weather 4
+time 13 0
+wait 8000
+time 13 0
+shot 03-hove-street-rain-day
+wanted 0
+weather 1
+time 19 0
+wait 5000
+time 19 0
+shot 03-hove-street-dusk
+wanted 0
+weather 3
+time 23 0
+wait 7000
+time 23 0
+shot 03-hove-street-cloudy-night
+cam off
+clear
+weather 3
+time 13 0
+tp 705 -160 6 90
+spawnprop lf_test_crate 30 4 off
+hideprop on
+cam prop 180 20 0.5
+wait 5000
+wanted 0
+weather 3
+time 13 0
+wait 4000
+time 13 0
+shot 04-east-hook-cloudy-day
+wanted 0
+weather 1
+time 13 0
+wait 4000
+time 13 0
+shot 04-east-hook-clear-day
+wanted 0
+weather 4
+time 13 0
+wait 8000
+time 13 0
+shot 04-east-hook-rain-day
+wanted 0
+weather 1
+time 19 0
+wait 5000
+time 19 0
+shot 04-east-hook-dusk
+wanted 0
+weather 3
+time 23 0
+wait 7000
+time 23 0
+shot 04-east-hook-cloudy-night
+cam off
+clear
+hud on
+restart autopilot
+alive
+pos
+owned autopilot
+modules

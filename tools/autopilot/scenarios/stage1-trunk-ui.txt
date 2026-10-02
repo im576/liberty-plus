@@ -1,0 +1,141 @@
+# T-046 trunk interface. Carried: pistol, shotgun, AK. An admiral (8 slots) and a banshee (4 slots, sports class).
+# A. Real keys on the admiral: E opens the trunk (choreography), Space stores the highlighted slot, a long gun is added,
+#    Enter takes the stored weapon back and swaps out the least recently used long gun. The state is saved and read back identical.
+# B. The banshee trunk fills at 4 weapons: the fifth store is refused with the capacity in the message.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1500
+give 7 100
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1500
+heading 0
+wait 500
+spawncar admiral 8
+expect "autopilot_spawncar handle=" 15
+wait 1500
+at-trunk 3.0
+wait 2000
+ui-budget begin
+wait {quick:5000|10000}
+ui-budget baseline
+key E 1200
+wait 4000
+expect "choreography_begin trunk" 8
+expect "arsenal_storage_open" 8
+hud off
+storage status
+expect "storage_status open=True selected=0 container=TRUNK stored=0 capacity=8 carried=7,10,14,0,0 list=none" 10
+shot trunk_ui_open
+# Frame time with the trunk interface open (its radial does not lock the player's control itself).
+label trunk_ui_cost
+ui-budget begin
+wait {quick:6000|10000}
+ui-budget check trunk 0.5 1.10 1.15 30
+expect "ui_budget label=trunk pass=True" 10
+# Move the highlight to the second long gun (the AK) and store it with Space.
+storage select 2
+wait 800
+mark
+key Space 1200
+expectmarked "arsenal_store id=14 to=.* instance=\S+ ammo=100 owned=True" 10
+wait 3000
+shot trunk_ui_after_store
+storage status
+expect "storage_status open=True selected=2 container=TRUNK stored=1 capacity=8 carried=7,10,0,0,0 list=14" 10
+# A third long gun while the trunk is open, then take the AK back: both long-gun slots are full, so the one used least recently goes.
+give 12 100
+expect "arsenal_gain id=12" 10
+wait 2000
+storage status
+expect "storage_status open=True .* stored=1 capacity=8 carried=7,(10,12|12,10),0,0 list=14" 10
+shot trunk_ui_swap_preview
+mark
+key Enter 1200
+expectmarked "arsenal_take id=14 .* ammo=100 owned=True swapped=10" 10
+expectmarked "arsenal_take_displaced id=10 .* ammo=60 owned=True" 10
+wait 3500
+shot trunk_ui_after_swap
+storage status
+expect "storage_status open=True .* stored=1 capacity=8 carried=7,(12,14|14,12),0,0 list=10" 10
+arsenal roundtrip
+expect "arsenal_roundtrip identical=True" 15
+key Back 1200
+wait 3500
+expect "choreography_complete trunk" 10
+expect "arsenal_storage_closed" 10
+storage state
+expect "storage_state open=False closing=False animation=False locked=False control=True" 10
+clear
+wait 1500
+# B. Capacity: a banshee trunk holds 4.
+strip
+wait 1500
+give 7 100
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1500
+heading 0
+wait 500
+spawncar banshee 8
+expect "autopilot_spawncar handle=" 15
+wait 1500
+at-trunk 3.0
+wait 2000
+key E 1200
+wait 4000
+expect "arsenal_storage_open" 8
+storage status
+expect "storage_status open=True .* container=TRUNK stored=0 capacity=4 carried=7,10,14,0,0" 10
+storage select 0
+storage store
+wait 2500
+storage select 1
+storage store
+wait 2500
+storage select 2
+storage store
+wait 2500
+storage status
+expect "storage_status open=True .* stored=3 capacity=4 carried=0,0,0,0,0" 10
+give 7 100
+wait 1500
+storage select 0
+storage store
+wait 2500
+storage status
+expect "storage_status open=True .* stored=4 capacity=4 carried=0,0,0,0,0" 10
+shot trunk_ui_full
+give 10 100
+wait 1500
+mark
+storage select 1
+key Space 1200
+expectmarked "arsenal_store_refused full id=10 bin=.* capacity=4" 10
+shot trunk_ui_full_refused
+storage status
+expect "storage_status open=True .* stored=4 capacity=4 carried=0,10,0,0,0" 10
+arsenal roundtrip
+expect "arsenal_roundtrip identical=True" 15
+key Back 1200
+wait 3500
+expect "choreography_complete trunk" 10
+expect "arsenal_storage_closed" 10
+storage state
+expect "storage_state open=False closing=False animation=False locked=False control=True" 10
+hud on
+clear

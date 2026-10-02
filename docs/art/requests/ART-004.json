@@ -1,0 +1,152 @@
+{
+  "id": "ART-004",
+  "title": "Bullet entry mark decals",
+  "status": "prepped",
+  "priority": "P0",
+  "kind": "decal",
+  "prompt": "A 2 by 2 atlas of four small realistic bullet entry marks on dark fabric-coloured stains, seen straight on, each centred in its quarter on a fully transparent background: a small dark hole with a torn edge and a soaked blood stain spreading around it, varying size and stain shape. Restrained and forensic, no exposed flesh or gore detail beyond the blood stain. Photographic, no lighting, no shadows.",
+  "intendedUse": "T-047 entry-hit response: small bullet entry marks with blood staining on clothing, four variants in a 2x2 atlas.",
+  "dimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "aspectRatio": "1:1",
+  "transparency": "alpha",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-004/",
+  "outputName": "art_004.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A 2 by 2 atlas of four small realistic bullet entry marks on dark fabric-coloured stains, seen straight on, each centred in its quarter on a fully transparent background: a small dark hole with a torn edge and a soaked blood stain spreading around it, varying size and stain shape. Restrained and forensic, no exposed flesh or gore detail beyond the blood stain. Photographic, no lighting, no shadows."
+    },
+    {
+      "at": "2026-09-30T04:48:49+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Both candidates contain glossy raised blood droplets and shaded fabric folds, conflicting with no lighting/no shadows. Failed candidates retained for provenance; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four small realistic bullet entry marks on dark fabric-coloured stains, seen straight on, each centred in its quarter on a fully transparent background: a small dark hole with a torn edge and a soaked blood stain spreading around it, varying size and stain shape. Restrained and forensic, no exposed flesh or gore detail beyond the blood stain. Photographic, no lighting, no shadows.",
+      "files": [
+        {
+          "path": "art/generated/ART-004/r1/art_004_1.png",
+          "sha256": "a5e46003e45957476ca530cedaa360783f587280b4acba5d2bc910781f8e22f8",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-004/r1/art_004_2.png",
+          "sha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:44:27+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two fresh generations (_3,_4) from current prompt and verbatim constraints; all four candidates registered. _1: shiny blood, shaded fabric folds and pronounced isolated fabric patches. _2: glossy raised drops, shaded folds and different atlas cell coverage. _3: highlighted blood and torn fabric with directional shading; broad cloth cutouts. _4: shaded torn cloth, shiny blood and oversized lower-right patch with tight margins. Real alpha preserved, no post-processing or review decision; version and seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four small realistic bullet entry marks on dark fabric-coloured stains, seen straight on, each centred in its quarter on a fully transparent background: a small dark hole with a torn edge and a soaked blood stain spreading around it, varying size and stain shape. Restrained and forensic, no exposed flesh or gore detail beyond the blood stain. Photographic, no lighting, no shadows.",
+      "files": [
+        {
+          "path": "art/generated/ART-004/r1/art_004_1.png",
+          "sha256": "a5e46003e45957476ca530cedaa360783f587280b4acba5d2bc910781f8e22f8",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-004/r1/art_004_2.png",
+          "sha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-004/r1/art_004_3.png",
+          "sha256": "3e3c23cc9d85006bc1bac0e666ab02a7aff69342a4a4cd3d77c60fd1ba13bcd4",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-004/r1/art_004_4.png",
+          "sha256": "45b3da0e53d139aca3b6135293a328d229d9e614f346c2c6fb3fd70bf7309ca1",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:54+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "four entry marks on fabric, varied size, restrained",
+      "files": [
+        {
+          "path": "art/approved/ART-004/r1_art_004_2.png",
+          "sha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:57+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 512x512 RGBA; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-004/prepped/art_004.png",
+          "sha256": "9f17180fd598ae6dcdb421f6c6d8e5cbedccb37a9eec301cb6203b7d1cb751e4",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-004/r1_art_004_2.png"
+}

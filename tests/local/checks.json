@@ -1,0 +1,1830 @@
+{
+  "schemaVersion": 1,
+  "comment": "Every check that needs the owner's PC. Single source of truth; docs/testing/LOCAL_VERIFICATION_PLAN.md is generated from it (python3 tools/checks/checks.py plan). Rules: docs/workflow/CLOUD_LOCAL_LOOP.md.",
+  "sessions": [
+    {
+      "id": "gunplay",
+      "title": "Session 1: gunplay and feel",
+      "setup": "Load a free-roam save, go to the test range (DevTools > TELEPORT). Keep DevTools (L3+R3 or F10) handy."
+    },
+    {
+      "id": "storage",
+      "title": "Session 2: storage, Arsenal and gunsmith",
+      "setup": "Use a save with a safehouse and a car you can park. Back up scripts/LibertyFramework/state/arsenal_iv.json first."
+    },
+    {
+      "id": "combat",
+      "title": "Session 3: combat effects",
+      "setup": "Free roam among ambient pedestrians, gold weapons from DevTools."
+    },
+    {
+      "id": "vehicles",
+      "title": "Session 4: vehicles (LVS)",
+      "setup": "A save with money near an LVS workshop."
+    },
+    {
+      "id": "performance",
+      "title": "Session 5: performance by eye",
+      "setup": "Your usual route and settings; note resolution and other mods."
+    },
+    {
+      "id": "long",
+      "title": "Session 6: long and destructive checks (optional)",
+      "setup": "Back up your save and scripts/LibertyFramework/state before starting."
+    },
+    {
+      "id": "confirm",
+      "title": "Session 7: confirmations",
+      "setup": "Nothing to set up."
+    },
+    {
+      "id": "world",
+      "title": "World objects",
+      "setup": "Free roam; the build from this run installed (the test wall stands at East Park)."
+    }
+  ],
+  "checks": [
+    {
+      "id": "T059-citywide-environment",
+      "task": "T-059",
+      "title": "Citywide approved environment look, four sites and five conditions",
+      "kind": "scenario",
+      "run": {
+        "scenario": "citywide-environment"
+      },
+      "proves": "Candidate boots on the existing preview; matched camera captures at four sites under five weather/time conditions; final camera/owned-prop cleanup.",
+      "pass": "Twenty captures produced without failed steps; screenshots reviewed against approved direction; cleanup succeeds.",
+      "unproven": "Owner acceptance, moving performance, interiors/missions and target material/local-light fidelity.",
+      "reference": "docs/tasks/T-059-citywide-environment-overhaul.md",
+      "status": "QUEUED",
+      "review": { "screenshots": {
+        "01-station-cloudy-day": "Grey sky and legible platform shade; compare original and approved target.",
+        "01-station-clear-day": "Natural daylight and surface colors without blown station detail.",
+        "01-station-rain-day": "Wet grey depth with legible station/road surfaces.",
+        "01-station-dusk": "Distinct dusk lighting; inspect warm/cool separation.",
+        "01-station-cloudy-night": "Compare unlit readability and warm local illumination against approved target; remaining gap recorded.",
+        "02-star-junction-cloudy-day": "Overcast architecture, sky detail and sign color against approved target.",
+        "02-star-junction-clear-day": "Daylight sign and surface color; inspect highlight clipping.",
+        "02-star-junction-rain-day": "Rain depth, worn surfaces and sign color against approved target.",
+        "02-star-junction-dusk": "Dusk architecture and existing light separation.",
+        "02-star-junction-cloudy-night": "Night C: readable shadows and rich sign colors; remaining local-light gap recorded.",
+        "03-hove-street-cloudy-day": "Shared grade in deep elevated-track shade; original/actual only.",
+        "03-hove-street-clear-day": "Readable road/shop shade and distinct sunlight.",
+        "03-hove-street-rain-day": "Wet road depth and pedestrian/storefront readability.",
+        "03-hove-street-dusk": "Dusk transition in shaded storefronts.",
+        "03-hove-street-cloudy-night": "Road/storefront readability and existing colored accents.",
+        "04-east-hook-cloudy-day": "Grey skyline separation and water detail; original/actual only.",
+        "04-east-hook-clear-day": "Sky/water daylight and distant city readability.",
+        "04-east-hook-rain-day": "Wet skyline/fog depth and water detail.",
+        "04-east-hook-dusk": "Dusk sky/water separation and city silhouette.",
+        "04-east-hook-cloudy-night": "Night skyline and water readability without blanket black crush."
+      } },
+      "addedIn": "Owner-authorized citywide overhaul 2026-10-02"
+    },
+    {
+      "id": "T040-feature-preview-smoke",
+      "task": "T-040",
+      "title": "Limited gameplay preview functional smoke",
+      "kind": "scenario",
+      "run": { "scenario": "feature-preview-smoke" },
+      "proves": "Limited preview catalog, wheel selection, shoulder probes and trunk store/take/close together; original task and performance gates unchanged.",
+      "pass": "Full smoke has zero failed steps and log errors; four captures reviewed for readable wheel/storage and closed controls.",
+      "unproven": "Original UI budgets, swap/capacity, controller, real save/load, missions/cutscenes, long stability and feel; experimental gore/HUD excluded.",
+      "reference": "docs/testing/FEATURE_PREVIEW.md",
+      "status": "QUEUED",
+      "addedIn": "owner-requested limited preview 2026-10-01",
+      "review": { "screenshots": {
+        "preview_wheel": "Pistol and two long guns; empty melee/thrown slots.",
+        "preview_trunk_open": "Empty eight-slot trunk and carried loadout.",
+        "preview_trunk_stored": "AK stored with one used slot, absent from carried guns.",
+        "preview_storage_closed": "Trunk closed and normal HUD restored."
+      } }
+    },
+    {
+      "id": "LOOP-build",
+      "task": "LOOP",
+      "title": "Engine, SDK, mods and native core build on Windows",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "build"
+      },
+      "pass": "exit code 0; build.ps1 and build-core.ps1 report no errors and ray_walk_test passes as a Windows .exe",
+      "proves": "The Windows toolchain builds the same sources the cloud built; the native unit tests pass on the game's target (i686 Windows).",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "LOOP-verify",
+      "task": "LOOP",
+      "title": "Full offline verifier against GTAIV.exe and game archives",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "verify"
+      },
+      "reference": "tools/README.md",
+      "pass": "exit code 0 and 'RESULT passed=N failed=0' with no NOT-RUN",
+      "proves": "Every verifier section, including the 7 the cloud reports NOT-RUN: address resolution against GTAIV.exe, native names and CE hashes, the core native table, vehicle extras, gore particles in gta_core.wpfl, WeaponInfo.xml accuracies and the collapse engine's x86 hook code.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "LOOP-content-selftest",
+      "task": "T-028",
+      "title": "Content compiler self-test and authoring fixtures on Windows .NET",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-selftest"
+      },
+      "pass": "exit code 0 (self-test, then fixtures) and 'selftest: ok passed=N failed=0'; the log also shows 'fixtures: ok passed=5 failed=0'",
+      "proves": "The content compiler behaves the same on .NET Framework as under Mono in the cloud (codecs, writer, validator), and reads the Blender-made authoring fixtures (tests/content/fixtures: materials, LODs, collision, world object) into the same structure and codes.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T028-wtdcheck",
+      "task": "T-028",
+      "title": "Texture dictionary writer rebuilds the game's own dictionaries",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "wtdcheck",
+        "archives": [
+          "pc/models/cdimages/weapons.img"
+        ]
+      },
+      "reference": "docs/tasks/T-028-lcc-native-textures.md#human-test-steps",
+      "pass": "exit code 0 and 'failed=0'; rebuilt equals identical (the review session reads the whole output)",
+      "proves": "The from-scratch WTD writer reproduces Rockstar's dictionaries byte for byte apart from placement.",
+      "unproven": "That the game loads and draws a native dictionary (T028-native-texture-review).",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "LOOP-blender-tests",
+      "task": "T-028",
+      "title": "Blender add-on tests with builds against the game",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "blender-tests"
+      },
+      "pass": "exit code 0 and 'Blender add-on tests passed' (needs Blender 4.2+ configured; otherwise NOT-RUN)",
+      "proves": "The 9 build expectations the cloud reports NOT-RUN (template and native builds from Blender, LOD counts, previews, modifiers, collection export), and on the owner's Blender the authoring cases: the five fixtures exported and refused or built as expected (lf_fx_lods builds 'ok'), collision tags as glTF extras, the add-on's checks and operators, and checks.CAPABILITIES equal to 'LibertyContent capabilities'.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "LOOP-package-install",
+      "task": "LOOP",
+      "title": "Package and install the develop build (backup kept)",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "package-install"
+      },
+      "pass": "package-phase2.ps1 and install-phase2.ps1 exit 0; every installed file hash-verified; backup folder recorded",
+      "proves": "The develop build packages against the owner's game (content assets compiled on game templates) and installs cleanly. Every scenario check depends on it.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T028-native-crate-report",
+      "task": "T-028",
+      "title": "Native DXT1 crate compiled and read back",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_native_crate",
+        "expect": {
+          "status": "ok",
+          "compiled.textureMode": "native",
+          "compiled.textureFormat": "DXT1",
+          "compiled.textureLevels": 7
+        }
+      },
+      "reference": "docs/tasks/T-028-lcc-native-textures.md#human-test-steps",
+      "pass": "report.json: status ok, textureMode native, textureFormat DXT1, textureLevels 7",
+      "proves": "The native writer's output for a real asset built against the game's template passes read-back.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T028-alpha-panel-report",
+      "task": "T-028",
+      "title": "Native DXT5 alpha panel compiled and read back",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_alpha_panel",
+        "expect": {
+          "status": "ok",
+          "compiled.textureFormat": "DXT5",
+          "compiled.textureLevels": 6,
+          "compiled.textureQuality.psnrAlphaDb": "present"
+        }
+      },
+      "reference": "docs/tasks/T-028-lcc-native-textures.md#human-test-steps",
+      "pass": "report.json: status ok, textureFormat DXT5, textureLevels 6, textureQuality.psnrAlphaDb present",
+      "proves": "DXT5 with alpha is written and read back for a real asset.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "PROBE-drawables",
+      "task": "RESEARCH",
+      "title": "Drawable structure survey: geometries, shaders, LOD slots",
+      "kind": "probe",
+      "run": {
+        "tool": "probe",
+        "probe": "drawables"
+      },
+      "reference": "docs/research/ModelFormat.md",
+      "pass": "exit code 0 and a JSON report; the review session reads it (no pass/fail on the numbers themselves)",
+      "proves": "Across the game's model archives: how many drawables use several geometries, several shaders and LOD slots 1-3, how their buffers, shader mappings, bounds and LOD distances are laid out, and whether the reader parses them all. Input for the multi-geometry/LOD writer (Session 4); and for the structure writer (T-031): which drawables it can use, their sphere-record layout and buffer order, and structure templates by shape.",
+      "unproven": "Anything about how the game renders them; this is file structure only.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "PROBE-collision",
+      "task": "RESEARCH",
+      "title": "Collision file inventory: types, locations, headers",
+      "kind": "probe",
+      "run": {
+        "tool": "probe",
+        "probe": "collision"
+      },
+      "reference": "docs/research/Collision.md",
+      "pass": "exit code 0 and a JSON report; the review session reads it",
+      "proves": "Which collision-related resources the game ships (by extension and resource type), in which archives, how many, their resource versions and top-level sizes. Input for collision research (Session 5) Also propCandidates: models shipped as a drawable with a same-named bounds resource, which the raycast-objects scenario spawns.",
+      "unproven": "The bound structures' field meanings; those need their own probes once the inventory is known.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T027-raycast",
+      "task": "T-027",
+      "title": "Raycast and line of sight in game",
+      "kind": "scenario",
+      "run": {
+        "scenario": "raycast"
+      },
+      "proves": "SDK 1.1 Query.Raycast / HasLineOfSight against world, a vehicle and a ped through the real game line test; filtering and ignore semantics; no faults.",
+      "pass": "autopilot PASS: ground hit, open sky clear, vehicle hit and filtered, ped hit and passed through, rayto matches, line of sight both ways, faults=0; screenshots judged",
+      "unproven": "Objects (props with collision) are not tested in game yet (RayMask.Objects); research questions R1-R6 in docs/research/Raycast.md.",
+      "review": {
+        "screenshots": {
+          "vehicle": "the spawned Admiral stands directly in front of Niko",
+          "ped": "one pedestrian stands in front of Niko, facing him"
+        }
+      },
+      "reference": "docs/tasks/T-027-engine-raycast.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T027-raycast-objects",
+      "task": "T-027",
+      "title": "Raycast RayMask.Objects against a vanilla prop with collision",
+      "kind": "scenario",
+      "run": {
+        "scenario": "raycast-objects"
+      },
+      "needs": [
+        "PROBE-collision"
+      ],
+      "proves": "RayMask.Objects in game: a script-created vanilla prop is hit as kind Object with its own handle (all kinds, and objects only), and a query that leaves objects out passes through it; the raycast link [result+0x0C] resolves objects through the object pool.",
+      "pass": "autopilot PASS: rayto prop all and objects both Hit kind=Object match=True; world,peds,vehicles passed>=1; faults=0; screenshot judged; prop creation logs collision=True before ray tests",
+      "unproven": "Only the probe's first candidate is tested; a FAIL on the first rayto may mean that model has no collision in game (the review session then tries the next candidate from the probe report) rather than a raycast fault. Authored (LCC) props need collision first (Session 5).",
+      "review": {
+        "screenshots": {
+          "prop": "a vanilla prop (not a Liberty test crate) stands on the ground about 3 m in front of Niko"
+        }
+      },
+      "reference": "docs/research/Raycast.md",
+      "status": "RETIRED", "retiredReason": "no propCandidates on this install; RayMask.Objects against vanilla props is covered by T032-proxy-probe",
+      "addedIn": "claude/nice-edison-xyxc6j (Session 2 audit)"
+    },
+    {
+      "id": "T027-raycast-spike",
+      "task": "T-027",
+      "title": "Raycast research spike (raw include bits)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "raycast-spike"
+      },
+      "proves": "Raw line-test results per include bit for ground, sky, a vehicle and a ped: evidence for Raycast.md open questions.",
+      "pass": "autopilot PASS (spawns succeed); the review session reads the raydebug/raybits lines for the vehicle",
+      "unproven": "Research only; interpretation happens in the review session.",
+      "reference": "docs/research/Raycast.md",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T057-audio-output-smoke",
+      "task": "T-057",
+      "title": "Game startup with an unattended playback output",
+      "kind": "scenario",
+      "run": {
+        "scenario": "audio-output-smoke"
+      },
+      "proves": "GTA IV reaches the engine and emits a fresh heartbeat with the audio preflight active. The installed Sonar Gaming endpoint is recovered if no playback output is active.",
+      "pass": "autopilot PASS: fresh T-001 heartbeat after startup",
+      "unproven": "Audible output and unrelated gameplay stability. Recovery from a disabled endpoint is recorded separately in T-057's native host evidence.",
+      "status": "QUEUED",
+      "addedIn": "T-057 local audio recovery"
+    },
+    {
+      "id": "SDK-selftest",
+      "task": "T-027",
+      "title": "SDK self-test in game (all services, raycast checks included)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "sdk-selftest"
+      },
+      "proves": "Every Liberty.Sdk service works in game on the new core ABI 5, including the ten raycast/line-of-sight checks. Since the engine audit also: the snapshot driver read from [vehicle+0xF50] (check vehicle-driver), capability refusal, and commands after the ownership and capability changes.",
+      "pass": "autopilot PASS: 'selftest_done passed=N failed=0'",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T028-native-texture-review",
+      "task": "T-028",
+      "title": "Native texture dictionaries drawn in game",
+      "kind": "scenario",
+      "run": {
+        "scenario": "native-texture-review"
+      },
+      "proves": "The game loads dictionaries written from scratch and draws DXT1; how gta_default treats DXT5 alpha.",
+      "pass": "autopilot PASS and the screenshots judged as described",
+      "unproven": "Alpha behaviour is an observation (translucent, cut-out or ignored); any of the three is a valid answer.",
+      "review": {
+        "screenshots": {
+          "native_crate_front": "native crate (front) and template crate (behind) both show the LIBERTY SUPPLY planks, same colour and sharpness, no garbage or white/grey",
+          "native_crate_side": "same as the front view, from the side",
+          "alpha_panel_front": "standing panel: dark frame and red diagonal; note what the checker cells do (see-through, holes, or solid)",
+          "alpha_panel_angle": "same panel at an angle; note the checker cells",
+          "alpha_panel_back": "the panel's back face: note whether it is drawn"
+        }
+      },
+      "reference": "docs/tasks/T-028-lcc-native-textures.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T031-drawable-roundtrip",
+      "task": "T-031",
+      "title": "Structure writer rebuilds the game's drawables byte for byte",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "drawable-roundtrip"
+      },
+      "pass": "exit code 0 and 'roundtrip: ok ... failed=0' (every eligible drawable identical under one buffer order); the JSON report is kept",
+      "proves": "For every drawable of the game the structure writer can use (layout 0x59 everywhere, own buffers, measurable sphere records): per-geometry patching of several geometries, shaders and LOD models reproduces Rockstar's files; the report says which buffer order (Interleaved or VerticesFirst) and which sphere-record layout the files use.",
+      "unproven": "Trimming (dropped geometries, models, LOD slots and shaders) and renamed textures have no counterpart in the game's files; the lod-review scenario tests a trimmed build in game.",
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "RETIRED", "retiredReason": "byte-exact round trip is not a release gate (decision 2026-09-30)",
+      "addedIn": "claude/confident-hopper-16pan1 (session 4)"
+    },
+    {
+      "id": "T031-multimat-report",
+      "task": "T-031",
+      "title": "Two-material fixture compiles with automatic structure selection",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_fx_multimat",
+        "expect": {
+          "status": "ok",
+          "compiled.drawableWriter": "structure",
+          "compiled.lodCount": 1,
+          "compiled.textureFormat": "DXT1"
+        }
+      },
+      "pass": "report fields match; inspect compiled.geometries and textures for two distinct material groups and readback []",
+      "proves": "The packaged authored fixture uses automatic structure writer selection and passes readback. The report names the real template and both material textures.",
+      "unproven": "In-game material appearance, culling and placement; tested by T031-multimat-review.",
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "QUEUED",
+      "addedIn": "codex/pr7-verification-fixes"
+    },
+    {
+      "id": "T031-structure-bisect",
+      "task": "T-031",
+      "title": "Structure-writer repro: single geometry spawns; multi-geometry crashes (KNOWN FAIL until Phase 3)",
+      "kind": "scenario",
+      "run": { "scenario": "structure-bisect" },
+      "pass": "today: CRASH at lf_st_2tex after lf_st_weap and lf_st_map render (known). PASS once multi-geometry drawables are fixed",
+      "proves": "Which structure-writer output the game accepts: the log shows the last spawn that survived if the game exits.",
+      "unproven": "Multiple LODs and authored collision.",
+      "review": { "screenshots": { "lf_st_weap": "textured crate", "lf_st_map": "textured crate", "lf_st_2tex": "textured crate, both material groups", "lf_fx_multimat": "textured sides and red lid" } },
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "RETIRED", "retiredReason": "known crash repro; run by hand: tools/autopilot/scenarios/structure-bisect.txt",
+      "addedIn": "engine-cleanup"
+    },
+    {
+      "id": "T032-proxy-probe",
+      "task": "T-032",
+      "title": "Collision proxy candidates: which vanilla props stop the engine's ray",
+      "kind": "scenario",
+      "run": { "scenario": "proxy-probe" },
+      "pass": "autopilot PASS; the log lists autopilot_rayto lines per candidate (Hit kind=Object match=True marks a solid prop)",
+      "proves": "Vanilla props usable as invisible collision proxies for custom objects (the authored-collision fallback).",
+      "unproven": "Player and vehicle collision (inferred from the shared physics bounds).",
+      "reference": "docs/research/Collision.md",
+      "status": "QUEUED",
+      "addedIn": "engine-cleanup"
+    },
+    {
+      "id": "T031-multimat-review",
+      "task": "T-031",
+      "title": "Two geometries and material textures drawn in game",
+      "kind": "scenario",
+      "run": {
+        "scenario": "multimat-review"
+      },
+      "pass": "autopilot PASS plus reviewed screenshots: textured sides and red top simultaneously visible, no missing geometry or corrupt material",
+      "proves": "The game draws the authored crate from the structure writer with separate side and top materials.",
+      "unproven": "Additional LOD slots, authored collision and the broad drawable roundtrip gate.",
+      "review": {
+        "screenshots": {
+          "multimat_top": "top is red; crate side is textured; both material groups render without garbage or missing faces",
+          "multimat_side": "textured side is visible; check seams and material assignment"
+        }
+      },
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "RETIRED", "retiredReason": "known crash (multi-geometry, T-031); repro kept in T031-structure-bisect scenario file",
+      "addedIn": "codex/pr7-verification-fixes"
+    },
+    {
+      "id": "T031-lod-post-report",
+      "task": "T-031",
+      "title": "lf_lod_post compiled by the structure writer",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_lod_post",
+        "expect": {
+          "status": "RETIRED", "retiredReason": "multi-LOD drawables dropped: every sampled game drawable uses LOD slot 0",
+          "compiled.drawableWriter": "structure",
+          "compiled.lodCount": 4,
+          "compiled.textureFormat": "DXT1"
+        }
+      },
+      "pass": "report.json fields match: status ok, drawableWriter structure (not 'template (fallback)'), four LODs",
+      "proves": "The \"*\"/\"auto\" search found a structure template with four LOD slots in the owner's game, and the four-LOD drawable read back; templateUsed names it.",
+      "unproven": "That the game loads and switches the LODs (T031-lod-review).",
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (session 4)"
+    },
+    {
+      "id": "T031-lod-review",
+      "task": "T-031",
+      "title": "Structure-writer LODs drawn and switched in game",
+      "kind": "scenario",
+      "run": {
+        "scenario": "lod-review"
+      },
+      "pass": "autopilot PASS and the screenshots judged as described",
+      "proves": "The game loads a drawable written by the structure writer (several LOD models, trimmed template, renamed texture, one graphics page) and which LOD it draws at each distance.",
+      "unproven": "Which distances the switches happen at is an observation: by drawable +0x50 (12/25/50/100 m), by the game's own rules, or no switching; each is a useful answer. If T031-lod-post-report shows a fallback, every shot is LOD 0.",
+      "review": {
+        "screenshots": {
+          "lod_6m": "a standing post, green with one dark band, round (LOD 0); note any garbage, missing or white texture",
+          "lod_18m": "note the colour and band count (yellow with two bands = LOD 1)",
+          "lod_38m": "note the colour and band count (orange with three bands = LOD 2)",
+          "lod_75m": "note the colour and band count (red with four bands = LOD 3); the post is small at this distance",
+          "lod_130m": "note what is drawn beyond the last LOD distance (red post, nothing, or another colour)"
+        }
+      },
+      "reference": "docs/tasks/T-031-structure-writer.md",
+      "status": "RETIRED", "retiredReason": "multi-LOD drawables dropped by decision (2026-09-30)",
+      "addedIn": "claude/confident-hopper-16pan1 (session 4)"
+    },
+    {
+      "id": "SDK-asset-review",
+      "task": "M4",
+      "title": "Content pipeline regression: compiled crate and Blender barrel",
+      "kind": "scenario",
+      "run": {
+        "scenario": "asset-review"
+      },
+      "proves": "The template-mode content pipeline still produces textured, upright, lit props after the T-028 merge.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "review": {
+        "screenshots": {
+          "crate_front": "textured test crate, upright and lit",
+          "crate_side": "same crate from the side",
+          "crate_top": "crate from above",
+          "barrel_front": "the Blender-made steel drum, textured and upright",
+          "barrel_top": "the drum from above"
+        }
+      },
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-engine-events",
+      "task": "ADR-0006",
+      "title": "Engine events regression (peds appear, damage, death, removal)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "engine-events"
+      },
+      "proves": "Core v2 snapshot events still fire on the new core ABI.",
+      "pass": "autopilot PASS",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-bullet-events",
+      "task": "ADR-0006",
+      "title": "BulletFired events regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "bullet-events"
+      },
+      "proves": "The bullet trace list still produces BulletFired events.",
+      "pass": "autopilot PASS",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-exact-damage",
+      "task": "ADR-0007",
+      "title": "Exact damage hook regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "exact-damage"
+      },
+      "proves": "The damage-response hook still reports attacker, weapon, type, bone and hit point, and the kill.",
+      "pass": "autopilot PASS",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-vehicle-events",
+      "task": "ADR-0006",
+      "title": "Vehicle events regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "vehicle-events"
+      },
+      "proves": "VehicleAppeared/VehicleRemoved still fire.",
+      "pass": "autopilot PASS",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-hot-reload",
+      "task": "M5",
+      "title": "Hot reload regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "hot-reload"
+      },
+      "proves": "Module restart and mod assembly reload still work; the SDK self-test passes on reloaded code.",
+      "pass": "autopilot PASS",
+      "status": "PASS",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)",
+      "lastRun": "20260929-142632-0d849f0",
+      "evidence": [
+        "results/20260929-142632-0d849f0/SDK-hot-reload/result.json",
+        "results/20260929-142632-0d849f0/SDK-hot-reload/run.log",
+        "docs/reports/2026-09-28-windows-verification.md#follow-up-run-20260929-142632-0d849f0"
+      ]
+    },
+    {
+      "id": "SDK-inspector-review",
+      "task": "M5",
+      "title": "Inspector overlay regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "inspector-review"
+      },
+      "proves": "The inspector overlay still draws engine numbers and module rows.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "review": {
+        "screenshots": {
+          "inspector": "overlay shows engine numbers and one row per module",
+          "inspector_after_restart": "overlay still correct after a module restart"
+        }
+      },
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "SDK-ui-review",
+      "task": "M5",
+      "title": "Liberty.Ui menus regression",
+      "kind": "scenario",
+      "run": {
+        "scenario": "ui-review"
+      },
+      "proves": "SDK list and radial menus still draw and release input.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "review": {
+        "screenshots": {
+          "sdk_list_menu": "SDK list menu drawn",
+          "sdk_list_menu_moved": "selection moved",
+          "sdk_radial_menu": "radial menu drawn"
+        }
+      },
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T022-gore-review",
+      "task": "T-022",
+      "title": "Gore tests on spawned NPCs",
+      "kind": "scenario",
+      "run": {
+        "scenario": "gore-review"
+      },
+      "proves": "Arm, leg and head severing still work under the engine.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "unproven": "Presentation quality (stump caps) is the owner's judgement in T022-combat-effects.",
+      "review": {
+        "screenshots": {
+          "arm_cut": "a spawned NPC with an arm severed",
+          "leg_cut": "a spawned NPC with a leg severed",
+          "head_cut": "a spawned NPC decapitated"
+        }
+      },
+      "reference": "docs/tasks/T-022-combat-effects.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T021-sling-review",
+      "task": "T-021",
+      "title": "Slings and slung long guns",
+      "kind": "scenario",
+      "run": {
+        "scenario": "sling-review"
+      },
+      "proves": "Both slings and the slung long guns attach and follow the body.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "review": {
+        "screenshots": {
+          "front": "Niko from the front with slings",
+          "back": "slung long guns on the back",
+          "left": "left side",
+          "right": "right side",
+          "back_close": "close-up of the sling attachment"
+        }
+      },
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)",
+      "lastRun": "20260929-142632-0d849f0",
+      "evidence": [
+        "results/20260929-142632-0d849f0/T021-sling-review/result.json",
+        "results/20260929-142632-0d849f0/T021-sling-review/run.log",
+        "docs/reports/2026-09-28-windows-verification.md#follow-up-run-20260929-142632-0d849f0"
+      ]
+    },
+    {
+      "id": "T024-trunk-review",
+      "task": "T-024",
+      "title": "Trunk choreography and storage wheel",
+      "kind": "scenario",
+      "run": {
+        "scenario": "trunk-review"
+      },
+      "proves": "The trunk sequence and the storage radial menu work on the engine.",
+      "pass": "autopilot PASS and the screenshots judged",
+      "review": {
+        "screenshots": {
+          "trunk_open": "boot open, Niko at the rear",
+          "trunk_wheel_next_segment": "storage wheel with a segment selected",
+          "trunk_after_store": "wheel after storing a weapon",
+          "trunk_closed": "boot closed again"
+        }
+      },
+      "reference": "docs/tasks/T-024-phase2-foundations.md#human-test-steps",
+      "status": "NEEDS-REVIEW",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)",
+      "lastRun": "20260929-121911-6931061",
+      "evidence": [
+        "results/20260929-121911-6931061/T024-trunk-review/result.json",
+        "results/20260929-121911-6931061/T024-trunk-review/run.log",
+        "docs/reports/2026-09-28-windows-verification.md#latest-focused-run-20260929-121911-6931061"
+      ]
+    },
+    {
+      "id": "T026-perf-baseline",
+      "task": "T-026",
+      "title": "Performance sample (walking idle with a rifle)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "perf-baseline"
+      },
+      "proves": "Per-frame script cost on the develop build, comparable with earlier samples.",
+      "pass": "autopilot PASS; the review session reads the performance lines",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T026-perf-stress",
+      "task": "T-026",
+      "title": "Performance under load (25 extra peds)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "perf-stress"
+      },
+      "proves": "Script cost and the density governor under load.",
+      "pass": "autopilot PASS; the review session reads the governor and memory figures",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T007-confirm-done",
+      "task": "T-007",
+      "session": "confirm",
+      "minutes": 1,
+      "title": "Confirm the gold weapon identities (IDs 58/59/60)",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "You already reported that the gold pistol (58), carbine (59) and shotgun (60) select and work.",
+          "If that is still true on this build (you will see it during the gunplay session), answer p."
+        ]
+      },
+      "proves": "Lets the owner mark T-007 DONE.",
+      "pass": "IDs 58, 59 and 60 select and fire; switching to the vanilla counterpart keeps total ammo",
+      "reference": "docs/tasks/T-007-weapon-slots.md",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T010-phase1",
+      "task": "T-010",
+      "session": "gunplay",
+      "minutes": 15,
+      "title": "Phase 1 gunplay checklist",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Follow docs/testing/PHASE1_PLAYTEST.md sections 1-10 (startup, DevTools, test range, free aim, gold weapons, movement/cover/vehicle, live tuning, save/load).",
+          "Skip anything you have already confirmed on an earlier build unless it looks different now."
+        ]
+      },
+      "proves": "Phase 1 integrated gunplay on the develop build.",
+      "pass": "every section behaves as the checklist describes; note any section that does not",
+      "reference": "docs/testing/PHASE1_PLAYTEST.md",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T011-gold-finishes",
+      "task": "T-011",
+      "session": "gunplay",
+      "minutes": 4,
+      "title": "Gold carbine and shotgun finishes",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "DevTools (L3+R3 or F10) > WEAPONS: give the gold carbine (59) and the gold shotgun (60).",
+          "Look at each held gun and its HUD icon; reload, aim and fire."
+        ]
+      },
+      "proves": "The gold finishes render.",
+      "pass": "both guns and icons are gold with normal-map detail, and stay gold after reload/aim/fire",
+      "reference": "docs/tasks/T-011-gold-finishes.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T013-debug-hit-info",
+      "task": "T-013",
+      "session": "gunplay",
+      "minutes": 4,
+      "title": "Debug overlay hit info",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "DevTools > GUNPLAY > Debug overlay ON.",
+          "At the test range shoot a ped, then a vehicle, then a wall."
+        ]
+      },
+      "proves": "The debug overlay's hit reporting.",
+      "pass": "the Hit line shows ped with a bone number, distance and damage, then vehicle, then world/unknown; fire shows interval and RPM",
+      "reference": "docs/tasks/T-013-debug-hit-info.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T014-aim-profiles",
+      "task": "T-014",
+      "session": "gunplay",
+      "minutes": 6,
+      "title": "Aim profiles (free / vanilla / rejected slowdown)",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Follow the three steps in the task card (edit freeAim.profile in the installed gunplay.json, then DevTools > PRESETS & CONFIG > Reload config from disk)."
+        ]
+      },
+      "proves": "Aim profile switching and rejection.",
+      "pass": "free: no snap or lock; vanilla: your own Auto-Aim applies; slowdown: rejected, previous profile kept",
+      "reference": "docs/tasks/T-014-aim-profiles.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T015-shoulder-swap",
+      "task": "T-015",
+      "session": "gunplay",
+      "minutes": 5,
+      "title": "Shoulder swap",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Aim on foot (L2/LT) and press L1/LB (or Z): the camera moves to the left shoulder; press again for the right.",
+          "Try it in cover and from a vehicle."
+        ]
+      },
+      "proves": "Shoulder swap on the CE camera.",
+      "pass": "smooth swap in about 0.2 s, aim and crosshair stay centred, nothing odd in cover or vehicles",
+      "reference": "docs/tasks/T-015-shoulder-swap.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T016-switch-while-aiming",
+      "task": "T-016",
+      "session": "gunplay",
+      "minutes": 4,
+      "title": "Switch weapons while aiming",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Carry two Arsenal weapons. Hold L2/LT and press D-pad right, then left.",
+          "Repeat crouched and out of cover; with one weapon nothing should cycle; in a vehicle it is off."
+        ]
+      },
+      "proves": "Weapon cycling while aiming.",
+      "pass": "the held weapon cycles only among carried items while aiming, without camera drop",
+      "reference": "docs/tasks/T-016-switch-while-aiming.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T017-feel-shake-fov",
+      "task": "T-017",
+      "session": "gunplay",
+      "minutes": 4,
+      "title": "Per-shot shake and aim FOV",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Aim and fire the gold pistol, carbine and shotgun; then their vanilla counterparts."
+        ]
+      },
+      "proves": "Feel effects are gated to the test weapons.",
+      "pass": "gold weapons: subtle per-shot shake and slightly narrower aim FOV; vanilla weapons: no change",
+      "reference": "docs/tasks/T-017-feel-shake-fov.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T024-gun-feel",
+      "task": "T-024",
+      "session": "gunplay",
+      "minutes": 5,
+      "title": "Phase 2 gun feel: taps, bursts, spray",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "At the range fire single shots, three-round bursts and one long carbine spray at the same distance, with gold 58/59/60.",
+          "Compare impacts with the crosshair gap; repeat moving, crouched, in cover and from a vehicle."
+        ]
+      },
+      "proves": "Phase 2 spread and recoil tuning.",
+      "pass": "tight taps, useful bursts, visibly broader long spray; impacts stay inside the displayed cone",
+      "reference": "docs/tasks/T-024-phase2-foundations.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T020-storage-basics",
+      "task": "T-020",
+      "session": "storage",
+      "minutes": 15,
+      "title": "Arsenal: safehouse, trunk, overflow, ownership",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Task card steps 1-4: mark a safehouse, store/take at a trunk, overflow to the last vehicle, ownership on purchase."
+        ]
+      },
+      "proves": "Liberty Arsenal core storage and ownership.",
+      "pass": "each step shows the described result and log lines",
+      "reference": "docs/tasks/T-020-arsenal-core.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T024-storage-prompt",
+      "task": "T-024",
+      "session": "storage",
+      "minutes": 6,
+      "title": "Storage prompt, trunk panel and safehouse storage",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Task card steps 2-3: the Open trunk prompt, store/take, safehouse storage with the gunsmith choice, DevTools not covering the panel, ReloadScripts with the panel open."
+        ]
+      },
+      "proves": "Phase 2 storage interaction.",
+      "pass": "prompt appears only when it should; store/take keeps ammo and ownership; controls return",
+      "reference": "docs/tasks/T-024-phase2-foundations.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T025-gunsmith",
+      "task": "T-025",
+      "session": "storage",
+      "minutes": 20,
+      "title": "Physical weapons and gunsmith",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Back up scripts/LibertyFramework/state/arsenal_iv.json first.",
+          "Task card steps 1-8: instance IDs through store/take/relaunch, displaced weapons, gold finish purchase, attachments."
+        ]
+      },
+      "proves": "Weapon instances, gunsmith purchases and attachments.",
+      "pass": "instance IDs persist; each purchase charges once and persists; attachments change bloom as described",
+      "reference": "docs/tasks/T-025-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T020-death-mission-persistence",
+      "task": "T-020",
+      "session": "long",
+      "minutes": 30,
+      "title": "Arsenal: missions, death, arrest, relaunch, corrupt state",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Task card steps 5-8. These are destructive: back up your save and scripts/LibertyFramework/state first."
+        ]
+      },
+      "proves": "Arsenal's mission, death, arrest and persistence rules.",
+      "pass": "no storage movement during missions/cutscenes; loss rules on wasted/busted as described; trunks persist across relaunch; corrupt state is recovered",
+      "reference": "docs/tasks/T-020-arsenal-core.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T021-holsters",
+      "task": "T-021",
+      "session": "gunplay",
+      "minutes": 8,
+      "title": "Visible holsters",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Task card steps 1-6: back/hip/thigh positions, vehicles and bikes, the Holsters page, death and ReloadScripts."
+        ]
+      },
+      "proves": "Holster placement and lifecycle.",
+      "pass": "props sit where described, follow the body, hide in cars, and never duplicate after reload",
+      "reference": "docs/tasks/T-021-holsters.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T022-combat-effects",
+      "task": "T-022",
+      "session": "combat",
+      "minutes": 15,
+      "title": "Combat reactions, blood and dismemberment",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Task card steps 1-6 with gold 58/59/60 on ambient NPCs (not test-range spawns)."
+        ]
+      },
+      "proves": "Combat effects and dismemberment on ambient peds.",
+      "pass": "distinct reactions per body region, bone-local blood, one limb/head event per qualifying hit, no hangs",
+      "reference": "docs/tasks/T-022-combat-effects.md#human-test-steps",
+      "unproven": "Stump cap geometry remains an open item.",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T023-lvs-labels",
+      "task": "T-023",
+      "session": "vehicles",
+      "minutes": 10,
+      "title": "LVS body-part labels",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Drive a Sultan RS into an LVS workshop, open Extras; then a taxi, a police cruiser and an Infernus (task card)."
+        ]
+      },
+      "proves": "The T-023 labels on real vehicles.",
+      "pass": "each Extras row names the part that actually changes; purchases persist after relaunch",
+      "reference": "docs/tasks/T-023-lvs-body-variants.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "T026-performance-feel",
+      "task": "T-026",
+      "session": "performance",
+      "minutes": 8,
+      "title": "Performance and visuals, by eye",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "Play 90 seconds on your usual route, then aim and fire briefly.",
+          "Optional: PresentMon capture as in the task card (PowerShell as Administrator)."
+        ]
+      },
+      "proves": "The owner's perception of frame pacing on the develop build (the perf scenarios measure script cost).",
+      "pass": "no choppiness worse than before; note flicker or stutter with the time",
+      "reference": "docs/tasks/T-026-performance-visual-baseline.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "claude/friendly-euler-m7hn4e (Session 1 seed)"
+    },
+    {
+      "id": "PROBE-bounds-layout",
+      "task": "T-032",
+      "title": "Collision resource layout, measured per class",
+      "kind": "probe",
+      "run": {
+        "tool": "probe",
+        "probe": "bounds"
+      },
+      "pass": "exit code 0 and a JSON report; the review session reads it",
+      "proves": "For each class of collision resource (extension, RSC type, root word): which root words are pointers, small integers (with their values: counts and type codes), floats or zero, the same one level down, and a bound on the root's size. Input for decoding one class before any collision writer (Collision.md plan step 3).",
+      "unproven": "Field meanings: the review session reads them from the measured layout plus the classes' counts, and writes them down in Collision.md with labels.",
+      "reference": "docs/research/Collision.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "PROBE-collision-links",
+      "task": "T-032",
+      "title": "Candidate hash references between bounds resources and local drawables",
+      "kind": "probe",
+      "run": {
+        "tool": "probe",
+        "probe": "collision-links"
+      },
+      "pass": "exit code 0 and a JSON report; the review session reads it",
+      "proves": "Whether any 32-bit system words in WBD/WBN resources match Jenkins hashes of WDR names from the same IMG, with names and offsets for targeted structural investigation.",
+      "unproven": "That a matching word is a dictionary key or that the game pairs that bounds resource with the model at runtime.",
+      "reference": "docs/research/Collision.md",
+      "status": "QUEUED",
+      "addedIn": "codex/pr7-verification-fixes (collision follow-up)"
+    },
+    {
+      "id": "T032-wbdcheck",
+      "task": "T-032",
+      "title": "CE WBD hash and target table reader",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "wbdcheck"
+      },
+      "needs": [
+        "LOOP-content-selftest"
+      ],
+      "pass": "At least one CE WBD parses, every parsed table field round-trips, and the tool exits 0 with a JSON report.",
+      "proves": "The measured CE WBD root has equal-count index-aligned hash and valid structured-target arrays across the successfully opened game archives.",
+      "unproven": "The target object's shape, a full WBD roundtrip, and runtime collision pairing.",
+      "reference": "docs/research/Collision.md",
+      "status": "QUEUED",
+      "addedIn": "codex/pr7-verification-fixes (Session 5b table reader)"
+    },
+    {
+      "id": "T032-collision-borrow-report",
+      "task": "T-032",
+      "title": "lf_col_crate ships a borrowed collision resource",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_col_crate",
+        "expect": {
+          "status": "RETIRED", "retiredReason": "no borrow candidate exists on this install; superseded by collision proxies (T032-proxy-probe, T033-world-objects)",
+          "compiled.collision.mode": "borrowed",
+          "compiled.collision.file": "lf_col_crate.wbn"
+        }
+      },
+      "pass": "report.json fields match: the build found a prop candidate and shipped its bounds as lf_col_crate.wbn",
+      "proves": "The auto borrow found PROBE-collision's first prop candidate in the owner's game and packaged its bounds resource with the crate (compiled.collision.from names it).",
+      "unproven": "That the game pairs it with the crate (T032-collision-borrow).",
+      "reference": "docs/tasks/T-032-collision.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "T032-collision-borrow",
+      "task": "T-032",
+      "title": "Borrowed collision on a LibertyContent model stops the engine's ray",
+      "kind": "scenario",
+      "run": {
+        "scenario": "collision-borrow"
+      },
+      "pass": "autopilot PASS (both rays hit the crate as kind Object) and the screenshot shows the crate; prop creation logs collision=True before ray tests",
+      "proves": "Collision.md C4-C6 for this project's archive: a model registered in lf_content.ide gets collision from a same-named bounds resource for a script-created object, and the engine's raycast hits it.",
+      "unproven": "Player and vehicle collision against it (T033-world-walk); authored collision shapes (need the collision writer).",
+      "review": {
+        "screenshots": {
+          "crate": "the LIBERTY SUPPLY crate standing in front of the player, textured; note anything else in view"
+        }
+      },
+      "reference": "docs/tasks/T-032-collision.md",
+      "status": "RETIRED", "retiredReason": "same-name borrowed bounds do not exist on this install; superseded by collision proxies",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "T033-world-wall-report",
+      "task": "T-033",
+      "title": "lf_world_wall builds as a world object with borrowed collision",
+      "kind": "pc-offline",
+      "run": {
+        "tool": "content-report",
+        "asset": "lf_world_wall",
+        "expect": {
+          "status": "RETIRED", "retiredReason": "the wall gets collision from proxies, not a borrowed resource",
+          "type": "object",
+          "compiled.collision.mode": "borrowed"
+        }
+      },
+      "pass": "report.json fields match",
+      "proves": "A type-object asset compiles, reads back and is packaged with its borrowed collision.",
+      "reference": "docs/tasks/T-033-world-objects.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "T033-world-objects",
+      "task": "T-033",
+      "title": "The world mod places a static world object near the player",
+      "kind": "scenario",
+      "run": {
+        "scenario": "world-objects"
+      },
+      "pass": "autopilot PASS (spawned with a handle; the ray hits it) and the screenshot shows the wall",
+      "proves": "mods/Liberty.World loads config/world/objects.json, streams lf_world_wall in within 150 m, snaps it to the ground, and its borrowed collision stops the engine's ray.",
+      "unproven": "Removal beyond 180 m is not driven here (the verifier tests the decision); player collision is T033-world-walk.",
+      "review": {
+        "screenshots": {
+          "wall_ahead": "a low grey-textured wall (2 m long, about 1.1 m high) ahead of the player, standing on the ground (not floating or sunk), seen end-on (running away from the player, north-south: heading 90 applied); across the view means the heading was not applied; note if it is missing"
+        }
+      },
+      "reference": "docs/tasks/T-033-world-objects.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "T033-world-walk",
+      "task": "T-033",
+      "session": "world",
+      "minutes": 2,
+      "title": "Walk into the test wall",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "DevTools > TELEPORT > East Park (or the autopilot's east_park); the test wall stands about 8 m north, ahead of you.",
+          "Walk straight into it, then try to walk through it along its length.",
+          "Answer p if it blocks you somewhere (say where), f if you walk straight through everywhere, s to skip."
+        ]
+      },
+      "pass": "the wall blocks the player at least where the borrowed shape is (its exact outline is the vanilla prop's, not the wall's)",
+      "proves": "Borrowed collision works for the player against a placed world object.",
+      "unproven": "Collision matching the wall's own outline needs the collision writer.",
+      "reference": "docs/tasks/T-033-world-objects.md",
+      "status": "QUEUED",
+      "addedIn": "claude/confident-hopper-16pan1 (sessions 5-6)"
+    },
+    {
+      "id": "T040-capture-broker",
+      "task": "T-040",
+      "title": "Stage 1 capture: the 8 Broker/Dukes points, day and night (mod-on)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-capture-broker"
+      },
+      "proves": "The 8 Broker/Dukes capture points are reachable, stream in, sit on streets, and yield frame statistics, script cost, memory and VRAM in day/overcast and night/rain.",
+      "pass": "autopilot PASS (every goto, expect and gpumem step); screenshots judged; the summary (tools/perf/Measure-Stage1.ps1) has frame statistics, costs, perf and GPU memory for every point and condition",
+      "review": {
+        "screenshots": {
+          "s1_hove_beach_a_day": "Hove Beach, Beachgate side street, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_hove_beach_a_night": "Hove Beach, Beachgate side street, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_hove_beach_b_day": "Hove Beach, inland avenue, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_hove_beach_b_night": "Hove Beach, inland avenue, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_firefly_island_day": "Firefly Island, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_firefly_island_night": "Firefly Island, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_rotterdam_hill_day": "Rotterdam Hill, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_rotterdam_hill_night": "Rotterdam Hill, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_boabo_day": "BOABO, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_boabo_night": "BOABO, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_east_hook_day": "East Hook, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_east_hook_night": "East Hook, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_dukes_meadow_hills_day": "Dukes, Meadow Hills road, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_dukes_meadow_hills_night": "Dukes, Meadow Hills road, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_east_island_city_day": "East Island City, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_east_island_city_night": "East Island City, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T040-capture-city",
+      "task": "T-040",
+      "title": "Stage 1 capture: the 4 points elsewhere in the city, day and night (mod-on)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-capture-city"
+      },
+      "proves": "The Algonquin, Bohan and Alderney capture points work and are measured like the Broker/Dukes ones.",
+      "pass": "autopilot PASS (every goto, expect and gpumem step); screenshots judged; the summary (tools/perf/Measure-Stage1.ps1) has frame statistics, costs, perf and GPU memory for every point and condition",
+      "review": {
+        "screenshots": {
+          "s1_algonquin_star_junction_day": "Algonquin, Star Junction, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_algonquin_star_junction_night": "Algonquin, Star Junction, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_algonquin_chinatown_day": "Algonquin, Chinatown, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_algonquin_chinatown_night": "Algonquin, Chinatown, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_bohan_boulevard_day": "Bohan, Boulevard, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_bohan_boulevard_night": "Bohan, Boulevard, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_alderney_city_day": "Alderney City, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_alderney_city_night": "Alderney City, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T040-worst-case",
+      "task": "T-040",
+      "title": "Stage 1 worst-case scene: 60 s sample (mod-on)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-worst-case"
+      },
+      "proves": "The scripted worst case (Hove Beach night rain, ambient traffic and pedestrians, 12 armed subjects fighting, 25 extra pedestrians, the player shooting the nearest subject so the gore and effect modules work, HUD on) runs for 60 s and is measured: frame statistics over the whole window, script cost, memory and VRAM every 10 s.",
+      "pass": "autopilot PASS; screenshots judged; the summary has the worst_case section with p50/p95/p99, engine.frame cost, private bytes and dedicated GPU memory",
+      "review": {
+        "screenshots": {
+          "worst_case_mid": "Hove Beach at night in rain, armed pedestrians fighting, Niko with a rifle, muzzle flashes and blood visible, HUD on",
+          "worst_case_end": "the same scene 30 s later: bodies and blood remain, the frame is not black or frozen"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T040-capture-broker-off",
+      "task": "T-040",
+      "title": "Stage 1 capture: the 8 Broker/Dukes points, day and night (mod-off)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-capture-broker-off"
+      },
+      "proves": "The same measurement with the Liberty gameplay modules stopped (gunplay, combat, arsenal, holsters, atmosphere): the reference every Stage 1 budget is compared to. Restarts the modules at the end.",
+      "pass": "autopilot PASS (every goto, expect and gpumem step); screenshots judged; the summary (tools/perf/Measure-Stage1.ps1) has frame statistics, costs, perf and GPU memory for every point and condition; the final 'modules' reply shows no module off",
+      "review": {
+        "screenshots": {
+          "s1_hove_beach_a_day": "Hove Beach, Beachgate side street, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_hove_beach_a_night": "Hove Beach, Beachgate side street, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_hove_beach_b_day": "Hove Beach, inland avenue, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_hove_beach_b_night": "Hove Beach, inland avenue, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_firefly_island_day": "Firefly Island, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_firefly_island_night": "Firefly Island, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_rotterdam_hill_day": "Rotterdam Hill, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_rotterdam_hill_night": "Rotterdam Hill, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_boabo_day": "BOABO, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_boabo_night": "BOABO, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_east_hook_day": "East Hook, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_east_hook_night": "East Hook, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_dukes_meadow_hills_day": "Dukes, Meadow Hills road, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_dukes_meadow_hills_night": "Dukes, Meadow Hills road, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_east_island_city_day": "East Island City, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_east_island_city_night": "East Island City, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T040-capture-city-off",
+      "task": "T-040",
+      "title": "Stage 1 capture: the 4 points elsewhere in the city, day and night (mod-off)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-capture-city-off"
+      },
+      "proves": "Mod-off measurement of the citywide points.",
+      "pass": "autopilot PASS (every goto, expect and gpumem step); screenshots judged; the summary (tools/perf/Measure-Stage1.ps1) has frame statistics, costs, perf and GPU memory for every point and condition; the final 'modules' reply shows no module off",
+      "review": {
+        "screenshots": {
+          "s1_algonquin_star_junction_day": "Algonquin, Star Junction, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_algonquin_star_junction_night": "Algonquin, Star Junction, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_algonquin_chinatown_day": "Algonquin, Chinatown, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_algonquin_chinatown_night": "Algonquin, Chinatown, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_bohan_boulevard_day": "Bohan, Boulevard, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_bohan_boulevard_night": "Bohan, Boulevard, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night",
+          "s1_alderney_city_day": "Alderney City, 13:00 overcast: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); overcast daylight",
+          "s1_alderney_city_night": "Alderney City, 23:00 rain: Niko stands on a road at ground level in front of streamed-in city (not inside geometry, under water or on a roof); dark, wet night"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T040-worst-case-off",
+      "task": "T-040",
+      "title": "Stage 1 worst-case scene: 60 s sample (mod-off)",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-worst-case-off"
+      },
+      "proves": "The worst case with the Liberty gameplay modules stopped: the reference for the frame-time budget (p95 +10%, p99 +15%) and the VRAM overhead.",
+      "pass": "autopilot PASS; screenshots judged; the final 'modules' reply shows no module off",
+      "review": {
+        "screenshots": {
+          "worst_case_mid": "Hove Beach at night in rain, armed pedestrians fighting, Niko with a rifle, muzzle flashes and blood visible, HUD on",
+          "worst_case_end": "the same scene 30 s later: bodies and blood remain, the frame is not black or frozen"
+        }
+      },
+      "reference": "docs/tasks/T-040-stage1-foundation.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-040"
+    },
+    {
+      "id": "T041-stage1-arsenal",
+      "task": "T-041",
+      "title": "Stage 1 arsenal: catalog, profiles, gate and availability in game",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-arsenal"
+      },
+      "proves": "Every Stage 1 catalog weapon is given, held and fired at the test range and the Liberty gunplay profile drives it (weapon_changed profile=, gunplay_state); the catalog, gunplay.json, the gate and the loaded WeaponInfo.xml agree (catalog check); restricted weapons (snipers, MG36, P90-look), a test weapon and a vanilla weapon outside the catalog keep their own behaviour; the availability rules offer only common weapons for $600 at the start and never a restricted weapon.",
+      "pass": "autopilot PASS (every expect); the six screenshots judged: the weapon in hand is the catalog weapon",
+      "review": {
+        "screenshots": {
+          "stage1_arsenal_service-pistol": "Glock 17 in Niko's hand at the test range (the installed weapon-pack model, not the vanilla one)",
+          "stage1_arsenal_combat-pistol": "the .44 AutoMag in hand",
+          "stage1_arsenal_street-sweeper": "the Street Sweeper in hand",
+          "stage1_arsenal_remington-1100": "the Remington 1100 in hand",
+          "stage1_arsenal_imi-uzi": "the IMI Uzi in hand",
+          "stage1_arsenal_ak-47": "the AK-47 in hand"
+        }
+      },
+      "reference": "docs/tasks/T-041-stage1-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-041"
+    },
+    {
+      "id": "T042-gunplay-range",
+      "task": "T-042",
+      "title": "Stage 1 gunplay: class targets through the model, and delivered spread at the range",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-gunplay-range"
+      },
+      "proves": "Every Stage 1 profile meets its class targets in the live model (`catalog sim`: first-shot cone, burst recovery, spread growth and camera climb for automatic weapons), and for each weapon the player's bullets at a point 25 m ahead are recorded (single shots, bursts, continuous fire) with the cone the model wrote for each, for tools/perf/Measure-GunplayRange.ps1.",
+      "pass": "autopilot PASS (catalog sim ok, range_summary for every weapon); the range table (Measure-GunplayRange.ps1) read: first-shot deviation inside the written cone, spread larger in sustained fire than on the first shot",
+      "reference": "docs/tasks/T-042-stage1-gunplay.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-042"
+    },
+    {
+      "id": "T042-shoulder-swap",
+      "task": "T-042",
+      "title": "Shoulder swap mechanism and shoulder clearance at wall spots",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-shoulder-swap"
+      },
+      "proves": "Forced left/right/toggle slides the game's aim-camera table to -1/+1 and the live table matches (swap probe), the right shoulder is restored at the end, and the engine ray from both sides of the player is logged at the test wall (0.4 to 3 m away, facing both ways) and at four city capture points.",
+      "pass": "autopilot PASS (every swap probe live_ok, settled); the `ray left` and `ray right` lines read: no side of a Stage 1 spot is closer than the camera offset (0.475 m)",
+      "review": {
+        "screenshots": {
+          "swap_wall_left_0.4": "Niko beside the test wall at East Park, wall about 0.4 m to his left, road and sky behind: the frame is not black or inside the wall"
+        }
+      },
+      "reference": "docs/tasks/T-042-stage1-gunplay.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-042"
+    },
+    {
+      "id": "T042-feel-per-class",
+      "task": "T-042",
+      "session": "gunplay",
+      "minutes": 15,
+      "title": "Feel of each Stage 1 weapon class and the shoulder swap in aim",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "In game open DevTools > Weapons and give yourself the Glock 17, IMI Uzi, Remington 1100 and AK-47 (the entries marked Stage 1), then go to the test range (DevTools > TELEPORT).",
+          "Pistol: aim (LT/right mouse) and fire single shots, then a fast three-round burst, then pause. Shots should be precise, the crosshair should open on each shot and close within about a second.",
+          "Uzi: hold the trigger for a full magazine. The crosshair should keep growing, the camera should climb steadily but not leave the target within one magazine when you pull down.",
+          "AK-47: hold the trigger for a full 30-round magazine at 25 m. The gun must not be a laser: the shots spread out and the camera climbs about ten degrees (roughly a third of the screen).",
+          "Remington 1100: single shots; each shot should kick hard and the pellets spread.",
+          "Shoulder swap: aim, press LB (or Z) to swap shoulders on foot, in cover, and standing with a wall close to either shoulder; look for the camera passing through the wall.",
+          "Tell me for each class: too weak / right / too strong, and every wall spot where the camera clipped."
+        ]
+      },
+      "proves": "Owner sign-off of the per-class starting numbers (config/gunplay.json weapons[], classTargets) and of shoulder swap near walls, which the autopilot cannot aim at.",
+      "pass": "each class reads as right or you name the value to change; no camera clip into a wall at either shoulder",
+      "reference": "docs/tasks/T-042-stage1-gunplay.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-042"
+    },
+    {
+      "id": "T043-stage1-reticles",
+      "task": "T-043",
+      "title": "Stage 1 reticles: class styles, truthful opening, draw cost",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-reticles"
+      },
+      "proves": "Each of the four Stage 1 classes (pistol, SMG, rifle, shotgun) is held and shows its configured reticle style while the model treats the player as aiming in four states (standing, crouched, moving, sustained fire and recovery); the drawn opening equals the cone within 5% whenever the cone is steady and never under-reports it (`reticle check`); the average draw cost of the reticle is under 0.1 ms.",
+      "pass": "autopilot PASS (reticle_resolved per class, reticle check ok per class, draw.crosshair average below 0.1 ms in costs); the screenshots judged: each class reads as its own reticle and the firing frames are visibly wider than the standing ones",
+      "review": {
+        "screenshots": {
+          "reticle_pistol_standing": "Glock in hand, aiming stance: a small precise four-arm cross with a tight gap at the centre of the screen",
+          "reticle_pistol_firing": "the same cross while firing: the gap is wider than standing",
+          "reticle_smg_standing": "Uzi: a four-arm cross with longer arms than the pistol's",
+          "reticle_smg_firing": "Uzi while firing continuously: the gap is much wider",
+          "reticle_rifle_standing": "AK-47: four corner brackets (crop marks) around a small square",
+          "reticle_rifle_moving": "AK-47 with a forced 4 m/s speed: the brackets are wider than standing",
+          "reticle_rifle_firing": "AK-47 during sustained fire: the brackets are far apart",
+          "reticle_shotgun_standing": "Remington: a ring of six dots, clearly wider than any cross",
+          "reticle_shotgun_firing": "Remington right after shots: the ring is not smaller than standing"
+        }
+      },
+      "reference": "docs/tasks/T-043-stage1-reticles.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-043"
+    },
+    {
+      "id": "T043-reticle-look",
+      "task": "T-043",
+      "session": "gunplay",
+      "minutes": 10,
+      "title": "Look and feel of the weapon-class reticles (keyboard/mouse and controller)",
+      "kind": "manual",
+      "run": {
+        "steps": [
+          "DevTools > Weapons: give yourself the Glock 17, IMI Uzi, AK-47 and Remington 1100 (Stage 1 entries) and go to the test range.",
+          "Aim with each weapon (LT / right mouse). Glock: a small cross; Uzi: a longer-armed cross; AK-47: four corner brackets; Remington: a ring of dots.",
+          "Fire a few shots and a long burst with each: the reticle opens instantly on every shot and closes smoothly; while you run or crouch it changes size with the movement.",
+          "Aim with a sniper rifle (give one from DevTools > Weapons if you want): the game's own scope is unchanged.",
+          "Check readability on a bright wall and at night (time of day in DevTools), on a controller and on keyboard/mouse.",
+          "Tell me for each class: too big, too small, too busy, or right."
+        ]
+      },
+      "proves": "Owner sign-off of the reticle styles and sizes (config/gunplay.json reticles.classes[]), which are looks and feel.",
+      "pass": "each class reads as right or you name the value to change",
+      "reference": "docs/tasks/T-043-stage1-reticles.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-043"
+    },
+    {
+      "id": "T044-loadout-vehicles",
+      "task": "T-044",
+      "title": "Loadout props hide in a vehicle and return, 100 enter/exit cycles, no orphans",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-vehicles"
+      },
+      "proves": "With two long guns and a sidearm carried, both slung guns and both straps are hidden every time Niko is in the car, all are back every time he steps out, and the game's object pool does not grow across 100 cycles (no orphaned or floating props). The car is parked on the Hove Beach road (s1_hove_beach_a).",
+      "pass": "autopilot PASS: the scenario line \"autopilot_vehicle_cycles_done cycles=100 hidden_failures=0 restored_failures=0 enter_timeouts=0 leave_timeouts=0 object_growth at most 3 (the pool may also shrink)\" is found; screenshots judged",
+      "review": {
+        "screenshots": {
+          "on_foot_back": "Niko seen from behind and the side: two long guns and two leather straps slung on the back, the pistol holstered, nothing floating or intersecting the head or arms",
+          "after_cycles_back": "the same view after 100 cycles: exactly the same two guns and two straps, none doubled, none missing"
+        }
+      },
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T044-loadout-weapons",
+      "task": "T-044",
+      "title": "Loadout limits, ammunition cap and draw/holster transitions",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-weapons"
+      },
+      "proves": "A third long gun pushes the least recently used one into the car's storage (1 sidearm + 2 long guns), ammunition above the loadout cap is taken back to the cap, and selecting each carried weapon hides its prop and shows the others within a few frames.",
+      "pass": "autopilot PASS: \"arsenal_overflow id=10\", \"arsenal_ammo_capped id=14 ... to=240\", \"autopilot_weapon_cycles_done switches=12 failures=0\" found; screenshots judged",
+      "review": {
+        "screenshots": {
+          "loadout_back": "Niko from behind with the pistol in hand: the rifle and the submachine gun slung on the back, separate, not intersecting each other",
+          "loadout_front": "the same from the front: the straps cross the chest and the guns are not poking through the body"
+        }
+      },
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T044-loadout-deaths-a",
+      "task": "T-044",
+      "title": "Inventory integrity: 25 death cycles, part 1 of 2",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-deaths-a"
+      },
+      "proves": "Across 25 wasted cycles with two bought (owned) weapons each, the stored weapon count grows by exactly the owned weapons carried at death (0 lost; with no safehouse known they go to an unassigned stash), and the arsenal state saved to disk reads back identical.",
+      "pass": "autopilot PASS: \"autopilot_death_cycles_done cycles=25 lost_owned=0 failed_cycles=0 timeouts=0\" with stored_growth equal to owned_expected (at least 40 of the 50 bought weapons counted as owned), and \"arsenal_roundtrip identical=True\" found",
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T044-loadout-deaths-b",
+      "task": "T-044",
+      "title": "Inventory integrity: 25 death cycles, part 2 of 2",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-deaths-b"
+      },
+      "proves": "The second 25 wasted cycles (50 in total with part 1): 0 lost owned weapons and an identical state after saving and loading.",
+      "pass": "autopilot PASS: \"autopilot_death_cycles_done cycles=25 lost_owned=0 failed_cycles=0 timeouts=0\" with stored_growth equal to owned_expected (at least 40 of the 50 bought weapons counted as owned), and \"arsenal_roundtrip identical=True\" found",
+      "needs": [
+        "T044-loadout-deaths-a"
+      ],
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T044-loadout-outfits",
+      "task": "T-044",
+      "title": "Clipping review: slung guns on every upper-body outfit",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-outfits"
+      },
+      "proves": "All 17 upper-body outfits Niko can wear are classified as config/holsters.json says (holster module reports the class), the holster props are re-attached with the class offsets, and front, side and back screenshots exist for each.",
+      "pass": "autopilot PASS (every outfit set, every status line with the expected class); the screenshots judged by the owner for clipping",
+      "review": {
+        "screenshots": {
+          "outfit_00_front": "Niko in upper-body outfit 0 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_00_side": "Niko in upper-body outfit 0 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_00_back": "Niko in upper-body outfit 0 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_01_front": "Niko in upper-body outfit 1 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_01_side": "Niko in upper-body outfit 1 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_01_back": "Niko in upper-body outfit 1 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_02_front": "Niko in upper-body outfit 2 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_02_side": "Niko in upper-body outfit 2 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_02_back": "Niko in upper-body outfit 2 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_03_front": "Niko in upper-body outfit 3 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_03_side": "Niko in upper-body outfit 3 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_03_back": "Niko in upper-body outfit 3 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_04_front": "Niko in upper-body outfit 4 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_04_side": "Niko in upper-body outfit 4 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_04_back": "Niko in upper-body outfit 4 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_05_front": "Niko in upper-body outfit 5 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_05_side": "Niko in upper-body outfit 5 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_05_back": "Niko in upper-body outfit 5 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_06_front": "Niko in upper-body outfit 6 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_06_side": "Niko in upper-body outfit 6 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_06_back": "Niko in upper-body outfit 6 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_07_front": "Niko in upper-body outfit 7 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_07_side": "Niko in upper-body outfit 7 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_07_back": "Niko in upper-body outfit 7 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_08_front": "Niko in upper-body outfit 8 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_08_side": "Niko in upper-body outfit 8 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_08_back": "Niko in upper-body outfit 8 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_09_front": "Niko in upper-body outfit 9 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_09_side": "Niko in upper-body outfit 9 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_09_back": "Niko in upper-body outfit 9 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_10_front": "Niko in upper-body outfit 10 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_10_side": "Niko in upper-body outfit 10 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_10_back": "Niko in upper-body outfit 10 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_11_front": "Niko in upper-body outfit 11 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_11_side": "Niko in upper-body outfit 11 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_11_back": "Niko in upper-body outfit 11 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_12_front": "Niko in upper-body outfit 12 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_12_side": "Niko in upper-body outfit 12 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_12_back": "Niko in upper-body outfit 12 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_13_front": "Niko in upper-body outfit 13 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_13_side": "Niko in upper-body outfit 13 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_13_back": "Niko in upper-body outfit 13 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_14_front": "Niko in upper-body outfit 14 (bulky class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_14_side": "Niko in upper-body outfit 14 (bulky class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_14_back": "Niko in upper-body outfit 14 (bulky class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_15_front": "Niko in upper-body outfit 15 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_15_side": "Niko in upper-body outfit 15 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_15_back": "Niko in upper-body outfit 15 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_16_front": "Niko in upper-body outfit 16 (default class), front view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_16_side": "Niko in upper-body outfit 16 (default class), side view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head",
+          "outfit_16_back": "Niko in upper-body outfit 16 (default class), back view: two long guns slung and two straps, pistol holstered; nothing pokes through the coat or shirt, the guns do not intersect each other, the arms or the head"
+        }
+      },
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T044-loadout-review",
+      "task": "T-044",
+      "title": "Clipping review: each long-gun class pair on a slim and a bulky outfit",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-loadout-review"
+      },
+      "proves": "Rifle + shotgun, SMG + rifle and SMG + shotgun are each slung on both body slots without sharing a position, on a slim and on a bulky outfit.",
+      "pass": "autopilot PASS; the screenshots judged by the owner for clipping",
+      "review": {
+        "screenshots": {
+          "rifle_shotgun_default_front": "Niko (default outfit), rifle + shotgun slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "rifle_shotgun_default_side": "Niko (default outfit), rifle + shotgun slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "rifle_shotgun_default_back": "Niko (default outfit), rifle + shotgun slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "rifle_shotgun_bulky_front": "Niko (bulky outfit), rifle + shotgun slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "rifle_shotgun_bulky_side": "Niko (bulky outfit), rifle + shotgun slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "rifle_shotgun_bulky_back": "Niko (bulky outfit), rifle + shotgun slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_default_front": "Niko (default outfit), smg + rifle slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_default_side": "Niko (default outfit), smg + rifle slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_default_back": "Niko (default outfit), smg + rifle slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_bulky_front": "Niko (bulky outfit), smg + rifle slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_bulky_side": "Niko (bulky outfit), smg + rifle slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_rifle_bulky_back": "Niko (bulky outfit), smg + rifle slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_default_front": "Niko (default outfit), smg + shotgun slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_default_side": "Niko (default outfit), smg + shotgun slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_default_back": "Niko (default outfit), smg + shotgun slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_bulky_front": "Niko (bulky outfit), smg + shotgun slung, front view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_bulky_side": "Niko (bulky outfit), smg + shotgun slung, side view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body",
+          "smg_shotgun_bulky_back": "Niko (bulky outfit), smg + shotgun slung, back view: both guns visible, separate from each other, sitting on the back without poking through the body, straps following the body"
+        }
+      },
+      "reference": "docs/tasks/T-044-stage1-physical-weapons.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-044"
+    },
+    {
+      "id": "T045-weapon-wheel",
+      "task": "T-045",
+      "title": "Weapon wheel: opens, shows the physical loadout, equips every slot",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-weapon-wheel"
+      },
+      "proves": "The Liberty weapon wheel shows sidearm, two long guns, melee and thrown (empty slots read empty), opens within 1 frame of the request, every filled slot equips the right weapon (12 of 12), hold-to-open with the keyboard equips on release, tap-open with arrow keys and Enter equips, and the UI draw cost while open is logged. Acceptance performance is enforced by ui-budget, rather than inferred from a PASS word or low draw submission cost.",
+      "pass": "autopilot PASS: every initial, cycle, keyboard hold/tap and budget-window opening has a paired first draw within one frame (wheel-latency rejects missing, negative and >1 measurements); 12 selections with no failures; keyboard hold and tap flows read back the requested equipped weapon; ui-budget check wheel passes (draw.ui <=0.5 ms, average/p95 <=+10%, p99 <=+15% vs paired closed menu, >=30 samples, no >=1 s stall); screenshots reviewed.",
+      "unproven": "Controller (pad) input cannot be injected: pad hold, stick selection and the Back button binding are for the owner to try. Whether the game itself reacts to the Back button or the Tab key on foot is not checked.",
+      "review": {
+        "screenshots": {
+          "wheel_open_sidearm": "The wheel in the middle of the screen, dark translucent ring, five slots (pistol, two long guns, knife, empty thrown); the pistol slot highlighted with an amber accent, centre shows SIDEARM, the pistol name and rounds as magazine / reserve; text readable",
+          "wheel_long_gun_1": "Same wheel with the first long gun highlighted; centre shows its name, rounds and finish",
+          "wheel_long_gun_2": "Second long gun highlighted",
+          "wheel_melee": "Melee slot highlighted (knife), no ammunition line",
+          "wheel_empty_slot": "The thrown slot highlighted and reading Empty",
+          "wheel_keyboard_highlight": "The wheel opened by tapping Tab, highlight moved by the arrow keys, confirmation hint readable below the wheel"
+        }
+      },
+      "reference": "docs/tasks/T-045-stage1-weapon-wheel.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-045"
+    },
+    {
+      "id": "T046-trunk-ui",
+      "task": "T-046",
+      "title": "Trunk interface: carried and trunk groups, store, take, swap, capacity",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-trunk-ui"
+      },
+      "proves": "The trunk interface shows the carried loadout (wheel) and the trunk list with used/available capacity; Space stores the highlighted carried weapon, Enter takes the highlighted stored one and swaps out the least recently used long gun when both slots are full; a 4-slot sports-car trunk refuses the fifth weapon; the state saved to disk reads back identical.",
+      "pass": "autopilot PASS: store/take/swap preserves logged ammunition and ownership, full trunk refuses store, two persisted state round trips identical; swap preview and keyboard capacity-refusal feedback captured; both closes release storage control and finish choreography; ui-budget check trunk passes; screenshots reviewed.",
+      "unproven": "Controller (pad) input and the safehouse stash through this interface are not exercised by the scenario; a game save and load is not automated (the saved state file round trip is). Latest Codex fixes have no in-game evidence; HUD coexistence is only inspected in source geometry.",
+      "review": {
+        "screenshots": {
+          "trunk_ui_open": "Trunk open behind Niko: the radial with pistol, shotgun and AK in their slots at the centre, the TRUNK panel at the right reading 0 / 8 and Empty; text readable",
+          "trunk_ui_after_store": "The AK gone from its slot, the TRUNK panel listing it with 1 / 8, the slung AK no longer on Niko",
+          "trunk_ui_swap_preview": "Before Enter, the centre previews taking the AK and swapping out the shotgun while the AK remains in the TRUNK list",
+          "trunk_ui_after_swap": "The AK back on Niko, the shotgun now in the TRUNK list (1 / 8); inspect the completed transfer and visible slings",
+          "trunk_ui_full": "A banshee trunk panel reading 4 / 4 in amber with the Full hint",
+          "trunk_ui_full_refused": "The shotgun still carried, the panel still 4 / 4, the message under the wheel says Trunk full (4)"
+        }
+      },
+      "reference": "docs/tasks/T-046-stage1-trunk-ui.md#human-test-steps",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-046"
+    },
+    {
+      "id": "T045-config-watch-reload",
+      "task": "T-045",
+      "title": "Wheel watcher rejects invalid config and recovers to a new valid state",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-config-watch-reload"
+      },
+      "proves": "A known invalid wheel navigation binding is rejected while the previous enabled config remains active; subsequent valid disabled/enabled changes arrive through the watcher. Exact original config bytes and original module running/config-enabled state are restored in the runner's finally.",
+      "pass": "All scenario steps pass; rejection is observed after a fresh mark, enabled state retains True, then changes False/True without module restart, and exactly one callback follows the final change. Review intentional weapon_wheel_config_rejected and shared arsenal rejection ERROR lines separately; no unexpected errors or cleanup failures. wheel-config-restored.txt confirms exact bytes and original running/enabled state.",
+      "unproven": "Not yet run in game. Expected rejection errors remain visible and may yield NEEDS-REVIEW; they are not filtered from logErrors. Physical controller and real save/load remain owner-only.",
+      "reference": "docs/tasks/T-045-stage1-weapon-wheel.md",
+      "status": "QUEUED",
+      "addedIn": "T-045 scoped watcher fixtures"
+    },
+    {
+      "id": "T045-config-watch-restart",
+      "task": "T-045",
+      "title": "Wheel watcher stops with its owner and resumes on fresh module instances",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-config-watch-restart"
+      },
+      "proves": "A stopped wheel gets no config callback, restart reads the config changed while stopped, and repeated restarts do not duplicate live callbacks. Original config bytes and original module running/config-enabled state are restored in finally.",
+      "pass": "autopilot PASS: stopped owner is quiet, fresh/repeated restart reports disabled, subsequent enabled change has exactly one accepted callback, and wheel-config-restored.txt confirms exact bytes and original running/enabled state.",
+      "unproven": "Not yet run in game; a bounded quiet interval is not a whole-engine unload or long soak proof.",
+      "reference": "docs/tasks/T-045-stage1-weapon-wheel.md",
+      "status": "QUEUED",
+      "addedIn": "T-045 scoped watcher fixtures"
+    },
+    {
+      "id": "T045-ui-path",
+      "task": "T-045",
+      "title": "Bounded shared UI control and primitive bisect",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-ui-path"
+      },
+      "pass": "All steps execute; frame and draw-cost windows recorded for closed, locked no-draw, primitives, text, full, and unlocked full. Diagnostic evidence only, never gameplay acceptance.",
+      "proves": "Separates control capture and deferred UI drawing cost in the same scene with normal density.",
+      "status": "QUEUED",
+      "reference": "docs/tasks/T-045-stage1-weapon-wheel.md"
+    },
+    {
+      "id": "T045-ui-text",
+      "task": "T-045",
+      "title": "Shared UI text stall: sprite text against SHDN DrawText, and the DevTools menu",
+      "kind": "scenario",
+      "run": {
+        "scenario": "stage1-ui-text"
+      },
+      "proves": "With the sample list menu (8 strings) open: frame statistics for sprite text (the shared canvas default), SHDN DrawText limited to 1 and 4 strings per frame and unlimited, a radial menu with sprite text, and the DevTools menu (its own SHDN text). Shows what the stall scales with and that sprite text keeps the frame time near the closed window.",
+      "pass": "autopilot PASS; in the report the second framestats of text_list_sprite and text_radial_sprite are within +10% average and +15% p99 of text_closed, and draw.ui average at most 0.5 ms; the other windows are the root-cause evidence",
+      "reference": "docs/tasks/T-045-stage1-weapon-wheel.md",
+      "status": "QUEUED",
+      "addedIn": "stage1/T-045"
+    },
+    {
+      "id": "T050-material-probe",
+      "task": "T-050",
+      "title": "Raw physics hit evidence against visible ground, ped, vehicle and solid prop",
+      "kind": "scenario",
+      "run": {
+        "scenario": "research-material"
+      },
+      "proves": "Raw results and stable resolver operation only; not material index semantics",
+      "status": "QUEUED",
+      "addedIn": "research/stage1",
+      "reference": "docs/tasks/T-050-r2-hit-material.md",
+      "review": {
+        "screenshots": {
+          "material_ground": "Visible ground context for the downward ray",
+          "material_vehicle": "Admiral present for door-height ray",
+          "material_ped": "Spawned ped present ahead",
+          "material_prop": "Solid corpbarrier1 prop present",
+          "material_world_hove": "Hove street: tarmac expected",
+          "material_world_dukes": "Dukes road",
+          "material_world_firefly": "Firefly Island: sand expected",
+          "material_world_range": "Gun range floor"
+        }
+      },
+      "pass": "Raw 24-word results and screenshots; no surface name asserted until decoded"
+    },
+    {
+      "id": "T050-material-coverage",
+      "task": "T-050",
+      "title": "Material ids for car glass, wood crate and planks, a low prop hit and water",
+      "kind": "scenario",
+      "run": {
+        "scenario": "research-material-coverage"
+      },
+      "proves": "The ray-hit material id on side glass, wood props and water bodies, read against config/impact-surfaces.json; only what the log shows, no surface name is asserted from the model name",
+      "status": "QUEUED",
+      "addedIn": "research/stage1",
+      "reference": "docs/tasks/T-050-r2-hit-material.md",
+      "review": {
+        "screenshots": {
+          "material_car_side": "Admiral broadside: side glass at the ray heights",
+          "material_crate": "cj_crate_1 wooden crate present ahead",
+          "material_planks": "planksboardup2 present ahead",
+          "material_water_pond": "Over the Algonquin pond (water.dat quad at z 9)",
+          "material_water_pool": "Over the small water body at z 14"
+        }
+      },
+      "pass": "autopilot PASS; every ray line has a material_id or UNKNOWN; the table in HitMaterial.md is filled from it"
+    }
+  ]
+}

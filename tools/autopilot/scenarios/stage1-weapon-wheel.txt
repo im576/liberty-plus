@@ -1,0 +1,108 @@
+# T-045 weapon wheel. Carried: knife (melee), a shotgun and an AK (long guns), a pistol (sidearm); the thrown slot is empty.
+# 1. The wheel opens from its command, shows the loadout, each slot can be highlighted (screenshots) and the empty slot says so.
+# 2. cycle-wheel: every filled slot is highlighted and confirmed three times; the weapon in hand must be that slot's (100%).
+# 3. Real keyboard input: holding Tab opens it and releasing equips the highlighted slot; a tap keeps it open, arrows move
+#    the highlight and Enter equips. Open-to-first-draw is logged (weapon_wheel_first_draw frames/ms) and the UI draw cost is
+#    sampled while it stays open.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1500
+give 3 1
+wait 1200
+give 10 100
+wait 1200
+give 14 100
+wait 1200
+give 7 100
+wait 1500
+wheel status
+expect "weapon_wheel_status open=False selected=-1 sticky=False held=7 slots=7,\d+,\d+,3,0 enabled=True" 10
+hud off
+mark
+wheel open
+expectmarked "weapon_wheel_open frame=\d+ held=7 slots=7,\d+,\d+,3,0" 10
+expectmarked "weapon_wheel_first_draw frames=[01] ms=\d+" 10
+wheel-latency
+wait 1500
+shot wheel_open_sidearm
+wheel select 1
+wait 1000
+shot wheel_long_gun_1
+wheel select 2
+wait 1000
+shot wheel_long_gun_2
+wheel select 3
+wait 1000
+shot wheel_melee
+wheel select 4
+wait 1000
+shot wheel_empty_slot
+mark
+wheel confirm
+expectmarked "weapon_wheel_equip slot=4 empty" 10
+wait 1000
+wheel status
+expect "weapon_wheel_status open=False" 10
+hud on
+mark
+cycle-wheel {quick:1|3}
+expect "autopilot_wheel_cycles_done rounds={quick:1|3} selections={quick:4|12} failures=0 open_failures=0" 120
+wheel-latency
+select 7
+wait 1500
+# Real keyboard: hold to open, release equips the highlighted slot (the pistol is in hand, so nothing changes).
+mark
+key Tab 1200
+expectmarked "weapon_wheel_open frame=\d+ held=7" 10
+expectmarked "weapon_wheel_equip slot=0 id=7 already_in_hand" 10
+expectmarked "weapon_wheel_equipped requested=7 actual=7 match=True" 10
+expectmarked "weapon_wheel_closed reason=confirmed" 10
+wheel-latency
+wait 1500
+# Real keyboard: tap to keep it open, move the highlight with the arrow keys, Enter equips another slot.
+mark
+key Tab 120
+expectmarked "weapon_wheel_open frame=\d+ held=7" 10
+wait 1200
+key Right 500
+wait 500
+key Right 500
+wait 500
+shot wheel_keyboard_highlight
+wheel-latency
+key Enter 500
+expectmarked "weapon_wheel_equip slot=[1-3] id=\d+ from=7" 10
+expectmarked "weapon_wheel_equipped requested=(\d+) actual=\1 match=True" 10
+wait 1500
+wheel status
+expect "weapon_wheel_status open=False selected=-1 sticky=False held=(?!7 )\d+" 10
+# Cost while open: frame statistics and per-section costs with the wheel closed, then with it open for 6 s.
+select 7
+wait 1500
+label wheel_closed
+ui-budget begin
+wait {quick:5000|10000}
+ui-budget baseline
+mark
+wheel open
+wait 1500
+wheel-latency
+label wheel_open
+ui-budget begin
+wait {quick:6000|10000}
+ui-budget check wheel 0.5 1.10 1.15 30
+expect "ui_budget label=wheel pass=True" 10
+perf
+wheel close
+wait 1000
+clear

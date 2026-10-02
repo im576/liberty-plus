@@ -1,0 +1,137 @@
+# T-045 root-cause and fix measurement for the shared canvas text stall. One scene, the SDK sample list menu open (8 strings), then:
+# sprite text (GDI+ cached textures), SHDN DrawText for the first 1 string, the first 4 strings, every string, and the DevTools menu
+# (its own SHDN text). Each window: 2 s settle, `framestats` (discard), 4 s, `framestats` (read), `costs`.
+events off
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto s1_hove_beach_a
+expect "teleport_done id=s1_hove_beach_a" 90
+wait 10000
+time 13 0
+wait 1500
+weather 1
+strip
+wait 1000
+wait 2000
+label text_closed
+framestats
+wait 4000
+framestats
+costs
+menu-test
+ui-text-renderer sprite
+wait 2000
+label text_list_sprite
+framestats
+wait 4000
+framestats
+costs
+ui-text-renderer shdn 1
+wait 2000
+label text_list_shdn_1_string
+framestats
+wait 4000
+framestats
+costs
+ui-text-renderer shdn 4
+wait 2000
+label text_list_shdn_4_strings
+framestats
+wait 4000
+framestats
+costs
+ui-text-renderer shdn
+wait 2000
+label text_list_shdn_all_strings
+framestats
+wait 4000
+framestats
+costs
+ui-text-renderer sprite
+menu-close
+wait 1500
+radial-test
+wait 2000
+label text_radial_sprite
+framestats
+wait 4000
+framestats
+costs
+menu-close
+wait 1500
+key F10 600
+wait 1000
+wait 2000
+label text_devtools_menu
+framestats
+wait 4000
+framestats
+costs
+key F10 600
+wait 1500
+ui-text-renderer sprite
+clear
+# Root cause probes (no menu open): the same SHDN DrawText call drawn in different arrangements.
+ui-text-probe same 1
+wait 2000
+label probe_same_1
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe same 8
+wait 2000
+label probe_same_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe different 8
+wait 2000
+label probe_different_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe sizes 8
+wait 2000
+label probe_sizes_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe noeffect 8
+wait 2000
+label probe_noeffect_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe devfont 8
+wait 2000
+label probe_devfont_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe devfontbold 8
+wait 2000
+label probe_devfontbold_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe canvasfont4 8
+wait 2000
+label probe_canvasfont4_8
+framestats
+wait 4000
+framestats
+costs
+ui-text-probe none
+wait 1000
+ui-text-stats
+expect "ui_text_sprites renderer=sprite count=\d+/600" 10
+clear

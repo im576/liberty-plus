@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "finishes": [
+    {
+      "id": "GOLD_TEST",
+      "label": "Gold (development marker)",
+      "diffuse": { "shadowRgb": [96, 62, 8], "midRgb": [214, 162, 40], "highlightRgb": [255, 236, 150], "contrast": 1.1, "lift": 0.32, "gamma": 0.65 },
+      "specular": { "shadowRgb": [120, 88, 30], "midRgb": [236, 196, 96], "highlightRgb": [255, 246, 205], "contrast": 1.0, "lift": 0.25, "gamma": 0.8 },
+      "icon": { "shadowRgb": [70, 48, 8], "midRgb": [214, 166, 48], "highlightRgb": [255, 240, 170], "contrast": 1.0, "lift": 0.0, "gamma": 1.0 }
+    }
+  ],
+  "variants": [
+    {
+      "variantModel": "lf_gold_pistol",
+      "baseModel": "w_glock",
+      "sourceImg": "pc/models/cdimages/weapons.img",
+      "finish": "GOLD_TEST",
+      "animGroup": "gun@handgun",
+      "drawDistance": 30,
+      "audioMaterial": "CM_WEAPONS_PISTOL",
+      "weaponInfoType": "LF_GOLD_PISTOL",
+      "textureRoles": {
+        "cj_glock": "diffuse",
+        "cj_glock_s": "specular",
+        "icon": "icon"
+      }
+    },
+    {
+      "variantModel": "lf_gold_carbine",
+      "baseModel": "w_m4",
+      "sourceImg": "pc/models/cdimages/weapons.img",
+      "finish": "GOLD_TEST",
+      "animGroup": "gun@ak47",
+      "drawDistance": 50,
+      "audioMaterial": "CM_WEAPONS_M4",
+      "weaponInfoType": "LF_GOLD_CARBINE",
+      "textureRoles": { "bm_m4a1": "diffuse", "bm_m4a1_s": "specular", "icon": "icon" }
+    },
+    {
+      "variantModel": "lf_gold_shotgun",
+      "baseModel": "w_shotgun",
+      "sourceImg": "pc/models/cdimages/weapons.img",
+      "finish": "GOLD_TEST",
+      "animGroup": "gun@shotgun",
+      "drawDistance": 50,
+      "audioMaterial": "CM_WEAPONS_SHOTGUN",
+      "weaponInfoType": "LF_GOLD_SHOTGUN",
+      "textureRoles": { "cj_shotgun_comp": "diffuse", "cj_shotgun_comp_s": "specular", "icon": "icon" }
+    }
+  ]
+}

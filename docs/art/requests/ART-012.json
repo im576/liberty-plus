@@ -1,0 +1,92 @@
+{
+  "id": "ART-012",
+  "title": "Liberty icon family exploration",
+  "status": "approved",
+  "priority": "P1",
+  "kind": "concept",
+  "prompt": "Icon family exploration sheet for a gritty 2008 crime game remaster: a 6 by 4 grid of simple monochrome icons on a dark charcoal background: side-view weapon silhouettes (compact pistol, revolver, submachine gun, pump shotgun, assault rifle, bat, knife, grenade), and utility icons (health cross, armour vest, ammo box, car trunk, safehouse, phone, cash, wanted star). Consistent line weight, sharp purposeful shapes, off-white on dark with one muted amber accent colour used sparingly. Utilitarian and industrial, no glossy or 3D effects, no text, not GTA V icons.",
+  "intendedUse": "Concept for the Slice C icon family (weapons, HUD, menus, later map categories).",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "aspectRatio": "3:2",
+  "transparency": "none",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-012/",
+  "outputName": "art_012.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:27+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "Icon family exploration sheet for a gritty 2008 crime game remaster: a 6 by 4 grid of simple monochrome icons on a dark charcoal background: side-view weapon silhouettes (compact pistol, revolver, submachine gun, pump shotgun, assault rifle, bat, knife, grenade), and utility icons (health cross, armour vest, ammo box, car trunk, safehouse, phone, cash, wanted star). Consistent line weight, sharp purposeful shapes, off-white on dark with one muted amber accent colour used sparingly. Utilitarian and industrial, no glossy or 3D effects, no text, not GTA V icons."
+    },
+    {
+      "at": "2026-09-30T05:09:28+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Visually inspected 1536x1024 3:2 concepts; 6x4 grid, requested weapon and utility family, off-white/charcoal with restrained amber, no text. Owner visual review pending.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "Icon family exploration sheet for a gritty 2008 crime game remaster: a 6 by 4 grid of simple monochrome icons on a dark charcoal background: side-view weapon silhouettes (compact pistol, revolver, submachine gun, pump shotgun, assault rifle, bat, knife, grenade), and utility icons (health cross, armour vest, ammo box, car trunk, safehouse, phone, cash, wanted star). Consistent line weight, sharp purposeful shapes, off-white on dark with one muted amber accent colour used sparingly. Utilitarian and industrial, no glossy or 3D effects, no text, not GTA V icons.",
+      "files": [
+        {
+          "path": "art/generated/ART-012/r1/art_012_1.png",
+          "sha256": "77d4b4e62f07ea1e09970cb157301204c8a34c80f769f9f28b6fbbc176b5ab76",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-012/r1/art_012_2.png",
+          "sha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:56+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "consistent family incl. trunk car and utility icons; reference for the Slice C icon family",
+      "files": [
+        {
+          "path": "art/approved/ART-012/r1_art_012_2.png",
+          "sha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2",
+          "width": 1536,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ],
+      "technicalIssues": null
+    }
+  ],
+  "approvedFile": "art/approved/ART-012/r1_art_012_2.png"
+}

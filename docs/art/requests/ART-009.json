@@ -1,0 +1,152 @@
+{
+  "id": "ART-009",
+  "title": "Wet asphalt road",
+  "status": "prepped",
+  "priority": "P1",
+  "kind": "texture",
+  "prompt": "Seamless tileable texture of old city road asphalt, viewed straight down (orthographic), covering the whole image edge to edge, about 3 by 3 metres of road. Dark grey asphalt with fine aggregate, patched repair squares, hairline and wider tar-sealed cracks, oil stains, slight darkening from dampness. Even, flat lighting with no shadows, no highlights, no reflections, no lane markings, no perspective. Must tile seamlessly in both directions.",
+  "intendedUse": "Slice B citywide/showcase road surface: base asphalt for Broker streets (Hove Beach first); lane markings are separate.",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024
+  },
+  "aspectRatio": "1:1",
+  "transparency": "none",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-009/",
+  "outputName": "art_009.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:27+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "Seamless tileable texture of old city road asphalt, viewed straight down (orthographic), covering the whole image edge to edge, about 3 by 3 metres of road. Dark grey asphalt with fine aggregate, patched repair squares, hairline and wider tar-sealed cracks, oil stains, slight darkening from dampness. Even, flat lighting with no shadows, no highlights, no reflections, no lane markings, no perspective. Must tile seamlessly in both directions."
+    },
+    {
+      "at": "2026-09-30T05:02:10+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. 2x2 repeat previews show crack and patch discontinuities at opposite edges; neither candidate tiles seamlessly in both directions. Opposite-edge low-frequency RGB mean absolute differences after 4px blur are about 6.7-8.8/255. No seam repair or prompt substitution performed. Failed candidates retained; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "Seamless tileable texture of old city road asphalt, viewed straight down (orthographic), covering the whole image edge to edge, about 3 by 3 metres of road. Dark grey asphalt with fine aggregate, patched repair squares, hairline and wider tar-sealed cracks, oil stains, slight darkening from dampness. Even, flat lighting with no shadows, no highlights, no reflections, no lane markings, no perspective. Must tile seamlessly in both directions.",
+      "files": [
+        {
+          "path": "art/generated/ART-009/r1/art_009_1.png",
+          "sha256": "34fa7ae6fb5407e6ff273b46b2ecbf99640b143231c42737d867754888f750a9",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-009/r1/art_009_2.png",
+          "sha256": "8fc5cc59d7f3baa20b719c91b5673668bf5cb1929df6141e78e8d7b58e15fd64",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:50:53+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two fresh generations (_3,_4), exact current prompt/constraints plus seamless tileable texture and no baked lighting instruction; all four registered. _1: existing repeat inspection found discontinuous cracks/patches at opposite edges. _2: existing repeat inspection found edge discontinuities. _3: coarse bright aggregate and large dark patches; crack/patch features touching boundaries do not visibly match opposite edges, seamless wrapping unverified. _4: coarse bright aggregate and uneven dark staining; edge crack continuity unverified and possible seam discontinuities. Neither texture repaired, resized or approved; model version/seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "Seamless tileable texture of old city road asphalt, viewed straight down (orthographic), covering the whole image edge to edge, about 3 by 3 metres of road. Dark grey asphalt with fine aggregate, patched repair squares, hairline and wider tar-sealed cracks, oil stains, slight darkening from dampness. Even, flat lighting with no shadows, no highlights, no reflections, no lane markings, no perspective. Must tile seamlessly in both directions.",
+      "files": [
+        {
+          "path": "art/generated/ART-009/r1/art_009_1.png",
+          "sha256": "34fa7ae6fb5407e6ff273b46b2ecbf99640b143231c42737d867754888f750a9",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-009/r1/art_009_2.png",
+          "sha256": "8fc5cc59d7f3baa20b719c91b5673668bf5cb1929df6141e78e8d7b58e15fd64",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-009/r1/art_009_3.png",
+          "sha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        },
+        {
+          "path": "art/generated/ART-009/r1/art_009_4.png",
+          "sha256": "918d7955e3366309514712ee72d7cf1104c635d13cd813eb46abab89fab10fc3",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:55+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "least visible repetition in a 2x2 preview; patch squares still repeat, fix the seam blend in the texture pipeline",
+      "files": [
+        {
+          "path": "art/approved/ART-009/r1_art_009_3.png",
+          "sha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:59+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 1024x1024 RGB; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-009/prepped/art_009.png",
+          "sha256": "ac4e12ebf266ff5368eb13ee6e251d3eb28fb42180efe189334a2ed97387c9e5",
+          "width": 1024,
+          "height": 1024,
+          "mode": "RGB",
+          "hasAlpha": false
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-009/r1_art_009_3.png"
+}

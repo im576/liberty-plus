@@ -1,0 +1,152 @@
+{
+  "id": "ART-005",
+  "title": "Muzzle flash side atlas",
+  "status": "prepped",
+  "priority": "P0",
+  "kind": "decal",
+  "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from the side, each in its own quarter on a fully transparent background, the (invisible) muzzle at the left edge of each quarter and the flash pointing right. Short, sharp, photographic flash: white-hot core, orange-yellow petals, faint grey smoke wisps; each variant a different shape and size (small to large). No gun, no hands, no background, no glow halo filling the cell, no stylisation.",
+  "intendedUse": "T-048 contextual combat effects: side-view muzzle flash sprites for pistols, SMGs and rifles (four variants in a 2x2 atlas).",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024
+  },
+  "aspectRatio": "1:1",
+  "transparency": "alpha",
+  "styleConstraints": [
+    "Must look like it belongs in GTA IV (2008, Liberty City, late-2000s New York analogue), remastered today; not GTA V, not GTA Online",
+    "Cold, grey, overcast, wet-city palette; grime, wear and dirt are welcome; warm artificial light against cold surroundings",
+    "Grounded and realistic, photographic material detail; no stylisation, no cartoon, no painterly look unless the request says so",
+    "Late-2000s objects, technology, signage and typography of that era, without real brands",
+    "UI and icons: dark translucent grey/black surfaces, restrained amber/orange/red accents, gritty industrial typography, sharp purposeful shapes, minimal decoration"
+  ],
+  "prohibited": [
+    "Real brand names, logos, trademarks or copyrighted characters",
+    "Rockstar, GTA, Take-Two or any game's logos, UI or artwork",
+    "Readable text unless the request gives the exact text",
+    "Watermarks, signatures, frames or borders",
+    "Neon gradients, glossy mobile-app UI, large rounded cards, live-service styling",
+    "Modern (post-2010) phones, cars, fashion or technology",
+    "Cartoon, anime, comic or exaggerated gore styles",
+    "Lighting or shadows baked into tiling textures (unless the request asks for it)",
+    "Perspective or visible camera angle in textures meant to tile (textures are flat, orthographic)"
+  ],
+  "outputPath": "art/generated/ART-005/",
+  "outputName": "art_005.png",
+  "consumer": null,
+  "revision": 1,
+  "history": [
+    {
+      "at": "2026-09-30T04:28:26+00:00",
+      "event": "requested",
+      "revision": 1,
+      "by": "claude",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from the side, each in its own quarter on a fully transparent background, the (invisible) muzzle at the left edge of each quarter and the flash pointing right. Short, sharp, photographic flash: white-hot core, orange-yellow petals, faint grey smoke wisps; each variant a different shape and size (small to large). No gun, no hands, no background, no glow halo filling the cell, no stylisation."
+    },
+    {
+      "at": "2026-09-30T04:51:10+00:00",
+      "event": "blocked",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two independent built-in generations; exact request prompt followed by all verbatim styleConstraints and prohibited entries; requested dimensions/aspect/transparency supplied; no image postprocessing; seed and underlying model/version unavailable. Both candidates show large flame plumes surrounded by dense smoke clouds rather than short sharp muzzle flashes with faint smoke wisps; some origins are inset from the quarter's left edge. Exact specification not achieved with the available generator. Failed candidates retained; status remains requested.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from the side, each in its own quarter on a fully transparent background, the (invisible) muzzle at the left edge of each quarter and the flash pointing right. Short, sharp, photographic flash: white-hot core, orange-yellow petals, faint grey smoke wisps; each variant a different shape and size (small to large). No gun, no hands, no background, no glow halo filling the cell, no stylisation.",
+      "files": [
+        {
+          "path": "art/generated/ART-005/r1/art_005_1.png",
+          "sha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-005/r1/art_005_2.png",
+          "sha256": "9d34dc34306739e42ed4f72cda66d04cf6ac6f6a4db1e65796521ad3b97b83db",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:46:43+00:00",
+      "event": "generated",
+      "revision": 1,
+      "by": "Codex",
+      "notes": "Two fresh generations (_3,_4) from current prompt plus verbatim constraints; four candidates registered with original alpha. _1: long broad flame plumes, dense smoke, origins inset from cell left edges. _2: thick smoke and large flames rather than short sharp flashes, inset origins. _3: dense smoke, oversized lower-right plume nearly fills cell, origins inset. _4: broad grey smoke and long flame shapes, upper-left origin notably inset and larger variants have tight right margins. No post-processing or review decision; model version/seeds unavailable.",
+      "model": "OpenAI image_gen built-in (model/version not exposed)",
+      "prompt": "A 2 by 2 atlas of four realistic firearm muzzle flashes seen from the side, each in its own quarter on a fully transparent background, the (invisible) muzzle at the left edge of each quarter and the flash pointing right. Short, sharp, photographic flash: white-hot core, orange-yellow petals, faint grey smoke wisps; each variant a different shape and size (small to large). No gun, no hands, no background, no glow halo filling the cell, no stylisation.",
+      "files": [
+        {
+          "path": "art/generated/ART-005/r1/art_005_1.png",
+          "sha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-005/r1/art_005_2.png",
+          "sha256": "9d34dc34306739e42ed4f72cda66d04cf6ac6f6a4db1e65796521ad3b97b83db",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-005/r1/art_005_3.png",
+          "sha256": "ccc00a197867fa0ed4d057d9751bdd537f03e8554b1719d88f8f92b6588a111c",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        },
+        {
+          "path": "art/generated/ART-005/r1/art_005_4.png",
+          "sha256": "31b22b8852a5e515e44bea19fcd8f5e4c4d89cf5bb30d9b9c952483f4574bb10",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "at": "2026-09-30T06:53:54+00:00",
+      "event": "approved",
+      "revision": 1,
+      "by": "claude",
+      "notes": "short realistic side flashes, small to large; pistol/SMG/rifle range",
+      "files": [
+        {
+          "path": "art/approved/ART-005/r1_art_005_1.png",
+          "sha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+          "width": 1254,
+          "height": 1254,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ],
+      "technicalIssues": null
+    },
+    {
+      "at": "2026-09-30T06:53:58+00:00",
+      "event": "prepped",
+      "revision": 1,
+      "by": "claude",
+      "notes": "final 1024x1024 RGBA; mipmaps and DXT compression are done by the content compiler",
+      "files": [
+        {
+          "path": "art/approved/ART-005/prepped/art_005.png",
+          "sha256": "66ad3ed4cf5e96d24d5ca06ff3bd7b5031ee905cdd9cf7311574b67661c4a735",
+          "width": 1024,
+          "height": 1024,
+          "mode": "RGBA",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ],
+  "approvedFile": "art/approved/ART-005/r1_art_005_1.png"
+}

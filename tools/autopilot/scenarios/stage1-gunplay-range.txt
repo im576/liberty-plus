@@ -1,0 +1,205 @@
+# T-042 gunplay range measurement. Part 1: every Stage 1 profile through the spread/recoil model against its class targets (catalog sim).
+# Part 2: the player fires each weapon at a fixed point 25 m ahead (TASK_SHOOT_AT_COORD: single shots, bursts, continuous fire) and the gunplay
+# module records every bullet's deviation from the line to that point next to the cone the model wrote (range command). range_shot lines are per
+# bullet, range_summary lines per weapon and group (first shot, burst 2-3, sustained 4+). tools/perf/Measure-GunplayRange.ps1 reads them from run.log.
+await-alive 60000
+expect "autopilot_player_ready" 65
+events on
+god on
+wanted 0
+goto gun_test_range
+expect "teleport_done id=gun_test_range" 90
+wait 4000
+time 12 0
+catalog check
+expect "catalog ok: 6 Stage 1 weapons of 13 entries" 20
+catalog sim
+expect "gunplay sim ok: 6 Stage 1 weapons meet their class targets" 20
+
+# --- service-pistol (weapon 7)
+wanted 0
+catalog give service-pistol 400 clear
+expect "weapon_changed from=\d+ to=7 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=7 group=first n=[1-9]" 15
+expect "range_summary weapon=7 group=sustained n=" 15
+
+# --- combat-pistol (weapon 9)
+wanted 0
+catalog give combat-pistol 400 clear
+expect "weapon_changed from=\d+ to=9 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=9 group=first n=[1-9]" 15
+expect "range_summary weapon=9 group=sustained n=" 15
+
+# --- remington-1100 (weapon 11)
+wanted 0
+catalog give remington-1100 400 clear
+expect "weapon_changed from=\d+ to=11 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=11 group=first n=[1-9]" 15
+expect "range_summary weapon=11 group=sustained n=" 15
+
+# --- street-sweeper (weapon 10)
+wanted 0
+catalog give street-sweeper 400 clear
+expect "weapon_changed from=\d+ to=10 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=10 group=first n=[1-9]" 15
+expect "range_summary weapon=10 group=sustained n=" 15
+
+# --- imi-uzi (weapon 12)
+wanted 0
+catalog give imi-uzi 400 clear
+expect "weapon_changed from=\d+ to=12 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=12 group=first n=[1-9]" 15
+expect "range_summary weapon=12 group=sustained n=" 15
+
+# --- ak-47 (weapon 14)
+wanted 0
+catalog give ak-47 400 clear
+expect "weapon_changed from=\d+ to=14 profile=" 20
+wait 1000
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 300 1
+wait 2000
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 500 3
+wait 2500
+range fire 3500 4
+wait 5000
+range stop
+expect "range_summary weapon=14 group=first n=[1-9]" 15
+expect "range_summary weapon=14 group=sustained n=" 15
+
+wait 1000

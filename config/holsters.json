@@ -1,0 +1,235 @@
+{
+    "schemaVersion":  1,
+    "enabled":  true,
+    "showOnBikes":  true,
+    "nudgePositionMeters":  0.01,
+    "nudgeRotationDegrees":  5,
+    "weapons":  [
+                    {
+                        "weaponId":  1,
+                        "weaponInfoType":  "BASEBALLBAT",
+                        "category":  1
+                    },
+                    {
+                        "weaponId":  2,
+                        "weaponInfoType":  "POOLCUE",
+                        "category":  1
+                    },
+                    {
+                        "weaponId":  3,
+                        "weaponInfoType":  "KNIFE",
+                        "category":  1
+                    },
+                    {
+                        "weaponId":  7,
+                        "weaponInfoType":  "PISTOL",
+                        "category":  2
+                    },
+                    {
+                        "weaponId":  9,
+                        "weaponInfoType":  "DEAGLE",
+                        "category":  2
+                    },
+                    {
+                        "weaponId":  10,
+                        "weaponInfoType":  "SHOTGUN",
+                        "category":  3
+                    },
+                    {
+                        "weaponId":  11,
+                        "weaponInfoType":  "BARETTA",
+                        "category":  3
+                    },
+                    {
+                        "weaponId":  12,
+                        "weaponInfoType":  "MICRO_UZI",
+                        "category":  4
+                    },
+                    {
+                        "weaponId":  13,
+                        "weaponInfoType":  "MP5",
+                        "category":  4
+                    },
+                    {
+                        "weaponId":  14,
+                        "weaponInfoType":  "AK47",
+                        "category":  5
+                    },
+                    {
+                        "weaponId":  15,
+                        "weaponInfoType":  "M4",
+                        "category":  5
+                    },
+                    {
+                        "weaponId":  16,
+                        "weaponInfoType":  "SNIPERRIFLE",
+                        "category":  6
+                    },
+                    {
+                        "weaponId":  17,
+                        "weaponInfoType":  "M40a1",
+                        "category":  6
+                    },
+                    {
+                        "weaponId":  18,
+                        "weaponInfoType":  "RLAUNCHER",
+                        "category":  7
+                    },
+                    {
+                        "weaponId":  19,
+                        "weaponInfoType":  "FTHROWER",
+                        "category":  7
+                    },
+                    {
+                        "weaponId":  20,
+                        "weaponInfoType":  "MINIGUN",
+                        "category":  7
+                    },
+                    {
+                        "weaponId":  58,
+                        "weaponInfoType":  "LF_GOLD_PISTOL",
+                        "category":  2
+                    },
+                    {
+                        "weaponId":  59,
+                        "weaponInfoType":  "LF_GOLD_CARBINE",
+                        "category":  5
+                    },
+                    {
+                        "weaponId":  60,
+                        "weaponInfoType":  "LF_GOLD_SHOTGUN",
+                        "category":  3
+                    }
+                ],
+    "placements":  [
+                       {
+                           "slot":  "SidearmPrimary",
+                           "bone":  "RightThigh",
+                           "position":  [
+                                            0.12,
+                                            0.0,
+                                            0.02
+                                        ],
+                           "rotation":  [
+                                            0,
+                                            0,
+                                            180
+                                        ]
+                       },
+                       {
+                           "slot":  "SidearmSecondary",
+                           "bone":  "Pelvis",
+                           "position":  [
+                                            -0.16,
+                                            0,
+                                            0
+                                        ],
+                           "rotation":  [
+                                            0,
+                                            0,
+                                            180
+                                        ]
+                       },
+                       {
+                           "slot":  "LongGun1",
+                           "bone":  "Spine2",
+                           "position":  [
+                                            -0.16,
+                                            -0.14,
+                                            0
+                                        ],
+                           "rotation":  [
+                                            0,
+                                            90,
+                                            0
+                                        ]
+                       },
+                       {
+                           "slot":  "LongGun2",
+                           "bone":  "Spine2",
+                           "position":  [
+                                            0.16,
+                                            -0.14,
+                                            0
+                                        ],
+                           "rotation":  [
+                                            0,
+                                            -90,
+                                            0
+                                        ]
+                       },
+                       {
+                           "slot":  "Melee",
+                           "bone":  "Pelvis",
+                           "position":  [
+                                            -0.12,
+                                            -0.1,
+                                            0
+                                        ],
+                           "rotation":  [
+                                            0,
+                                            90,
+                                            0
+                                        ]
+                       }
+                   ],
+    "outfitClasses":  [
+                          {
+                              "id":  "bulky",
+                              "component":  1,
+                              "drawables":  [
+                                                0,
+                                                1,
+                                                2,
+                                                3,
+                                                8,
+                                                9,
+                                                14
+                                            ]
+                          }
+                      ],
+    "loadoutPlacements":  [
+                              {
+                                  "slot":  "LongGun1",
+                                  "outfit":  "bulky",
+                                  "bone":  "Spine2",
+                                  "position":  [
+                                                   -0.16,
+                                                   -0.17,
+                                                   0
+                                               ],
+                                  "rotation":  [
+                                                   0,
+                                                   90,
+                                                   0
+                                               ]
+                              },
+                              {
+                                  "slot":  "LongGun2",
+                                  "outfit":  "bulky",
+                                  "bone":  "Spine2",
+                                  "position":  [
+                                                   0.16,
+                                                   -0.17,
+                                                   0
+                                               ],
+                                  "rotation":  [
+                                                   0,
+                                                   -90,
+                                                   0
+                                               ]
+                              }
+                          ],
+    "slings":  [
+                   {
+                       "slot":  "LongGun1",
+                       "model":  "lf_sling_a",
+                       "bone":  "Spine2"
+                   },
+                   {
+                       "slot":  "LongGun2",
+                       "model":  "lf_sling_b",
+                       "bone":  "Spine2"
+                   }
+               ]
+}
