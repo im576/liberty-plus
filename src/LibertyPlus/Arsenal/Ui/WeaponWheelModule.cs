@@ -41,14 +41,14 @@ namespace LibertyFramework.Arsenal.Ui
             Interval = 0;
         }
 
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             LoadConfig();
-            Engine.ModuleConfig.WatchFile(this, LibertyPlus.Configuration.PlusPaths.ArsenalConfig, LoadConfig);
+            Engine.ModuleConfig.WatchFile(this, LibertyPaths.ArsenalConfig, LoadConfig);
             Engine.Commands.Register(this, "wheel", "wheel [status] | open | select <slot 0-4> | confirm | close - weapon wheel (T-045)", WheelCommand);
         }
 
-        protected override void OnStop() { CloseMenu("module stopped"); }
+        protected internal override void OnStop() { CloseMenu("module stopped"); }
 
         protected internal override void OnUpdate()
         {
@@ -95,7 +95,7 @@ namespace LibertyFramework.Arsenal.Ui
         {
             try
             {
-                byte[] bytes = JsonStore.ReadBytes(LibertyPlus.Configuration.PlusPaths.ArsenalConfig);
+                byte[] bytes = JsonStore.ReadBytes(LibertyPaths.ArsenalConfig);
                 string hash = JsonStore.Hash(bytes);
                 if (hash == configHash) { return; }
                 ArsenalConfig parsed = JsonStore.Parse<ArsenalConfig>(bytes);
@@ -141,14 +141,12 @@ namespace LibertyFramework.Arsenal.Ui
             radial.OnAccept = slot => { Equip(slot, true); return null; };
             radial.OnClosed = () => { menu = null; sticky = false; };
             int held = Liberty.Weapons.Current(Liberty.Player.Ped);
-            // Centre evaluates during OpenRadial, so tap/command hints must already reflect this opening.
+            menu = Engine.Ui.OpenRadial(this, radial);
+            menu.Selected = WeaponWheelLogic.StartSegment(ids, held);
             sticky = alreadySticky;
             firstDrawLogged = false;
-            // Include initial snapshot preparation in the existing tick/wall-time measurement.
             openedAtTicks = Environment.TickCount;
             openedAtFrame = Engine.Frame;
-            menu = Engine.Ui.OpenRadial(this, radial, WeaponWheelLogic.StartSegment(ids, held));
-            if (!menu.IsOpen) { menu = null; return; }
             RuntimeLog.Info("weapon_wheel_open frame=" + openedAtFrame + " held=" + held + " slots=" + string.Join(",", Array.ConvertAll(ids, id => id.ToString())));
         }
 
@@ -259,7 +257,7 @@ namespace LibertyFramework.Arsenal.Ui
             if (!catalogLoaded)
             {
                 catalogLoaded = true;
-                try { catalog = JsonStore.Load<WeaponCatalog>(LibertyPlus.Configuration.PlusPaths.WeaponCatalog); catalog.Validate(); }
+                try { catalog = JsonStore.Load<WeaponCatalog>(LibertyPaths.WeaponCatalog); catalog.Validate(); }
                 catch (Exception error) { catalog = null; RuntimeLog.Error("weapon_wheel_catalog_unavailable error=" + error.Message); }
             }
             WeaponCatalogEntry entry = catalog == null ? null : catalog.Find(weaponId);

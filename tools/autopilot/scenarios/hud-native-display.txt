@@ -1,0 +1,110 @@
+# T-049 documented-native experiment ONLY. No policy adoption, no Liberty replacement drawings.
+# Establish a normal public HUD-on baseline. Missing icon/ammo/cash invalidates its hide comparison.
+# Native mission/help/subtitle/location preservation needs the separate T049-hud-native-story-text review.
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+hud on
+hudctl native-display off
+hudctl layout-test off
+hudctl probe-mode off
+goto gun_test_range
+expect "teleport_done id=gun_test_range" 90
+time 12 0
+weather 1
+catalog give service-pistol 150 clear
+wait 1500
+hudctl ammo
+expect "hud_ammo weapon=7 clip=17 total=150 includes_clip=True shown=.17 / 133." 10
+hudctl probe-mode on
+expect "hud_probe_mode on" 10
+wanted 3
+hudctl cash-test pulse
+expect "hud_cash_test pulse original=" 10
+wait 250
+shot hud_native_baseline
+hudctl cash-test restore
+expect "hud_cash_test restored" 10
+
+# Enforce HUD false / radar true every tick; expiry is a fail-safe, not visual proof.
+hudctl native-display on 60000
+expect "hud_native_display applied hud=False radar=True visual=unproven" 10
+hudctl cash-test pulse
+expect "hud_cash_test pulse original=" 10
+wait 250
+shot hud_native_hidden
+hudctl cash-test restore
+hudctl status
+expect "hud_status enabled=True disabled=False.*probe_mode=True.*native_requested=True native_applied=True.*hidden=0 help_by_hud=False drawn=$" 10
+
+# Normal config polling must release the native owner; restore is independently read back and hashed.
+hudctl config-test off
+expect "hud_config_loaded enabled=False" 10
+expect "hud_native_display released owner" 10
+hudctl status
+expect "hud_status enabled=False disabled=False.*native_requested=False native_applied=False.*hidden=0 help_by_hud=False drawn=$" 10
+hudctl cash-test pulse
+wait 250
+shot hud_native_config_off
+hudctl cash-test restore
+hudctl config-test restore
+expect "hud_config_test original bytes restored hash=" 10
+expect "hud_config_loaded enabled=True" 10
+hudctl status
+expect "hud_status enabled=True disabled=False.*native_requested=False native_applied=False" 10
+hudctl cash-test pulse
+wait 250
+shot hud_native_config_restored
+hudctl cash-test restore
+
+# Explicit off restoration while config stays enabled.
+hudctl native-display on 60000
+expect "hud_native_display applied hud=False radar=True visual=unproven" 10
+hudctl native-display off
+expect "hud_native_display released owner" 10
+hudctl cash-test pulse
+wait 250
+shot hud_native_explicit_off
+hudctl cash-test restore
+
+# A different public HUD-off owner must win, including its radar-off request.
+hudctl native-display on 60000
+expect "hud_native_display applied hud=False radar=True visual=unproven" 10
+hud off
+expect "hud_native_display released owner" 10
+hudctl status
+expect "hud_status .*native_requested=False native_applied=False" 10
+shot hud_native_public_off
+hud on
+hudctl cash-test pulse
+wait 250
+shot hud_native_public_restored
+hudctl cash-test restore
+
+# Automatic expiry cannot silently leave the HUD hidden.
+hudctl native-display on 3000
+expect "hud_native_display applied hud=False radar=True visual=unproven" 10
+expect "hud_native_display released owner" 10
+hudctl status
+expect "hud_status .*native_requested=False native_applied=False" 10
+shot hud_native_expired
+
+# Stop releases the lease and its temporary wallet. Built-in HUD cannot be assembly-reloaded in isolation.
+hudctl native-display on 60000
+expect "hud_native_display applied hud=False radar=True visual=unproven" 10
+hudctl cash-test pulse
+stop hud
+expect "hud_native_display released owner" 10
+expect "hud_cash_test original wallet restored" 10
+expect "hud_released reason=stopped" 10
+shot hud_native_stopped
+restart hud
+expect "engine_module_restarted hud" 10
+hudctl status
+expect "hud_status enabled=True disabled=False.*probe_mode=False.*native_requested=False native_applied=False" 10
+hudctl probe-mode off
+hudctl check
+expect "hud_check ok weapon=vanilla_kept health=vanilla_kept armour=vanilla_kept wanted=vanilla_kept hidden=0" 10
+wanted 0
+god off

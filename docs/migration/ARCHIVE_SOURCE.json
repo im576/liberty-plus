@@ -1,0 +1,8 @@
+{
+  "branch": "archive/legacy-lane-d-hud",
+  "frameworkRef": "codex/T-049-hud-continuation",
+  "sourceCommit": "6ff67ab11bdad1090d30ac63f67c4fe683bab235",
+  "files": 136,
+  "status": "ARCHIVE / NOT VALIDATED",
+  "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+}

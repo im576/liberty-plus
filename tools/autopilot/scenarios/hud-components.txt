@@ -1,0 +1,76 @@
+# T-049 research spike (rule 4: do not guess engine behaviour). Which vanilla HUD elements can be hidden on their own, without the radar?
+# The engine lists every hud.dat component it found (hud_component lines: name, live position/size/alpha, and the globals), then hides
+# groups of them one at a time so the screenshots show what each one is. Nothing here is a pass/fail on the game's look: the output is
+# the evidence for docs/research/HudComponents.md and for vanillaComponents in config/hud.json. Names the game does not have reply
+# "not found" and the run goes on. Every hide is restored before the next.
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+goto east_park
+expect "teleport_done id=east_park" 90
+wait 4000
+time 13 0
+weather 1
+hudctl force all off
+hudctl probe-mode on
+hudctl table
+expect "hud_table components=\d+" 10
+select 0
+catalog give service-pistol 150 clear
+select 7
+wait 1500
+wanted 3
+wait 1500
+shot hud_vanilla_baseline
+
+# Weapon icon and ammunition.
+hudctl hide HUD_WEAPON_ICON
+wait 800
+shot hud_hidden_weapon_only
+hudctl restore
+hudctl hide HUD_AMMO
+wait 800
+shot hud_hidden_ammo_only
+hudctl restore
+hudctl hide HUD_WEAPON_ICON
+hudctl hide HUD_AMMO
+wait 800
+shot hud_hidden_weapon_ammo
+hudctl restore
+# Wanted stars.
+hudctl hide HUD_WANTED_BACK
+hudctl hide HUD_WANTED_FRONT
+wait 800
+shot hud_hidden_wanted
+hudctl restore
+# Cash.
+hudctl hide-matching CASH
+wait 800
+shot hud_hidden_cash
+hudctl restore
+# The radar and whatever carries the player's health and armour arcs.
+hudctl hide-matching RADAR
+wait 800
+shot hud_hidden_radar
+hudctl restore
+hudctl hide-matching HEALTH
+wait 800
+shot hud_hidden_health
+hudctl restore
+hudctl hide-matching ARMOUR
+hudctl hide-matching ARMOR
+wait 800
+shot hud_hidden_armour
+hudctl restore
+# Everything the table has, to see what stays (text, help messages, mission and street names).
+hudctl hide-matching HUD_
+wait 800
+shot hud_hidden_everything_in_table
+hudctl restore
+wait 800
+shot hud_restored
+hudctl probe-mode off
+hudctl status
+expect "hud_status enabled=True" 10
+wanted 0

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "enabled": true,
+  "hideVanilla": "components",
+  "layout": {
+    "marginRight": 28,
+    "marginTop": 24,
+    "iconWidth": 96,
+    "iconHeight": 48,
+    "ammoHeight": 22,
+    "barWidth": 112,
+    "barHeight": 5,
+    "barGap": 4,
+    "rowGap": 6,
+    "starSize": 16,
+    "starGap": 4,
+    "promptX": 34,
+    "promptY": 30,
+    "promptWidth": 360,
+    "promptHeight": 44,
+    "shadowOffset": 1
+  },
+  "palette": {
+    "text": [240, 232, 230, 224],
+    "textShadow": [200, 10, 10, 12],
+    "icon": [235, 232, 230, 224],
+    "barBack": [150, 12, 13, 15],
+    "health": [235, 134, 158, 104],
+    "healthLow": [245, 190, 58, 42],
+    "armour": [235, 150, 170, 196],
+    "wantedStar": [240, 222, 170, 70],
+    "wantedEmpty": [90, 120, 120, 120],
+    "promptBack": [200, 0, 0, 0],
+    "promptText": [255, 240, 240, 242],
+    "lowClip": [245, 214, 120, 52]
+  },
+  "weapon": {
+    "enabled": true,
+    "fadeInSeconds": 0.15,
+    "fadeOutSeconds": 0.6,
+    "holdSeconds": 4,
+    "showOnChange": true,
+    "showOnShot": true,
+    "showWhileReloading": true,
+    "showWhileAiming": true,
+    "alwaysWhenArmed": false,
+    "lowClipFraction": 0.25,
+    "totalIncludesClip": true,
+    "aimTriggerLevel": 0.3,
+    "vanillaComponents": ["HUD_WEAPON_ICON", "HUD_AMMO"],
+    "drawWithoutHidingVanilla": false
+  },
+  "health": {
+    "enabled": true,
+    "fadeInSeconds": 0.15,
+    "fadeOutSeconds": 0.8,
+    "holdSeconds": 4,
+    "showOnChange": true,
+    "combatHoldSeconds": 6,
+    "lowFraction": 0.3,
+    "pulsePerSecond": 1.2,
+    "pulseDepth": 0.45,
+    "maximum": 100,
+    "hideWhenZero": false,
+    "vanillaComponents": [],
+    "drawWithoutHidingVanilla": false
+  },
+  "armour": {
+    "enabled": true,
+    "fadeInSeconds": 0.15,
+    "fadeOutSeconds": 0.8,
+    "holdSeconds": 4,
+    "showOnChange": true,
+    "combatHoldSeconds": 6,
+    "lowFraction": 0,
+    "pulsePerSecond": 1.2,
+    "pulseDepth": 0,
+    "maximum": 100,
+    "hideWhenZero": true,
+    "vanillaComponents": [],
+    "drawWithoutHidingVanilla": false
+  },
+  "wanted": {
+    "enabled": true,
+    "fadeInSeconds": 0.2,
+    "fadeOutSeconds": 0.8,
+    "holdSeconds": 1,
+    "maximumStars": 6,
+    "vanillaComponents": ["HUD_WANTED_BACK", "HUD_WANTED_FRONT"],
+    "drawWithoutHidingVanilla": false
+  },
+  "prompt": {
+    "enabled": true,
+    "fadeInSeconds": 0.12,
+    "fadeOutSeconds": 0.25,
+    "device": "auto",
+    "deviceSwitchMilliseconds": 400,
+    "glyphs": [
+      { "token": "interact", "pad": "X", "keyboard": "E" },
+      { "token": "accept", "pad": "A", "keyboard": "Enter" },
+      { "token": "cancel", "pad": "B", "keyboard": "Backspace" },
+      { "token": "reload", "pad": "X", "keyboard": "R" },
+      { "token": "aim", "pad": "LT", "keyboard": "Right Mouse" },
+      { "token": "fire", "pad": "RT", "keyboard": "Left Mouse" },
+      { "token": "wheel", "pad": "RB", "keyboard": "Tab" }
+    ]
+  },
+  "suppress": {
+    "inCutscenes": true,
+    "whenPaused": true,
+    "whenFadedOut": true,
+    "whenDead": true
+  },
+  "sampling": {
+    "wantedPollMilliseconds": 250,
+    "ammoPollMilliseconds": 100,
+    "inputPollMilliseconds": 100
+  }
+}

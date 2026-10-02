@@ -1,0 +1,140 @@
+# T-049 Basic Liberty HUD. Phase A: the plan the shipped config makes (which vanilla components are hidden, which stay) and a quiet screen.
+# Phase B (`hudctl layout-test on` draws every Liberty element even where its vanilla counterpart stays, so the layout and the fades can be
+# walked through whatever the table allows): ammunition on change, shot and reload, health on damage and while low, armour, wanted, prompts
+# with the pad and the keyboard names, and the combined draw cost. Evidence: hud_element / hud_reload / hud_health_low / hud_prompt log lines,
+# `hudctl check`, the costs line and the screenshots. The group must sit at the top right with the radar still at the bottom left.
+await-alive 60000
+expect "autopilot_player_ready" 65
+god on
+wanted 0
+select 0
+goto gun_test_range
+expect "teleport_done id=gun_test_range" 90
+wait 4000
+time 12 0
+weather 1
+costs
+hudctl force all off
+hudctl device keyboard
+hudctl status
+expect "hud_status enabled=True disabled=False" 10
+hudctl table
+expect "hud_table components=\d+" 10
+
+# --- Phase A: all replacement elements stay vanilla until visible hiding is proven. Table membership alone is insufficient.
+# `hudctl check` checks ownership and layout, not the rendered disappearance; screenshots must establish that separately.
+hudctl check
+expect "hud_check ok weapon=vanilla_kept health=vanilla_kept armour=vanilla_kept wanted=vanilla_kept hidden=0" 10
+wait 5000
+shot hud_rest
+
+# --- Phase B: everything drawn.
+hudctl layout-test on
+expect "hud_element_plan element=health mode=liberty" 10
+hudctl health 100
+wait 1500
+
+# Weapon: appears on change with the ammunition, then fades.
+catalog give service-pistol 150 clear
+expect "weapon_changed from=\d+ to=7" 20
+expect "hud_element weapon shown reason=change" 10
+wait 1500
+hudctl ammo
+expect "hud_ammo weapon=7 clip=17 total=150 includes_clip=True shown=.17 / 133." 10
+shot hud_weapon_change
+expect "hud_element weapon hidden" 15
+
+# Shots and a reload (the clip empties during the burst).
+range start ahead 25 0.3
+expect "range_started aim=" 10
+range fire 7000 4
+expect "hud_element weapon shown reason=shot" 10
+wait 2500
+shot hud_weapon_firing
+expect "hud_reload reloading=1" 20
+wait 3000
+range stop
+expect "hud_element weapon hidden" 20
+# The health bar also stays for its combat hold after the last shot; wait for it so the damage step below sees it appear.
+expect "hud_element health hidden" 20
+
+# Health: on damage, then while low, then gone again.
+hudctl hurt 30
+expect "hud_element health shown reason=(health|damage)" 10
+wait 900
+shot hud_health_hit
+hudctl health 20
+expect "hud_health_low low=1" 10
+wait 600
+shot hud_health_low
+hudctl health 100
+expect "hud_health_low low=0" 10
+expect "hud_element health hidden" 15
+
+# Armour: shown on change while there is some, gone at zero.
+hudctl armour 60
+expect "hud_element armour shown" 10
+wait 900
+shot hud_armour
+hudctl armour 0
+expect "hud_element armour hidden" 10
+
+# Wanted: stars while wanted, a fade after.
+wanted 3
+wait 900
+hudctl status
+expect "hud_status .*wanted_stars=3" 10
+shot hud_wanted
+wanted 0
+expect "hud_element wanted hidden" 15
+
+# Prompts: the IV-style help box with the button names of the device in use.
+hudctl device pad
+hudctl prompt Press {interact} to open the weapon stash.
+expect "hud_prompt device=pad text=.Press X to open the weapon stash\.." 10
+wait 600
+shot hud_prompt_pad
+hudctl device keyboard
+hudctl prompt Press {interact} to open the weapon stash, {cancel} to leave.
+expect "hud_prompt device=keyboard text=.Press E to open the weapon stash, Backspace to leave\.." 10
+wait 600
+shot hud_prompt_keyboard
+
+# Everything at once and its cost (Liberty UI draw budget: 0.5 ms for all of it; this gate is 0.35 ms for the HUD alone).
+hudctl health 25
+hudctl armour 60
+wanted 4
+hudctl force all on
+wait 2500
+shot hud_everything
+costs
+wait 4000
+costs
+expect "costs_ms.*draw\.hud=0\.([0-2]\d|3[0-4])\d/" 10
+expect "costs_ms.*draw\.ui=(0\.[0-4]\d\d|0\.500)/" 10
+hudctl force all off
+wanted 0
+
+# Back to the shipped plan: nothing is left hidden or forced.
+hudctl layout-test off
+expect "hud_element_plan element=health mode=vanilla_kept" 10
+hudctl check
+expect "hud_check ok weapon=vanilla_kept health=vanilla_kept armour=vanilla_kept wanted=vanilla_kept hidden=0" 10
+
+# Config-off is a real file edit, read by the normal poll. The hook restores exact original bytes.
+hudctl config-test off
+expect "hud_config_loaded enabled=False" 10
+wait 1200
+hudctl status
+expect "hud_status enabled=False disabled=False.*hidden=0 help_by_hud=False drawn=$" 10
+wanted 3
+wait 800
+shot hud_config_off_vanilla
+hudctl table
+hudctl config-test restore
+expect "hud_config_loaded enabled=True" 10
+wait 1200
+hudctl check
+expect "hud_check ok weapon=vanilla_kept health=vanilla_kept armour=vanilla_kept wanted=vanilla_kept hidden=0" 10
+shot hud_config_restored
+wanted 0

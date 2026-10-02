@@ -81,10 +81,8 @@ namespace LibertyFramework.Arsenal
         }
 
         // Engine events that change what the player carries mark the inventory for re-reading on the next tick.
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
-            Engine.Perf.ObserveUiBudgetState(this, () => "storage_open=" + StorageOpen + " storage_closing=" + storageClosing +
-                " wheel_open=" + wheel.IsOpen + " storage_locked=" + storageControlLocked + " " + trunkAnimation.Observation());
             Engine.Events.Subscribe<global::Liberty.Sdk.Events.PlayerWeaponChanged>(this, e => inventoryDirty = true);
             Engine.Events.Subscribe<global::Liberty.Sdk.Events.PlayerShot>(this, e => inventoryDirty = true);
             Engine.Events.Subscribe<global::Liberty.Sdk.Events.ReloadFinished>(this, e => inventoryDirty = true);
@@ -265,11 +263,11 @@ namespace LibertyFramework.Arsenal
 
         private void Initialize()
         {
-            config = JsonStore.Load<ArsenalConfig>(LibertyPlus.Configuration.PlusPaths.ArsenalConfig);
+            config = JsonStore.Load<ArsenalConfig>(LibertyPaths.ArsenalConfig);
             ArsenalConfigValidator.Validate(config);
             try
             {
-                weaponCatalog = JsonStore.Load<WeaponCatalog>(LibertyPlus.Configuration.PlusPaths.WeaponCatalog);
+                weaponCatalog = JsonStore.Load<WeaponCatalog>(LibertyPaths.WeaponCatalog);
                 weaponCatalog.Validate();
             }
             catch (Exception error)
@@ -279,7 +277,7 @@ namespace LibertyFramework.Arsenal
             }
             int index = Function.Call<int>("GET_CURRENT_EPISODE");
             episode = index == 0 ? "iv" : index == 1 ? "tlad" : index == 2 ? "tbogt" : "episode_" + index;
-            statePath = LibertyPlus.Configuration.PlusPaths.ArsenalState(episode);
+            statePath = LibertyPaths.ArsenalState(episode);
             state = ArsenalStateStore.LoadOrEmpty(statePath,
                 error => RuntimeLog.Error("arsenal_state_corrupt starting_empty path=" + statePath + " error=" + error));
             WeaponIdentity.Normalize(state);
@@ -661,7 +659,7 @@ namespace LibertyFramework.Arsenal
             return trunkSlotsByModel.TryGetValue(openedTrunk.Model.Hash, out slots) ? slots : capacityRules.DefaultSlots;
         }
 
-        protected override void OnDraw(global::Liberty.Sdk.ICanvas canvas) { wheel.Draw(canvas); }
+        protected internal override void OnDraw(global::Liberty.Sdk.ICanvas canvas) { wheel.Draw(canvas); }
 
         private StorageBin Trunk(Vehicle vehicle)
         {
@@ -798,7 +796,7 @@ namespace LibertyFramework.Arsenal
         private void UpdatePrompt()
         {
             string prompt = activeStorage != null || DevToolsMenu.IsOpen ? null :
-                nearbyTrunk != null ? "Press X / E to use the trunk." : nearbySafehouse != null ? "Press X / E to open the weapon stash." : null;
+                nearbyTrunk != null ? "Press {interact} to use the trunk." : nearbySafehouse != null ? "Press {interact} to open the weapon stash." : null;
             if (prompt == promptShown) { return; }
             promptShown = prompt;
             if (prompt != null) { Engine.Ui.ShowHelp(this, prompt, 0); } else { Engine.Ui.ClearHelp(this); }
@@ -1137,7 +1135,7 @@ namespace LibertyFramework.Arsenal
             house.Episode = episode; house.X = position.X; house.Y = position.Y; house.Z = position.Z;
             house.Radius = config.TrunkDistanceMeters; house.Verified = true;
             config.Safehouses.Add(house); ArsenalConfigValidator.Validate(config);
-            JsonStore.Save(LibertyPlus.Configuration.PlusPaths.ArsenalConfig, config);
+            JsonStore.Save(LibertyPaths.ArsenalConfig, config);
             state.LastSafehouseId = house.Id; AdoptUnassignedStash(house.Id); Persist();
             RuntimeLog.Info("arsenal_safehouse_marked id=" + house.Id + " x=" + house.X + " y=" + house.Y + " z=" + house.Z);
             return "Marked " + house.Id;
