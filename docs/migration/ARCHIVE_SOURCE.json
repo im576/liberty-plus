@@ -1,0 +1,8 @@
+{
+  "branch": "archive/legacy-lane-b-validation",
+  "frameworkRef": "codex/lane-b-validation",
+  "sourceCommit": "392e36b608756195b19b6f9ff5778cf2261abfde",
+  "files": 117,
+  "status": "ARCHIVE / NOT VALIDATED",
+  "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+}

@@ -41,14 +41,14 @@ namespace LibertyFramework.Arsenal.Ui
             Interval = 0;
         }
 
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             LoadConfig();
-            Engine.ModuleConfig.WatchFile(this, LibertyPlus.Configuration.PlusPaths.ArsenalConfig, LoadConfig);
+            Engine.ModuleConfig.WatchFile(this, LibertyPaths.ArsenalConfig, LoadConfig);
             Engine.Commands.Register(this, "wheel", "wheel [status] | open | select <slot 0-4> | confirm | close - weapon wheel (T-045)", WheelCommand);
         }
 
-        protected override void OnStop() { CloseMenu("module stopped"); }
+        protected internal override void OnStop() { CloseMenu("module stopped"); }
 
         protected internal override void OnUpdate()
         {
@@ -95,7 +95,7 @@ namespace LibertyFramework.Arsenal.Ui
         {
             try
             {
-                byte[] bytes = JsonStore.ReadBytes(LibertyPlus.Configuration.PlusPaths.ArsenalConfig);
+                byte[] bytes = JsonStore.ReadBytes(LibertyPaths.ArsenalConfig);
                 string hash = JsonStore.Hash(bytes);
                 if (hash == configHash) { return; }
                 ArsenalConfig parsed = JsonStore.Parse<ArsenalConfig>(bytes);
@@ -259,7 +259,7 @@ namespace LibertyFramework.Arsenal.Ui
             if (!catalogLoaded)
             {
                 catalogLoaded = true;
-                try { catalog = JsonStore.Load<WeaponCatalog>(LibertyPlus.Configuration.PlusPaths.WeaponCatalog); catalog.Validate(); }
+                try { catalog = JsonStore.Load<WeaponCatalog>(LibertyPaths.WeaponCatalog); catalog.Validate(); }
                 catch (Exception error) { catalog = null; RuntimeLog.Error("weapon_wheel_catalog_unavailable error=" + error.Message); }
             }
             WeaponCatalogEntry entry = catalog == null ? null : catalog.Find(weaponId);

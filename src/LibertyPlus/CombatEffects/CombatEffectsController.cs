@@ -67,7 +67,7 @@ namespace LibertyFramework.CombatEffects
         }
 
         // Console / autopilot: the DevTools gore tests on the nearest NPC.
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             Engine.Commands.Register(this, "gore", "gore gallery|arm|leg|head|leak - DevTools gore test on the nearest NPC", args =>
             {

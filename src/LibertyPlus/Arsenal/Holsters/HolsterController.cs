@@ -62,7 +62,7 @@ namespace LibertyFramework.Arsenal.Holsters
         }
 
         // T-044: the holster props react in the frame the engine reports the change instead of waiting for the next 50 ms tick.
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             Engine.Events.Subscribe<global::Liberty.Sdk.Events.PlayerWeaponChanged>(this, e => SyncNow());
             Engine.Events.Subscribe<global::Liberty.Sdk.Events.PlayerEnteredVehicle>(this, e => SyncNow());
@@ -72,7 +72,7 @@ namespace LibertyFramework.Arsenal.Holsters
         }
 
         // A stopped module must not leave props on Niko (mod-off runs and restarts stop it mid-session).
-        protected override void OnStop()
+        protected internal override void OnStop()
         {
             ArsenalRegistry.WeaponsRemoving -= OnWeaponsRemoving;
             try { Clear(); } catch (Exception error) { RuntimeLog.Error("holsters_stop_cleanup_failed error=" + error); }
@@ -93,7 +93,7 @@ namespace LibertyFramework.Arsenal.Holsters
             lastConfigCheckUtc = DateTime.UtcNow;
             try
             {
-                byte[] bytes = JsonStore.ReadBytes(LibertyPlus.Configuration.PlusPaths.HolstersConfig);
+                byte[] bytes = JsonStore.ReadBytes(LibertyPaths.HolstersConfig);
                 string hash = JsonStore.Hash(bytes);
                 if (hash == configHash) { return; }
                 configHash = hash;
@@ -546,7 +546,7 @@ namespace LibertyFramework.Arsenal.Holsters
             items.Add(NudgeItem("Rotation X", true, 0));
             items.Add(NudgeItem("Rotation Y", true, 1));
             items.Add(NudgeItem("Rotation Z", true, 2));
-            items.Add(MenuItem.Action("Save offsets", () => { JsonStore.Save(LibertyPlus.Configuration.PlusPaths.HolstersConfig, config); return "Saved holsters.json (.bak)"; }));
+            items.Add(MenuItem.Action("Save offsets", () => { JsonStore.Save(LibertyPaths.HolstersConfig, config); return "Saved holsters.json (.bak)"; }));
             return items;
         }
 

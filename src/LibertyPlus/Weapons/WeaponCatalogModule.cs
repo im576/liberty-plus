@@ -22,7 +22,7 @@ namespace LibertyFramework.Weapons
 
         public WeaponCatalogModule() { Interval = 1000; }
 
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             Engine.Commands.Register(this, "catalog",
                 "catalog [list] | give <catalog id|weapon id> [ammo] [force] [clear] | offer <money> <story progress 0-1|unknown> [contacts,comma|-] [override] | check | sim [catalog id|all] - Stage 1 arsenal",
@@ -34,7 +34,7 @@ namespace LibertyFramework.Weapons
             string verb = args.Length > 0 ? args[0].ToLowerInvariant() : "list";
             try
             {
-                WeaponCatalog catalog = JsonStore.Load<WeaponCatalog>(LibertyPlus.Configuration.PlusPaths.WeaponCatalog);
+                WeaponCatalog catalog = JsonStore.Load<WeaponCatalog>(LibertyPaths.WeaponCatalog);
                 catalog.Validate();
                 if (verb == "list") { return List(catalog); }
                 if (verb == "give") { return Give(catalog, args); }
