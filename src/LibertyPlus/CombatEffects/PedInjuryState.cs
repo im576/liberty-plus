@@ -4,7 +4,6 @@ namespace LibertyFramework.CombatEffects
 {
     internal sealed class PedInjuryState
     {
-        internal int LastHealth;
         internal long LastReactionMilliseconds;
         internal int Bleeds;
         internal int LastBone;

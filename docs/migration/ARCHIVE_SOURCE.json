@@ -1,0 +1,8 @@
+{
+  "branch": "archive/legacy-lane-c-effects",
+  "frameworkRef": "stage1/T-048",
+  "sourceCommit": "4cae50e0f4e5ce5668c93ffa3d4734f574ec6b53",
+  "files": 131,
+  "status": "ARCHIVE / NOT VALIDATED",
+  "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+}

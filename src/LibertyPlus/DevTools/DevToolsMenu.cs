@@ -65,7 +65,7 @@ namespace LibertyFramework.DevTools
         }
 
         // Console / autopilot: "goto <location id>" uses the same data-driven teleports as the TELEPORT page.
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             Engine.Commands.Register(this, "goto", "goto <location id> - teleport to a DevTools location (config/devtools/locations.json)", args =>
             {
@@ -109,7 +109,7 @@ namespace LibertyFramework.DevTools
             // T-041/T-042: the Stage 1 arsenal from the weapon catalog (same as the `catalog give` command).
             try
             {
-                WeaponCatalog catalog = JsonStore.Load<WeaponCatalog>(LibertyPlus.Configuration.PlusPaths.WeaponCatalog);
+                WeaponCatalog catalog = JsonStore.Load<WeaponCatalog>(LibertyPaths.WeaponCatalog);
                 // Owner decision 2026-09-30: the weapons outside normal Stage 1 availability (P90 look, MG36, snipers) stay in the game
                 // and are always obtainable from here; the test weapons have their own entries below.
                 List<WeaponCatalogEntry> menuEntries = catalog.Stage1Entries();
@@ -207,7 +207,7 @@ namespace LibertyFramework.DevTools
         {
             List<MenuItem> items = new List<MenuItem>();
             if (Gunplay == null) { items.Add(MenuItem.Info(() => "Gunplay script not running")); return items; }
-            string[] files = Directory.Exists(LibertyPlus.Configuration.PlusPaths.PresetDirectory) ? Directory.GetFiles(LibertyPlus.Configuration.PlusPaths.PresetDirectory, "*.json") : new string[0];
+            string[] files = Directory.Exists(LibertyPaths.PresetDirectory) ? Directory.GetFiles(LibertyPaths.PresetDirectory, "*.json") : new string[0];
             Array.Sort(files, StringComparer.OrdinalIgnoreCase);
             items.Add(MenuItem.Info(() => "Active: " + (Gunplay.Store.ActivePresetName ?? "-")));
             if (files.Length > 0)
@@ -225,10 +225,10 @@ namespace LibertyFramework.DevTools
             }
             else
             {
-                items.Add(MenuItem.Info(() => "No presets in " + LibertyPlus.Configuration.PlusPaths.PresetDirectory));
+                items.Add(MenuItem.Info(() => "No presets in " + LibertyPaths.PresetDirectory));
             }
             items.Add(MenuItem.Confirmed("Save live values as preset 'user_saved'", () =>
-                Gunplay.Store.SavePreset(Path.Combine(LibertyPlus.Configuration.PlusPaths.PresetDirectory, "user_saved.json"), "User saved",
+                Gunplay.Store.SavePreset(Path.Combine(LibertyPaths.PresetDirectory, "user_saved.json"), "User saved",
                     "Saved in game " + DateTime.Now.ToString("yyyy-MM-dd HH:mm")) ? "Saved presets/user_saved.json" : "Save failed; see log"));
             items.Add(MenuItem.Confirmed("Save live values to gunplay.json", () => Gunplay.Store.SaveActiveToConfig() ? "Saved (backup: gunplay.json.bak)" : "Save failed; see log"));
             items.Add(MenuItem.Action("Reload config from disk", () => ReloadConfig()));

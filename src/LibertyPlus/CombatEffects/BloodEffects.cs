@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GTA;
+using LibertyFramework.CombatEffects.Logic;
 using LibertyFramework.Core.Logging;
 
 namespace LibertyFramework.CombatEffects
@@ -12,6 +13,14 @@ namespace LibertyFramework.CombatEffects
     //   of confirmed one-shot blood, with a slowing/fading envelope, for visible leaks.
     internal sealed class BloodEffects
     {
+        private readonly EffectGenerationGate generation;
+
+        private readonly Action<int> ownLoop;
+        private readonly Action<int> forgetLoop;
+
+        internal BloodEffects(EffectGenerationGate generation, Action<int> ownLoop, Action<int> forgetLoop)
+        { this.generation = generation; this.ownLoop = ownLoop; this.forgetLoop = forgetLoop; }
+
         private sealed class Loop
         {
             internal int Handle;
@@ -22,16 +31,45 @@ namespace LibertyFramework.CombatEffects
         private readonly Dictionary<string, int> logged = new Dictionary<string, int>();
         private readonly List<BloodEmitter> pulses = new List<BloodEmitter>();
         private readonly List<Loop> loops = new List<Loop>();
-        private bool callFailureLogged;
+        private readonly Queue<long> bursts = new Queue<long>();
 
         internal int ActiveLoops { get { return loops.Count; } }
         internal int ActivePulses { get { return pulses.Count; } }
+        // Performance pressure 0-1 (Liberty.Perf.Pressure), set by the controller each tick; it shrinks the active-effect cap.
+        internal float Pressure;
+        // Emitters evicted by the shared budget (the caller reports the difference as gore_stats skipped_budget).
+        internal int Refused;
+
+        // Emitters that may be running for this source, after the shared budget (T-047/T-048) and pressure.
+        private int Allowed(CombatEffectsConfig config)
+        {
+            return Math.Max(0, EffectBudget.Available("gore", config.MaximumActiveEffects, config.MinimumActiveEffects, Pressure));
+        }
+
+        // Oldest emitters make room for a new one: bleeding wounds fade before a fresh hit is refused.
+        private bool MakeRoom(CombatEffectsConfig config)
+        {
+            int allowed = Allowed(config);
+            while (loops.Count + pulses.Count + bursts.Count >= allowed)
+            {
+                if (pulses.Count > 0) { pulses.RemoveAt(0); }
+                else if (loops.Count > 0) { if (!StopLoop(0)) { ReportBudget(); return false; } }
+                else { ReportBudget(); return false; } // accepted one-shots cannot be stopped; keep their leases
+                Refused++;
+            }
+            ReportBudget();
+            return true;
+        }
+
+        private void ReportBudget() { EffectBudget.Report("gore", loops.Count + pulses.Count + bursts.Count); }
 
         // Plays 'effect' on the bone. A looping effect runs for durationMilliseconds; a one-shot effect plays once, or
         // repeats every intervalMilliseconds for durationMilliseconds when both are set. Returns whether it spawned.
         internal bool Play(CombatEffectsConfig config, string effect, Ped ped, int bone, float scale, long now, int durationMilliseconds, int intervalMilliseconds)
         {
+            if (!generation.Allows(config.Enabled)) return false;
             if (string.IsNullOrEmpty(effect) || ped == null || !ped.Exists() || scale <= 0) { return false; }
+            if (!MakeRoom(config)) { Refused++; return false; }
             if (!looping.Contains(effect))
             {
                 bool ok = Call(() => CombatEffectsNatives.Burst(effect, ped, bone, scale), effect);
@@ -39,12 +77,13 @@ namespace LibertyFramework.CombatEffects
                 if (ok)
                 {
                     if (durationMilliseconds > 0 && intervalMilliseconds > 0) { AddPulse(config, effect, ped, bone, scale, now, durationMilliseconds, intervalMilliseconds); }
+                    else { bursts.Enqueue(now + config.OneShotLifetimeMilliseconds); ReportBudget(); }
                     return true;
                 }
                 looping.Add(effect);
             }
             int duration = durationMilliseconds > 0 ? durationMilliseconds : config.BurstLoopMilliseconds;
-            if (loops.Count >= config.MaximumLoopedEffects) { StopLoop(0); }
+            if (loops.Count >= config.MaximumLoopedEffects && !StopLoop(0)) return false;
             int handle = 0;
             Call(() => { handle = CombatEffectsNatives.Start(effect, ped, bone, scale); return handle != 0; }, effect);
             Log(effect, bone, scale, handle != 0 ? "loop " + duration + "ms" : "loop_failed");
@@ -60,6 +99,8 @@ namespace LibertyFramework.CombatEffects
             loop.Handle = handle;
             loop.StopAt = now + duration;
             loops.Add(loop);
+            ReportBudget();
+            ownLoop(handle);
             return true;
         }
 
@@ -68,11 +109,13 @@ namespace LibertyFramework.CombatEffects
         internal bool Leak(CombatEffectsConfig config, string effect, Ped ped, int bone, float scale, long now,
             int durationMilliseconds, int startIntervalMilliseconds, int endIntervalMilliseconds, bool stump)
         {
+            if (!generation.Allows(config.Enabled)) return false;
             if (string.IsNullOrEmpty(effect) || ped == null || !ped.Exists() || scale <= 0 || durationMilliseconds <= 0) { return false; }
+            for (int i = pulses.Count - 1; i >= 0; i--)
+                if (pulses[i].Ped == ped && pulses[i].Bone == bone) pulses.RemoveAt(i);
+            if (!MakeRoom(config)) { Refused++; return false; }
             bool ok = Call(() => CombatEffectsNatives.Burst(effect, ped, bone, scale), effect);
             if (!ok) { Log(effect, bone, scale, "leak_refused"); return false; }
-            for (int i = pulses.Count - 1; i >= 0; i--)
-                if (pulses[i].Ped == ped && pulses[i].Bone == bone) { pulses.RemoveAt(i); }
             int limit = Math.Min(config.MaximumEmitters, config.ExternalMaximumBleedEmitters);
             if (pulses.Count >= limit) { pulses.RemoveAt(0); }
             BloodEmitter pulse = new BloodEmitter();
@@ -85,6 +128,7 @@ namespace LibertyFramework.CombatEffects
             pulse.UntilMilliseconds = now + durationMilliseconds;
             pulse.Stump = stump;
             pulses.Add(pulse);
+            ReportBudget();
             Log(effect, bone, scale, "leak " + durationMilliseconds + "ms");
             return true;
         }
@@ -93,6 +137,7 @@ namespace LibertyFramework.CombatEffects
         {
             for (int i = pulses.Count - 1; i >= 0; i--)
                 if (pulses[i].Ped == ped && !pulses[i].Stump) { pulses.RemoveAt(i); }
+            ReportBudget();
         }
 
         private void AddPulse(CombatEffectsConfig config, string effect, Ped ped, int bone, float scale, long now, int duration, int interval)
@@ -104,15 +149,18 @@ namespace LibertyFramework.CombatEffects
             pulse.IntervalMilliseconds = interval; pulse.EndIntervalMilliseconds = interval;
             pulse.NextMilliseconds = now + interval; pulse.UntilMilliseconds = now + duration;
             pulses.Add(pulse);
+            ReportBudget();
         }
 
-        internal void Update(long now)
+        internal void Update(CombatEffectsConfig config, long now)
         {
+            while (bursts.Count > 0 && now >= bursts.Peek()) bursts.Dequeue();
             for (int i = loops.Count - 1; i >= 0; i--) { if (now >= loops[i].StopAt) { StopLoop(i); } }
             for (int i = pulses.Count - 1; i >= 0; i--)
             {
                 BloodEmitter pulse = pulses[i];
                 if (pulse.Ped == null || !pulse.Ped.Exists() || now > pulse.UntilMilliseconds) { pulses.RemoveAt(i); continue; }
+                if (!generation.Allows(config.Enabled)) continue;
                 if (now < pulse.NextMilliseconds) { continue; }
                 float progress = (float)(now - pulse.StartedMilliseconds) / (float)(pulse.UntilMilliseconds - pulse.StartedMilliseconds);
                 if (progress < 0) progress = 0;
@@ -122,20 +170,34 @@ namespace LibertyFramework.CombatEffects
                 pulse.NextMilliseconds = now + interval;
                 Call(() => CombatEffectsNatives.Burst(pulse.Effect, pulse.Ped, pulse.Bone, scale), pulse.Effect);
             }
+            // Pressure can rise while emitters run: shed the oldest until the budget fits again.
+            int allowed = Allowed(config);
+            while (loops.Count + pulses.Count + bursts.Count > allowed)
+            {
+                if (pulses.Count > 0) { pulses.RemoveAt(0); }
+                else if (loops.Count > 0) { if (!StopLoop(0)) break; }
+                else break; // one-shots finish naturally, no new admissions until their leases expire
+                Refused++;
+            }
+            ReportBudget();
         }
 
-        private void StopLoop(int index)
+        private bool StopLoop(int index)
         {
             int handle = loops[index].Handle;
+            if (!Call(() => { CombatEffectsNatives.Stop(handle); return true; }, "stop")) return false;
+            forgetLoop(handle);
             loops.RemoveAt(index);
-            Call(() => { CombatEffectsNatives.Stop(handle); return true; }, "stop");
+            return true;
         }
 
         // Natives only: call from a script tick, never from unload.
         internal void StopAll()
         {
-            while (loops.Count > 0) { StopLoop(loops.Count - 1); }
+            for (int i = loops.Count - 1; i >= 0; i--) StopLoop(i);
             pulses.Clear();
+            bursts.Clear();
+            ReportBudget();
         }
 
         private bool Call(Func<bool> action, string effect)
@@ -143,7 +205,7 @@ namespace LibertyFramework.CombatEffects
             try { return action(); }
             catch (Exception error)
             {
-                if (!callFailureLogged) { callFailureLogged = true; RuntimeLog.Error("ptfx_call_failed effect=" + effect + " error=" + error.Message); }
+                RuntimeLog.Error("ptfx_call_failed effect=" + effect + " error=" + error.Message);
                 return false;
             }
         }

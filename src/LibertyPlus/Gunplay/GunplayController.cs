@@ -126,6 +126,7 @@ namespace LibertyFramework.Gunplay
         private double lastAttachmentBloomMultiplier = 1.0;
         private bool loggedOwnerMismatch;
         private bool loggedCameraCrossCheck;
+        private bool loggedCameraCrossCheckDeferred;
         private bool useShdnDirection;
         private double pixelsPerTangent;
         private bool loggedProjection;
@@ -165,7 +166,7 @@ namespace LibertyFramework.Gunplay
         {
             Instance = this;
             Interval = 0;
-            store = new GunplayConfigStore(LibertyPlus.Configuration.PlusPaths.GunplayConfig, RuntimeLog.Info, RuntimeLog.Error);
+            store = new GunplayConfigStore(LibertyPaths.GunplayConfig, RuntimeLog.Info, RuntimeLog.Error);
             store.Poll(true);
             FreeAimEnabled = store.Active != null && store.Active.FreeAim.Profile == "free" && store.Active.FreeAim.EnabledOnStartup;
             configuredAimProfile = store.Active != null ? store.Active.FreeAim.Profile : null;
@@ -562,8 +563,8 @@ namespace LibertyFramework.Gunplay
         {
             try
             {
-                if (!File.Exists(LibertyPlus.Configuration.PlusPaths.WeaponCatalog)) { return; }
-                byte[] bytes = JsonStore.ReadBytes(LibertyPlus.Configuration.PlusPaths.WeaponCatalog);
+                if (!File.Exists(LibertyPaths.WeaponCatalog)) { return; }
+                byte[] bytes = JsonStore.ReadBytes(LibertyPaths.WeaponCatalog);
                 string hash = JsonStore.Hash(bytes);
                 if (hash == weaponCatalogHash) { return; }
                 weaponCatalogHash = hash;
@@ -703,7 +704,7 @@ namespace LibertyFramework.Gunplay
 
         // ---- T-042 range measurement ----
 
-        protected override void OnStart()
+        protected internal override void OnStart()
         {
             Engine.Commands.Register(this, "aim", "aim on|off [crouched] [cover] [speed <m/s>] - test hook: act as if the aim button is held, with a forced stance/speed (T-043)", AimCommand);
             Engine.Commands.Register(this, "reticle", "reticle debug on|off | check | reset | status - log the drawn opening against the cone and check it (T-043)", ReticleCommand);
@@ -878,11 +879,18 @@ namespace LibertyFramework.Gunplay
             Vec3 cameraPosition = Natives.CamPosition(gameCamera);
             Vec3 rotation = Natives.CamRotation(gameCamera);
             Vec3 forward = Vec3.FromPitchHeadingDegrees(rotation.X, rotation.Z);
-            if (!loggedCameraCrossCheck)
+            Camera currentCamera = (!loggedCameraCrossCheck || useShdnDirection) ? Game.CurrentCamera : null;
+            bool sameCamera = currentCamera != null && currentCamera.GetHashCode() == gameCamera;
+            if (!loggedCameraCrossCheck && !sameCamera && !loggedCameraCrossCheckDeferred)
             {
-                // One-time evidence that the rotation->direction convention matches ScriptHookDotNet's camera direction.
+                loggedCameraCrossCheckDeferred = true;
+                RuntimeLog.Info("shot_audit_camera_check_deferred reason=different_camera_handles");
+            }
+            if (!loggedCameraCrossCheck && sameCamera)
+            {
+                // Compare the same camera. A scripted side-on review camera is not evidence of a rotation convention mismatch.
                 loggedCameraCrossCheck = true;
-                Vector3 shdn = Game.CurrentCamera.Direction;
+                Vector3 shdn = currentCamera.Direction;
                 Vec3 other = new Vec3(shdn.X, shdn.Y, shdn.Z).Normalized();
                 double agreement = Math.Acos(Math.Max(-1, Math.Min(1, Vec3.Dot(forward, other)))) * 180 / Math.PI;
                 Vec3 firstShot = (traces[0].End - traces[0].Start).Normalized();
@@ -890,9 +898,9 @@ namespace LibertyFramework.Gunplay
                     " angle_between=" + agreement.ToString("0.00") + " first_bullet_dir=" + firstShot);
                 if (agreement > 5) { useShdnDirection = true; RuntimeLog.Error("shot_audit_convention_mismatch using ScriptHookDotNet camera direction"); }
             }
-            if (useShdnDirection)
+            if (useShdnDirection && sameCamera)
             {
-                Vector3 shdn = Game.CurrentCamera.Direction;
+                Vector3 shdn = currentCamera.Direction;
                 forward = new Vec3(shdn.X, shdn.Y, shdn.Z);
             }
             ShotAuditStats stats;

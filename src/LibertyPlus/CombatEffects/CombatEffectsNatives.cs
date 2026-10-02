@@ -42,6 +42,13 @@ namespace LibertyFramework.CombatEffects
             Function.Call("SET_CHAR_BLEEDING", ped, on);
         }
 
+        // One frame of a point light (name, x y z, r g b 0-255 as ints, range in metres, intensity). The light exists for the frame
+        // of the call, so a lasting light is drawn every tick; call from the script tick, never from the draw pass.
+        internal static void DrawLight(float x, float y, float z, int red, int green, int blue, float range, float intensity)
+        {
+            Function.Call("DRAW_LIGHT_WITH_RANGE", x, y, z, red, green, blue, range, intensity);
+        }
+
         internal static void RemoveHead(Ped ped)
         {
             Function.Call("EXPLODE_CHAR_HEAD", ped);
