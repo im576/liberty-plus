@@ -5,6 +5,53 @@ using System.Runtime.Serialization;
 #pragma warning disable 0649
 namespace LibertyFramework.CombatEffects
 {
+    // One weapon class of the gore presentation (T-047). The catalog's "family" (T-041) is the natural source of the
+    // ids once it lands; until then the ids are listed here. scaleMultiplier is the caliber sensitivity: it multiplies
+    // the entry/exit effect scale. Effects fade with distance from the attacker over effectFalloffMeters (scale 1 at
+    // point blank down to distanceScaleFloor at that distance and beyond).
+    [DataContract]
+    internal sealed class GoreWeaponClass
+    {
+        [DataMember(Name="name", IsRequired=true)] internal string Name;
+        [DataMember(Name="weaponIds", IsRequired=true)] internal int[] WeaponIds;
+        [DataMember(Name="scaleMultiplier", IsRequired=false)] internal float ScaleMultiplier;
+        [DataMember(Name="severeHeadMaximumMeters", IsRequired=false)] internal float SevereHeadMaximumMeters;
+        // 0 = this class has no trauma effect.
+        [DataMember(Name="traumaMaximumMeters", IsRequired=false)] internal float TraumaMaximumMeters;
+        [DataMember(Name="effectFalloffMeters", IsRequired=false)] internal float EffectFalloffMeters;
+        [DataMember(Name="distanceScaleFloor", IsRequired=false)] internal float DistanceScaleFloor;
+        // Names of the shipped effects (entry/chunks); empty = the global default for that slot.
+        [DataMember(Name="entryEffect", IsRequired=false)] internal string EntryEffect;
+        [DataMember(Name="chunksEffect", IsRequired=false)] internal string ChunksEffect;
+
+        [OnDeserializing]
+        private void ApplyDefaults(StreamingContext context)
+        {
+            ScaleMultiplier = 1.0f; SevereHeadMaximumMeters = 10f; EffectFalloffMeters = 30f; DistanceScaleFloor = 0.6f;
+        }
+
+        internal static GoreWeaponClass[] Defaults()
+        {
+            return new[]
+            {
+                Make("pistol", new[] { 7, 8, 9, 58 }, 1.0f, 10f, 0f, 30f, 0.6f, null, null),
+                Make("smg", new[] { 12, 13 }, 0.9f, 12f, 0f, 30f, 0.6f, null, null),
+                Make("rifle", new[] { 14, 15, 59 }, 1.3f, 20f, 0f, 45f, 0.7f, null, "blood_gun_chunks"),
+                Make("shotgun", new[] { 10, 11, 60 }, 1.5f, 15f, 5f, 15f, 0.5f, "blood_shotgun_entry", "blood_shotgun_chunks"),
+                Make("sniper", new[] { 16, 17 }, 1.8f, 60f, 0f, 200f, 1.0f, "blood_sniper_entry", "blood_sniper_chunks"),
+            };
+        }
+
+        private static GoreWeaponClass Make(string name, int[] ids, float scale, float head, float trauma, float falloff, float floor, string entry, string chunks)
+        {
+            GoreWeaponClass value = new GoreWeaponClass();
+            value.Name = name; value.WeaponIds = ids; value.ScaleMultiplier = scale; value.SevereHeadMaximumMeters = head;
+            value.TraumaMaximumMeters = trauma; value.EffectFalloffMeters = falloff; value.DistanceScaleFloor = floor;
+            value.EntryEffect = entry; value.ChunksEffect = chunks;
+            return value;
+        }
+    }
+
     [DataContract]
     internal sealed class CombatEffectsConfig
     {
@@ -124,8 +171,128 @@ namespace LibertyFramework.CombatEffects
         [DataMember(Name="severedLimbSpawnHeightMeters", IsRequired=false)] internal float SeveredLimbSpawnHeightMeters;
         [DataMember(Name="severedLimbVerticalForceFraction", IsRequired=false)] internal float SeveredLimbVerticalForceFraction;
 
+        // T-047 (Stage 1 harsh gore). All optional: OnDeserializing gives every field its default, so a config file from
+        // before T-047 loads and behaves as documented in CONFIG_SCHEMA.md. The scan* and sample* fields above are unused
+        // (damage arrives as exact PedDamaged events) and kept only so older files still validate.
+        // Weapon classes: which vanilla/catalog weapon ids belong to which class, and how the class changes the presentation.
+        [DataMember(Name="weaponClasses", IsRequired=false)] internal GoreWeaponClass[] WeaponClasses;
+        // Severe head trauma (any firearm hit to the head within the class's severeHeadMaximumMeters) and trauma (shotgun-type
+        // hit within traumaMaximumMeters): extra effect sets on top of the entry effects, scaled by headTraumaScale/traumaScale.
+        [DataMember(Name="headTraumaEffects", IsRequired=false)] internal string[] HeadTraumaEffects;
+        [DataMember(Name="headTraumaScale", IsRequired=false)] internal float HeadTraumaScale;
+        [DataMember(Name="traumaEffects", IsRequired=false)] internal string[] TraumaEffects;
+        [DataMember(Name="traumaScale", IsRequired=false)] internal float TraumaScale;
+        // Exact events beyond this distance from the player produce no particles (they are still counted); at most
+        // maximumEffectHitsPerFrame hits per engine frame get the full effect set (the rest only bleed).
+        [DataMember(Name="effectMaximumDistanceMeters", IsRequired=false)] internal float EffectMaximumDistanceMeters;
+        [DataMember(Name="maximumEffectHitsPerFrame", IsRequired=false)] internal int MaximumEffectHitsPerFrame;
+        // combat_hit log lines per second (severe hits and kills are always logged); the counters are never limited.
+        [DataMember(Name="maximumHitLogsPerSecond", IsRequired=false)] internal int MaximumHitLogsPerSecond;
+        // A hit that is not the killing hit but is severe (head, trauma, limb loss) can leave the victim suffering:
+        // ragdoll, pain speech, then the game's own cower task. woundedChance is the share of such hits (0-1).
+        [DataMember(Name="woundedChance", IsRequired=false)] internal float WoundedChance;
+        [DataMember(Name="woundedRagdollMilliseconds", IsRequired=false)] internal int WoundedRagdollMilliseconds;
+        [DataMember(Name="woundedCowerMilliseconds", IsRequired=false)] internal int WoundedCowerMilliseconds;
+        [DataMember(Name="woundedSpeechContexts", IsRequired=false)] internal string[] WoundedSpeechContexts;
+        [DataMember(Name="woundedMaximumPeds", IsRequired=false)] internal int WoundedMaximumPeds;
+        // Nearby unarmed pedestrians flee after severe violence (a kill, or a severe hit).
+        [DataMember(Name="panicEnabled", IsRequired=false)] internal bool PanicEnabled;
+        [DataMember(Name="panicRadiusMeters", IsRequired=false)] internal float PanicRadiusMeters;
+        [DataMember(Name="panicMaximumPeds", IsRequired=false)] internal int PanicMaximumPeds;
+        [DataMember(Name="panicFleeDistanceMeters", IsRequired=false)] internal float PanicFleeDistanceMeters;
+        [DataMember(Name="panicCooldownMilliseconds", IsRequired=false)] internal int PanicCooldownMilliseconds;
+        [DataMember(Name="panicScreamChance", IsRequired=false)] internal float PanicScreamChance;
+        [DataMember(Name="panicSpeechContexts", IsRequired=false)] internal string[] PanicSpeechContexts;
+        [DataMember(Name="panicVerifyMilliseconds", IsRequired=false)] internal int PanicVerifyMilliseconds;
+        [DataMember(Name="panicMovedMeters", IsRequired=false)] internal float PanicMovedMeters;
+        // Bodies of peds killed near the player stay (the game is told to keep them) for a lifetime between the two
+        // values, then are released. Hard cap, distance cleanup, and both shrink under performance pressure.
+        [DataMember(Name="bodyPersistenceEnabled", IsRequired=false)] internal bool BodyPersistenceEnabled;
+        [DataMember(Name="bodyLifetimeMinimumMilliseconds", IsRequired=false)] internal int BodyLifetimeMinimumMilliseconds;
+        [DataMember(Name="bodyLifetimeMaximumMilliseconds", IsRequired=false)] internal int BodyLifetimeMaximumMilliseconds;
+        [DataMember(Name="maximumBodies", IsRequired=false)] internal int MaximumBodies;
+        [DataMember(Name="bodyMaximumDistanceAtDeathMeters", IsRequired=false)] internal float BodyMaximumDistanceAtDeathMeters;
+        [DataMember(Name="bodyCleanupDistanceMeters", IsRequired=false)] internal float BodyCleanupDistanceMeters;
+        [DataMember(Name="bodySweepIntervalMilliseconds", IsRequired=false)] internal int BodySweepIntervalMilliseconds;
+        [DataMember(Name="minimumBodiesUnderPressure", IsRequired=false)] internal int MinimumBodiesUnderPressure;
+        // Total active gore/effect emitters (looped effects plus pulses; T-048's effects report into the same budget);
+        // under pressure the cap shrinks to no fewer than minimumActiveEffects. Oldest are removed first.
+        [DataMember(Name="maximumActiveEffects", IsRequired=false)] internal int MaximumActiveEffects;
+        [DataMember(Name="minimumActiveEffects", IsRequired=false)] internal int MinimumActiveEffects;
+        // Blood pools, trails and surface blood: interface designed (IBloodSurface), implementation waits for T-051.
+        [DataMember(Name="bloodSurfaceEnabled", IsRequired=false)] internal bool BloodSurfaceEnabled;
+
+        [OnDeserializing]
+        private void ApplyDefaults(StreamingContext context)
+        {
+            WeaponClasses = GoreWeaponClass.Defaults();
+            HeadTraumaEffects = new[] { "blood_gun_entry_arterial", "blood_mouth_mist", "blood_mouth_chunks" };
+            HeadTraumaScale = 1.4f;
+            TraumaEffects = new[] { "blood_shotgun_chunks", "blood_shotgun_mist" };
+            TraumaScale = 1.5f;
+            EffectMaximumDistanceMeters = 60;
+            MaximumEffectHitsPerFrame = 6;
+            WoundedChance = 0.35f;
+            WoundedRagdollMilliseconds = 2500;
+            WoundedCowerMilliseconds = 6000;
+            MaximumHitLogsPerSecond = 10;
+            WoundedSpeechContexts = new[] { "PAIN" };
+            WoundedMaximumPeds = 4;
+            PanicEnabled = true;
+            PanicRadiusMeters = 25;
+            PanicMaximumPeds = 8;
+            PanicFleeDistanceMeters = 60;
+            PanicCooldownMilliseconds = 8000;
+            PanicScreamChance = 0.5f;
+            PanicSpeechContexts = new[] { "PAIN" };
+            PanicVerifyMilliseconds = 3000;
+            PanicMovedMeters = 1.5f;
+            BodyPersistenceEnabled = true;
+            BodyLifetimeMinimumMilliseconds = 180000;
+            BodyLifetimeMaximumMilliseconds = 300000;
+            MaximumBodies = 10;
+            BodyMaximumDistanceAtDeathMeters = 60;
+            BodyCleanupDistanceMeters = 120;
+            BodySweepIntervalMilliseconds = 1000;
+            MinimumBodiesUnderPressure = 2;
+            MaximumActiveEffects = 24;
+            MinimumActiveEffects = 6;
+        }
+
         internal bool GoreConfigured { get { return EffectScale > 0 && MaximumEmitters > 0 && !string.IsNullOrEmpty(BleedEffectName); } }
         internal bool StockBloodVisuals { get { return string.IsNullOrEmpty(BloodVisualMode) || BloodVisualMode == "stock"; } }
+
+        private void ValidateGore()
+        {
+            if (WeaponClasses == null || WeaponClasses.Length == 0 || WeaponClasses.Length > 16)
+                throw new InvalidDataException("combat_effects.json weaponClasses must have 1-16 entries");
+            System.Collections.Generic.HashSet<int> seen = new System.Collections.Generic.HashSet<int>();
+            foreach (GoreWeaponClass weaponClass in WeaponClasses)
+            {
+                if (weaponClass == null || string.IsNullOrEmpty(weaponClass.Name) || weaponClass.WeaponIds == null || weaponClass.WeaponIds.Length == 0 ||
+                    weaponClass.ScaleMultiplier <= 0 || weaponClass.ScaleMultiplier > 4 || weaponClass.SevereHeadMaximumMeters < 0 || weaponClass.SevereHeadMaximumMeters > 300 ||
+                    weaponClass.TraumaMaximumMeters < 0 || weaponClass.TraumaMaximumMeters > 300 || weaponClass.EffectFalloffMeters <= 0 || weaponClass.EffectFalloffMeters > 500 ||
+                    weaponClass.DistanceScaleFloor <= 0 || weaponClass.DistanceScaleFloor > 1)
+                    throw new InvalidDataException("combat_effects.json weaponClasses entry invalid");
+                foreach (int id in weaponClass.WeaponIds)
+                    if (id < 0 || id > 255 || !seen.Add(id)) throw new InvalidDataException("combat_effects.json weapon id " + id + " listed twice or out of range");
+            }
+            if (HeadTraumaEffects == null || TraumaEffects == null || WoundedSpeechContexts == null || PanicSpeechContexts == null ||
+                HeadTraumaScale <= 0 || HeadTraumaScale > 8 || TraumaScale <= 0 || TraumaScale > 8 ||
+                EffectMaximumDistanceMeters < 5 || EffectMaximumDistanceMeters > 500 || MaximumEffectHitsPerFrame < 1 || MaximumEffectHitsPerFrame > 64 ||
+                WoundedChance < 0 || WoundedChance > 1 || WoundedRagdollMilliseconds < 0 || WoundedRagdollMilliseconds > 10000 || WoundedCowerMilliseconds < 0 || WoundedCowerMilliseconds > 60000 ||
+                MaximumHitLogsPerSecond < 0 || MaximumHitLogsPerSecond > 1000 || WoundedMaximumPeds < 0 || WoundedMaximumPeds > 32 ||
+                PanicRadiusMeters < 1 || PanicRadiusMeters > 100 || PanicMaximumPeds < 0 || PanicMaximumPeds > 32 || PanicFleeDistanceMeters < 5 || PanicFleeDistanceMeters > 200 ||
+                PanicCooldownMilliseconds < 0 || PanicCooldownMilliseconds > 120000 || PanicScreamChance < 0 || PanicScreamChance > 1 ||
+                PanicVerifyMilliseconds < 500 || PanicVerifyMilliseconds > 30000 || PanicMovedMeters <= 0 || PanicMovedMeters > 20)
+                throw new InvalidDataException("combat_effects.json gore/wounded/panic bounds invalid");
+            if (BodyLifetimeMinimumMilliseconds < 1000 || BodyLifetimeMaximumMilliseconds < BodyLifetimeMinimumMilliseconds || BodyLifetimeMaximumMilliseconds > 3600000 ||
+                MaximumBodies < 1 || MaximumBodies > 64 || MinimumBodiesUnderPressure < 0 || MinimumBodiesUnderPressure > MaximumBodies ||
+                BodyMaximumDistanceAtDeathMeters < 1 || BodyMaximumDistanceAtDeathMeters > 500 || BodyCleanupDistanceMeters < BodyMaximumDistanceAtDeathMeters || BodyCleanupDistanceMeters > 1000 ||
+                BodySweepIntervalMilliseconds < 100 || BodySweepIntervalMilliseconds > 10000 ||
+                MaximumActiveEffects < 1 || MaximumActiveEffects > 128 || MinimumActiveEffects < 0 || MinimumActiveEffects > MaximumActiveEffects)
+                throw new InvalidDataException("combat_effects.json persistence/budget bounds invalid");
+        }
 
         internal void Validate()
         {
@@ -186,6 +353,7 @@ namespace LibertyFramework.CombatEffects
                 SeveredLimbSpawnOffsetMeters < 0 || SeveredLimbSpawnOffsetMeters > 3 || LimbConfirmTicks < 0 || LimbConfirmTicks > 30 ||
                 LimbSettleMilliseconds < 0 || LimbSettleMilliseconds > 10000 || LimbFloatingHeightMeters < 0.05f || LimbFloatingHeightMeters > 5))
                 throw new InvalidDataException("combat effects gore bounds invalid");
+            ValidateGore();
             if (AllFirearms) { return; }
             foreach (int id in AllowedWeaponIds)
                 if (id < 58 || id > 255) throw new InvalidDataException("combat effects requires registered test weapon IDs");

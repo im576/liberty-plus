@@ -30,14 +30,14 @@ namespace LibertyFramework.DevTools.Teleport
             error = null;
             try
             {
-                LocationFile file = JsonStore.Load<LocationFile>(LibertyPlus.Configuration.PlusPaths.Locations);
+                LocationFile file = JsonStore.Load<LocationFile>(LibertyPaths.Locations);
                 if (file.SchemaVersion != 1 || file.Locations == null) { throw new InvalidDataException("schemaVersion must be 1 with locations"); }
                 return file.Locations;
             }
             catch (Exception exception)
             {
                 error = exception.Message;
-                RuntimeLog.Error("locations_load_failed path=" + LibertyPlus.Configuration.PlusPaths.Locations + " error=" + exception.Message);
+                RuntimeLog.Error("locations_load_failed path=" + LibertyPaths.Locations + " error=" + exception.Message);
                 return new List<TeleportLocation>();
             }
         }
@@ -153,7 +153,7 @@ namespace LibertyFramework.DevTools.Teleport
             LocationFile file = new LocationFile();
             file.SchemaVersion = 1;
             file.Locations = locations;
-            JsonStore.Save(LibertyPlus.Configuration.PlusPaths.Locations, file);
+            JsonStore.Save(LibertyPaths.Locations, file);
             RuntimeLog.Info("gun_test_range_saved position=" + position.X + "," + position.Y + "," + position.Z + " heading=" + range.Heading);
             return "Gun Test Range saved here";
         }

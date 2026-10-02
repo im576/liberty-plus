@@ -45,15 +45,17 @@ namespace LibertyFramework.CombatEffects
         private readonly PedSkeleton skeleton;
         private readonly SkeletonCollapseEngine engine;
         private readonly float collapseScale;
+        private readonly GoreStats stats;
         private readonly List<Collapse> records = new List<Collapse>();
         private bool tableDirty;
         private bool variationFailureLogged;
 
-        internal Dismemberment(PedSkeleton skeleton, SkeletonCollapseEngine engine, float collapseScale)
+        internal Dismemberment(PedSkeleton skeleton, SkeletonCollapseEngine engine, float collapseScale, GoreStats stats)
         {
             this.skeleton = skeleton;
             this.engine = engine;
             this.collapseScale = collapseScale;
+            this.stats = stats;
         }
 
         internal bool EngineActive { get { return engine != null && engine.PatchCount > 0; } }
@@ -231,7 +233,7 @@ namespace LibertyFramework.CombatEffects
                     if (record.Clone)
                     {
                         record.ConfirmTicks = 0;
-                        if (record.Shown) { record.Ped.Visible = false; record.Hidden = true; RuntimeLog.Info("dismember_limb_rehidden part=" + record.Name); }
+                        if (record.Shown) { record.Ped.Visible = false; record.Hidden = true; stats.LimbsFlashing++; RuntimeLog.Info("dismember_limb_rehidden part=" + record.Name); }
                     }
                 }
                 Apply(record);
@@ -288,6 +290,7 @@ namespace LibertyFramework.CombatEffects
             {
                 record.Hidden = false;
                 record.Ped.Visible = true;
+                stats.LimbsFlashing++;
                 RuntimeLog.Info("dismember_limb_reshown part=" + record.Name);
             }
             if (record.Settled || now - record.ShownMilliseconds < config.LimbSettleMilliseconds) { return; }
@@ -299,6 +302,7 @@ namespace LibertyFramework.CombatEffects
                 float height = joint[2] - Natives.GroundZ(joint[0], joint[1], joint[2] + 0.5f);
                 if (height > config.LimbFloatingHeightMeters)
                 {
+                    stats.LimbsFloating++;
                     RuntimeLog.Info("dismember_limb_floating_removed part=" + record.Name + " height=" + height.ToString("0.00"));
                     if (onLanding != null) { onLanding(record.Ped, record.CutTag); }
                     record.Ped.Delete();

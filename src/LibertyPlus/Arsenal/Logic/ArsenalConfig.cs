@@ -32,10 +32,6 @@ namespace LibertyFramework.Arsenal.Logic
         [DataMember(Name = "trunkTimings", IsRequired = true)] internal TrunkTimings TrunkTimings;
         // T-044: the Stage 1 loadout; absent in files that predate it (general limits apply then).
         [DataMember(Name = "loadout", IsRequired = false)] internal LoadoutRules Loadout;
-        // T-045: weapon wheel bindings; absent in files that predate it (WeaponWheelConfig.Defaults then).
-        [DataMember(Name = "weaponWheel", IsRequired = false)] internal WeaponWheelConfig WeaponWheel;
-        // T-046: trunk capacity per vehicle class; absent in files that predate it (TrunkCapacityRules.Defaults then).
-        [DataMember(Name = "trunkCapacity", IsRequired = false)] internal TrunkCapacityRules TrunkCapacity;
     }
 
 }

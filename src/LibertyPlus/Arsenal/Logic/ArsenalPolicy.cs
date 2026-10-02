@@ -74,30 +74,6 @@ namespace LibertyFramework.Arsenal.Logic
             return -1;
         }
 
-        // T-046: which carried weapon an incoming one from storage swaps out. The game's inventory holds one weapon per category,
-        // so a carried weapon of the same category always goes; otherwise, when the incoming weapon's group is already at its
-        // limit, the least recently used carried weapon of that group goes; otherwise nothing (-1, a plain take).
-        internal static int DisplacedOnTake(ArsenalConfig config, IList<WeaponRecord> carried, WeaponRecord incoming, IDictionary<int, long> lastUsed)
-        {
-            for (int index = 0; index < carried.Count; index++)
-            {
-                if (carried[index].Category == incoming.Category && carried[index].WeaponId != incoming.WeaponId) { return index; }
-            }
-            string group = Group(config, incoming.Category);
-            if (group != "sidearm" && group != "longGun" && group != "melee") { return -1; }
-            int count = 0, oldest = -1;
-            long age = long.MaxValue;
-            for (int index = 0; index < carried.Count; index++)
-            {
-                if (Group(config, carried[index].Category) != group) { continue; }
-                count++;
-                long used;
-                if (!lastUsed.TryGetValue(carried[index].WeaponId, out used)) { used = 0; }
-                if (oldest < 0 || used < age) { oldest = index; age = used; }
-            }
-            return count >= Limit(config, group) ? oldest : -1;
-        }
-
         internal static bool IsOwnedGain(bool fromStorage, bool mission, long gainMilliseconds, long lastMoneyDecreaseMilliseconds, int windowMilliseconds)
         {
             return fromStorage || (!mission && lastMoneyDecreaseMilliseconds >= 0 && gainMilliseconds >= lastMoneyDecreaseMilliseconds &&

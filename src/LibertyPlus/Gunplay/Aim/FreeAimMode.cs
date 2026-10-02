@@ -141,7 +141,7 @@ namespace LibertyFramework.Gunplay.Aim
                 state.AutoAimPreference = AutoAimPrior;
                 state.LockOnDisabledBefore = LockOnPrior;
                 state.SavedUtc = DateTime.UtcNow.ToString("o");
-                JsonStore.Save(LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState, state);
+                JsonStore.Save(LibertyPaths.FreeAimRestoreState, state);
             }
             catch (Exception error)
             {
@@ -153,8 +153,8 @@ namespace LibertyFramework.Gunplay.Aim
         {
             try
             {
-                if (!File.Exists(LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState)) { return null; }
-                FreeAimRestoreState state = JsonStore.Load<FreeAimRestoreState>(LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState);
+                if (!File.Exists(LibertyPaths.FreeAimRestoreState)) { return null; }
+                FreeAimRestoreState state = JsonStore.Load<FreeAimRestoreState>(LibertyPaths.FreeAimRestoreState);
                 return state.SchemaVersion == 1 ? state : null;
             }
             catch (Exception error)
@@ -168,8 +168,8 @@ namespace LibertyFramework.Gunplay.Aim
         {
             try
             {
-                if (File.Exists(LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState)) { File.Delete(LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState); }
-                string backup = LibertyPlus.Configuration.PlusPaths.FreeAimRestoreState + ".bak";
+                if (File.Exists(LibertyPaths.FreeAimRestoreState)) { File.Delete(LibertyPaths.FreeAimRestoreState); }
+                string backup = LibertyPaths.FreeAimRestoreState + ".bak";
                 if (File.Exists(backup)) { File.Delete(backup); }
             }
             catch (Exception error)

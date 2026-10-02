@@ -31,14 +31,6 @@ namespace LibertyFramework.Arsenal.Ui
         internal bool Active { get { return sequence != null && sequence.IsRunning; } }
         internal bool WheelReady { get { return Active && browsing && !closeRequested; } }
 
-        // Existing managed choreography fields only; called at measurement command boundaries, never the draw pass.
-        internal string Observation()
-        {
-            return "trunk_active=" + Active + " trunk_completed=" + (sequence != null && sequence.Completed) +
-                " trunk_step=" + (sequence != null ? sequence.StepIndex : -1) + " browsing=" + browsing +
-                " close_requested=" + closeRequested + " handle_requested=" + handleRequested;
-        }
-
         internal void Begin(PedRef ped, VehicleRef trunk, Vec3 lookAt, TrunkTimings timings)
         {
             LibertyEngine engine = LibertyEngine.Current;
@@ -57,12 +49,7 @@ namespace LibertyFramework.Arsenal.Ui
                 .Do(() => browsing = false)
                 .At(timings.LidCloseAtMilliseconds, () => engine.Vehicles.CloseDoor(trunk, VehicleDoor.Trunk))
                 .Play(ped, CloseBoot, AnimOptions.Default, timings.CloseMinMilliseconds, timings.CloseMaxMilliseconds)
-                .OnComplete(() =>
-                {
-                    // A missing close clip skips its timed action; successful completion must still shut the lid.
-                    if (engine.Vehicles.Exists(trunk)) { engine.Vehicles.CloseDoor(trunk, VehicleDoor.Trunk); }
-                    engine.Tasks.Clear(ped);
-                })
+                .OnComplete(() => engine.Tasks.Clear(ped))
                 .OnCancel(() =>
                 {
                     if (engine.Vehicles.Exists(trunk)) { engine.Vehicles.CloseDoor(trunk, VehicleDoor.Trunk); }

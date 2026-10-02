@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GTA;
+using LibertyFramework.CombatEffects.Logic;
 using LibertyFramework.Core.Logging;
 
 namespace LibertyFramework.CombatEffects
@@ -26,6 +27,29 @@ namespace LibertyFramework.CombatEffects
 
         internal int ActiveLoops { get { return loops.Count; } }
         internal int ActivePulses { get { return pulses.Count; } }
+        // Performance pressure 0-1 (Liberty.Perf.Pressure), set by the controller each tick; it shrinks the active-effect cap.
+        internal float Pressure;
+        // Emitters evicted by the shared budget (the caller reports the difference as gore_stats skipped_budget).
+        internal int Refused;
+
+        // Emitters that may be running for this source, after the shared budget (T-047/T-048) and pressure.
+        private int Allowed(CombatEffectsConfig config)
+        {
+            return Math.Max(1, EffectBudget.Available("gore", config.MaximumActiveEffects, config.MinimumActiveEffects, Pressure));
+        }
+
+        // Oldest emitters make room for a new one: bleeding wounds fade before a fresh hit is refused.
+        private void MakeRoom(CombatEffectsConfig config)
+        {
+            int allowed = Allowed(config);
+            while (loops.Count + pulses.Count >= allowed)
+            {
+                if (pulses.Count > 0) { pulses.RemoveAt(0); }
+                else if (loops.Count > 0) { StopLoop(0); }
+                else { break; }
+                Refused++;
+            }
+        }
 
         // Plays 'effect' on the bone. A looping effect runs for durationMilliseconds; a one-shot effect plays once, or
         // repeats every intervalMilliseconds for durationMilliseconds when both are set. Returns whether it spawned.
@@ -44,6 +68,7 @@ namespace LibertyFramework.CombatEffects
                 looping.Add(effect);
             }
             int duration = durationMilliseconds > 0 ? durationMilliseconds : config.BurstLoopMilliseconds;
+            MakeRoom(config);
             if (loops.Count >= config.MaximumLoopedEffects) { StopLoop(0); }
             int handle = 0;
             Call(() => { handle = CombatEffectsNatives.Start(effect, ped, bone, scale); return handle != 0; }, effect);
@@ -75,6 +100,7 @@ namespace LibertyFramework.CombatEffects
                 if (pulses[i].Ped == ped && pulses[i].Bone == bone) { pulses.RemoveAt(i); }
             int limit = Math.Min(config.MaximumEmitters, config.ExternalMaximumBleedEmitters);
             if (pulses.Count >= limit) { pulses.RemoveAt(0); }
+            MakeRoom(config);
             BloodEmitter pulse = new BloodEmitter();
             pulse.Ped = ped; pulse.Bone = bone; pulse.Effect = effect; pulse.Scale = scale;
             pulse.EndScaleFraction = config.ExternalBleedEndScaleFraction;
@@ -98,6 +124,7 @@ namespace LibertyFramework.CombatEffects
         private void AddPulse(CombatEffectsConfig config, string effect, Ped ped, int bone, float scale, long now, int duration, int interval)
         {
             if (pulses.Count >= config.MaximumEmitters) { pulses.RemoveAt(0); }
+            MakeRoom(config);
             BloodEmitter pulse = new BloodEmitter();
             pulse.Ped = ped; pulse.Bone = bone; pulse.Effect = effect; pulse.Scale = scale;
             pulse.EndScaleFraction = 1.0f; pulse.StartedMilliseconds = now;
@@ -106,7 +133,7 @@ namespace LibertyFramework.CombatEffects
             pulses.Add(pulse);
         }
 
-        internal void Update(long now)
+        internal void Update(CombatEffectsConfig config, long now)
         {
             for (int i = loops.Count - 1; i >= 0; i--) { if (now >= loops[i].StopAt) { StopLoop(i); } }
             for (int i = pulses.Count - 1; i >= 0; i--)
@@ -122,6 +149,15 @@ namespace LibertyFramework.CombatEffects
                 pulse.NextMilliseconds = now + interval;
                 Call(() => CombatEffectsNatives.Burst(pulse.Effect, pulse.Ped, pulse.Bone, scale), pulse.Effect);
             }
+            // Pressure can rise while emitters run: shed the oldest until the budget fits again.
+            int allowed = Allowed(config);
+            while (loops.Count + pulses.Count > allowed)
+            {
+                if (pulses.Count > 0) { pulses.RemoveAt(0); }
+                else { StopLoop(0); }
+                Refused++;
+            }
+            EffectBudget.Report("gore", loops.Count + pulses.Count);
         }
 
         private void StopLoop(int index)
@@ -136,6 +172,7 @@ namespace LibertyFramework.CombatEffects
         {
             while (loops.Count > 0) { StopLoop(loops.Count - 1); }
             pulses.Clear();
+            EffectBudget.Report("gore", 0);
         }
 
         private bool Call(Func<bool> action, string effect)

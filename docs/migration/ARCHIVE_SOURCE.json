@@ -1,0 +1,8 @@
+{
+  "branch": "archive/legacy-lane-c",
+  "frameworkRef": "stage1/T-047",
+  "sourceCommit": "bbcf12de10f339716b65b83139a292f043b90777",
+  "files": 121,
+  "status": "ARCHIVE / NOT VALIDATED",
+  "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+}

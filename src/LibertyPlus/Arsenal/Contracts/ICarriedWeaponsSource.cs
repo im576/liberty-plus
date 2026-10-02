@@ -10,7 +10,5 @@ namespace LibertyFramework.Arsenal.Contracts
         IList<CarriedWeapon> Carried { get; }
         // Active physical weapon modifier; 1.0 when no supported attachment is fitted.
         double PerShotBloomMultiplier(int weaponId);
-        // The finish of a carried weapon (the weapon wheel shows it); empty when none is recorded.
-        string FinishOf(int weaponId);
     }
 }

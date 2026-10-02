@@ -60,7 +60,7 @@ namespace LibertyFramework.Atmosphere
             lastConfigCheckUtc = DateTime.UtcNow;
             try
             {
-                byte[] bytes = JsonStore.ReadBytes(LibertyPlus.Configuration.PlusPaths.AtmosphereConfig);
+                byte[] bytes = JsonStore.ReadBytes(LibertyPaths.AtmosphereConfig);
                 string hash = JsonStore.Hash(bytes);
                 if (hash == configHash) { return; }
                 AtmosphereConfig candidate = JsonStore.Parse<AtmosphereConfig>(bytes);
