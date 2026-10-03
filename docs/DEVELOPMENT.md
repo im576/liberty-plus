@@ -1,7 +1,7 @@
 # Development and integration
 
 Framework owns generic services; Liberty+ owns gameplay. See
-[the ownership contract](../../GTAIV-Reborn/docs/architecture/REPOSITORIES.md).
+[the ownership contract](https://github.com/im576/liberty-framework/blob/main/docs/architecture/REPOSITORIES.md).
 
 Public commands from this repository:
 

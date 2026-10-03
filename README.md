@@ -1,6 +1,6 @@
 # Liberty+
 
-A substantial GTA IV overhaul built on **[Liberty Framework](../GTAIV-Reborn/README.md)**.
+A substantial GTA IV overhaul built on **[Liberty Framework](https://github.com/im576/liberty-framework)**.
 This repository owns the player experience: weapons, reactive reticles, physical
 inventory/holsters, weapon wheel, trunk storage, gore, vehicle ownership, custom
 HUD, atmosphere, visual tuning and AI-generated artwork.
@@ -29,5 +29,5 @@ ordinary mods should use only Liberty.Sdk; see the framework's repository contra
 Original source namespaces remain for compatibility, while folder/assembly
 ownership separates the products. No framework source is vendored here.
 
-No GitHub remote has been created or pushed. Original framework history and local
+GitHub repository: **[im576/liberty-plus](https://github.com/im576/liberty-plus)**. Original framework history and local
 worktrees remain intact. Archived mod lane snapshots are unaccepted research work.

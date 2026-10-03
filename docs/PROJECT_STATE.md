@@ -2,6 +2,9 @@
 
 Updated 2026-10-02. Authoritative mod dashboard; old cards/reports describe history.
 
+GitHub: [Liberty+](https://github.com/im576/liberty-plus), built on
+[Liberty Framework](https://github.com/im576/liberty-framework).
+
 ## What is here
 
 The integrated preview was extracted from framework source `56ee760` into a
@@ -34,7 +37,7 @@ Standalone framework + Liberty+ compilation PASS. Initial combined tooling check
 verifier 135/0/4 NOT-RUN. Final staged verifier 441/0/5 NOT-RUN; PowerShell 7 and
 5.1 each 317/0, boundary 17/0, preservation audit 82/0 and 45 package hashes checked.
 Final results and limitations are in
-[the split report](../../GTAIV-Reborn/docs/reports/2026-10-02-repository-split.md).
+[the split report](https://github.com/im576/liberty-framework/blob/main/docs/reports/2026-10-02-repository-split.md).
 
 Installed preview remains `36901ab`; nothing was installed, launched or restored
 during the split. Source may be newer than installed gameplay.
