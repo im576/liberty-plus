@@ -1,80 +1,96 @@
-# First mod milestone and research order
+# Liberty+ development plan
 
-2026-10-02. Updated from the owner's voice answers. The first mod is the priority. Use research to finish its
-features, then expand the framework as a separate program. Keep one coordinator for now; additional agents are
-an option when a task has clean file ownership and a clear deliverable.
-Current source integration is tracked by [T-060](../../../GTAIV-Reborn/docs/tasks/T-060-local-integration.md).
+Updated 2026-10-02. This is the current first-mod plan. It replaces the previous
+weapons-first sequential schedule; old task reports remain historical evidence.
+Product scope is in [PRODUCT.md](../PRODUCT.md). These are planning decisions,
+not instructions to dispatch agents or resume feature implementation automatically.
 
-## Deliver one reliable playable slice
+## Decisions settled
 
-Start with the existing weapons/loadout/wheel/trunk preview and the prepared visual candidate. Establish
-repeatable startup and restoration, then test the combined source with the original acceptance thresholds.
-Keep combat/atmosphere disabled in the preview profile until their individual and combined gates pass.
-The lighting candidate is generated/installed separately; merging its source does not install its tables.
+- Finish Liberty+ as a polished showcase before a broad Liberty Engine program.
+- Keep the complete scope: weapons/reticles, physical inventory/holsters, wheel,
+  trunk storage, connected vehicle ownership, gore, custom HUD and visual overhaul.
+- Next feature focus after preparation: **grounded, severe gore and world atmosphere
+  across day/night and weather, plus a cloud overhaul**. The
+  [gore/atmosphere briefs](../design/GORE_AND_ATMOSPHERE.md) separate the desired
+  experience from technical capability and remaining asset/tuning decisions.
+- Research concrete mod blockers and reuse accepted findings before new experiments.
+- Once authorized, independent features can develop in parallel under one coordinator.
+  Integration checkpoints do not require serial feature-by-feature owner playtests.
+- Use focused offline checks and short discriminating runtime checks during development;
+  use the assembled candidate for longer owner playtesting and subsequent iteration.
+- Keep the game installation and experimental saves protected by the existing receipts,
+  restoration procedures and single game slot. No game run is authorized by this plan.
+- Target natural color in gloom, a substantial cloud improvement and 1080p/60 FPS.
+  Environmental destruction stays outside the initial gore package.
 
-The first owner playtest should cover walking/driving between two locations, combat with the existing
-weapon catalog, switching the 2+1 loadout, storing/retrieving a weapon, and an actual game save/reload.
-Use one current build/config/plugin receipt and record controller, mission and visual limitations explicitly.
-After this baseline, complete the first mod as one product: gameplay, body/injury effects, a unified owned-vehicle
-system and the visual pass. Develop and validate these in small steps so a failure has a traceable cause.
+## Shared state contracts to establish before dependent implementation
 
-## Sequence
+These are design requirements, not claims that the APIs are already implemented.
 
-1. **Source integration:** reviewed preview/mood and B radial/diagnostic work join the tooling fixes.
-   Build the engine; run offline verifier, both PowerShell versions, radial and metrics harnesses,
-   generator checks and queue validation. Keep experimental C/D/R code on its preserved branches.
-2. **Runtime baseline:** schedule one bounded readiness attempt with a fresh journal and exact restoration.
-   A launch failure is investigated at its first failed stage; do not repeat an unchanged batch. Once startup
-   is available, run a short combined smoke, then the affected full wheel/trunk and config-lifecycle gates.
-   The historical trunk p95/p99 failure remains unresolved even if the new preview disables combat.
-3. **Visual iteration:** use the approved references and matched actual captures. Separate global color/lighting
-   from cloud shapes, material textures and local lights. Record one change family per candidate and inspect
-   street-level moving scenes, interiors and weather transitions in addition to the existing static views.
-   Overcast must retain natural color; the v3 gloomy captures look too desaturated to the owner. GTA IV's cloud
-   shapes need a substantial overhaul beyond timecycle color values. Target 1080p/60 FPS; measure frame times
-   in motion, not only static screenshot quality. The exact resolution beyond 1080p is undecided.
-4. **First deeper engine experiment:** distinguish the C setup/scene crash from the actual sever operation.
-   Complete the matched control/active setup pair before assuming skeleton changes cause a crash that occurred
-   before a scripted cut. Then instrument one ped/cut with object generation, skeleton pointers, counts and
-   release order. Require cleanup and original performance gates before promoting gore to the combined preview.
-5. **Vehicle ownership:** deliver one coherent design covering persistent personal cars, garages, dealerships,
-   trunks, customization, fuel/repairs, insurance and recovery. Build its data model and transaction rules
-   together; implement and test vertical slices within that design. Selectively adapt licensed LVS behavior.
-   A purchase, storage and actual save/load round-trip precedes broader integration and feel testing.
-6. **HUD/materials/assets:** promote only the specific contracts each next feature needs. Vanilla HUD remains
-   until hiding/restoration and native story text are demonstrated. Material names require effective-table and
-   visible hit-target evidence. Multi-geometry/collision research becomes priority when required for chosen assets.
-7. **Deeper framework program:** after the first mod's systems work together, audit its remaining engine limits,
-   profile real gameplay, and pursue broader renderer, asset, collision and scripting control with pinned
-   reverse-engineering evidence. Framework work can still happen earlier when a first-mod blocker requires it.
-
-## Agent organization
-
-Use one coordinating agent initially. No new agents have been created. Revisit parallel work when there are
-separate, bounded assignments, such as visual asset authoring and isolated source research.
-
-| Role | Owns | Deliverable and boundary |
+| State | Producer/owner | Consumers and required agreement |
 |---|---|---|
-| Coordinator | Main, test host, shared SDK contracts, schedule and owner playtest | Reviews patches/evidence, runs the sole game/install slot, combines accepted changes |
-| Optional gameplay/engine worker | One chosen blocker, initially setup/gore lifetime or vehicle transactions | One hypothesis or vertical slice, bounded files, focused tests; no speculative unrelated hooks |
-| Optional visual worker | Mood generator/config, capture fixtures and later selected assets | Matched baseline/candidate evidence against approved targets; coordinates host changes with coordinator |
+| Actual weapon spread, recoil and recovery | Gunplay simulation | Weapon-specific reticle and shot behavior use the same current state |
+| Weapon identity, ammunition and location | Inventory/transfer authority | Holsters, wheel, HUD and trunk operations cannot disagree or duplicate items |
+| Durable vehicle identity and ownership | Vehicle ownership authority | Registration, garage, insurance, recovery and trunks refer to the same vehicle |
+| Damage and injury lifetime | Injury authority fed by verified damage events | Wounds, bleeding, reactions, severed parts and cleanup share victim generation/state |
+| Weather and visual overrides | Atmosphere configuration/runtime owner | Lighting, rain, clouds and wet-surface effects coordinate and restore their original state |
+| Input focus and visibility | Shared UI/input services with mod layout policy | HUD, prompts, wheel and menus do not fight for controls or hide required story information |
 
-If parallel work becomes useful, start each worker from the reviewed integration commit, in a separate worktree. Do not give both ownership of
-shared host/SDK/UI files. Workers request the game slot through the integrator; heavy builds are serialized.
-Every handoff includes source commit, changed behavior, actual check status, first failure and the next experiment.
-Create or resume threads only for actual bounded assignments; do not dispatch from this document automatically.
+Specify update timing, invalidation, resource ownership and failure behavior for each
+contract actually needed by the next assignment. Do not redesign every framework API
+up front. Reusable capabilities go into Framework; Liberty+ keeps gameplay/art choices.
 
-## Owner decisions and remaining design detail
+## Focused skills
 
-- Body/injury package: realistic wounds, dismemberment, reactions and persistent blood/bodies belong together.
-  Environmental damage is outside this initial gore package.
-- Vehicle package: all named ownership features belong in one design and eventual first-mod system, with staged
-  implementation and testing.
-- Visual direction: the recent candidate is mostly liked, with more color in gloomy weather and substantially
-  better clouds. Performance goal is 60 FPS at 1080p.
-- Saves: separate experimental saves are acceptable during development. Keep backups and later verify real
-  save/load and story compatibility before calling the mod complete.
-- Agent/research order: keep coordination simple now; research first-mod blockers, then broaden engine research.
-- Still useful to specify: the ideal first five minutes and which gameplay behavior should be refined first.
+Framework contains liberty-feature-delivery (briefs, contracts and integration),
+liberty-presentation (HUD/reticles/atmosphere) and liberty-persistence (ownership,
+transfers and save recovery), alongside liberty-research and liberty-evidence.
+Load only the relevant skill. Scripts perform established repetitive operations;
+skills guide decisions and evidence. Add automation when observed repetition justifies
+it; skills alone do not prove development or testing became faster.
 
-Detailed experiment/provenance requirements: [research program](../../../GTAIV-Reborn/docs/research/RESEARCH_PROGRAM.md).
+## First assignments when feature work is authorized
+
+**Gore:** review preserved candidate/crash evidence, isolate setup versus cut failure,
+then establish reliable injury/clone/resource lifetimes. Investigate convincing cut
+geometry and wound/pool rendering with bounded experiments. Preserve the full desired
+gore package; do not call current particles or a partial sever demo the final overhaul.
+
+**World atmosphere:** inspect existing presets, generators and visual captures; map
+color/lighting, cloud, rain and wet-material/reflection controls separately. Use actual
+matched moving captures and measure cost. Correct loss of color and research genuine
+cloud improvements rather than promising cloud replacement through grading alone.
+
+These can advance together with distinct owned files. Coordinator owns shared APIs
+and integration; only one worker owns the game/install slot at a time. Framework
+changes must be reflected in the mod's dependency lock after appropriate validation.
+
+Weapons, trunks, vehicles and HUD remain part of the assembled acceptance scope.
+Expand their assignments as dependencies and approved briefs permit; they are not
+prerequisites that must all finish before gore/atmosphere work starts.
+
+## Completion and testing
+
+Existing startup/stall, gore lifetime, trunk frame-budget, HUD restoration and actual
+save/load problems remain unresolved. Treat them as explicit assembled-release gates.
+Run affected checks while building, investigate first failures before repeating, and
+retain required final trial counts/budgets. Profile build/setup/startup/lock-wait and
+scenario time separately before claiming the testing slowdown is fixed.
+
+The assembled candidate must show repeatable startup/restoration, coordinated
+weapons/wheel/holsters/trunks, actual save/reload, controller/story compatibility,
+cleanup under sustained combat, readable HUD and convincing moving visuals.
+Offline PASS, bounded runtime observations, full acceptance and owner feel approval
+are separate statuses. No runtime or 60 FPS success is claimed by this planning pass.
+
+## Remaining decisions
+
+The owner chose grounded, severe gore and full atmosphere tuning across daytime,
+nighttime and sunny/cloudy/rainy conditions, plus a cloud overhaul. Rain was an
+example, not a rain-only scope. Final assets, persistence limits and technical
+feasibility remain open until evidence and owner review settle them.
+Exact weapon roster/reticle designs can be specified when
+those assignments become active; answered product questions should not be repeated.
+
+Feature implementation is still paused. Planning completion does not lift that pause.

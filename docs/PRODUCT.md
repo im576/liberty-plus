@@ -17,18 +17,26 @@ technically unproven contracts still need specific briefs before feature develop
   ammunition and relevant information; coordinate reticles/wheel/menus, preserve
   radar and essential story/help text, and prove hide/restore without duplicates.
   Existing ART-007 top-right direction remains a reference; final feel needs review.
-- Gore: realistic wounds, dismemberment with detached heads/limbs and convincing
-  exposed cuts, bleeding/splatter/pools, injury reactions and persistent bodies/blood.
+- Gore: grounded and severe, with realistic wounds, dismemberment including detached
+  heads/limbs and convincing exposed cuts, bleeding/splatter/pools, injury reactions
+  and persistent bodies/blood.
   Cleaner deliberate visuals that substantially change the experience. Environmental
   destruction is outside the initial scope. Persistence needs measured limits.
 - Vehicles: personal cars, garages, dealerships, trunks, customization, fuel/repairs,
   insurance and recovery as one coherent ownership experience.
-- Visuals: build on the liked overhaul, retain natural color in gloom, substantially
-  overhaul clouds and bring materials/lighting/effects/UI to a consistent standard.
+- Visuals: tune the existing overhaul across daytime, nighttime and sunny/cloudy/
+  rainy weather, retain natural color in gloom, substantially overhaul clouds and
+  bring materials/lighting/effects/UI to a consistent standard.
 - Performance: target 1080p/60 FPS for the combined mod; solve startup/crashes/spikes.
 - Development: research what unlocks this mod, reuse verified techniques, perform
   focused developer checks, then longer owner tests of the assembled package.
   Experimental saves are acceptable; final compatibility details remain to be settled.
+
+Next focus after workflow preparation: **grounded, severe gore and full atmosphere
+tuning across day/night and weather, plus a cloud overhaul**. See the
+[development plan](workflow/NEXT_MILESTONE.md) and
+[gore/atmosphere briefs](design/GORE_AND_ATMOSPHERE.md). This priority does not drop weapons,
+trunk storage, vehicle ownership or the HUD from the finished product.
 
 Exact starting weapons, final assets and reticle designs, persistence limits and
 research feasibility remain decisions to resolve. Broad engine replacement is later.

@@ -44,7 +44,13 @@ during the split. Source may be newer than installed gameplay.
 
 ## Work order
 
-Repository separation is authorized. Building new showcase features remains paused
-until the detailed feature briefs are agreed. Eventual parallel development should
-use existing evidence, focused checks, then an assembled candidate for owner testing.
-Further deep engine research follows the first mod.
+Repository separation and publication are complete. Current work settles the
+development plan and focused reusable skills. Next priorities are grounded/severe
+gore and full day/night/weather atmosphere tuning, plus a cloud overhaul; see
+[the plan](workflow/NEXT_MILESTONE.md) and
+[feature briefs](design/GORE_AND_ATMOSPHERE.md). These directions are confirmed;
+final tuning/assets and technical feasibility remain open.
+Building new showcase features and game runs remain paused. Once authorized, use
+parallel work with explicit shared contracts, focused developer checks and an
+assembled candidate for longer owner testing. Full weapons/vehicles/trunks/HUD scope
+is retained. Further broad engine research follows the first mod.

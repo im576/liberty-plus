@@ -27,5 +27,12 @@ Legacy preview code is privileged and version-pinned; prefer SDK-only new code.
   unchanged failure. Record both revisions and exact input hashes in test evidence.
 - Commit locally after relevant validation; do not push or dispatch agents unless requested.
 
-The current assignment is repository separation. Unfinished feature development
-remains paused. Existing saves/preview installation must remain untouched.
+The current assignment is development planning and reusable skill preparation.
+Read docs/workflow/NEXT_MILESTONE.md; the next feature focus is grounded/severe gore
+and atmosphere tuning across day/night and weather, plus a cloud overhaul.
+Unfinished feature development remains paused until a current request
+authorizes it. Existing saves/preview installation must remain untouched.
+
+Framework skills liberty-feature-delivery, liberty-presentation and
+liberty-persistence support briefs/integration, visual behavior and durable state.
+Their SKILL.md files live under the framework's .agents/skills directory.
