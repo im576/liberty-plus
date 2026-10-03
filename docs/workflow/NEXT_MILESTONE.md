@@ -56,6 +56,9 @@ it; skills alone do not prove development or testing became faster.
 then establish reliable injury/clone/resource lifetimes. Investigate convincing cut
 geometry and wound/pool rendering with bounded experiments. Preserve the full desired
 gore package; do not call current particles or a partial sever demo the final overhaul.
+Track every behavior in the brief's required wound/blood checklist, including
+impact-position bullet holes, clothing leakage, pressure/post-death bleeding and
+surface drips/pools/trails; unresolved capabilities stay explicit research work.
 
 **World atmosphere:** inspect existing presets, generators and visual captures; map
 color/lighting, cloud, rain and wet-material/reflection controls separately. Use actual

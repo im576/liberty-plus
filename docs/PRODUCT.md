@@ -22,6 +22,9 @@ technically unproven contracts still need specific briefs before feature develop
   and persistent bodies/blood.
   Cleaner deliberate visuals that substantially change the experience. Environmental
   destruction is outside the initial scope. Persistence needs measured limits.
+  The [required gore behaviors](design/GORE_AND_ATMOSPHERE.md#required-wound-and-blood-overhaul)
+  explicitly include attached impact-position bullet-hole wounds, weapon/anatomy
+  variation, clothing leakage, pressure/post-death bleeding and surface drips/trails.
 - Vehicles: personal cars, garages, dealerships, trunks, customization, fuel/repairs,
   insurance and recovery as one coherent ownership experience.
 - Visuals: tune the existing overhaul across daytime, nighttime and sunny/cloudy/
