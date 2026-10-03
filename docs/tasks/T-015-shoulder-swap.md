@@ -4,7 +4,7 @@ Status: **NEEDS-PLAYTEST** (implemented and installed 2026-09-24, Claude). Previ
 
 ## How it works
 
-`CCamAimWeapon`'s update chooses a 40-byte settings record per camera state from a table in game data (0x103C118, 15 records). Field `+0x10` is multiplied by the camera's right vector to place the camera beside the shoulder: 0.475 m on foot, 0.2 m in cover, 0.375 m in another state. Fields `+0x1C/+0x20` are the pitch limits clamped by 0xA25230, which proves the table drives the aim camera. See [MEMORY.md](../game-api/MEMORY.md).
+`CCamAimWeapon`'s update chooses a 40-byte settings record per camera state from a table in game data (0x103C118, 15 records). Field `+0x10` is multiplied by the camera's right vector to place the camera beside the shoulder: 0.475 m on foot, 0.2 m in cover, 0.375 m in another state. Fields `+0x1C/+0x20` are the pitch limits clamped by 0xA25230, which proves the table drives the aim camera. See [MEMORY.md](../../../GTAIV-Reborn/docs/game-api/MEMORY.md).
 
 Shoulder swap scales `+0x10` of every record by a side factor that slides between +1 (right, vanilla) and −1 (left) over `transitionMilliseconds`. It is a data write only (no code patch, ADR-0004): the resolver finds the table from code shapes, the runtime validates the originals (each |x| ≤ 1.5 m and a right-shoulder value present) and restores them on toggle-off, error, script unload and process exit. Verify checks table address, record count, field offset and the 0.475/0.2 values against GTAIV.exe; FusionFix patches no byte the resolver reads.
 

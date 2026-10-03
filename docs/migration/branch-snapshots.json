@@ -1,0 +1,34 @@
+[
+  {
+    "branch": "archive/legacy-lane-c",
+    "frameworkRef": "stage1/T-047",
+    "sourceCommit": "bbcf12de10f339716b65b83139a292f043b90777",
+    "files": 121,
+    "status": "ARCHIVE / NOT VALIDATED",
+    "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+  },
+  {
+    "branch": "archive/legacy-lane-c-effects",
+    "frameworkRef": "stage1/T-048",
+    "sourceCommit": "4cae50e0f4e5ce5668c93ffa3d4734f574ec6b53",
+    "files": 131,
+    "status": "ARCHIVE / NOT VALIDATED",
+    "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+  },
+  {
+    "branch": "archive/legacy-lane-d-hud",
+    "frameworkRef": "codex/T-049-hud-continuation",
+    "sourceCommit": "6ff67ab11bdad1090d30ac63f67c4fe683bab235",
+    "files": 136,
+    "status": "ARCHIVE / NOT VALIDATED",
+    "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+  },
+  {
+    "branch": "archive/legacy-lane-b-validation",
+    "frameworkRef": "codex/lane-b-validation",
+    "sourceCommit": "392e36b608756195b19b6f9ff5778cf2261abfde",
+    "files": 117,
+    "status": "ARCHIVE / NOT VALIDATED",
+    "note": "Exact legacy mod snapshot, not merged into main; may require original framework APIs and adaptation."
+  }
+]

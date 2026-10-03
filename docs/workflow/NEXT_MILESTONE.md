@@ -3,7 +3,7 @@
 2026-10-02. Updated from the owner's voice answers. The first mod is the priority. Use research to finish its
 features, then expand the framework as a separate program. Keep one coordinator for now; additional agents are
 an option when a task has clean file ownership and a clear deliverable.
-Current source integration is tracked by [T-060](../tasks/T-060-local-integration.md).
+Current source integration is tracked by [T-060](../../../GTAIV-Reborn/docs/tasks/T-060-local-integration.md).
 
 ## Deliver one reliable playable slice
 
@@ -77,4 +77,4 @@ Create or resume threads only for actual bounded assignments; do not dispatch fr
 - Agent/research order: keep coordination simple now; research first-mod blockers, then broaden engine research.
 - Still useful to specify: the ideal first five minutes and which gameplay behavior should be refined first.
 
-Detailed experiment/provenance requirements: [research program](../research/RESEARCH_PROGRAM.md).
+Detailed experiment/provenance requirements: [research program](../../../GTAIV-Reborn/docs/research/RESEARCH_PROGRAM.md).

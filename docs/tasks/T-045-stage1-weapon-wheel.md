@@ -41,7 +41,7 @@ Automated checks (keyboard input through the autopilot) are in the Claude contin
 ## Codex continuation — September 30, 2026
 
 Both original B tips are reconciled with main `f5679a5`, including `db08832`/`45561b4`, on `codex/lane-b-validation`.
-See [Codex handoff](../handoffs/Codex-Lane-B-2026-09-30.md) for files, commits and exact restart instructions.
+See [Codex handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Codex-Lane-B-2026-09-30.md) for files, commits and exact restart instructions.
 
 Actual elapsed press time replaces the 100 ms/frame cap. Confirm releases this menu's control lock before equip and reads
 the actual weapon next frame. Bindings colliding with storage/navigation are rejected. Footer/ammo bounds are wider and
@@ -121,7 +121,7 @@ The original seven real watcher checks passed; a new casing regression failed be
 (focused total 8/0, freshly compiled actual service/current SDK, no game). Accepted wheel hash still updates only
 after validation, retaining previous config on rejection. Runtime reject/correct and module restart remain unproven.
 Full production build, repository verifier/tool suite and full wheel runtime are deferred to assigned slots.
-See [live handoff](../handoffs/Lane-B-live.md) for logs, changed paths and proposed checks. NEEDS-PLAYTEST remains.
+See [live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md) for logs, changed paths and proposed checks. NEEDS-PLAYTEST remains.
 
 ### Full watcher-follow-up build reviewed — 20261001-122159-4330603
 
@@ -163,7 +163,7 @@ implementation was changed or claimed fixed.
 Focused fixture checks 17/0 in PS7 and Windows PS5.1; existing runner simulations 30/0; queue/plan preservation and
 diff checks PASS. No heavy build/game slot used. Exact next IDs:
 `LOOP-package-install,T045-config-watch-reload,T045-config-watch-restart,T045-weapon-wheel`.
-Only a new authorized slot may run them. [Live handoff](../handoffs/Lane-B-live.md) records evidence/cleanup limits.
+Only a new authorized slot may run them. [Live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md) records evidence/cleanup limits.
 
 ### Initial snapshot source repair — runtime acceptance pending
 
@@ -174,7 +174,7 @@ Focused actual UI/view/input/ledger/storage sources: **25/0** PS7 and PS5.1, war
 source **12/13** expected negative control. Engine/SHDN boundaries are spies; full production build/runtime unrun.
 P1 <=1-frame acceptance gap persists until a scheduled full `T045-weapon-wheel` with every-opening pairing passes.
 Separate `T045-config-watch-reload,T045-config-watch-restart` remain unrun. No threshold/budget change; NEEDS-PLAYTEST.
-Exact logs, caller audit, limits and next batches are in the [live handoff](../handoffs/Lane-B-live.md).
+Exact logs, caller audit, limits and next batches are in the [live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md).
 
 ### Full2297a17 receipt (20261001-202311), shared candidate held unmerged
 
@@ -185,4 +185,4 @@ highlight/ammo/footer readable, Melee_Knife cosmetic. SDK21/0/0 +3 captures supp
 Production warnings-as-errors build PASS, NoGame441/0/5, full tools255/0, full game-file verifier1020/0.
 Restored phase2-20232903:31:10.031Z; no retry. Trunk FAIL relative p95 (later flows NOT-RUN) holds shared candidate
 unmerged; wheel PASS does not erase it. Watcher runtime/physical controller/owner gates remain; no task DONE.
-Exact opening-group metrics,10-capture list and receipt in [live handoff](../handoffs/Lane-B-live.md).
+Exact opening-group metrics,10-capture list and receipt in [live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md).

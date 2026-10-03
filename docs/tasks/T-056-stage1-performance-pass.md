@@ -1,7 +1,7 @@
 # T-056 — Stage 1 performance pass (software only)
 
 Status: **READY after lanes A-C merge** · Lane P · Depends on: T-041 to T-048 on main · Design: STAGE1 section 10
-(all pillars), baseline [2026-09-30-stage1-baseline.md](../reports/2026-09-30-stage1-baseline.md), research
+(all pillars), baseline [2026-09-30-stage1-baseline.md](../../../GTAIV-Reborn/docs/reports/2026-09-30-stage1-baseline.md), research
 `docs/research/OptimizationMods.md`
 
 ## Goal

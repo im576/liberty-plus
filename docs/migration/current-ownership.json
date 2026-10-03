@@ -1,0 +1,2225 @@
+{
+  "schemaVersion": 1,
+  "baseline": "56ee76055478a39b91d1384cd455a1320130e0eb",
+  "files": [
+    {
+      "original": "art/README.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\README.md",
+      "originalSha256": "a283ca8239472f4b0a91a03d1b1e3cf5d961d33fb47d3ca0fcc448aaaea6f738",
+      "currentSha256": "a283ca8239472f4b0a91a03d1b1e3cf5d961d33fb47d3ca0fcc448aaaea6f738"
+    },
+    {
+      "original": "art/approved/.gitkeep",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\.gitkeep",
+      "originalSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "currentSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "original": "art/approved/ART-001/r1_art_001_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-001\\r1\\art_001_2.png",
+      "originalSha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406",
+      "currentSha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406"
+    },
+    {
+      "original": "art/approved/ART-002/prepped/art_002.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-002\\prepped\\art_002.png",
+      "originalSha256": "2914654fd9caf9399e3c0e4188d70323f13e1f98300e031424c81695732953aa",
+      "currentSha256": "2914654fd9caf9399e3c0e4188d70323f13e1f98300e031424c81695732953aa"
+    },
+    {
+      "original": "art/approved/ART-002/r1_art_002_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-002\\r1\\art_002_1.png",
+      "originalSha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+      "currentSha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e"
+    },
+    {
+      "original": "art/approved/ART-003/prepped/art_003.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-003\\prepped\\art_003.png",
+      "originalSha256": "af3bc450611796484750c4d97b9129a4c0ba17370ed416c0309b9daa1aee316b",
+      "currentSha256": "af3bc450611796484750c4d97b9129a4c0ba17370ed416c0309b9daa1aee316b"
+    },
+    {
+      "original": "art/approved/ART-003/r1_art_003_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-003\\r1\\art_003_3.png",
+      "originalSha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84",
+      "currentSha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84"
+    },
+    {
+      "original": "art/approved/ART-004/prepped/art_004.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-004\\prepped\\art_004.png",
+      "originalSha256": "9f17180fd598ae6dcdb421f6c6d8e5cbedccb37a9eec301cb6203b7d1cb751e4",
+      "currentSha256": "9f17180fd598ae6dcdb421f6c6d8e5cbedccb37a9eec301cb6203b7d1cb751e4"
+    },
+    {
+      "original": "art/approved/ART-004/r1_art_004_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-004\\r1\\art_004_2.png",
+      "originalSha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+      "currentSha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028"
+    },
+    {
+      "original": "art/approved/ART-005/prepped/art_005.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-005\\prepped\\art_005.png",
+      "originalSha256": "66ad3ed4cf5e96d24d5ca06ff3bd7b5031ee905cdd9cf7311574b67661c4a735",
+      "currentSha256": "66ad3ed4cf5e96d24d5ca06ff3bd7b5031ee905cdd9cf7311574b67661c4a735"
+    },
+    {
+      "original": "art/approved/ART-005/r1_art_005_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-005\\r1\\art_005_1.png",
+      "originalSha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+      "currentSha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75"
+    },
+    {
+      "original": "art/approved/ART-006/prepped/art_006.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-006\\prepped\\art_006.png",
+      "originalSha256": "2d2f98b54871b9f3800ab944150bdb40b80ca6d66ff65ef8e73bf298be26baa5",
+      "currentSha256": "2d2f98b54871b9f3800ab944150bdb40b80ca6d66ff65ef8e73bf298be26baa5"
+    },
+    {
+      "original": "art/approved/ART-006/r1_art_006_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-006\\r1\\art_006_4.png",
+      "originalSha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed",
+      "currentSha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed"
+    },
+    {
+      "original": "art/approved/ART-007/r2_art_007_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-007\\r2\\art_007_2.png",
+      "originalSha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb",
+      "currentSha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb"
+    },
+    {
+      "original": "art/approved/ART-008/r1_art_008_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-008\\r1\\art_008_1.png",
+      "originalSha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1",
+      "currentSha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1"
+    },
+    {
+      "original": "art/approved/ART-009/prepped/art_009.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-009\\prepped\\art_009.png",
+      "originalSha256": "ac4e12ebf266ff5368eb13ee6e251d3eb28fb42180efe189334a2ed97387c9e5",
+      "currentSha256": "ac4e12ebf266ff5368eb13ee6e251d3eb28fb42180efe189334a2ed97387c9e5"
+    },
+    {
+      "original": "art/approved/ART-009/r1_art_009_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-009\\r1\\art_009_3.png",
+      "originalSha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb",
+      "currentSha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb"
+    },
+    {
+      "original": "art/approved/ART-010/prepped/art_010.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-010\\prepped\\art_010.png",
+      "originalSha256": "500d83d829fb4f56dddd51889008ceddce50093d53251217b64f0b79d4114a94",
+      "currentSha256": "500d83d829fb4f56dddd51889008ceddce50093d53251217b64f0b79d4114a94"
+    },
+    {
+      "original": "art/approved/ART-010/r1_art_010_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-010\\r1\\art_010_1.png",
+      "originalSha256": "1f0ff93616d95a988b23db27ec01dc561551b10273afd83de55195d222e53552",
+      "currentSha256": "1f0ff93616d95a988b23db27ec01dc561551b10273afd83de55195d222e53552"
+    },
+    {
+      "original": "art/approved/ART-011/prepped/art_011.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\approved\\ART-011\\prepped\\art_011.png",
+      "originalSha256": "7a950bcd386f9384dd01aa68dd2c28109d6fcfbe88178341c259fbc83641260f",
+      "currentSha256": "7a950bcd386f9384dd01aa68dd2c28109d6fcfbe88178341c259fbc83641260f"
+    },
+    {
+      "original": "art/approved/ART-011/r1_art_011_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-011\\r1\\art_011_1.png",
+      "originalSha256": "fd616785737c616b6c349c4184ae5c56b7101bb2e489c55371bfc5dee5fcba10",
+      "currentSha256": "fd616785737c616b6c349c4184ae5c56b7101bb2e489c55371bfc5dee5fcba10"
+    },
+    {
+      "original": "art/approved/ART-012/r1_art_012_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-012\\r1\\art_012_2.png",
+      "originalSha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2",
+      "currentSha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2"
+    },
+    {
+      "original": "art/generated/.gitkeep",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\.gitkeep",
+      "originalSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "currentSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "original": "art/generated/ART-001/r1/art_001_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-001\\r1\\art_001_1.png",
+      "originalSha256": "2bba4645a38662932bd44444310bba5cd58f977dc43b6aab4c5a1d3d16c80b3c",
+      "currentSha256": "2bba4645a38662932bd44444310bba5cd58f977dc43b6aab4c5a1d3d16c80b3c"
+    },
+    {
+      "original": "art/generated/ART-001/r1/art_001_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-001\\r1\\art_001_2.png",
+      "originalSha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406",
+      "currentSha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406"
+    },
+    {
+      "original": "art/generated/ART-002/r1/art_002_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-002\\r1\\art_002_1.png",
+      "originalSha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+      "currentSha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e"
+    },
+    {
+      "original": "art/generated/ART-002/r1/art_002_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-002\\r1\\art_002_2.png",
+      "originalSha256": "5889ed937296240ef1ff515b1ca1218698b1bfb131e569af2348ed593d976a0d",
+      "currentSha256": "5889ed937296240ef1ff515b1ca1218698b1bfb131e569af2348ed593d976a0d"
+    },
+    {
+      "original": "art/generated/ART-002/r1/art_002_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-002\\r1\\art_002_3.png",
+      "originalSha256": "2acc580bb46c3bc795caa99b118a908738898a1e2ae7129a4d9f4032188c4a91",
+      "currentSha256": "2acc580bb46c3bc795caa99b118a908738898a1e2ae7129a4d9f4032188c4a91"
+    },
+    {
+      "original": "art/generated/ART-002/r1/art_002_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-002\\r1\\art_002_4.png",
+      "originalSha256": "a29809cac07c8a2a8f96e5077a51ab3413ffba82b958e3436fcba1575a45b81a",
+      "currentSha256": "a29809cac07c8a2a8f96e5077a51ab3413ffba82b958e3436fcba1575a45b81a"
+    },
+    {
+      "original": "art/generated/ART-003/r1/art_003_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-003\\r1\\art_003_1.png",
+      "originalSha256": "53d097655b69b1f12f9775bd2071e60570ffadb65e312652f14ec6f4d1bb87f2",
+      "currentSha256": "53d097655b69b1f12f9775bd2071e60570ffadb65e312652f14ec6f4d1bb87f2"
+    },
+    {
+      "original": "art/generated/ART-003/r1/art_003_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-003\\r1\\art_003_2.png",
+      "originalSha256": "62e6ed192701c9b7eb8dfa4138d514b4ba88de4ac57210f625b3c136a2adea5a",
+      "currentSha256": "62e6ed192701c9b7eb8dfa4138d514b4ba88de4ac57210f625b3c136a2adea5a"
+    },
+    {
+      "original": "art/generated/ART-003/r1/art_003_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-003\\r1\\art_003_3.png",
+      "originalSha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84",
+      "currentSha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84"
+    },
+    {
+      "original": "art/generated/ART-003/r1/art_003_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-003\\r1\\art_003_4.png",
+      "originalSha256": "d50cc6e1ce14f6e7167fa758fb12a9354b547ea42c2ac728016cb91ff9f6cff8",
+      "currentSha256": "d50cc6e1ce14f6e7167fa758fb12a9354b547ea42c2ac728016cb91ff9f6cff8"
+    },
+    {
+      "original": "art/generated/ART-004/r1/art_004_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-004\\r1\\art_004_1.png",
+      "originalSha256": "a5e46003e45957476ca530cedaa360783f587280b4acba5d2bc910781f8e22f8",
+      "currentSha256": "a5e46003e45957476ca530cedaa360783f587280b4acba5d2bc910781f8e22f8"
+    },
+    {
+      "original": "art/generated/ART-004/r1/art_004_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-004\\r1\\art_004_2.png",
+      "originalSha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+      "currentSha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028"
+    },
+    {
+      "original": "art/generated/ART-004/r1/art_004_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-004\\r1\\art_004_3.png",
+      "originalSha256": "3e3c23cc9d85006bc1bac0e666ab02a7aff69342a4a4cd3d77c60fd1ba13bcd4",
+      "currentSha256": "3e3c23cc9d85006bc1bac0e666ab02a7aff69342a4a4cd3d77c60fd1ba13bcd4"
+    },
+    {
+      "original": "art/generated/ART-004/r1/art_004_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-004\\r1\\art_004_4.png",
+      "originalSha256": "45b3da0e53d139aca3b6135293a328d229d9e614f346c2c6fb3fd70bf7309ca1",
+      "currentSha256": "45b3da0e53d139aca3b6135293a328d229d9e614f346c2c6fb3fd70bf7309ca1"
+    },
+    {
+      "original": "art/generated/ART-005/r1/art_005_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-005\\r1\\art_005_1.png",
+      "originalSha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+      "currentSha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75"
+    },
+    {
+      "original": "art/generated/ART-005/r1/art_005_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-005\\r1\\art_005_2.png",
+      "originalSha256": "9d34dc34306739e42ed4f72cda66d04cf6ac6f6a4db1e65796521ad3b97b83db",
+      "currentSha256": "9d34dc34306739e42ed4f72cda66d04cf6ac6f6a4db1e65796521ad3b97b83db"
+    },
+    {
+      "original": "art/generated/ART-005/r1/art_005_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-005\\r1\\art_005_3.png",
+      "originalSha256": "ccc00a197867fa0ed4d057d9751bdd537f03e8554b1719d88f8f92b6588a111c",
+      "currentSha256": "ccc00a197867fa0ed4d057d9751bdd537f03e8554b1719d88f8f92b6588a111c"
+    },
+    {
+      "original": "art/generated/ART-005/r1/art_005_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-005\\r1\\art_005_4.png",
+      "originalSha256": "31b22b8852a5e515e44bea19fcd8f5e4c4d89cf5bb30d9b9c952483f4574bb10",
+      "currentSha256": "31b22b8852a5e515e44bea19fcd8f5e4c4d89cf5bb30d9b9c952483f4574bb10"
+    },
+    {
+      "original": "art/generated/ART-006/r1/art_006_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-006\\r1\\art_006_1.png",
+      "originalSha256": "72092252366de8f804e70215c23aa9f939ab4248b55cba75268adab51bb54a0f",
+      "currentSha256": "72092252366de8f804e70215c23aa9f939ab4248b55cba75268adab51bb54a0f"
+    },
+    {
+      "original": "art/generated/ART-006/r1/art_006_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-006\\r1\\art_006_2.png",
+      "originalSha256": "1474a8156749302f449432da55e4554638c0687dfba2ca6f97c2738c380c90dd",
+      "currentSha256": "1474a8156749302f449432da55e4554638c0687dfba2ca6f97c2738c380c90dd"
+    },
+    {
+      "original": "art/generated/ART-006/r1/art_006_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-006\\r1\\art_006_3.png",
+      "originalSha256": "4bd2e911d132e070b5c6670073d3279c9fd3dd2ef19697c9d955549e3a707393",
+      "currentSha256": "4bd2e911d132e070b5c6670073d3279c9fd3dd2ef19697c9d955549e3a707393"
+    },
+    {
+      "original": "art/generated/ART-006/r1/art_006_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-006\\r1\\art_006_4.png",
+      "originalSha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed",
+      "currentSha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed"
+    },
+    {
+      "original": "art/generated/ART-007/r1/art_007_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-007\\r1\\art_007_1.png",
+      "originalSha256": "0f2d585a25b722c48a3a8d9a9858148ed67c09b11caf84122a6bb588f30dea4b",
+      "currentSha256": "0f2d585a25b722c48a3a8d9a9858148ed67c09b11caf84122a6bb588f30dea4b"
+    },
+    {
+      "original": "art/generated/ART-007/r1/art_007_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-007\\r1\\art_007_2.png",
+      "originalSha256": "0c86e0b569c8c652a332fc72dfec74a1fde3c42689b3d6a8197243d3d9ee222f",
+      "currentSha256": "0c86e0b569c8c652a332fc72dfec74a1fde3c42689b3d6a8197243d3d9ee222f"
+    },
+    {
+      "original": "art/generated/ART-007/r2/art_007_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-007\\r2\\art_007_1.png",
+      "originalSha256": "84b18f6e7d5cc6287ce2f1bb365e2c5faf7459c04a8c9486a03924db77da662e",
+      "currentSha256": "84b18f6e7d5cc6287ce2f1bb365e2c5faf7459c04a8c9486a03924db77da662e"
+    },
+    {
+      "original": "art/generated/ART-007/r2/art_007_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-007\\r2\\art_007_2.png",
+      "originalSha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb",
+      "currentSha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb"
+    },
+    {
+      "original": "art/generated/ART-008/r1/art_008_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-008\\r1\\art_008_1.png",
+      "originalSha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1",
+      "currentSha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1"
+    },
+    {
+      "original": "art/generated/ART-008/r1/art_008_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-008\\r1\\art_008_2.png",
+      "originalSha256": "ac16e5d71963031b5436cf8738e41fcafa04bcd99a7284bf5791b9aee019171b",
+      "currentSha256": "ac16e5d71963031b5436cf8738e41fcafa04bcd99a7284bf5791b9aee019171b"
+    },
+    {
+      "original": "art/generated/ART-009/r1/art_009_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-009\\r1\\art_009_1.png",
+      "originalSha256": "34fa7ae6fb5407e6ff273b46b2ecbf99640b143231c42737d867754888f750a9",
+      "currentSha256": "34fa7ae6fb5407e6ff273b46b2ecbf99640b143231c42737d867754888f750a9"
+    },
+    {
+      "original": "art/generated/ART-009/r1/art_009_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-009\\r1\\art_009_2.png",
+      "originalSha256": "8fc5cc59d7f3baa20b719c91b5673668bf5cb1929df6141e78e8d7b58e15fd64",
+      "currentSha256": "8fc5cc59d7f3baa20b719c91b5673668bf5cb1929df6141e78e8d7b58e15fd64"
+    },
+    {
+      "original": "art/generated/ART-009/r1/art_009_3.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-009\\r1\\art_009_3.png",
+      "originalSha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb",
+      "currentSha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb"
+    },
+    {
+      "original": "art/generated/ART-009/r1/art_009_4.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-009\\r1\\art_009_4.png",
+      "originalSha256": "918d7955e3366309514712ee72d7cf1104c635d13cd813eb46abab89fab10fc3",
+      "currentSha256": "918d7955e3366309514712ee72d7cf1104c635d13cd813eb46abab89fab10fc3"
+    },
+    {
+      "original": "art/generated/ART-010/r1/art_010_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-010\\r1\\art_010_1.png",
+      "originalSha256": "1f0ff93616d95a988b23db27ec01dc561551b10273afd83de55195d222e53552",
+      "currentSha256": "1f0ff93616d95a988b23db27ec01dc561551b10273afd83de55195d222e53552"
+    },
+    {
+      "original": "art/generated/ART-010/r1/art_010_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-010\\r1\\art_010_2.png",
+      "originalSha256": "8adad4e94a9df39bc7ffb1fc34c24366e2fb5241991a506077daeb5dbf2d4def",
+      "currentSha256": "8adad4e94a9df39bc7ffb1fc34c24366e2fb5241991a506077daeb5dbf2d4def"
+    },
+    {
+      "original": "art/generated/ART-011/r1/art_011_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-011\\r1\\art_011_1.png",
+      "originalSha256": "fd616785737c616b6c349c4184ae5c56b7101bb2e489c55371bfc5dee5fcba10",
+      "currentSha256": "fd616785737c616b6c349c4184ae5c56b7101bb2e489c55371bfc5dee5fcba10"
+    },
+    {
+      "original": "art/generated/ART-011/r1/art_011_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-011\\r1\\art_011_2.png",
+      "originalSha256": "a000fef977fdb43ec2a8c5517a4ef9c0be69b52d8c92b3a3c2bc5881a0550f7c",
+      "currentSha256": "a000fef977fdb43ec2a8c5517a4ef9c0be69b52d8c92b3a3c2bc5881a0550f7c"
+    },
+    {
+      "original": "art/generated/ART-012/r1/art_012_1.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-012\\r1\\art_012_1.png",
+      "originalSha256": "77d4b4e62f07ea1e09970cb157301204c8a34c80f769f9f28b6fbbc176b5ab76",
+      "currentSha256": "77d4b4e62f07ea1e09970cb157301204c8a34c80f769f9f28b6fbbc176b5ab76"
+    },
+    {
+      "original": "art/generated/ART-012/r1/art_012_2.png",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\generated\\ART-012\\r1\\art_012_2.png",
+      "originalSha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2",
+      "currentSha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2"
+    },
+    {
+      "original": "art/rejected/.gitkeep",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\art\\rejected\\.gitkeep",
+      "originalSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "currentSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "original": "assets/finishes/finishes.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\assets\\finishes\\finishes.json",
+      "originalSha256": "54f56f39ec3df69d55145248d2e0b070644f241312c5d3d9f62c74dd9aeddb38",
+      "currentSha256": "54f56f39ec3df69d55145248d2e0b070644f241312c5d3d9f62c74dd9aeddb38"
+    },
+    {
+      "original": "config/arsenal.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\arsenal.json",
+      "originalSha256": "7f65d7a006a0df6fe70c475b70335f476a0ce1dc8c4ca7fe94eedfb53db43f67",
+      "currentSha256": "7f65d7a006a0df6fe70c475b70335f476a0ce1dc8c4ca7fe94eedfb53db43f67"
+    },
+    {
+      "original": "config/atmosphere.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\atmosphere.json",
+      "originalSha256": "5a410e71910136aefb444eb7db3afc681145384c72e26f6220d4db72bbecec21",
+      "currentSha256": "5a410e71910136aefb444eb7db3afc681145384c72e26f6220d4db72bbecec21"
+    },
+    {
+      "original": "config/combat_effects.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\combat_effects.json",
+      "originalSha256": "94274af9b3505e354460ee16d2ec2839fcd2d236dec2c519ed5c77864f839350",
+      "currentSha256": "94274af9b3505e354460ee16d2ec2839fcd2d236dec2c519ed5c77864f839350"
+    },
+    {
+      "original": "config/devtools/locations.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\devtools\\locations.json",
+      "originalSha256": "20fcd45752344c5362a4c9a70091ced1f3d35312262b675cbc74961fccb8cc53",
+      "currentSha256": "20fcd45752344c5362a4c9a70091ced1f3d35312262b675cbc74961fccb8cc53"
+    },
+    {
+      "original": "config/gunplay.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\gunplay.json",
+      "originalSha256": "7ee5b14fa3be9d6e98f953e2facd984bb5ffb38695df961e70ea1d27214c4e7a",
+      "currentSha256": "7ee5b14fa3be9d6e98f953e2facd984bb5ffb38695df961e70ea1d27214c4e7a"
+    },
+    {
+      "original": "config/holsters.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\holsters.json",
+      "originalSha256": "b2f76806d656e7ec1a9fdcc9f84c83472b17d3cbcd0db26bc8d36489c8a86969",
+      "currentSha256": "b2f76806d656e7ec1a9fdcc9f84c83472b17d3cbcd0db26bc8d36489c8a86969"
+    },
+    {
+      "original": "config/impact-surfaces.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\impact-surfaces.json",
+      "originalSha256": "8d1b0f73aa0b897072e9bbb72e73577d21b81272206a552fb6a20f40253e287f",
+      "currentSha256": "8d1b0f73aa0b897072e9bbb72e73577d21b81272206a552fb6a20f40253e287f"
+    },
+    {
+      "original": "config/models/sling.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\models\\sling.json",
+      "originalSha256": "5a4796d828fe0e247817d97f58e7b2366deaa558ad2766a20e33950b1ab41bbe",
+      "currentSha256": "5a4796d828fe0e247817d97f58e7b2366deaa558ad2766a20e33950b1ab41bbe"
+    },
+    {
+      "original": "config/mood.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\mood.json",
+      "originalSha256": "0ee7c348712abf250e7b250c1f869d0a3eb9b67df0b698ca46cf792e5ebb2bf9",
+      "currentSha256": "0ee7c348712abf250e7b250c1f869d0a3eb9b67df0b698ca46cf792e5ebb2bf9"
+    },
+    {
+      "original": "config/presets/a_gta4plus.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\presets\\a_gta4plus.json",
+      "originalSha256": "034af37d29012a3aa3b0e3975a14a88bc2602f7bf13c950a88e378ceaac516c1",
+      "currentSha256": "034af37d29012a3aa3b0e3975a14a88bc2602f7bf13c950a88e378ceaac516c1"
+    },
+    {
+      "original": "config/presets/b_mafia_light.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\presets\\b_mafia_light.json",
+      "originalSha256": "4b9a49a3a27336075047c70da61f4cfda00cd238cecde4ba31a4aa7c20778e82",
+      "currentSha256": "4b9a49a3a27336075047c70da61f4cfda00cd238cecde4ba31a4aa7c20778e82"
+    },
+    {
+      "original": "config/presets/c_mafia_heavy.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\presets\\c_mafia_heavy.json",
+      "originalSha256": "f12afa956e52657bb61d155c613e8017904534e27f3c8f4b932ad92a47e73732",
+      "currentSha256": "f12afa956e52657bb61d155c613e8017904534e27f3c8f4b932ad92a47e73732"
+    },
+    {
+      "original": "config/presets/d_experimental.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\presets\\d_experimental.json",
+      "originalSha256": "c6bbb540f55b689eb4c35f3748d089bf07febd804f20d48fc18105d82735331b",
+      "currentSha256": "c6bbb540f55b689eb4c35f3748d089bf07febd804f20d48fc18105d82735331b"
+    },
+    {
+      "original": "config/violent_liberty_tuning.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\violent_liberty_tuning.json",
+      "originalSha256": "359f07c9adbe6235921bef965d37ba9c6a96afc61da4b23cefd14c18af612937",
+      "currentSha256": "359f07c9adbe6235921bef965d37ba9c6a96afc61da4b23cefd14c18af612937"
+    },
+    {
+      "original": "config/weapon-catalog.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\config\\weapon-catalog.json",
+      "originalSha256": "62a812d8053194a9af16261b524d0ffecfebeba9cd0a541a1f72adac3bc19767",
+      "currentSha256": "62a812d8053194a9af16261b524d0ffecfebeba9cd0a541a1f72adac3bc19767"
+    },
+    {
+      "original": "docs/art/GENERATOR.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\GENERATOR.md",
+      "originalSha256": "6f54eb73704aec77ad61919bdb72951e1ede9be0db8e067a55a657a9bcfd6443",
+      "currentSha256": "6f54eb73704aec77ad61919bdb72951e1ede9be0db8e067a55a657a9bcfd6443"
+    },
+    {
+      "original": "docs/art/README.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\README.md",
+      "originalSha256": "9f7b6e9d082b3296876136caf4d8dc1cade200df8e75cbbf1966c3cea01ff501",
+      "currentSha256": "9f7b6e9d082b3296876136caf4d8dc1cade200df8e75cbbf1966c3cea01ff501"
+    },
+    {
+      "original": "docs/art/requests/.gitkeep",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\.gitkeep",
+      "originalSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "currentSha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "original": "docs/art/requests/ART-001.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-001.json",
+      "originalSha256": "39f303608fc09edde23a52b84f54ad293aabcdc73d45162f81547ab3309d4fd6",
+      "currentSha256": "2cc619675872b862c9de1fa297b37320f245c0caba833e8f66a0d7b58edc1488"
+    },
+    {
+      "original": "docs/art/requests/ART-002.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-002.json",
+      "originalSha256": "810a8b0238060fc7d3e05574f49f4c0a1f0bac3ab1211be7aa679032329743ac",
+      "currentSha256": "38dcb404912ccc3a363f48d7687b36accbc13738ae483c540304ebfe7a31bffd"
+    },
+    {
+      "original": "docs/art/requests/ART-003.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-003.json",
+      "originalSha256": "e56a6d37299e0fb2a728b97680c8f95c16364793114bbf6365f49d595caace98",
+      "currentSha256": "d2f1daf11dcc45c4218104965bf387a54fd6c3a32d6895d336ac428160a4b55e"
+    },
+    {
+      "original": "docs/art/requests/ART-004.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-004.json",
+      "originalSha256": "83abb0ac996e616f09a20716c9dd3374f3fce9a8a9b59f631a405747cc328adf",
+      "currentSha256": "a5f04baae3cc389dd1ac05440eac18655dfe35f187fb17deae3b7674f57511d5"
+    },
+    {
+      "original": "docs/art/requests/ART-005.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-005.json",
+      "originalSha256": "20b4bf52037f0f5893c2cb3587525094d6d446732d472d9ab154bf02d92ae1ff",
+      "currentSha256": "24aaba132c63b840139351b59a3a86b6ad6d15d8c6fb6a80641c3461cab03672"
+    },
+    {
+      "original": "docs/art/requests/ART-006.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-006.json",
+      "originalSha256": "c27daee37a9e0c0816be1e8c4d81d9bfe2d2bcddc84d067865f8c56445872dae",
+      "currentSha256": "f810d542871f2556715583820f56be915025e7f91e51641b8e18dff227efaafe"
+    },
+    {
+      "original": "docs/art/requests/ART-007.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-007.json",
+      "originalSha256": "d98223f3f0ca4666ede9d206db5aa3306f253380edd9fef90f166c171e83de87",
+      "currentSha256": "cc3d3b46238317f8cc1c01dfe7dbd4d62b182e5ebc2d9de7be53d523cbd714ca"
+    },
+    {
+      "original": "docs/art/requests/ART-008.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-008.json",
+      "originalSha256": "13b321d56f3cedb4e6960f38bd6da1a3ddfc1ef1bf1e714c2233b4391259e473",
+      "currentSha256": "00650582336397199540e2e5021be3b229f99d5e1161b28b3f5795bbbf903c6e"
+    },
+    {
+      "original": "docs/art/requests/ART-009.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-009.json",
+      "originalSha256": "08788f8d4698c45203815762ac9acc4a6d58821945ccf243936e4ff3aed04d05",
+      "currentSha256": "d094857788ef71cd96fd5125019d5f35023d491e97c9d4cbee61f98f93b666da"
+    },
+    {
+      "original": "docs/art/requests/ART-010.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-010.json",
+      "originalSha256": "b17ba725b8c05fdeb1a4d601f08ef8cd2f16e1cbea3caf1802e310c262d8c263",
+      "currentSha256": "be19125434b3f72dbe3a607b450fff975deaee297778b6b0e81e04e42b717de5"
+    },
+    {
+      "original": "docs/art/requests/ART-011.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-011.json",
+      "originalSha256": "faebc27c3cf8759abb323f8662543a12dc6f6626302cd2d8a8e5976815a00f14",
+      "currentSha256": "01f2cb8fcab770e8f849b8dca8e50fb8d4108cdca267f7858d8f11919785b01e"
+    },
+    {
+      "original": "docs/art/requests/ART-012.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\requests\\ART-012.json",
+      "originalSha256": "f09848efde4d0a7879db284821042898f6b0bc518a642175acaad318aabedccf",
+      "currentSha256": "1b40e3f927e9b3a6f26129e1d9d09ba43536136472c036bb0df215d3e2902fc6"
+    },
+    {
+      "original": "docs/art/style.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\art\\style.json",
+      "originalSha256": "91a7bfd39a9919ff0bba00b86b5ed143ab35f2ac6ad0aceeb3558814c564ee45",
+      "currentSha256": "91a7bfd39a9919ff0bba00b86b5ed143ab35f2ac6ad0aceeb3558814c564ee45"
+    },
+    {
+      "original": "docs/design/STAGE1.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\design\\STAGE1.md",
+      "originalSha256": "82a5f9bb99f5498ceb676580a2d11cca225726b895240ef240f714a6570fe4f0",
+      "currentSha256": "121d0c67a79322c8e2c31a61dc600810279ecc438aa3f4df148e4b363beebd65"
+    },
+    {
+      "original": "docs/tasks/T-007-weapon-slots.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-007-weapon-slots.md",
+      "originalSha256": "bcafb21f9bcf41ab603dc868957fca223a10cd54f375efee4ca62b17f7308216",
+      "currentSha256": "687a2f0c7578da11a8d327653d31dbde6110c7757fb52f7a6dde40abb013741f"
+    },
+    {
+      "original": "docs/tasks/T-011-gold-finishes.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-011-gold-finishes.md",
+      "originalSha256": "db057d973c38fc8a985b4421e36d9fc0662f8eb834e8d3ec4f8c444863aea4a7",
+      "currentSha256": "db057d973c38fc8a985b4421e36d9fc0662f8eb834e8d3ec4f8c444863aea4a7"
+    },
+    {
+      "original": "docs/tasks/T-013-debug-hit-info.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-013-debug-hit-info.md",
+      "originalSha256": "8210626b9ba7ccba51388fbe7f0cce0bb9c1f9f5a852fc09a4c6188828305105",
+      "currentSha256": "8210626b9ba7ccba51388fbe7f0cce0bb9c1f9f5a852fc09a4c6188828305105"
+    },
+    {
+      "original": "docs/tasks/T-014-aim-profiles.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-014-aim-profiles.md",
+      "originalSha256": "bfeefbaf0844ff8244e8468b1461036e8a5a12ad8eed38bf3357503f675a4489",
+      "currentSha256": "bfeefbaf0844ff8244e8468b1461036e8a5a12ad8eed38bf3357503f675a4489"
+    },
+    {
+      "original": "docs/tasks/T-015-shoulder-swap.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-015-shoulder-swap.md",
+      "originalSha256": "076d1f5ce225e87850334e8e20ab56c661e468ce2c76362bca43b83990ebeb19",
+      "currentSha256": "0ffd11b645583aff664ff6733aba611377e64703a39d94571035c15a966c0062"
+    },
+    {
+      "original": "docs/tasks/T-016-switch-while-aiming.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-016-switch-while-aiming.md",
+      "originalSha256": "c85ddd40560f5becb2d65208d9bf93f67164c38731c342365b6a5c542a6c87ac",
+      "currentSha256": "c85ddd40560f5becb2d65208d9bf93f67164c38731c342365b6a5c542a6c87ac"
+    },
+    {
+      "original": "docs/tasks/T-017-feel-shake-fov.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-017-feel-shake-fov.md",
+      "originalSha256": "365a96139befb5fc9a726672f0f98945a42f8b8e4412d26857ea14ec0d9341de",
+      "currentSha256": "365a96139befb5fc9a726672f0f98945a42f8b8e4412d26857ea14ec0d9341de"
+    },
+    {
+      "original": "docs/tasks/T-020-arsenal-core.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-020-arsenal-core.md",
+      "originalSha256": "022281f5112653709c1aa0ce1b19a341defc3938db2ae638256aacbec44a9935",
+      "currentSha256": "022281f5112653709c1aa0ce1b19a341defc3938db2ae638256aacbec44a9935"
+    },
+    {
+      "original": "docs/tasks/T-021-holsters.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-021-holsters.md",
+      "originalSha256": "699475cbd00a8b62b5bfe455bb8499c387e1ebb7b713b8a130b023ad330e09bc",
+      "currentSha256": "699475cbd00a8b62b5bfe455bb8499c387e1ebb7b713b8a130b023ad330e09bc"
+    },
+    {
+      "original": "docs/tasks/T-022-combat-effects.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-022-combat-effects.md",
+      "originalSha256": "1cedee661fa9bd9dc14acc3e76f4f64ef7cf1b2a695b14ac6a962f1d56256f57",
+      "currentSha256": "218d803851a3e46a3a10d82596956c3e3d73f78b6e60d73e75078f58544a5fb9"
+    },
+    {
+      "original": "docs/tasks/T-023-lvs-body-variants.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-023-lvs-body-variants.md",
+      "originalSha256": "0c0285470d5e56f0aed6ae2649310d70d01cd44a5181dbd90b6bb5c477bf7f5b",
+      "currentSha256": "0c0285470d5e56f0aed6ae2649310d70d01cd44a5181dbd90b6bb5c477bf7f5b"
+    },
+    {
+      "original": "docs/tasks/T-025-physical-weapons.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-025-physical-weapons.md",
+      "originalSha256": "92d03f36282244c2aa0d0b5312c2828df3f4ecd208d8f9f75bb4698b13c268e9",
+      "currentSha256": "92d03f36282244c2aa0d0b5312c2828df3f4ecd208d8f9f75bb4698b13c268e9"
+    },
+    {
+      "original": "docs/tasks/T-040-stage1-foundation.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-040-stage1-foundation.md",
+      "originalSha256": "cb41ef2e0b000f699a96f4ddc01558a3afc0b1c6394a08d2a6d282fc8b26a650",
+      "currentSha256": "f53699d049067abfc0c7826b59132f8f7a1f7f47c4995307d8cc03a04e75ce7d"
+    },
+    {
+      "original": "docs/tasks/T-041-stage1-weapons.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-041-stage1-weapons.md",
+      "originalSha256": "f0f35becd39ca8378eb668d519d7107c348292bbad8e09b6eef817d5e622615b",
+      "currentSha256": "b3ee2cc075fc1c5debe05c232482020735b4e32a9435c0a0582e95d49c5e7c33"
+    },
+    {
+      "original": "docs/tasks/T-042-stage1-gunplay.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-042-stage1-gunplay.md",
+      "originalSha256": "54f03ee44a686d21c7abeb0f9289d36953acb761f3f914ec0652480513d5a29b",
+      "currentSha256": "54f03ee44a686d21c7abeb0f9289d36953acb761f3f914ec0652480513d5a29b"
+    },
+    {
+      "original": "docs/tasks/T-043-stage1-reticles.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-043-stage1-reticles.md",
+      "originalSha256": "7b0a4c3ce0c3e2fd4074996c5e3fa718383f5e3b194821fd6afd28184c0b3fe0",
+      "currentSha256": "7b0a4c3ce0c3e2fd4074996c5e3fa718383f5e3b194821fd6afd28184c0b3fe0"
+    },
+    {
+      "original": "docs/tasks/T-044-stage1-physical-weapons.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-044-stage1-physical-weapons.md",
+      "originalSha256": "e13b753fabcc993dcb919afd42fc0675223c2465bca306ce83385c04d6fa14ca",
+      "currentSha256": "e13b753fabcc993dcb919afd42fc0675223c2465bca306ce83385c04d6fa14ca"
+    },
+    {
+      "original": "docs/tasks/T-045-stage1-weapon-wheel.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-045-stage1-weapon-wheel.md",
+      "originalSha256": "8af8d1842b51b6efdf038138749733670dee4adc4544ab27425f882fdbf6120a",
+      "currentSha256": "8d4f750a16bd47aa04dc625ab2dd6baff4d53f58a3dd8a1c95ff288bf684b005"
+    },
+    {
+      "original": "docs/tasks/T-046-stage1-trunk-ui.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-046-stage1-trunk-ui.md",
+      "originalSha256": "723c74088d08673ffef0f18fb94fdb1b48f7c7b1e034de3b5a076f848ea2ffc6",
+      "currentSha256": "30f99c65d9a10fc7fcea5c948ce8fa3b70985de89210be9bb42db289ce105d65"
+    },
+    {
+      "original": "docs/tasks/T-047-stage1-gore.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-047-stage1-gore.md",
+      "originalSha256": "33f543929b39f089262df49c3fe2799d1dfefa90420ace379f11f61562f5e8f5",
+      "currentSha256": "33f543929b39f089262df49c3fe2799d1dfefa90420ace379f11f61562f5e8f5"
+    },
+    {
+      "original": "docs/tasks/T-048-stage1-combat-effects.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-048-stage1-combat-effects.md",
+      "originalSha256": "6a2d1fa334615cce987d22e62aad23030c517bedee18d5f09b4953727da51d46",
+      "currentSha256": "6a2d1fa334615cce987d22e62aad23030c517bedee18d5f09b4953727da51d46"
+    },
+    {
+      "original": "docs/tasks/T-049-stage1-hud.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-049-stage1-hud.md",
+      "originalSha256": "e81078652cc6292e8f5d4cab51db0a357baaa2469cbac6906805f81fe6e8c27f",
+      "currentSha256": "e81078652cc6292e8f5d4cab51db0a357baaa2469cbac6906805f81fe6e8c27f"
+    },
+    {
+      "original": "docs/tasks/T-056-stage1-performance-pass.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-056-stage1-performance-pass.md",
+      "originalSha256": "ff854f898f3929b101b5aa6e4e6b59acccfb2da958351ef574ec31966c1ba09b",
+      "currentSha256": "19f113d5dcbfdac22a23f1c0087d2e64feedaba7d0d58694c10fd301913f6eb2"
+    },
+    {
+      "original": "docs/tasks/T-059-citywide-environment-overhaul.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\tasks\\T-059-citywide-environment-overhaul.md",
+      "originalSha256": "34d76428a219e3abc487c99cb23a50e8afc6b9fa6e6f0ad78b777b81d3152399",
+      "currentSha256": "34d76428a219e3abc487c99cb23a50e8afc6b9fa6e6f0ad78b777b81d3152399"
+    },
+    {
+      "original": "docs/testing/FEATURE_PREVIEW.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\testing\\FEATURE_PREVIEW.md",
+      "originalSha256": "36bc749461cece289fba2853a390762454c4cc8d14937d7931c9bb005719beed",
+      "currentSha256": "36bc749461cece289fba2853a390762454c4cc8d14937d7931c9bb005719beed"
+    },
+    {
+      "original": "docs/testing/LOCAL_VERIFICATION_PLAN.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\testing\\LOCAL_VERIFICATION_PLAN.md",
+      "originalSha256": "6e686c98a936b9859bb8523f313654d19f82adf1433bb010e209502c80d1a55e",
+      "currentSha256": "74aeeb53e69d30097fb4933288a0c59259e28cb5a296bbe1634780dda329f42a"
+    },
+    {
+      "original": "docs/workflow/NEXT_MILESTONE.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\docs\\workflow\\NEXT_MILESTONE.md",
+      "originalSha256": "c0ba3e7b4f61b07ed6da9075d5fb2cefc8b707850772f8c9943cebb5605c936a",
+      "currentSha256": "1a02e9a05e69d61b7d68106734aec8c0d934e1db7b5b0d28f5f05224b9a0a1ca"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/ArsenalCore.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\ArsenalCore.cs",
+      "originalSha256": "c52274da3d3309edc65c79445f0f7a23c9b0e02cfc42be89a3a53f3accece2c4",
+      "currentSha256": "3c128de6568c0cf502837f96f5aadffade711233cdbaf11703f458bea474f066"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/ArsenalRegistry.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\ArsenalRegistry.cs",
+      "originalSha256": "496ab907535fef5a255ad5b3277b06a1586060496e0ff59898e1909974b96b31",
+      "currentSha256": "496ab907535fef5a255ad5b3277b06a1586060496e0ff59898e1909974b96b31"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/BodySlot.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\BodySlot.cs",
+      "originalSha256": "934b1525f832284e652f25b70d9a015af2dea00d30284715c37abc4d14b47b95",
+      "currentSha256": "934b1525f832284e652f25b70d9a015af2dea00d30284715c37abc4d14b47b95"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/CarriedWeapon.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\CarriedWeapon.cs",
+      "originalSha256": "3bb9d972622b9590a7304616fbdf8cbc7a765c3e2ea2139555c5b85ae3897784",
+      "currentSha256": "3bb9d972622b9590a7304616fbdf8cbc7a765c3e2ea2139555c5b85ae3897784"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/ICarriedWeaponsSource.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\ICarriedWeaponsSource.cs",
+      "originalSha256": "82722bac09d62e8efb30e75b0b90bd991ab09d317068dd51903046505481162e",
+      "currentSha256": "82722bac09d62e8efb30e75b0b90bd991ab09d317068dd51903046505481162e"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/WeaponCategory.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\WeaponCategory.cs",
+      "originalSha256": "874b2c193cb6a30768944f8349f1754bc1691a230856dc95d5886971fc1c4dc3",
+      "currentSha256": "874b2c193cb6a30768944f8349f1754bc1691a230856dc95d5886971fc1c4dc3"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Contracts/WeaponRecord.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Contracts\\WeaponRecord.cs",
+      "originalSha256": "82236d3e8b083363c7afc978f953b3a3fcbdb1a73e03db96861f53825ec6d58a",
+      "currentSha256": "82236d3e8b083363c7afc978f953b3a3fcbdb1a73e03db96861f53825ec6d58a"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/HolsterController.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\HolsterController.cs",
+      "originalSha256": "52125ce9cedd0fc3f8697399b8e558e2747437c06ae012f171517a0d01824c78",
+      "currentSha256": "3ebde1333af8846cb8c4c9a36fb8a5ae938c321bbc61a2ed09d9291d4ceaa191"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/HolsterPropJournal.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\HolsterPropJournal.cs",
+      "originalSha256": "4a6436c41592aee6898360f3fbaa0e57cc2e978d3f6f07037de12d55741ecaaf",
+      "currentSha256": "4a6436c41592aee6898360f3fbaa0e57cc2e978d3f6f07037de12d55741ecaaf"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/HolsterPropRecord.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\HolsterPropRecord.cs",
+      "originalSha256": "c3723fa83d199e4a558baa72f0426d0f07ec3dad19278f67186afc3106bd3d45",
+      "currentSha256": "c3723fa83d199e4a558baa72f0426d0f07ec3dad19278f67186afc3106bd3d45"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterConfig.cs",
+      "originalSha256": "d88a8cce371470be3ba1daff8be397ff8e0019e165c8ad21016e0f2c1e8acfef",
+      "currentSha256": "d88a8cce371470be3ba1daff8be397ff8e0019e165c8ad21016e0f2c1e8acfef"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterOutfitClass.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterOutfitClass.cs",
+      "originalSha256": "4ba0275dfd6ec0e4a47cc65a9d1d5d8bb6454f40167c5def8a249aa0e9e5b551",
+      "currentSha256": "4ba0275dfd6ec0e4a47cc65a9d1d5d8bb6454f40167c5def8a249aa0e9e5b551"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterPlacement.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterPlacement.cs",
+      "originalSha256": "a3030e03d8fa4071d3922a60c29111cff993df8596aecc98e9e409de77a53eaa",
+      "currentSha256": "a3030e03d8fa4071d3922a60c29111cff993df8596aecc98e9e409de77a53eaa"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterRules.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterRules.cs",
+      "originalSha256": "c6de1def17939365462cabd04f4f7a135897e51eb4769d781f8befb06a6b5848",
+      "currentSha256": "c6de1def17939365462cabd04f4f7a135897e51eb4769d781f8befb06a6b5848"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterSling.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterSling.cs",
+      "originalSha256": "4fbfca995555e8578683d93c2aa6e8766262fe7a49742519d627ed508714952e",
+      "currentSha256": "4fbfca995555e8578683d93c2aa6e8766262fe7a49742519d627ed508714952e"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Holsters/Logic/HolsterWeapon.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Holsters\\Logic\\HolsterWeapon.cs",
+      "originalSha256": "949652135f9e2c9061aaaaeb9930602d786faca50c85b0422cd6418c0b12654e",
+      "currentSha256": "949652135f9e2c9061aaaaeb9930602d786faca50c85b0422cd6418c0b12654e"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/ArsenalConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\ArsenalConfig.cs",
+      "originalSha256": "dc40f32d84955be4574945a59d7402e3814fb27541cc81db64a940b965b4a9ef",
+      "currentSha256": "dc40f32d84955be4574945a59d7402e3814fb27541cc81db64a940b965b4a9ef"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/ArsenalConfigValidator.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\ArsenalConfigValidator.cs",
+      "originalSha256": "58f710fafa71ea976ac44b3e35a74b7e6df63f066155fdb74c4fe26678eb248b",
+      "currentSha256": "58f710fafa71ea976ac44b3e35a74b7e6df63f066155fdb74c4fe26678eb248b"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/ArsenalPolicy.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\ArsenalPolicy.cs",
+      "originalSha256": "3d0d1f068198627e73b14342f78f143bd0ad7d4599a83f4b9cb42167c023d3e2",
+      "currentSha256": "3d0d1f068198627e73b14342f78f143bd0ad7d4599a83f4b9cb42167c023d3e2"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/ArsenalState.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\ArsenalState.cs",
+      "originalSha256": "8496fad34d6ad193b6823d717375ca8f1e036d5e50756a46d9cbd64fe580bc06",
+      "currentSha256": "8496fad34d6ad193b6823d717375ca8f1e036d5e50756a46d9cbd64fe580bc06"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/ArsenalStateStore.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\ArsenalStateStore.cs",
+      "originalSha256": "fee8ddca413475a68613079c2c54d1cdc561061c96b8728d089a7599230b5da7",
+      "currentSha256": "fee8ddca413475a68613079c2c54d1cdc561061c96b8728d089a7599230b5da7"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/CategoryRule.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\CategoryRule.cs",
+      "originalSha256": "e8fc72526b20cb4ad7f0ae1372af848a2753a8c3102ecf7d0ac6f1843c7765fc",
+      "currentSha256": "e8fc72526b20cb4ad7f0ae1372af848a2753a8c3102ecf7d0ac6f1843c7765fc"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/LoadoutRules.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\LoadoutRules.cs",
+      "originalSha256": "92c468c1ec319b25f2313557167c77ebf71c7f99b9ffd2c7d20b7fea139ba1ae",
+      "currentSha256": "92c468c1ec319b25f2313557167c77ebf71c7f99b9ffd2c7d20b7fea139ba1ae"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/LvsOwnedVehicleEntry.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\LvsOwnedVehicleEntry.cs",
+      "originalSha256": "6b6c231e378650d37c3b7e24b23c76e4bbea6838175170985cc3f5035c442e05",
+      "currentSha256": "6b6c231e378650d37c3b7e24b23c76e4bbea6838175170985cc3f5035c442e05"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/LvsOwnedVehicleReader.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\LvsOwnedVehicleReader.cs",
+      "originalSha256": "7815081b5e25bef568db4016a6aba488ebbdae138df1e6f5439dd9df83f4d49c",
+      "currentSha256": "7815081b5e25bef568db4016a6aba488ebbdae138df1e6f5439dd9df83f4d49c"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/SafehouseRule.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\SafehouseRule.cs",
+      "originalSha256": "837f1c7e037e899bae87a2accd0933f7c35b42d7e703b022045571e056e7be53",
+      "currentSha256": "837f1c7e037e899bae87a2accd0933f7c35b42d7e703b022045571e056e7be53"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/StorageBin.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\StorageBin.cs",
+      "originalSha256": "02ccedfdbf316fbc8c4988f8995211636fff5fb0f70d9c1e86039d7901d6cfc7",
+      "currentSha256": "02ccedfdbf316fbc8c4988f8995211636fff5fb0f70d9c1e86039d7901d6cfc7"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/TrunkCapacityRules.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\TrunkCapacityRules.cs",
+      "originalSha256": "860530065ff4e12f7379ddfe3a76f19eee5446f11500f3ec7f1ef6e49e9dfbd5",
+      "currentSha256": "860530065ff4e12f7379ddfe3a76f19eee5446f11500f3ec7f1ef6e49e9dfbd5"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/TrunkTimings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\TrunkTimings.cs",
+      "originalSha256": "41ac27518e2df2e2cead6c9d95955ea0dd0119a3555f1b21ece71334dbf9b1bf",
+      "currentSha256": "41ac27518e2df2e2cead6c9d95955ea0dd0119a3555f1b21ece71334dbf9b1bf"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/WeaponIdentity.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\WeaponIdentity.cs",
+      "originalSha256": "c91f611b86971983db13e0d77fc4c0d01dcb815dba3b5a92deb1d89977a88415",
+      "currentSha256": "c91f611b86971983db13e0d77fc4c0d01dcb815dba3b5a92deb1d89977a88415"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/WeaponWheelConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\WeaponWheelConfig.cs",
+      "originalSha256": "6ebb6601e64fe0dda07bc55ba253e3e70b9ad17c4c7a6b836e0d59e1276540d2",
+      "currentSha256": "6ebb6601e64fe0dda07bc55ba253e3e70b9ad17c4c7a6b836e0d59e1276540d2"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Logic/WeaponWheelLogic.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Logic\\WeaponWheelLogic.cs",
+      "originalSha256": "30b78284895c0ed042704d950a57af35e4dcda7fe3e972ed2438ccc7a5608eac",
+      "currentSha256": "30b78284895c0ed042704d950a57af35e4dcda7fe3e972ed2438ccc7a5608eac"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Ui/StorageWheel.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Ui\\StorageWheel.cs",
+      "originalSha256": "a8003e91eb2265abf952e75c5f002ba1c1035d68708546987f17c2b8ae47d8df",
+      "currentSha256": "a8003e91eb2265abf952e75c5f002ba1c1035d68708546987f17c2b8ae47d8df"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Ui/TrunkSequence.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Ui\\TrunkSequence.cs",
+      "originalSha256": "eedc68586f71edbe17dafdfc4200d04e992aefbbad8fa37adbdc30d2037adf83",
+      "currentSha256": "eedc68586f71edbe17dafdfc4200d04e992aefbbad8fa37adbdc30d2037adf83"
+    },
+    {
+      "original": "src/LibertyFramework/Arsenal/Ui/WeaponWheelModule.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Arsenal\\Ui\\WeaponWheelModule.cs",
+      "originalSha256": "18b562967c5bd6e5ea020eef8bc660ced85dd32b9567cbbe2776911ed352b744",
+      "currentSha256": "b6a2da8917a3639fa8acbd3567b6963d7dcbd857fabafc88d3faf297ed9d1d3f"
+    },
+    {
+      "original": "src/LibertyFramework/Atmosphere/AtmosphereController.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Atmosphere\\AtmosphereController.cs",
+      "originalSha256": "13d609399125e5ed2796c8541f0f9115fc9f5767bffe2d9401e88e7989bc276c",
+      "currentSha256": "3225225b8b37c59922ee3715efd8c68529332366d51dcc020fe0549f6980e5ea"
+    },
+    {
+      "original": "src/LibertyFramework/Atmosphere/Logic/AtmosphereConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Atmosphere\\Logic\\AtmosphereConfig.cs",
+      "originalSha256": "298886c15c9bb16cb02522c291fe357b48c5fbc715f5832b851706827febd6fc",
+      "currentSha256": "298886c15c9bb16cb02522c291fe357b48c5fbc715f5832b851706827febd6fc"
+    },
+    {
+      "original": "src/LibertyFramework/Atmosphere/Logic/DensityGovernor.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Atmosphere\\Logic\\DensityGovernor.cs",
+      "originalSha256": "4465baab5911a20ec6652809192ec12effc45687d593814fd6ae0238a3a5023c",
+      "currentSha256": "4465baab5911a20ec6652809192ec12effc45687d593814fd6ae0238a3a5023c"
+    },
+    {
+      "original": "src/LibertyFramework/Atmosphere/Logic/WeatherForecast.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Atmosphere\\Logic\\WeatherForecast.cs",
+      "originalSha256": "9ad77e5c63aa92d33bb2792f278a1fe192c6d5bbbcd390f83687d9c1a295e046",
+      "currentSha256": "9ad77e5c63aa92d33bb2792f278a1fe192c6d5bbbcd390f83687d9c1a295e046"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/BloodEffects.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\BloodEffects.cs",
+      "originalSha256": "eff2408b16b4495e5fa94a4faf83c1809c3cb172e91d36ee2abcd0bd6865a1da",
+      "currentSha256": "eff2408b16b4495e5fa94a4faf83c1809c3cb172e91d36ee2abcd0bd6865a1da"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/BloodEmitter.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\BloodEmitter.cs",
+      "originalSha256": "4d24f84726388cac1f7db886e86a22fcb323a6ca87cce95b96b86bde3cb86271",
+      "currentSha256": "4d24f84726388cac1f7db886e86a22fcb323a6ca87cce95b96b86bde3cb86271"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/CombatEffectsConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\CombatEffectsConfig.cs",
+      "originalSha256": "a3643650a04233fc80f98c99e1f0fcb3e323b2dc90ed4945f2dde222bdf5a4fa",
+      "currentSha256": "a3643650a04233fc80f98c99e1f0fcb3e323b2dc90ed4945f2dde222bdf5a4fa"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/CombatEffectsController.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\CombatEffectsController.cs",
+      "originalSha256": "28b40e9d2a733c13c47fa27e8db6a6ce1a910619b5094f304ab238fccf65d88a",
+      "currentSha256": "4201ec909b68a97b17e35376dcee94f19cec9820457a36ee627d6fee6f6305bf"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/CombatEffectsNatives.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\CombatEffectsNatives.cs",
+      "originalSha256": "c6be68f3b03a78efd784960fc036104dc83621152478d0a5e3287df616961ed8",
+      "currentSha256": "c6be68f3b03a78efd784960fc036104dc83621152478d0a5e3287df616961ed8"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/Dismemberment.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\Dismemberment.cs",
+      "originalSha256": "d1d40d76e35aa09a68d6e846ce651dce3043f086e930f0fce35c2d61b293e4fe",
+      "currentSha256": "d1d40d76e35aa09a68d6e846ce651dce3043f086e930f0fce35c2d61b293e4fe"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/HitClassifier.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\HitClassifier.cs",
+      "originalSha256": "f6f32d483ba54962956e2eb0b1dd65180fe582743947a575f348be94d51b2b61",
+      "currentSha256": "f6f32d483ba54962956e2eb0b1dd65180fe582743947a575f348be94d51b2b61"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/HitRegion.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\HitRegion.cs",
+      "originalSha256": "7ab54ce807a4e4e41d914c05f0e19fdc95788bbee2c4add17e4cfc293ef472ab",
+      "currentSha256": "7ab54ce807a4e4e41d914c05f0e19fdc95788bbee2c4add17e4cfc293ef472ab"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/Logic/LimbCutPlan.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\Logic\\LimbCutPlan.cs",
+      "originalSha256": "2227505427820250bf1b8f0df35391d1a4f25dc6838f9febdf0907f8f9a70b1a",
+      "currentSha256": "2227505427820250bf1b8f0df35391d1a4f25dc6838f9febdf0907f8f9a70b1a"
+    },
+    {
+      "original": "src/LibertyFramework/CombatEffects/PedInjuryState.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\CombatEffects\\PedInjuryState.cs",
+      "originalSha256": "945a7716de4d7571d0a3faf625d37cf7f02b553de47a47e91561d0a956c7dd7c",
+      "currentSha256": "945a7716de4d7571d0a3faf625d37cf7f02b553de47a47e91561d0a956c7dd7c"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/DevToolsMenu.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\DevToolsMenu.cs",
+      "originalSha256": "602042daa5b869f294300329eaa546128119b93ca4a30fcab30090e8d6bc5579",
+      "currentSha256": "4c69b1e61cafdb2872ce4086e4cff1c0a0d64267f1700608a77fadd649e6d104"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/DevToolsPages.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\DevToolsPages.cs",
+      "originalSha256": "37b451f544cc6d8c37451e10c13c7ecf9acd4c35c8a1ca2b36d6b3414931b2a2",
+      "currentSha256": "37b451f544cc6d8c37451e10c13c7ecf9acd4c35c8a1ca2b36d6b3414931b2a2"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/Menu/MenuItem.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\Menu\\MenuItem.cs",
+      "originalSha256": "d7810a62ba7ded9107dbc4439f6b39f6671a739e85148fd6c6a979b470481959",
+      "currentSha256": "d7810a62ba7ded9107dbc4439f6b39f6671a739e85148fd6c6a979b470481959"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/Menu/MenuPage.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\Menu\\MenuPage.cs",
+      "originalSha256": "076e57bb89d9df2a64925414280ef5c888eceefc736e47a81b2c67b3001c15bf",
+      "currentSha256": "076e57bb89d9df2a64925414280ef5c888eceefc736e47a81b2c67b3001c15bf"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/Teleport/Logic/TeleportSnap.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\Teleport\\Logic\\TeleportSnap.cs",
+      "originalSha256": "baf6307ac89fc428e2d23e5e052ba6d7fc6e5358e2788cd1f65127c71e5e5e9d",
+      "currentSha256": "baf6307ac89fc428e2d23e5e052ba6d7fc6e5358e2788cd1f65127c71e5e5e9d"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/Teleport/TeleportService.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\Teleport\\TeleportService.cs",
+      "originalSha256": "6a8d0fd3e74117f732ea2b55232be3124f7fbf909c767bc259b1af0288db3272",
+      "currentSha256": "be4b111d8ed3bec20aa4e2ba1f9ecc47d82284dac81225211f4b2df29843d5f9"
+    },
+    {
+      "original": "src/LibertyFramework/DevTools/TestRange/TestRangeService.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\DevTools\\TestRange\\TestRangeService.cs",
+      "originalSha256": "e136bb4d2a6267e6e28b3b411d97301db0d58b695173c590e444c763a89d9caa",
+      "currentSha256": "e136bb4d2a6267e6e28b3b411d97301db0d58b695173c590e444c763a89d9caa"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Aim/FreeAimMode.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Aim\\FreeAimMode.cs",
+      "originalSha256": "6c0368a562d97623ef14cc4fe97ddbee525762477b916e3d254476111fb8bd1c",
+      "currentSha256": "0d934f9e8249eb3a3ec2de412994af607ef7c28e4b2d578086fd4e6355d6e7ab"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Aim/FreeAimRestoreState.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Aim\\FreeAimRestoreState.cs",
+      "originalSha256": "a157c074820d8b484b8b11e3d91ae702ef4649993e12d31e6f49dde9847117fd",
+      "currentSha256": "a157c074820d8b484b8b11e3d91ae702ef4649993e12d31e6f49dde9847117fd"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Aim/ShoulderSwap.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Aim\\ShoulderSwap.cs",
+      "originalSha256": "5464990f3ca7de30fd39c0bcaa6f739ef9d47e7b4f4c1995f1ee9079403030f4",
+      "currentSha256": "5464990f3ca7de30fd39c0bcaa6f739ef9d47e7b4f4c1995f1ee9079403030f4"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Crosshair/CrosshairRenderer.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Crosshair\\CrosshairRenderer.cs",
+      "originalSha256": "fc6c58a1e75a823b14542910bd9f6e7e87c7a0e354286631311a7bbda6b1cb6d",
+      "currentSha256": "fc6c58a1e75a823b14542910bd9f6e7e87c7a0e354286631311a7bbda6b1cb6d"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/DebugHitTracker.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\DebugHitTracker.cs",
+      "originalSha256": "d649bfa4325ef15e4de0a8e4214e01a1e0ad72e1f20be12c200f048936e45c93",
+      "currentSha256": "d649bfa4325ef15e4de0a8e4214e01a1e0ad72e1f20be12c200f048936e45c93"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/FeelFovRestoreState.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\FeelFovRestoreState.cs",
+      "originalSha256": "a5a0be92efc001b9e424b852b8454a41163c3ade7e433bd9a842add57b5a8a7b",
+      "currentSha256": "a5a0be92efc001b9e424b852b8454a41163c3ade7e433bd9a842add57b5a8a7b"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/GunplayController.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\GunplayController.cs",
+      "originalSha256": "b1b789109e9daad30ff0f33d026cb60e187d0f4ceee24f1ead688a7b615d3e43",
+      "currentSha256": "a7ed73fee6a5d8653472b62fa4e77d7d81d1748112a602caa2221416c589c4dc"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/AimingCycleRules.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\AimingCycleRules.cs",
+      "originalSha256": "83bb1e2123bd02e87aeab29356a467ef9023f653202387958aad6b4011d730a7",
+      "currentSha256": "83bb1e2123bd02e87aeab29356a467ef9023f653202387958aad6b4011d730a7"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/GunplaySimulation.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\GunplaySimulation.cs",
+      "originalSha256": "f585f416b7e491451518ccc2e511a45c06306754b3e02b3556519fd6c837be58",
+      "currentSha256": "f585f416b7e491451518ccc2e511a45c06306754b3e02b3556519fd6c837be58"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/RangeRecorder.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\RangeRecorder.cs",
+      "originalSha256": "15c75a92dfdee7d047399d4b1bc92bb1c6b098c5f4926a5d79da6fe2a4e136fd",
+      "currentSha256": "15c75a92dfdee7d047399d4b1bc92bb1c6b098c5f4926a5d79da6fe2a4e136fd"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/ReticleResolver.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\ReticleResolver.cs",
+      "originalSha256": "5e223b14aa4b0e716013fb18bf0dc3819a61a69848652b081def57cb0d46abf3",
+      "currentSha256": "5e223b14aa4b0e716013fb18bf0dc3819a61a69848652b081def57cb0d46abf3"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/ReticleTruth.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\ReticleTruth.cs",
+      "originalSha256": "2c550f3261b140828b55275046ecb6916dbd57abbcd4cff04a4e479a920bf088",
+      "currentSha256": "2c550f3261b140828b55275046ecb6916dbd57abbcd4cff04a4e479a920bf088"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Logic/Stage1Gate.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Logic\\Stage1Gate.cs",
+      "originalSha256": "76915f4e8886037e65af5193c44a0ba6a721455a598516333c45faa86fdffc09",
+      "currentSha256": "76915f4e8886037e65af5193c44a0ba6a721455a598516333c45faa86fdffc09"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/AimingSwitchSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\AimingSwitchSettings.cs",
+      "originalSha256": "4bcb81e7ed01e1dbf9b4785dcf755a8c0624bd7db89705227387735c26fb73ad",
+      "currentSha256": "4bcb81e7ed01e1dbf9b4785dcf755a8c0624bd7db89705227387735c26fb73ad"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ClassTargetSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ClassTargetSettings.cs",
+      "originalSha256": "cb9cbf8d1875b92c296ef81a7fcdf72f0a83d5189eac7eeb5d3ca9716711627a",
+      "currentSha256": "cb9cbf8d1875b92c296ef81a7fcdf72f0a83d5189eac7eeb5d3ca9716711627a"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/CrosshairSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\CrosshairSettings.cs",
+      "originalSha256": "fdb1bd356e825c24eaa2e0ddaf7dedf33c0cc1c82ea7c2ff9b692970af5ef3ef",
+      "currentSha256": "fdb1bd356e825c24eaa2e0ddaf7dedf33c0cc1c82ea7c2ff9b692970af5ef3ef"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/DebugHitSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\DebugHitSettings.cs",
+      "originalSha256": "6fbf4f6051993ad7aa9a17a92f44592fe764d4cd936aee5a1f18505944507611",
+      "currentSha256": "6fbf4f6051993ad7aa9a17a92f44592fe764d4cd936aee5a1f18505944507611"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/FeelSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\FeelSettings.cs",
+      "originalSha256": "df0a78255d02898cf46b0edf7d7f71c9406a1466b72e66e3e423c2e8abc85079",
+      "currentSha256": "df0a78255d02898cf46b0edf7d7f71c9406a1466b72e66e3e423c2e8abc85079"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/FreeAimSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\FreeAimSettings.cs",
+      "originalSha256": "124955c8a3e9561c130fd0a63a9020fad67dcf73007332183d9153a5fcb04687",
+      "currentSha256": "124955c8a3e9561c130fd0a63a9020fad67dcf73007332183d9153a5fcb04687"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/GunplayConfig.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\GunplayConfig.cs",
+      "originalSha256": "551540fd0b4c807bba6e4d4082bdfcc22cd91ce2a9999dcac5121722947d0f79",
+      "currentSha256": "551540fd0b4c807bba6e4d4082bdfcc22cd91ce2a9999dcac5121722947d0f79"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/GunplayConfigStore.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\GunplayConfigStore.cs",
+      "originalSha256": "fc878eac151f69cea41de04437a5121c2a78495d33aeffd6132d9349bd59e5e9",
+      "currentSha256": "fc878eac151f69cea41de04437a5121c2a78495d33aeffd6132d9349bd59e5e9"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/GunplayConfigValidator.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\GunplayConfigValidator.cs",
+      "originalSha256": "6cbc15536733a80decb803cc815dfc56b009b33f4c9d9b7975ff0b09c60d2801",
+      "currentSha256": "6cbc15536733a80decb803cc815dfc56b009b33f4c9d9b7975ff0b09c60d2801"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/MovementSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\MovementSettings.cs",
+      "originalSha256": "fdf6fdc19ca96cd675057e65b0e45aad028b6a9338939fe56674e4140584e448",
+      "currentSha256": "fdf6fdc19ca96cd675057e65b0e45aad028b6a9338939fe56674e4140584e448"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/PerformanceSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\PerformanceSettings.cs",
+      "originalSha256": "1a92fdad1a0ec3716414230104f96c8e7381c461f0c93f832878fe42ba71e6c8",
+      "currentSha256": "1a92fdad1a0ec3716414230104f96c8e7381c461f0c93f832878fe42ba71e6c8"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/PresetFile.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\PresetFile.cs",
+      "originalSha256": "57c71f32f9a6f1faf49d3693941d86dedc1316b05a4e7061d0f3b2783d719212",
+      "currentSha256": "57c71f32f9a6f1faf49d3693941d86dedc1316b05a4e7061d0f3b2783d719212"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/PresetWeapon.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\PresetWeapon.cs",
+      "originalSha256": "52add24f63c1a8f344f8b2a674999b3d5e4c124bf67fffbb05e40d5265d0a618",
+      "currentSha256": "52add24f63c1a8f344f8b2a674999b3d5e4c124bf67fffbb05e40d5265d0a618"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ProfileParameters.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ProfileParameters.cs",
+      "originalSha256": "0ea7ae399d1b36c38d7696b013a23dc2c93cef676e073ac7f7079d49813784d7",
+      "currentSha256": "0ea7ae399d1b36c38d7696b013a23dc2c93cef676e073ac7f7079d49813784d7"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/RecoilGlobalSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\RecoilGlobalSettings.cs",
+      "originalSha256": "c3746b1b06b077b3a4a7bf1c8fdc1a898c86960ba8f4f37b7dec866469af39eb",
+      "currentSha256": "c3746b1b06b077b3a4a7bf1c8fdc1a898c86960ba8f4f37b7dec866469af39eb"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/RecoilProfile.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\RecoilProfile.cs",
+      "originalSha256": "d94981d825c15c9829cc1a6d0e9b510b42b554dd6a1769bf4c343c57e77fd443",
+      "currentSha256": "d94981d825c15c9829cc1a6d0e9b510b42b554dd6a1769bf4c343c57e77fd443"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ReticleClassSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ReticleClassSettings.cs",
+      "originalSha256": "48e65d9fb0a8dd1d771cb03093ea3de1a61253034d086ae7d5823878aa1dee1c",
+      "currentSha256": "48e65d9fb0a8dd1d771cb03093ea3de1a61253034d086ae7d5823878aa1dee1c"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ReticleSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ReticleSettings.cs",
+      "originalSha256": "7deea7fe8d537c20abd57b727a178a9d32f0ba9eee846eefe451ad14c533f688",
+      "currentSha256": "7deea7fe8d537c20abd57b727a178a9d32f0ba9eee846eefe451ad14c533f688"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ReticleStyleSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ReticleStyleSettings.cs",
+      "originalSha256": "e647d3ec1220af1ed781048d76b4a9adf44a998c7bcda9f090df653fc0434767",
+      "currentSha256": "e647d3ec1220af1ed781048d76b4a9adf44a998c7bcda9f090df653fc0434767"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ReticleWeaponSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ReticleWeaponSettings.cs",
+      "originalSha256": "4acdd994f5ee9432cd64dd5a09889e3d9701a80aa141f29d13a4aa41096cde16",
+      "currentSha256": "4acdd994f5ee9432cd64dd5a09889e3d9701a80aa141f29d13a4aa41096cde16"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/ShoulderSwapSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\ShoulderSwapSettings.cs",
+      "originalSha256": "259946074ecf53f3f65d3d51cbe8b7b0ee949a8f7bd3d6f004e2e13c98f53c7e",
+      "currentSha256": "259946074ecf53f3f65d3d51cbe8b7b0ee949a8f7bd3d6f004e2e13c98f53c7e"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/SpreadCalibrationSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\SpreadCalibrationSettings.cs",
+      "originalSha256": "323b51e10782c49bf9bf7cc6e742a92fd919a2e7b0e9c8ea87f20017f05a05c7",
+      "currentSha256": "323b51e10782c49bf9bf7cc6e742a92fd919a2e7b0e9c8ea87f20017f05a05c7"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/SpreadProfile.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\SpreadProfile.cs",
+      "originalSha256": "c2dd7c7e6cfb95b53401174dfc2a068f6cce4c6181a7d86f165f51ae9d61ccb0",
+      "currentSha256": "c2dd7c7e6cfb95b53401174dfc2a068f6cce4c6181a7d86f165f51ae9d61ccb0"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/Stage1WeaponSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\Stage1WeaponSettings.cs",
+      "originalSha256": "4717219ce26eee6dd97503251daa264dc14352f490dbfaca92dd2d4fe60a3512",
+      "currentSha256": "4717219ce26eee6dd97503251daa264dc14352f490dbfaca92dd2d4fe60a3512"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/TestRangeSettings.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\TestRangeSettings.cs",
+      "originalSha256": "2002beabb61a1d301bd746341f7c74a9eedae3064eb07d42f874912ca0e48c04",
+      "currentSha256": "2002beabb61a1d301bd746341f7c74a9eedae3064eb07d42f874912ca0e48c04"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/TuningParameter.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\TuningParameter.cs",
+      "originalSha256": "a7c79f1f145ba54f33068f1521d00c7d97f4d07c9a9b4ac977f6e906af2cc552",
+      "currentSha256": "a7c79f1f145ba54f33068f1521d00c7d97f4d07c9a9b4ac977f6e906af2cc552"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Profiles/WeaponProfile.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Profiles\\WeaponProfile.cs",
+      "originalSha256": "cac2a236373576c1a966cff7cee872eca4436c33a51c84b317d5e7e0e77146dd",
+      "currentSha256": "cac2a236373576c1a966cff7cee872eca4436c33a51c84b317d5e7e0e77146dd"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Recoil/RecoilMultiplier.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Recoil\\RecoilMultiplier.cs",
+      "originalSha256": "2f562a6b6d23bf8f81af10270d27ec975b5cc86c6d56259468041ecbdd956bf3",
+      "currentSha256": "2f562a6b6d23bf8f81af10270d27ec975b5cc86c6d56259468041ecbdd956bf3"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Recoil/RecoilSolver.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Recoil\\RecoilSolver.cs",
+      "originalSha256": "8b0188fd5e75fe2e5545d9c3fa7f19b5bb4353201ddc8414eb593c580126dcd9",
+      "currentSha256": "8b0188fd5e75fe2e5545d9c3fa7f19b5bb4353201ddc8414eb593c580126dcd9"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Recoil/RecoilStep.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Recoil\\RecoilStep.cs",
+      "originalSha256": "152c7a1f1dce12d08bd544ba6d2353cfb7e6b936d5263f65d13db5e5400fac28",
+      "currentSha256": "152c7a1f1dce12d08bd544ba6d2353cfb7e6b936d5263f65d13db5e5400fac28"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Spread/ShooterState.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Spread\\ShooterState.cs",
+      "originalSha256": "c4c18ea6f0a4f7e52cb66b1caaf93a46f82c993d7fa0311ffbbc69c586881f6c",
+      "currentSha256": "c4c18ea6f0a4f7e52cb66b1caaf93a46f82c993d7fa0311ffbbc69c586881f6c"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Spread/ShotAuditStats.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Spread\\ShotAuditStats.cs",
+      "originalSha256": "b9ca0779f76ea8d88845e28eed93c3d63ef06f82d5727c8d9a6289dcc857335d",
+      "currentSha256": "b9ca0779f76ea8d88845e28eed93c3d63ef06f82d5727c8d9a6289dcc857335d"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Spread/ShotGeometry.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Spread\\ShotGeometry.cs",
+      "originalSha256": "faab72b957530751c73a1dba41a51790c6e5504e830c0e31956fd67a2f6a61de",
+      "currentSha256": "faab72b957530751c73a1dba41a51790c6e5504e830c0e31956fd67a2f6a61de"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Spread/SpreadCalibrator.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Spread\\SpreadCalibrator.cs",
+      "originalSha256": "1fb5aa31d4c4d826b6164aac0289a9ed5a2cd435f5aad13df6f608721b9fe583",
+      "currentSha256": "1fb5aa31d4c4d826b6164aac0289a9ed5a2cd435f5aad13df6f608721b9fe583"
+    },
+    {
+      "original": "src/LibertyFramework/Gunplay/Spread/SpreadModel.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Gunplay\\Spread\\SpreadModel.cs",
+      "originalSha256": "b18297b8d11cb319011b45a9586b30f8149ab33f16befad5f0123a043d55fa10",
+      "currentSha256": "b18297b8d11cb319011b45a9586b30f8149ab33f16befad5f0123a043d55fa10"
+    },
+    {
+      "original": "src/LibertyFramework/WeaponProbe/WeaponSlotProbe.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\WeaponProbe\\WeaponSlotProbe.cs",
+      "originalSha256": "b3977c80b9ac226fb62506384ca24f23676fd281f31e0c2c5a4b804128c27cc9",
+      "currentSha256": "b3977c80b9ac226fb62506384ca24f23676fd281f31e0c2c5a4b804128c27cc9"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/AttachmentOption.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\AttachmentOption.cs",
+      "originalSha256": "fc4842d6abbcf06c52479a777be05a4d8e3e1cc74810d93be16d283611090abc",
+      "currentSha256": "fc4842d6abbcf06c52479a777be05a4d8e3e1cc74810d93be16d283611090abc"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponAvailability.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\WeaponAvailability.cs",
+      "originalSha256": "105b3ef774c750dd0d674fbde5ae7932cb7cf0d8c9a98ca93e1b2313ebb03b5a",
+      "currentSha256": "105b3ef774c750dd0d674fbde5ae7932cb7cf0d8c9a98ca93e1b2313ebb03b5a"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponAvailabilityRule.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\WeaponAvailabilityRule.cs",
+      "originalSha256": "81eb917d061adbace605dd17e16275587e610cb5ecedb7a8ae493f9609a1356f",
+      "currentSha256": "81eb917d061adbace605dd17e16275587e610cb5ecedb7a8ae493f9609a1356f"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponCatalog.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\WeaponCatalog.cs",
+      "originalSha256": "dd5ca09c3864b78be8fcdc788b2c9abf21a3ba4e19392b551b3c454ca4e96da4",
+      "currentSha256": "80b9f74cf7deb2c2cf18122b184bfa717a7fed5154f415568cf2b4d79e74e04b"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponCatalogEntry.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\WeaponCatalogEntry.cs",
+      "originalSha256": "6518e0f7da9b072a2f50535fe626315630a781d803e231ee0879ea0ec933862e",
+      "currentSha256": "c9a1446f722c9487b3803c29b8f3ed2ffc5c7ab560ec6ab3c78c643bd21364ff"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponStats.cs",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\src\\LibertyFramework\\GameApi\\WeaponStats.cs",
+      "originalSha256": "a5bda5489a0359a3c2c8d1b669bd6f4dcbf7f39773a08bf941a129bc22734814",
+      "currentSha256": "0fbb91b25bc09f9daccffa13cdcc40462e4eb4e709f94965bd85a741421db8a7"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/Logic/WeaponTier.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\Logic\\WeaponTier.cs",
+      "originalSha256": "14c585cf81fe8624ef30af87d6c46464e77232f43800d6614dfb96c56c6601b5",
+      "currentSha256": "14c585cf81fe8624ef30af87d6c46464e77232f43800d6614dfb96c56c6601b5"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/TestWeaponActions.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\TestWeaponActions.cs",
+      "originalSha256": "ed1def79e8e9d95655f83a411c65574e2bb24853a63d2083395e514d32e61bbb",
+      "currentSha256": "ed1def79e8e9d95655f83a411c65574e2bb24853a63d2083395e514d32e61bbb"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/WeaponCatalogModule.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\WeaponCatalogModule.cs",
+      "originalSha256": "c38419a469bf08217b81c6e7391a40b0f92e50fd57b75e17851aff478417f857",
+      "currentSha256": "9e916e2ad06dcb00e5033bd5b5fbd0e906b3c28e79ffa78882d643c7a04137eb"
+    },
+    {
+      "original": "src/LibertyFramework/Weapons/WeaponFinishCatalog.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\src\\LibertyPlus\\Weapons\\WeaponFinishCatalog.cs",
+      "originalSha256": "28554124ded2ad0e967c98ca651a4888710f76e767b08db680af5bbcd4aa0eb6",
+      "currentSha256": "28554124ded2ad0e967c98ca651a4888710f76e767b08db680af5bbcd4aa0eb6"
+    },
+    {
+      "original": "tests/local/checks.json",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tests\\local\\checks.json",
+      "originalSha256": "8c34f5558bbda4607c84102e67d79b0f403f5a66d28e55f8b693e05157c5f1ed",
+      "currentSha256": "8c34f5558bbda4607c84102e67d79b0f403f5a66d28e55f8b693e05157c5f1ed"
+    },
+    {
+      "original": "tools/PackageMerge.psm1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\PackageMerge.psm1",
+      "originalSha256": "d7cd6361e27cbcf31db8b41896d7f212e761484ba575bfa43a4ec25c8c20e13c",
+      "currentSha256": "c97a0114a21601eb40af1fab017ca53120320d2243066ebf36b88287425896d4"
+    },
+    {
+      "original": "tools/archive/README.md",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\README.md",
+      "originalSha256": "0cdd8df6ce449b23569d9b257b1b2f1c9c91b5916704ad5e8531d0c32447ebce",
+      "currentSha256": "b06ff2b553ed27ea21e024985282b8c6c3b42d7249f6eb5638f0c76dc4998fa3"
+    },
+    {
+      "original": "tools/archive/deploy-t001.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\deploy-t001.ps1",
+      "originalSha256": "b58eb3b8453ab3156983642f430fe55bd392482a6c9cbddfa7ea4f4ccc7f5d5f",
+      "currentSha256": "b58eb3b8453ab3156983642f430fe55bd392482a6c9cbddfa7ea4f4ccc7f5d5f"
+    },
+    {
+      "original": "tools/archive/deploy-t002.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\deploy-t002.ps1",
+      "originalSha256": "402b29732165190a521bb72c96a3ceb9a640ee464c4642647239d77fddb08392",
+      "currentSha256": "402b29732165190a521bb72c96a3ceb9a640ee464c4642647239d77fddb08392"
+    },
+    {
+      "original": "tools/archive/deploy-t007.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\deploy-t007.ps1",
+      "originalSha256": "e24d80ad098d372102203b8df4e76ca90e533b188a2a1cd44bd97d7391036253",
+      "currentSha256": "e24d80ad098d372102203b8df4e76ca90e533b188a2a1cd44bd97d7391036253"
+    },
+    {
+      "original": "tools/archive/install-phase1.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\install-phase1.ps1",
+      "originalSha256": "a02d3f1399a5c0f47bba3551cfbffecd2f14deaeac1fbbfbe129a1a8bdf8a542",
+      "currentSha256": "a02d3f1399a5c0f47bba3551cfbffecd2f14deaeac1fbbfbe129a1a8bdf8a542"
+    },
+    {
+      "original": "tools/archive/move-game-to-ssd.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\move-game-to-ssd.ps1",
+      "originalSha256": "91a1bd7ecb4809109466f5b4ea08a4c3971d8f48210624ed0a95566192890c68",
+      "currentSha256": "91a1bd7ecb4809109466f5b4ea08a4c3971d8f48210624ed0a95566192890c68"
+    },
+    {
+      "original": "tools/archive/move-streaming-to-ssd.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\move-streaming-to-ssd.ps1",
+      "originalSha256": "b54b2bc711ae2616ba682c71490f2a833e868b28509f9b92962dd62d9c684079",
+      "currentSha256": "b54b2bc711ae2616ba682c71490f2a833e868b28509f9b92962dd62d9c684079"
+    },
+    {
+      "original": "tools/archive/package-phase1.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\package-phase1.ps1",
+      "originalSha256": "48f7de066f788bc48fae60d45c6596c00f08f88f00a067009dcb24d2e3f0f0de",
+      "currentSha256": "48f7de066f788bc48fae60d45c6596c00f08f88f00a067009dcb24d2e3f0f0de"
+    },
+    {
+      "original": "tools/archive/prepare-t007.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\prepare-t007.ps1",
+      "originalSha256": "36d6946397a0701a8b8c440db6b120577e3f245a4c5a68507e805c9eea0988c4",
+      "currentSha256": "36d6946397a0701a8b8c440db6b120577e3f245a4c5a68507e805c9eea0988c4"
+    },
+    {
+      "original": "tools/archive/remove-t007.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\remove-t007.ps1",
+      "originalSha256": "67d47d9222fff7e04cf596d61a769b1824a9c34321b6fab1f6d7d08530f0313b",
+      "currentSha256": "67d47d9222fff7e04cf596d61a769b1824a9c34321b6fab1f6d7d08530f0313b"
+    },
+    {
+      "original": "tools/archive/restore-streaming-from-ssd.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\restore-streaming-from-ssd.ps1",
+      "originalSha256": "529755060aca1d02cc98f10e07414d29dc8c4891d5925d521ad547804af1b27d",
+      "currentSha256": "529755060aca1d02cc98f10e07414d29dc8c4891d5925d521ad547804af1b27d"
+    },
+    {
+      "original": "tools/archive/rollback-phase1.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\rollback-phase1.ps1",
+      "originalSha256": "6587b9e922c5d04299453b94288fb1bd3932b94d86434d20cb8737f1079f9f54",
+      "currentSha256": "6587b9e922c5d04299453b94288fb1bd3932b94d86434d20cb8737f1079f9f54"
+    },
+    {
+      "original": "tools/archive/test-t002-live.ps1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\archive\\test-t002-live.ps1",
+      "originalSha256": "88b08dd922a6a358c42fcb1724469662f258b7d38bfcaaf423b6e8e051cea381",
+      "currentSha256": "88b08dd922a6a358c42fcb1724469662f258b7d38bfcaaf423b6e8e051cea381"
+    },
+    {
+      "original": "tools/archive/upgrade-t007.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\archive\\upgrade-t007.ps1",
+      "originalSha256": "3f5c67086dffc7311ac618005cc645fe903c1cc83ffc790abc2f273b3e483bb3",
+      "currentSha256": "3f5c67086dffc7311ac618005cc645fe903c1cc83ffc790abc2f273b3e483bb3"
+    },
+    {
+      "original": "tools/autopilot/scenarios/citywide-environment.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\citywide-environment.txt",
+      "originalSha256": "f3c49bb7f8f512f8fe749d81108e625800e7a782ec1d2a7c9a875b177439a537",
+      "currentSha256": "f3c49bb7f8f512f8fe749d81108e625800e7a782ec1d2a7c9a875b177439a537"
+    },
+    {
+      "original": "tools/autopilot/scenarios/feature-preview-smoke.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\feature-preview-smoke.txt",
+      "originalSha256": "8c504f7e5254280c8cf1db4e1756368a39a868507fc47f75aad978f50a89e2a3",
+      "currentSha256": "8c504f7e5254280c8cf1db4e1756368a39a868507fc47f75aad978f50a89e2a3"
+    },
+    {
+      "original": "tools/autopilot/scenarios/gore-review.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\gore-review.txt",
+      "originalSha256": "66200a542bcb2f51d3ba14c5c280b1e9125c8402e5e11fb4919c2592e08204eb",
+      "currentSha256": "66200a542bcb2f51d3ba14c5c280b1e9125c8402e5e11fb4919c2592e08204eb"
+    },
+    {
+      "original": "tools/autopilot/scenarios/sling-review.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\sling-review.txt",
+      "originalSha256": "02c60be2bcd25d964309a9797d36dfb4ac8eec2c0f738180fc6e939be84315e2",
+      "currentSha256": "02c60be2bcd25d964309a9797d36dfb4ac8eec2c0f738180fc6e939be84315e2"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-arsenal.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-arsenal.txt",
+      "originalSha256": "de8324af23ee627a3b8bd3e33903e930b8906e355ebc98490c16bcdbb1cf3f00",
+      "currentSha256": "de8324af23ee627a3b8bd3e33903e930b8906e355ebc98490c16bcdbb1cf3f00"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-capture-broker-off.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-capture-broker-off.txt",
+      "originalSha256": "86fa0a31d6c6f599abe3898fe546a98aceed9b6a38e73cdfd1bf308d5aa873e8",
+      "currentSha256": "86fa0a31d6c6f599abe3898fe546a98aceed9b6a38e73cdfd1bf308d5aa873e8"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-capture-broker.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-capture-broker.txt",
+      "originalSha256": "5564641e08370b68975445bb4af21a0f508e73eaff00d895bd429ddffc497aed",
+      "currentSha256": "5564641e08370b68975445bb4af21a0f508e73eaff00d895bd429ddffc497aed"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-capture-city-off.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-capture-city-off.txt",
+      "originalSha256": "7febd52545e778968f5252417807ce2c6c5d5316597bad9111e8208be26f05fa",
+      "currentSha256": "7febd52545e778968f5252417807ce2c6c5d5316597bad9111e8208be26f05fa"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-capture-city.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-capture-city.txt",
+      "originalSha256": "abd61b6c30d7a1193b02fad2d0f02a7f9eab81680b3d491ea11d54fdd5e5ca2b",
+      "currentSha256": "abd61b6c30d7a1193b02fad2d0f02a7f9eab81680b3d491ea11d54fdd5e5ca2b"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-config-watch-reload.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-config-watch-reload.txt",
+      "originalSha256": "d1a1f36e5ce55ab3966b183f1bc88ebedfb545384026f1d176d363963a0124e4",
+      "currentSha256": "d1a1f36e5ce55ab3966b183f1bc88ebedfb545384026f1d176d363963a0124e4"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-config-watch-restart.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-config-watch-restart.txt",
+      "originalSha256": "8fbefb5f2a642dd351c2e668abfcb45bae7cbee7722ae18d867ea08b4d2c095f",
+      "currentSha256": "8fbefb5f2a642dd351c2e668abfcb45bae7cbee7722ae18d867ea08b4d2c095f"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-gunplay-range.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-gunplay-range.txt",
+      "originalSha256": "b4aeebb675af93f7b15e5f3d4fead71abaa5cce5b9966b8a6d35eb94016d0d91",
+      "currentSha256": "b4aeebb675af93f7b15e5f3d4fead71abaa5cce5b9966b8a6d35eb94016d0d91"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-deaths-a.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-deaths-a.txt",
+      "originalSha256": "9da5e976844cb79a1a9b0a65d54247fd7c055658a9df34084a43adeb7b92c8d0",
+      "currentSha256": "9da5e976844cb79a1a9b0a65d54247fd7c055658a9df34084a43adeb7b92c8d0"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-deaths-b.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-deaths-b.txt",
+      "originalSha256": "96723db48c888446a73bde70c3a643a99d4e45696aadcfb9053ff545944b45b4",
+      "currentSha256": "96723db48c888446a73bde70c3a643a99d4e45696aadcfb9053ff545944b45b4"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-outfits.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-outfits.txt",
+      "originalSha256": "cc4719f000f8bb98911c79883b29d1a1f3a3608482b456eb85852ee5a97713d7",
+      "currentSha256": "cc4719f000f8bb98911c79883b29d1a1f3a3608482b456eb85852ee5a97713d7"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-review.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-review.txt",
+      "originalSha256": "6f704849b551b6e6e884e65705d81d06379b8e6fec02cf3cd7878fccc215b693",
+      "currentSha256": "6f704849b551b6e6e884e65705d81d06379b8e6fec02cf3cd7878fccc215b693"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-vehicles.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-vehicles.txt",
+      "originalSha256": "1eae5bff309eafd171eda0ac3337a7db2012e2b3628437fc0d9b962f75aa0ec6",
+      "currentSha256": "1eae5bff309eafd171eda0ac3337a7db2012e2b3628437fc0d9b962f75aa0ec6"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-loadout-weapons.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-loadout-weapons.txt",
+      "originalSha256": "b6c6fe1e5698883f7ae87d2dafcfd3a30e36b075eaa800f1ea48f69e18b9ad20",
+      "currentSha256": "b6c6fe1e5698883f7ae87d2dafcfd3a30e36b075eaa800f1ea48f69e18b9ad20"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-reticles.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-reticles.txt",
+      "originalSha256": "ddf3a2126192282f30b16e737bedc09e1fc96e7743b4d74cf43c430d3af42221",
+      "currentSha256": "ddf3a2126192282f30b16e737bedc09e1fc96e7743b4d74cf43c430d3af42221"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-shoulder-swap.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-shoulder-swap.txt",
+      "originalSha256": "3eda3c76f250d93cc40be29cb5c5b95449b72141324a5b3b39062b154d6d6544",
+      "currentSha256": "3eda3c76f250d93cc40be29cb5c5b95449b72141324a5b3b39062b154d6d6544"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-trunk-ui.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-trunk-ui.txt",
+      "originalSha256": "5f00adad7e8572cbc3909753f181a76c964c1ab3a5f0e234494c23e47ad5971f",
+      "currentSha256": "5f00adad7e8572cbc3909753f181a76c964c1ab3a5f0e234494c23e47ad5971f"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-ui-bisect.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-ui-bisect.txt",
+      "originalSha256": "802661f76b37554e0b2317996699ac58f0b1009448921d577fd2b4346f03fc66",
+      "currentSha256": "802661f76b37554e0b2317996699ac58f0b1009448921d577fd2b4346f03fc66"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-ui-path.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-ui-path.txt",
+      "originalSha256": "3c815c06233c132b706d8ffbbe55d27572b54e3042225cdd2904cd58a33482be",
+      "currentSha256": "3c815c06233c132b706d8ffbbe55d27572b54e3042225cdd2904cd58a33482be"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-ui-text.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-ui-text.txt",
+      "originalSha256": "997aac87c9df92896a977dfb1953612f8ef27e2a6f7674444815030889a6c547",
+      "currentSha256": "997aac87c9df92896a977dfb1953612f8ef27e2a6f7674444815030889a6c547"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-weapon-wheel.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-weapon-wheel.txt",
+      "originalSha256": "174d69b28cf8b659a260fcae0ac3ae3e3c16cc813843350d83bec49103790716",
+      "currentSha256": "174d69b28cf8b659a260fcae0ac3ae3e3c16cc813843350d83bec49103790716"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-wheel-perf.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-wheel-perf.txt",
+      "originalSha256": "d66c06605448a58ace1326958f467518efe20cb4f9d570a142a454593b4d7ebe",
+      "currentSha256": "d66c06605448a58ace1326958f467518efe20cb4f9d570a142a454593b4d7ebe"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-worst-case-off.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-worst-case-off.txt",
+      "originalSha256": "b7471d2152010381dc81d7f08f4e1b1a29220cd34dfcaf83302d3721229fe658",
+      "currentSha256": "b7471d2152010381dc81d7f08f4e1b1a29220cd34dfcaf83302d3721229fe658"
+    },
+    {
+      "original": "tools/autopilot/scenarios/stage1-worst-case.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\stage1-worst-case.txt",
+      "originalSha256": "9c5beb957e9680ca0e6f865431b24f22904fdd67973a7b9d4cc5628f7b5ad3ac",
+      "currentSha256": "9c5beb957e9680ca0e6f865431b24f22904fdd67973a7b9d4cc5628f7b5ad3ac"
+    },
+    {
+      "original": "tools/autopilot/scenarios/trunk-review.txt",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\autopilot\\scenarios\\trunk-review.txt",
+      "originalSha256": "ee80f117f6e6a02aa1e9896cb1ad5f8f0fb0d4a746edad77f4eea520b0c41a11",
+      "currentSha256": "ee80f117f6e6a02aa1e9896cb1ad5f8f0fb0d4a746edad77f4eea520b0c41a11"
+    },
+    {
+      "original": "tools/build-finishes.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\build-finishes.ps1",
+      "originalSha256": "ba0c98f2efe4566c1d5e56b3203f90c0bb39706f59e5282849af7eae86eae759",
+      "currentSha256": "6f924ae46a904ed97ff71bc59a2559b44b04b144ed7996e5f059a15c213817eb"
+    },
+    {
+      "original": "tools/generate-presets.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\generate-presets.ps1",
+      "originalSha256": "4f0578e9a63bf31659bbaf357a054194dbd072f649527c7a412ff77215f66781",
+      "currentSha256": "79be0c8518f1d3254e70d0178e810545eb136d004a7783ab214f2b575fe48a00"
+    },
+    {
+      "original": "tools/install-mood.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\install-mood.ps1",
+      "originalSha256": "0f22d289da9913d724fd25b04d958425b3a7affe26c7d0d94e9020c9122ec58c",
+      "currentSha256": "b44bc29577bfed9e45dbd0e78efb7de34c320914a80e18f330d23f0e56583780"
+    },
+    {
+      "original": "tools/install-violent-liberty.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\install-violent-liberty.ps1",
+      "originalSha256": "324c41f72429dde64ee149e5dc9c689369ad9cfb909c7b83c819d639fb8621da",
+      "currentSha256": "e1f2086c1d61c54444837958d220e5721c09b5dc29320462b510978f454188cc"
+    },
+    {
+      "original": "tools/install-weapon-pack.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\install-weapon-pack.ps1",
+      "originalSha256": "e728d73c30d39b716ca56d477ea6bedf9d459acf3087d98ca7c85b22388cd5e8",
+      "currentSha256": "fa5f6af9e44d8eb43a10bf352a4b5d2051168ee62501983bc4d43bc5fc5dc33f"
+    },
+    {
+      "original": "tools/mood/MoodReceipt.psm1",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\mood\\MoodReceipt.psm1",
+      "originalSha256": "1edc2f25cc302135681530338337650bd76baed01d24e7f89704ff76f9ae6cd7",
+      "currentSha256": "1edc2f25cc302135681530338337650bd76baed01d24e7f89704ff76f9ae6cd7"
+    },
+    {
+      "original": "tools/mood/MoodTimecycle.cs",
+      "currentRepository": "framework",
+      "currentPath": "C:\\Users\\IM576\\GTAIV-Reborn\\tools\\mood\\MoodTimecycle.cs",
+      "originalSha256": "469a87a8941f0ee04fadcf6432188321e5d5050861e78e9a3118e24151eda4e9",
+      "currentSha256": "469a87a8941f0ee04fadcf6432188321e5d5050861e78e9a3118e24151eda4e9"
+    },
+    {
+      "original": "tools/mood/Run-CitywideReview.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\mood\\Run-CitywideReview.ps1",
+      "originalSha256": "d0acb59c3b49396178b846524d10079b0d559f06058c4f0f33ac09d8d454ef8c",
+      "currentSha256": "d0acb59c3b49396178b846524d10079b0d559f06058c4f0f33ac09d8d454ef8c"
+    },
+    {
+      "original": "tools/mood/check-citywide.py",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\mood\\check-citywide.py",
+      "originalSha256": "9f52f8967d383a582715af6b7c2101394402207625d9bbf3d1d396f190454d73",
+      "currentSha256": "9f52f8967d383a582715af6b7c2101394402207625d9bbf3d1d396f190454d73"
+    },
+    {
+      "original": "tools/package-phase2.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\package-phase2.ps1",
+      "originalSha256": "2b065dc675b69f00d7a57ab3af74af9a2f5b6223525d0017a0e3a5cc5fd7028c",
+      "currentSha256": "8e87be6039adfcd7849608d847753e825e7aced0a531acd0148d145d8aaf3522"
+    },
+    {
+      "original": "tools/rollback-violent-liberty.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\rollback-violent-liberty.ps1",
+      "originalSha256": "54649f0fe8a95415b06941e89bdfe11dea8f5db197b85003c4dc3c8d6c498e82",
+      "currentSha256": "acabb10533b05b485e7a1870080ae4d4cf6d76feef7c32bbea8d9f7519e27729"
+    },
+    {
+      "original": "tools/rollback-weapon-pack.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\rollback-weapon-pack.ps1",
+      "originalSha256": "0e558a2fa9d5f4d9d334a51c1642fd9bcd9c01d8ee4ba5abfa1a36ba4881298d",
+      "currentSha256": "24f7356aa4fb52b708b10ff4ba519d88d65ce71ba05739be76fe1f77fad20d16"
+    },
+    {
+      "original": "tools/test-phase2-install.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\integration\\legacy\\test-phase2-install.ps1",
+      "originalSha256": "2e92e52e6caf5d12c68cc22bdeb2f580dea2ab8caec315cd1dd9fc826f54adf4",
+      "currentSha256": "c041ed6613ac605ce905ee458be82cbbcb2af2c018819fa6685a1eb91081ae44"
+    },
+    {
+      "original": "tools/tests/CitywideCleanup.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\CitywideCleanup.Tests.ps1",
+      "originalSha256": "0907bf1a417ff1f274b50db6270b8bca282ba36bf5532f890db2ae29039b23b1",
+      "currentSha256": "0907bf1a417ff1f274b50db6270b8bca282ba36bf5532f890db2ae29039b23b1"
+    },
+    {
+      "original": "tools/tests/GunplayRange.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\GunplayRange.Tests.ps1",
+      "originalSha256": "fde6367bbf93c7cefa6ddcfab66b321f7abcbfd5ad2cdb781848e55adaa56908",
+      "currentSha256": "fde6367bbf93c7cefa6ddcfab66b321f7abcbfd5ad2cdb781848e55adaa56908"
+    },
+    {
+      "original": "tools/tests/LoadoutScenarios.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\LoadoutScenarios.Tests.ps1",
+      "originalSha256": "c1aa5780d17672ec8ed402f81c3375fbcee119fe2fcd3064e171ec9a34003b39",
+      "currentSha256": "c1aa5780d17672ec8ed402f81c3375fbcee119fe2fcd3064e171ec9a34003b39"
+    },
+    {
+      "original": "tools/tests/MoodReceipt.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\MoodReceipt.Tests.ps1",
+      "originalSha256": "d8e1bf9b1eaed01af548424ad1b7f222486dc16810d6a666c84f2b6efb0546c5",
+      "currentSha256": "d8e1bf9b1eaed01af548424ad1b7f222486dc16810d6a666c84f2b6efb0546c5"
+    },
+    {
+      "original": "tools/tests/PackageMerge.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\PackageMerge.Tests.ps1",
+      "originalSha256": "44b21d9a3d1a490428d206fafd557495d34bb51c8160f30ad1a9b49346d4d4e2",
+      "currentSha256": "44b21d9a3d1a490428d206fafd557495d34bb51c8160f30ad1a9b49346d4d4e2"
+    },
+    {
+      "original": "tools/tests/ResumeEvidence.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\ResumeEvidence.Tests.ps1",
+      "originalSha256": "9e31edd83af17faf24b72de1ed642207cd694d387b65101e29623a6e669e324a",
+      "currentSha256": "9e31edd83af17faf24b72de1ed642207cd694d387b65101e29623a6e669e324a"
+    },
+    {
+      "original": "tools/tests/Stage1Metrics.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\Stage1Metrics.Tests.ps1",
+      "originalSha256": "62ae521eb4bb87c8a06474ed8ebfe96eb62195bee7d0aff33f01f2477ccc9cd9",
+      "currentSha256": "62ae521eb4bb87c8a06474ed8ebfe96eb62195bee7d0aff33f01f2477ccc9cd9"
+    },
+    {
+      "original": "tools/tests/VerifyInputs.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\VerifyInputs.Tests.ps1",
+      "originalSha256": "9138741bc45be7096fb1951a0f5bd867f907099734bec2d14814fb4beb70ca46",
+      "currentSha256": "9138741bc45be7096fb1951a0f5bd867f907099734bec2d14814fb4beb70ca46"
+    },
+    {
+      "original": "tools/tests/VerifyLocal.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\VerifyLocal.Tests.ps1",
+      "originalSha256": "8473004b69bc47daf4a81419a6a9f4f81015c05c5169cea291d327196eeadec9",
+      "currentSha256": "8473004b69bc47daf4a81419a6a9f4f81015c05c5169cea291d327196eeadec9"
+    },
+    {
+      "original": "tools/tests/WheelFixtures.Tests.ps1",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\tests\\WheelFixtures.Tests.ps1",
+      "originalSha256": "3b52051e38254ef6dc18fbb1c11cc63a22aa28273442bdbf5cc8484b5377bd50",
+      "currentSha256": "3b52051e38254ef6dc18fbb1c11cc63a22aa28273442bdbf5cc8484b5377bd50"
+    },
+    {
+      "original": "tools/verify/ArsenalCoreChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\ArsenalCoreChecks.cs",
+      "originalSha256": "c14d020145cbab043bd8937979a4edb339c1e504c85546b238af693018529e2a",
+      "currentSha256": "c14d020145cbab043bd8937979a4edb339c1e504c85546b238af693018529e2a"
+    },
+    {
+      "original": "tools/verify/AtmosphereChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\AtmosphereChecks.cs",
+      "originalSha256": "a4ce59842c74559adb8312a35312839708dc03e9de33b0a4fb18d5bef41ffffc",
+      "currentSha256": "a4ce59842c74559adb8312a35312839708dc03e9de33b0a4fb18d5bef41ffffc"
+    },
+    {
+      "original": "tools/verify/CombatChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\CombatChecks.cs",
+      "originalSha256": "35e1897e8fb7f76bd58add2887f0527a00ead53b446446237c3a17d768ac608c",
+      "currentSha256": "35e1897e8fb7f76bd58add2887f0527a00ead53b446446237c3a17d768ac608c"
+    },
+    {
+      "original": "tools/verify/FeelChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\FeelChecks.cs",
+      "originalSha256": "822eb88d5d8d9f7fd7b58300052f18b23bf5063d9ec408984d55aff83e86fa98",
+      "currentSha256": "822eb88d5d8d9f7fd7b58300052f18b23bf5063d9ec408984d55aff83e86fa98"
+    },
+    {
+      "original": "tools/verify/LoadoutChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\LoadoutChecks.cs",
+      "originalSha256": "bf675968dff5d528427c887603ead61084d8096aff91d8a8845bf914117f06fa",
+      "currentSha256": "bf675968dff5d528427c887603ead61084d8096aff91d8a8845bf914117f06fa"
+    },
+    {
+      "original": "tools/verify/LogicChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\LogicChecks.cs",
+      "originalSha256": "3eb9adce4fd1198b40ef27383f73dffbc8e97809500bd86425eb42794fda9f6d",
+      "currentSha256": "3eb9adce4fd1198b40ef27383f73dffbc8e97809500bd86425eb42794fda9f6d"
+    },
+    {
+      "original": "tools/verify/Phase2SystemsChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\Phase2SystemsChecks.cs",
+      "originalSha256": "5fd0ee3fa42766a440d66fd7e03c6e3d800d7b0f7dba4e011d1332d9ba4c2602",
+      "currentSha256": "5fd0ee3fa42766a440d66fd7e03c6e3d800d7b0f7dba4e011d1332d9ba4c2602"
+    },
+    {
+      "original": "tools/verify/Stage1ArsenalChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\Stage1ArsenalChecks.cs",
+      "originalSha256": "003d1bc8e3de587f29ca47b348db8566a7d1690409dcb5503b8d5c2db5a3c0ad",
+      "currentSha256": "003d1bc8e3de587f29ca47b348db8566a7d1690409dcb5503b8d5c2db5a3c0ad"
+    },
+    {
+      "original": "tools/verify/Stage1GunplayChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\Stage1GunplayChecks.cs",
+      "originalSha256": "163a95929f910a48eef38b2543c9ef5d459c7abd21f2cfe5f2db325d2cf1158f",
+      "currentSha256": "f2852b1206faa0266c7a22ed4e0a43232d144f73ec8bdcf6802f16aff9a9d54c"
+    },
+    {
+      "original": "tools/verify/Stage1ReticleChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\Stage1ReticleChecks.cs",
+      "originalSha256": "e1e9c8218067c2f10db9a2c492de98611e9845ea280a0dc1a428402a3eab2d7b",
+      "currentSha256": "e1e9c8218067c2f10db9a2c492de98611e9845ea280a0dc1a428402a3eab2d7b"
+    },
+    {
+      "original": "tools/verify/TrunkUiChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\TrunkUiChecks.cs",
+      "originalSha256": "9df0eea025b874a4f47e51c854e415ea44e2d5f56d1404c8ca3be22d9d569c89",
+      "currentSha256": "9df0eea025b874a4f47e51c854e415ea44e2d5f56d1404c8ca3be22d9d569c89"
+    },
+    {
+      "original": "tools/verify/WeaponWheelChecks.cs",
+      "currentRepository": "Liberty+",
+      "currentPath": "C:\\Users\\IM576\\LibertyPlus\\tools\\verify\\WeaponWheelChecks.cs",
+      "originalSha256": "481de2f5d6f95e380e89b99561ba86752f2d8f8a9f14f0550b414778b8122824",
+      "currentSha256": "481de2f5d6f95e380e89b99561ba86752f2d8f8a9f14f0550b414778b8122824"
+    }
+  ]
+}

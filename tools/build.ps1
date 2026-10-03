@@ -2,12 +2,26 @@ param(
     [string] $FrameworkDirectory = (Join-Path (Split-Path -Parent (Split-Path -Parent $PSScriptRoot)) 'GTAIV-Reborn'),
     [Parameter(Mandatory = $true)][string] $ScriptHookDotNetReference,
     [switch] $SkipFrameworkBuild,
+    [switch] $AllowFrameworkChanges,
     [string] $SourceDirectory,
     [string] $OutputDirectory
 )
 $ErrorActionPreference = 'Stop'
 $modRoot = Split-Path -Parent $PSScriptRoot
 $framework = (Resolve-Path -LiteralPath $FrameworkDirectory).Path
+$lockPath = Join-Path $modRoot 'framework.lock.json'
+if (-not (Test-Path -LiteralPath $lockPath) -and (Test-Path -LiteralPath (Join-Path $framework 'framework.lock.json'))) {
+    $lockPath = Join-Path $framework 'framework.lock.json'
+}
+if (Test-Path -LiteralPath $lockPath) {
+    $lock = Get-Content -LiteralPath $lockPath -Raw | ConvertFrom-Json
+    $actualJson = & python (Join-Path $framework 'tools\repository\fingerprint.py') --root $framework
+    if ($LASTEXITCODE -ne 0) { throw 'Could not fingerprint framework source.' }
+    $actual = $actualJson | ConvertFrom-Json
+    if ($lock.sourceSha256 -ne $actual.sourceSha256 -and -not $AllowFrameworkChanges) {
+        throw 'Framework contract differs from framework.lock.json. Revalidate an intentional update; development builds may explicitly pass -AllowFrameworkChanges.'
+    }
+}
 if (-not $SourceDirectory) { $SourceDirectory = Join-Path $modRoot 'src\LibertyPlus' }
 if (-not $OutputDirectory) { $OutputDirectory = Join-Path $modRoot 'bin' }
 if (-not $SkipFrameworkBuild) {

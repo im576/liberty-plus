@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "frameworkCommit": "b420152c04a6b79acc66208f96887493d060fbe8",
+  "sourceSha256": "268b9f2f8d254aea0227620e068d3db53475ab34ded626aaf7acc55e9b801267",
+  "sourceFiles": 210,
+  "sdkVersion": "1.2.0",
+  "gameVersion": "1.2.0.59",
+  "boundary": "Privileged extracted preview; new ordinary mods use SDK-only services.",
+  "validation": "Separate builds; assembly boundary 17/0; combined staged verifier 441/0/5 NOT-RUN; PS7 and PS5.1 each 317/0. No split-build game run."
+}

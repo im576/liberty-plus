@@ -1,8 +1,10 @@
-# Liberty Vanilla+ — Stage 1 (first production mod)
+> Historical implementation plan. The current product target is [PRODUCT.md](../PRODUCT.md); current status is [PROJECT_STATE.md](../PROJECT_STATE.md). Old limits/statuses do not override owner decisions.
 
-Status: **IMPLEMENTATION / INTEGRATION; approved direction (owner, 2026-09-30), awaiting full acceptance and owner playtest.** Working title: *Liberty Vanilla+ / Gunplay V2 — Stage 1*.
+# Liberty Vanilla+ â€” Stage 1 (first production mod)
+
+Status: **IMPLEMENTATION / INTEGRATION; approved direction (owner, 2026-09-30), awaiting full acceptance and owner playtest.** Working title: *Liberty Vanilla+ / Gunplay V2 â€” Stage 1*.
 This document is the build plan for the first mod on the Liberty Engine. Engine facts it relies on are in
-[PROJECT_STATE.md](../PROJECT_STATE.md) and the [regression report](../reports/2026-09-30-regression.md).
+[PROJECT_STATE.md](../../../GTAIV-Reborn/docs/PROJECT_STATE.md) and the [regression report](../../../GTAIV-Reborn/docs/reports/2026-09-30-regression.md).
 
 **Owner clarification (2026-10-02):** finish this first mod as the near-term goal, using focused research to
 resolve feature blockers. Broader engine research follows. The visual overhaul is part of the first mod:
@@ -116,7 +118,7 @@ Nothing is rebuilt because a new version would look cleaner. Stage 1 exists to p
 Each feature lists its engine status: **Ready** (existing code or data), **Extend** (existing system, new work),
 **Spike** (depends on a research item in section 8, not promised until it passes).
 
-### P0 / Slice A — Combat & Inventory
+### P0 / Slice A â€” Combat & Inventory
 
 Functional first; Slice C gives these screens their final unified look.
 
@@ -129,10 +131,10 @@ Functional first; Slice C gives these screens their final unified look.
 | Harsh gore | Extend / Spike | *"Harsh realism, not gore for gore's sake."* Exact-damage driven (no proximity guessing): severe wounds, strong head and shotgun trauma, caliber-sensitive presentation, limb damage, dismemberment where reliable, bleeding, wounded NPCs crawling/writhing, brief pain behaviour, strong panic nearby, contextual grounded executions only (no finisher system, no arcade or comedic gore). Blood pools, trails and surface blood: **Spike R3** |
 | Combat effects | Extend / Spike | Per-weapon muzzle flash, smoke, casings, sparks, night muzzle light. Material-specific impacts (concrete, wood, glass, metal): **Spike R2** |
 | Weapon wheel | Ready/Extend | Liberty.Ui radial menu; shows the physical loadout (carried slots, equipped, ammo, category, finish), not every owned gun |
-| Trunk UI | Ready/Extend | Loadout ↔ vehicle storage, carried vs stored, ammo, capacity. Moving a gun makes it visibly no longer carried |
+| Trunk UI | Ready/Extend | Loadout â†” vehicle storage, carried vs stored, ammo, capacity. Moving a gun makes it visibly no longer carried |
 | Basic Liberty HUD | Extend | Our own health/armour/ammo/wanted/prompts drawn by Liberty.Ui, contextual (shown when relevant). Owner-directed layout: current weapon, ammo, health and armour form a compact **top-right** group, in the GTA IV-era visual language; do not relocate them to a lower corner. IV's radar stays **bottom-left** until **Spike R5**. Art reference: ART-007 r2 |
 
-### P1 / Slice B — Visual Remaster & Atmosphere
+### P1 / Slice B â€” Visual Remaster & Atmosphere
 
 | Feature | Status | Notes / acceptance |
 |---|---|---|
@@ -146,7 +148,7 @@ Functional first; Slice C gives these screens their final unified look.
 | Population and vehicle variety | Extend | Popgroups/neighbourhood data, clothing variations, props, contextual street activity. New ped/vehicle *models* are deferred (skinned meshes/fragments) |
 | Performance-conscious art pipeline | Extend | Mipmaps, sizes per surface class, a VRAM budget report per pack, measured before/after |
 
-### P1 / Slice C — Unified Liberty UI
+### P1 / Slice C â€” Unified Liberty UI
 
 | Feature | Status | Notes |
 |---|---|---|
@@ -187,71 +189,71 @@ watchdog, memory probes and screenshot review. Each criterion gets an autopilot 
 **Fixed capture points:** 8 Broker/Dukes spots (day, overcast, night, rain) plus 4 elsewhere in the city (citywide
 systems). Visual and performance comparisons always use these.
 
-### Pillar 1 — GTA IV first (visual remaster, UI)
+### Pillar 1 â€” GTA IV first (visual remaster, UI)
 
 | Criterion | Measure | Target |
 |---|---|---|
 | Owner identity check | Side-by-side captures, mod-off vs mod-on, at all 12 capture points | Owner judges every pair "GTA IV, remastered"; any "looks like another game" is a fail |
 | UI design language | Every screen uses only the Liberty UI tokens (palette, fonts, spacing, corner radius) | 100% of screens; token check automated where the UI is data-driven |
-| UI readability | Smallest text at 1280x720 virtual | ≥ 14 px; full navigation with controller **and** keyboard/mouse |
-| UI responsiveness | Menu open to first drawn frame / open animation | ≤ 1 frame / ≤ 200 ms |
+| UI readability | Smallest text at 1280x720 virtual | â‰¥ 14 px; full navigation with controller **and** keyboard/mouse |
+| UI responsiveness | Menu open to first drawn frame / open animation | â‰¤ 1 frame / â‰¤ 200 ms |
 | Art pack quality | Every shipped texture has a full mip chain, a size within its surface class, a recorded source/licence | 100% (tool-verified); 0 unlicensed assets |
 | Showcase coverage | Broker/Dukes capture points with an area-specific art change | 8/8 |
 | Citywide coverage | Shared road/sidewalk/glass/emissive textures replaced where used | Listed per texture in the pack manifest |
 
-Budget: UI draw ≤ **0.5 ms** average; no new streaming hitch > **100 ms** on the scripted Broker/Dukes drive.
+Budget: UI draw â‰¤ **0.5 ms** average; no new streaming hitch > **100 ms** on the scripted Broker/Dukes drive.
 **VRAM (measured GPU: RX 570 4 GB):** original budget: normal overhead **+250 to +300 MB** over vanilla; hard ceiling **+350 MB** in the
 worst-case scene (Pillar 5). 350 MB is a ceiling, not a target to fill. Every texture has proper mipmaps and sensible
 compression; no blanket 4K; higher resolution only where it visibly improves the result. The owner's decision on a
 proposed **+300 MB hard ceiling** is pending; retain +350 MB as the written criterion until answered. Measure actual
 headroom on the 4 GB card alongside CPU, streaming and frame pacing.
 
-### Pillar 2 — Harsh violence (gore, combat effects)
+### Pillar 2 â€” Harsh violence (gore, combat effects)
 
 | Criterion | Measure | Target |
 |---|---|---|
 | Exact attribution | Gore/effects driven by exact damage events, never proximity scans | 100% (code review + event log) |
-| Hit response latency | Exact `PedDamaged` to visible entry effect | ≤ 1 engine frame |
-| Severe headshot | Pistol headshot ≤ 10 m on a spawned ped, autopilot trials | severe effect in ≥ 95% |
-| Shotgun trauma | Shotgun hit ≤ 5 m, autopilot trials | trauma/limb effect in ≥ 90%; dismemberment only where reliable (0 floating or flashing limbs in 50 trials) |
+| Hit response latency | Exact `PedDamaged` to visible entry effect | â‰¤ 1 engine frame |
+| Severe headshot | Pistol headshot â‰¤ 10 m on a spawned ped, autopilot trials | severe effect in â‰¥ 95% |
+| Shotgun trauma | Shotgun hit â‰¤ 5 m, autopilot trials | trauma/limb effect in â‰¥ 90%; dismemberment only where reliable (0 floating or flashing limbs in 50 trials) |
 | Contextual effects | Muzzle flash/smoke per weapon class; impact by material once R2 passes | Each Stage 1 weapon has its own configured effect set |
-| Persistent aftermath | Bodies, blood decals/pools, active effects | Bodies stay **3–5 minutes** normally; blood may outlast bodies where performance allows. Hard caps in `config/` (proposal: 10 bodies, 64 decals, 24 active effects), distance-based cleanup, adaptive cleanup under performance pressure; oldest removed first. Gameplay performance wins over keeping every body or decal |
+| Persistent aftermath | Bodies, blood decals/pools, active effects | Bodies stay **3â€“5 minutes** normally; blood may outlast bodies where performance allows. Hard caps in `config/` (proposal: 10 bodies, 64 decals, 24 active effects), distance-based cleanup, adaptive cleanup under performance pressure; oldest removed first. Gameplay performance wins over keeping every body or decal |
 | Suffering and panic | Wounded non-fatal NPCs; nearby peds after severe violence | crawl/writhe/pain behaviour on a configurable share of survivable severe hits; brief, never a scripted loop |
 
-Budget: gore + effects **≤ 0.8 ms** average, **≤ 4 ms** peak during the 10-ped firefight scenario; frame p95 in that
-scenario ≤ **+15%** vs mod-off.
+Budget: gore + effects **â‰¤ 0.8 ms** average, **â‰¤ 4 ms** peak during the 10-ped firefight scenario; frame p95 in that
+scenario â‰¤ **+15%** vs mod-off.
 
-### Pillar 3 — Physical world (weapons, gunplay, inventory)
+### Pillar 3 â€” Physical world (weapons, gunplay, inventory)
 
 | Criterion | Measure | Target |
 |---|---|---|
-| First-shot accuracy | Aimed, standing, first shot at 25 m on the test range (bullet events) | pistols/SMGs within a configured cone (proposal ≤ 0.5°); owner feel sign-off per class |
+| First-shot accuracy | Aimed, standing, first shot at 25 m on the test range (bullet events) | pistols/SMGs within a configured cone (proposal â‰¤ 0.5Â°); owner feel sign-off per class |
 | Burst control | 3-round burst then pause | recovers to the first-shot cone within the weapon's configured recovery time |
-| Sustained fire | 30-round full-auto AK burst | vertical climb within the configured range for that weapon (proposal 6–12°); never "laser" (spread grows every shot) |
-| Reticle truthfulness | Reticle opening vs the spread model's live cone, across stand/crouch/move/sustained fire/recovery (logged per frame in a test-range scenario) | opening within ±5% of the cone at every sample; each Stage 1 weapon class shows its own configured reticle; reticle drawing ≤ 0.1 ms |
+| Sustained fire | 30-round full-auto AK burst | vertical climb within the configured range for that weapon (proposal 6â€“12Â°); never "laser" (spread grows every shot) |
+| Reticle truthfulness | Reticle opening vs the spread model's live cone, across stand/crouch/move/sustained fire/recovery (logged per frame in a test-range scenario) | opening within Â±5% of the cone at every sample; each Stage 1 weapon class shows its own configured reticle; reticle drawing â‰¤ 0.1 ms |
 | Shoulder swap | On foot, in cover, near walls (scripted camera scenario) | works in all states; 0 camera clips into walls at the test spots |
 | Visible loadout | Carried weapons visible on the body | 100% on foot; hidden in vehicles and cutscenes; 0 orphaned/floating props after 100 autopilot vehicle enter/exit cycles |
 | Clipping | Front/side/back review for every Stage 1 outfit and weapon class | owner pass on every pair |
 | Inventory integrity | Store/take trunk round trips; death/busted rules; save/load | 100% round trips; 0 lost owned weapons across 50 death cycles; state identical after save/load |
 | Mission compatibility | Main Broker/Dukes story missions | 0 blocked missions; mission-given weapons behave as the game expects |
 
-Budget: gunplay + arsenal + holsters **≤ 1.5 ms** average combined (today about 1.2–1.5 ms), no single frame spike
+Budget: gunplay + arsenal + holsters **â‰¤ 1.5 ms** average combined (today about 1.2â€“1.5 ms), no single frame spike
 > **5 ms** from these modules outside menus.
 
-### Pillar 4 — Dangerous Liberty City (atmosphere, audio, population)
+### Pillar 4 â€” Dangerous Liberty City (atmosphere, audio, population)
 
 | Criterion | Measure | Target |
 |---|---|---|
-| Ambient events | Scripted city events (screams, arguments, sirens, alarms, distant violence) in Broker/Dukes | configurable rate (proposal: one noticeable event every 60–180 s at night, rarer by day); never two within 20 s |
-| Reaction to violence | Nearby peds after severe violence | panic/scream/flee in ≥ 90% of autopilot trials |
-| Population variety | 60 s at each capture point, snapshot of visible peds (model + variation) | ≥ 8 distinct looks among any 15 visible peds; no identical pair within 10 m |
-| Vehicle variety | Scripted 2-minute Broker/Dukes drive | ≥ 12 distinct models |
+| Ambient events | Scripted city events (screams, arguments, sirens, alarms, distant violence) in Broker/Dukes | configurable rate (proposal: one noticeable event every 60â€“180 s at night, rarer by day); never two within 20 s |
+| Reaction to violence | Nearby peds after severe violence | panic/scream/flee in â‰¥ 90% of autopilot trials |
+| Population variety | 60 s at each capture point, snapshot of visible peds (model + variation) | â‰¥ 8 distinct looks among any 15 visible peds; no identical pair within 10 m |
+| Vehicle variety | Scripted 2-minute Broker/Dukes drive | â‰¥ 12 distinct models |
 | Density preserved | Ped and traffic density | never below vanilla; the density governor is off (owner decision 2026-09-30) |
 | Lighting/weather | Target look (cold day, overcast, wet, dark readable nights) | owner sign-off at the 12 capture points, day/night/rain |
 
-Budget: atmosphere + ambient audio + population scripts **≤ 0.5 ms** average.
+Budget: atmosphere + ambient audio + population scripts **â‰¤ 0.5 ms** average.
 
-### Pillar 5 — Performance conscious (whole mod)
+### Pillar 5 â€” Performance conscious (whole mod)
 
 **Worst-case scene** (scripted, repeatable): Broker/Dukes, night, rain, normal or high traffic, normal pedestrians, a
 firefight in progress, blood and effects active, Liberty UI/HUD on. Measured in it and at every capture point: average
@@ -259,12 +261,12 @@ frame time, p50, p95, p99, module cost, VRAM, memory pressure, streaming stalls 
 
 | Criterion | Target |
 |---|---|
-| VRAM over vanilla | normal +250 to +300 MB; **≤ +350 MB** in the worst-case scene |
-| Stage 1 script cost inside `engine.frame` | ≤ **3 ms** average at every capture point; no module above its `moduleBudgetMs` |
-| Frame time vs mod-off | p95 ≤ **+10%**, p99 ≤ **+15%** at every capture point |
+| VRAM over vanilla | normal +250 to +300 MB; **â‰¤ +350 MB** in the worst-case scene |
+| Stage 1 script cost inside `engine.frame` | â‰¤ **3 ms** average at every capture point; no module above its `moduleBudgetMs` |
+| Frame time vs mod-off | p95 â‰¤ **+10%**, p99 â‰¤ **+15%** at every capture point |
 | Stalls | none > **1 s** outside teleports and loading; no `engine_stall` in a 1-hour soak |
-| Memory | private bytes growth ≤ **50 MB/hour** in the soak; free address space never below `lowAddressSpaceMegabytes` (600 MB) |
-| Screen effects (after R4) | ≤ **0.5 ms** |
+| Memory | private bytes growth â‰¤ **50 MB/hour** in the soak; free address space never below `lowAddressSpaceMegabytes` (600 MB) |
+| Screen effects (after R4) | â‰¤ **0.5 ms** |
 | Density | no ped/traffic reduction used to meet any budget above |
 
 ## 10a. Environment art-pass order
@@ -272,7 +274,7 @@ frame time, p50, p95, p99, module cost, VRAM, memory pressure, streaming stalls 
 Broker/Dukes scopes progression and where the deepest art pass happens **first**; citywide systems and shared-texture
 fixes apply everywhere (section 4). Each area is finished to the Hove Beach standard before the next starts.
 
-1. **Hove Beach — the benchmark.** Storefronts, signage, roads, sidewalks, apartment facades, grime, glass,
+1. **Hove Beach â€” the benchmark.** Storefronts, signage, roads, sidewalks, apartment facades, grime, glass,
    underpasses, lighting, wet streets, night atmosphere, graffiti, street clutter. *If Hove Beach looks like a believable
    Rockstar remaster, the art direction is working.*
 2. **Firefly Island / Firefly Projects.** Boardwalk, amusement area, neon and emissives, wet surfaces, signs,
@@ -301,7 +303,7 @@ fixes apply everywhere (section 4). Each area is finished to the Hove Beach stan
 3. **VRAM:** original +250 to +300 MB normal, +350 MB hard ceiling in the worst-case scene (Pillars 1 and 5).
    Hardware correction 2026-10-01: RX 570 **4 GB**; proposed +300 MB hard ceiling awaits the owner, not yet adopted.
    The other section 10 numbers remain proposals, tuned when their scenarios exist.
-4. **Gore:** very harsh, grounded; suffering, crawling and contextual executions allowed; bodies 3–5 minutes with hard
+4. **Gore:** very harsh, grounded; suffering, crawling and contextual executions allowed; bodies 3â€“5 minutes with hard
    caps and adaptive cleanup (Pillar 2).
 5. **Art-pass order:** Hove Beach first, as the benchmark (section 10a).
 6. **Population:** no automatic thinning of peds or traffic for performance; find other optimizations (density governor off).

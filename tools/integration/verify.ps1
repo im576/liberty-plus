@@ -40,8 +40,8 @@ $sources = @(
     (Join-Path $src 'Core\Math3\Vec3.cs')
     (Join-Path $src 'GameApi\WeaponInfoXml.cs')
     (Join-Path $src 'GameApi\WeaponStats.cs')
-    (Join-Path $src 'DevTools\Teleport\LocationFile.cs')
-    (Join-Path $src 'DevTools\Teleport\TeleportLocation.cs')
+    (Join-Path $src 'Engine\Locations\LocationFile.cs')
+    (Join-Path $src 'Engine\Locations\TeleportLocation.cs')
     (Get-ChildItem -LiteralPath (Join-Path $src 'Gunplay\Profiles') -Filter '*.cs').FullName
     (Get-ChildItem -LiteralPath (Join-Path $src 'Gunplay\Recoil') -Filter '*.cs').FullName
     (Get-ChildItem -LiteralPath (Join-Path $src 'Gunplay\Spread') -Filter '*.cs').FullName

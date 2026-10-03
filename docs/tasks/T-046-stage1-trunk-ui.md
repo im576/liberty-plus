@@ -43,7 +43,7 @@ Automated checks (keyboard input, state-file round trip) are in the Claude conti
 ## Codex continuation — September 30, 2026
 
 The trunk continuation includes the later wheel fixes and current main lock/cache tooling on `codex/lane-b-validation`.
-See [Codex handoff](../handoffs/Codex-Lane-B-2026-09-30.md). Gameplay validation remains incomplete. The owner reauthorized bounded checks through 9:30 p.m. Pacific; any later session must follow its current instructions.
+See [Codex handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Codex-Lane-B-2026-09-30.md). Gameplay validation remains incomplete. The owner reauthorized bounded checks through 9:30 p.m. Pacific; any later session must follow its current instructions.
 
 Storage uses the engine's owned player-control lock, releasing only Arsenal's claim on close. Completion explicitly shuts
 the lid even if a missing animation skipped its timed close. Storage list starts below the top-right HUD band. Transfer logs
@@ -117,7 +117,7 @@ this is the separate capture review. Available images are 960x540, not proof of 
 Full batch package/wheel/text assertions also passed; the wheel has a separate first-draw timing gap recorded in T-045.
 Restored from `phase2-20261001-122209`; slot is released and this run must not be repeated unchanged.
 Offline build PASS, verifier 441/0/5 not-run, tools 236/0. ASI hashes/inventory and exact evidence in
-[live handoff](../handoffs/Lane-B-live.md). Controller, real game save/load, safehouse/gunsmith and B/D coexistence
+[live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md). Controller, real game save/load, safehouse/gunsmith and B/D coexistence
 remain owner/combined checks; state-file round trips do not prove real save/load. Status stays NEEDS-PLAYTEST.
 
 ### Shared radial initial snapshot follow-up — offline only
@@ -128,7 +128,7 @@ highlight, panel, no opening action/input consumption, external-close semantics,
 failure cleanup pass within **25/0** checks in PS7/PS5.1. Engine/SHDN boundaries are spies; production build/full
 runtime evidence is pending. Next affected gate `T046-trunk-ui`, plus `SDK-ui-review` for the other shared radial
 callers, with `LOOP-package-install` under a scheduled slot. Prior acceptance stays preserved; this patch claims no
-fresh timing/visual acceptance. [Live handoff](../handoffs/Lane-B-live.md) records exact receipts and pending gates.
+fresh timing/visual acceptance. [Live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md) records exact receipts and pending gates.
 
 ### Full2297a17 fresh FAIL — 20261001-202311
 
@@ -139,7 +139,7 @@ draw.ui0.345/5.8 avg/max, zero measured>=1s stalls. Draw avg<0.5 does not pass r
 Later store/take/swap/capacity/state round-trip/close flows NOT-RUN due fail-fast. Restore phase2-20232903:31:10.031Z
 confirmed; no retry. Shared UI candidate held unmerged despite wheel pass; source attribution unproven. Offline
 diagnose paired baseline/choreography/scheduler/hotpaths, thresholds unchanged. D owns next slot; no game/build.
-Historical passes/failures preserved, owner-only checks remain. [Live handoff](../handoffs/Lane-B-live.md) indexes receipt.
+Historical passes/failures preserved, owner-only checks remain. [Live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md) indexes receipt.
 
 ### Paired metrics/state observation candidate — offline, runtime unrun
 
@@ -151,4 +151,4 @@ Actual metrics/logger/ledger/trunk-state focused compilation **25/0**, warnings-
 Fresh full202311 p95 FAIL and later action flows NOT-RUN remain; shared candidate heldunmerged.
 Next ONE full assigned batch proposes `LOOP-build,LOOP-verify,LOOP-package-install,T046-trunk-ui`, cap30/Restore/
 StopOnFailure/full, after parent host-startup fix review. Passing wheel/SDK unchanged, not rerun. Exact test receipt,
-source boundaries and observation limits in [live handoff](../handoffs/Lane-B-live.md).
+source boundaries and observation limits in [live handoff](../../../GTAIV-Reborn/docs/archive/pre-split/handoffs/Lane-B-live.md).

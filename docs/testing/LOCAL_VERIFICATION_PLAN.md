@@ -35,7 +35,7 @@ Load a free-roam save, go to the test range (DevTools > TELEPORT). Keep DevTools
 2. Skip anything you have already confirmed on an earlier build unless it looks different now.
 
 - Pass when: every section behaves as the checklist describes; note any section that does not
-- Full steps: [docs/testing/PHASE1_PLAYTEST.md](../../docs/testing/PHASE1_PLAYTEST.md)
+- Full steps: [docs/testing/PHASE1_PLAYTEST.md](../../../GTAIV-Reborn/docs/testing/PHASE1_PLAYTEST.md)
 
 **Gold carbine and shotgun finishes** `T011-gold-finishes` (T-011, 4 min)
 
@@ -204,7 +204,7 @@ Nothing to set up.
 2. If that is still true on this build (you will see it during the gunplay session), answer p.
 
 - Pass when: IDs 58, 59 and 60 select and fire; switching to the vanilla counterpart keeps total ammo
-- Full steps: [docs/tasks/T-007-weapon-slots.md](../../docs/tasks/T-007-weapon-slots.md)
+- Full steps: [docs/tasks/T-007-weapon-slots.md](../tasks/T-007-weapon-slots.md)
 
 ### World objects (about 2 minutes)
 
@@ -217,7 +217,7 @@ Free roam; the build from this run installed (the test wall stands at East Park)
 3. Answer p if it blocks you somewhere (say where), f if you walk straight through everywhere, s to skip.
 
 - Pass when: the wall blocks the player at least where the borrowed shape is (its exact outline is the vanilla prop's, not the wall's)
-- Full steps: [docs/tasks/T-033-world-objects.md](../../docs/tasks/T-033-world-objects.md)
+- Full steps: [docs/tasks/T-033-world-objects.md](../../../GTAIV-Reborn/docs/tasks/T-033-world-objects.md)
 
 ## Automated checks
 

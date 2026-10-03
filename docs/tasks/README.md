@@ -1,0 +1,28 @@
+# Task evidence index
+
+Current status is in [PROJECT_STATE.md](../PROJECT_STATE.md). These cards retain their revision-specific evidence; old statuses are not current acceptance.
+
+- [T-007-weapon-slots](T-007-weapon-slots.md)
+- [T-011-gold-finishes](T-011-gold-finishes.md)
+- [T-013-debug-hit-info](T-013-debug-hit-info.md)
+- [T-014-aim-profiles](T-014-aim-profiles.md)
+- [T-015-shoulder-swap](T-015-shoulder-swap.md)
+- [T-016-switch-while-aiming](T-016-switch-while-aiming.md)
+- [T-017-feel-shake-fov](T-017-feel-shake-fov.md)
+- [T-020-arsenal-core](T-020-arsenal-core.md)
+- [T-021-holsters](T-021-holsters.md)
+- [T-022-combat-effects](T-022-combat-effects.md)
+- [T-023-lvs-body-variants](T-023-lvs-body-variants.md)
+- [T-025-physical-weapons](T-025-physical-weapons.md)
+- [T-040-stage1-foundation](T-040-stage1-foundation.md)
+- [T-041-stage1-weapons](T-041-stage1-weapons.md)
+- [T-042-stage1-gunplay](T-042-stage1-gunplay.md)
+- [T-043-stage1-reticles](T-043-stage1-reticles.md)
+- [T-044-stage1-physical-weapons](T-044-stage1-physical-weapons.md)
+- [T-045-stage1-weapon-wheel](T-045-stage1-weapon-wheel.md)
+- [T-046-stage1-trunk-ui](T-046-stage1-trunk-ui.md)
+- [T-047-stage1-gore](T-047-stage1-gore.md)
+- [T-048-stage1-combat-effects](T-048-stage1-combat-effects.md)
+- [T-049-stage1-hud](T-049-stage1-hud.md)
+- [T-056-stage1-performance-pass](T-056-stage1-performance-pass.md)
+- [T-059-citywide-environment-overhaul](T-059-citywide-environment-overhaul.md)

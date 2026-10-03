@@ -146,7 +146,17 @@
           "hasAlpha": true
         }
       ]
+    },
+    {
+      "at": "2026-10-02T23:32:46.478106+00:00",
+      "event": "deduplicated",
+      "revision": 1,
+      "by": "repository split",
+      "notes": "Current approval references the identical original generation; historical paths remain in the provenance map.",
+      "originalPath": "art/approved/ART-006/r1_art_006_4.png",
+      "canonicalPath": "art/generated/ART-006/r1/art_006_4.png",
+      "sha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed"
     }
   ],
-  "approvedFile": "art/approved/ART-006/r1_art_006_4.png"
+  "approvedFile": "art/generated/ART-006/r1/art_006_4.png"
 }

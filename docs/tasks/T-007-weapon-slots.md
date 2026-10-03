@@ -1,6 +1,6 @@
 # T-007 — Separate gold weapon identifier spike
 
-Status: **NEEDS-PLAYTEST — owner confirmation recorded, owner to mark DONE**. The owner reported the carbine (ID 59) and shotgun (ID 60) working first try, and logs show both selected; the pistol (ID 58) passed earlier. Gold art and custom gunplay moved to [T-010](../archive/tasks/T-010-phase1-gunplay.md). The history below is kept as written at the time.
+Status: **NEEDS-PLAYTEST — owner confirmation recorded, owner to mark DONE**. The owner reported the carbine (ID 59) and shotgun (ID 60) working first try, and logs show both selected; the pistol (ID 58) passed earlier. Gold art and custom gunplay moved to [T-010](../../../GTAIV-Reborn/docs/archive/tasks/T-010-phase1-gunplay.md). The history below is kept as written at the time.
 
 The staged `LF_GOLD_PISTOL` entry copies this machine's base `PISTOL` data and uses the existing `w_glock` model; no external art is redistributed. The source data comes from the owner's installed game. `ExtendedLimits=1` is already set. The first diagnostic script registers `LFWeaponStatus`, `LFWeaponGive`, and `LFWeaponVanilla` console commands. FusionFix's [v5.0.1 source](https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix/blob/v5.0.1/source/limits.ixx) assigns the first custom name ID 58; the live log and owner screenshot confirmed that ID was selected. The guarded installer placed the generated XML at `update/common/data/WeaponInfo.xml`, leaving the original file intact. A hash-checked removal script reverses the override.
 

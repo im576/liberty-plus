@@ -33,10 +33,17 @@ $buildInfoPath = Join-Path $built 'build.json'
 
 # git reports on stderr; with 'Stop', Windows PowerShell 5.1 would turn that into a terminating error.
 function Get-RepoState {
+    if (Test-Path -LiteralPath (Join-Path $repoRoot 'workspace.json')) {
+        $workspace = Get-Content -LiteralPath (Join-Path $repoRoot 'workspace.json') -Raw | ConvertFrom-Json
+        $snapshotCommit = (& git -C $repoRoot rev-parse HEAD 2>$null | Out-String).Trim()
+        return [ordered]@{ commit = $snapshotCommit;
+            dirty = [bool]($workspace.repositories.framework.dirty -or $workspace.repositories.mod.dirty);
+            repositories = $workspace.repositories }
+    }
     $ErrorActionPreference = 'Continue'
     $commit = (& git -C $repoRoot rev-parse HEAD 2>$null | Out-String).Trim()
     $dirty = [bool]((& git -C $repoRoot status --porcelain --untracked-files=no 2>$null | Out-String).Trim())
-    return [ordered]@{ commit = $commit; dirty = $dirty }
+    return [ordered]@{ commit = $commit; dirty = $dirty; repositories = $null }
 }
 
 function Get-RepoFiles([string] $relativeFolder, [string] $filter, [switch] $SkipProgram, [switch] $Recurse) {
@@ -180,8 +187,8 @@ if ($Phase -ne 'Stage') {
         Copy-Item -LiteralPath $source -Destination $target
     }
 
-    $info = [ordered]@{ repo = $repoRoot; commit = $state.commit; dirty = $state.dirty; builtUtc = [DateTime]::UtcNow.ToString('o'); lvs = [bool]$LvsDirectory }
-    [IO.File]::WriteAllText($buildInfoPath, ($info | ConvertTo-Json), (New-Object Text.UTF8Encoding($false)))
+    $info = [ordered]@{ repo = $repoRoot; commit = $state.commit; dirty = $state.dirty; repositories = $state.repositories; builtUtc = [DateTime]::UtcNow.ToString('o'); lvs = [bool]$LvsDirectory }
+    [IO.File]::WriteAllText($buildInfoPath, ($info | ConvertTo-Json -Depth 8), (New-Object Text.UTF8Encoding($false)))
     Write-Host "Phase 2 artifacts built in $built"
 }
 
@@ -312,8 +319,8 @@ $manifest = [ordered]@{
     builtUtc = (Get-Date).ToUniversalTime().ToString('o')
     gameVersion = '1.2.0.59'
     # The worktree and commit the build came from; install-phase2 records them as the installed build.
-    source = [ordered]@{ repo = [string]$info.repo; commit = [string]$info.commit; dirty = [bool]$info.dirty }
+    source = [ordered]@{ repo = [string]$info.repo; commit = [string]$info.commit; dirty = [bool]$info.dirty; repositories = $info.repositories }
     files = $entries
 }
-[IO.File]::WriteAllText((Join-Path $stage 'manifest.json'), ($manifest | ConvertTo-Json -Depth 5), (New-Object Text.UTF8Encoding($false)))
+[IO.File]::WriteAllText((Join-Path $stage 'manifest.json'), ($manifest | ConvertTo-Json -Depth 9), (New-Object Text.UTF8Encoding($false)))
 Write-Host "Phase 2 staged $($entries.Count) files in $stage"

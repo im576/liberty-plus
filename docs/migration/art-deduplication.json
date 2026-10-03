@@ -1,0 +1,74 @@
+[
+  {
+    "removed": "art/approved/ART-001/r1_art_001_2.png",
+    "canonical": "art/generated/ART-001/r1/art_001_2.png",
+    "sha256": "dcb6676386a8031098ce5471274db79add9941b51ab18c1aa6125bd22b2d1406",
+    "bytes": 1140540
+  },
+  {
+    "removed": "art/approved/ART-002/r1_art_002_1.png",
+    "canonical": "art/generated/ART-002/r1/art_002_1.png",
+    "sha256": "b87072cc32434698613b1c26d65d045392c711d7381182fb8457a5413420917e",
+    "bytes": 1719305
+  },
+  {
+    "removed": "art/approved/ART-003/r1_art_003_3.png",
+    "canonical": "art/generated/ART-003/r1/art_003_3.png",
+    "sha256": "9a32bb74d726e95cd8e21331d9d640c506f5fa35a8c8c7e1bb0fe2781ef7de84",
+    "bytes": 1278630
+  },
+  {
+    "removed": "art/approved/ART-004/r1_art_004_2.png",
+    "canonical": "art/generated/ART-004/r1/art_004_2.png",
+    "sha256": "4f4df2cd29c14c21eba718cf2aa5413cee5d4f282fec48fcd4e8fbd41b4a7028",
+    "bytes": 1251159
+  },
+  {
+    "removed": "art/approved/ART-005/r1_art_005_1.png",
+    "canonical": "art/generated/ART-005/r1/art_005_1.png",
+    "sha256": "2511fe5516930c33844f51b77c26f7149cf22ef00b1e1f0a1c52e7a5b2989b75",
+    "bytes": 1036506
+  },
+  {
+    "removed": "art/approved/ART-006/r1_art_006_4.png",
+    "canonical": "art/generated/ART-006/r1/art_006_4.png",
+    "sha256": "e2a3452c1a2cecfce266d864736ac18ee67ed38c1882ca9eaf6e8d691ea2b5ed",
+    "bytes": 1708010
+  },
+  {
+    "removed": "art/approved/ART-007/r2_art_007_2.png",
+    "canonical": "art/generated/ART-007/r2/art_007_2.png",
+    "sha256": "c21bb40f9be8e6fb92f53ab8d1c414255b04fca16978b282922008d1e9587ffb",
+    "bytes": 2370697
+  },
+  {
+    "removed": "art/approved/ART-008/r1_art_008_1.png",
+    "canonical": "art/generated/ART-008/r1/art_008_1.png",
+    "sha256": "e07d76fed57b75bd827c4185e5efeeb40b54b713fb300c6a1e25120ec1e0a3f1",
+    "bytes": 2757504
+  },
+  {
+    "removed": "art/approved/ART-009/r1_art_009_3.png",
+    "canonical": "art/generated/ART-009/r1/art_009_3.png",
+    "sha256": "7aa37431fc495aa93c57d7e2e726631a92205fc50f91f1dea1ce2142736ed0bb",
+    "bytes": 3866530
+  },
+  {
+    "removed": "art/approved/ART-010/r1_art_010_1.png",
+    "canonical": "art/generated/ART-010/r1/art_010_1.png",
+    "sha256": "1f0ff93616d95a988b23db27ec01dc561551b10273afd83de55195d222e53552",
+    "bytes": 3581599
+  },
+  {
+    "removed": "art/approved/ART-011/r1_art_011_1.png",
+    "canonical": "art/generated/ART-011/r1/art_011_1.png",
+    "sha256": "fd616785737c616b6c349c4184ae5c56b7101bb2e489c55371bfc5dee5fcba10",
+    "bytes": 1676366
+  },
+  {
+    "removed": "art/approved/ART-012/r1_art_012_2.png",
+    "canonical": "art/generated/ART-012/r1/art_012_2.png",
+    "sha256": "0966d71a56bd2f99a0e4913469fe97dc3abaec955037d3da258be080264a52c2",
+    "bytes": 2556502
+  }
+]
